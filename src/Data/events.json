@@ -1,0 +1,186 @@
+[
+  {
+    "title": "Amine - The Best Tour",
+    "event_photo": "/images/four.jpeg",
+    "location": "Boston TD Garden",
+    "date": {
+      "day":5,
+      "month": "April"
+    },
+    "time": "6 PM",
+    "cost": 31,
+    "hosts": [{
+      "first_name": "Julie",
+      "last_name": "Harris",
+      "profile_picture": "/images/anga.jpeg"
+    }],
+    "attendees": 5
+  },
+  {
+    "title": "ODIE - Little Lies",
+    "event_photo": "/images/jnk.jpeg",
+    "location": "Boston University",
+    "date": {
+      "day": 12,
+      "month": "April"
+    },
+    "time": "7 PM",
+    "cost": 55,
+    "hosts": [
+      {
+        "first_name": "Ryan",
+        "last_name": "Bell",
+        "profile_picture": "/images/jo.jpeg"
+      },
+      {
+        "first_name": "Sammy",
+        "last_name": "Heim",
+        "profile_picture": "/images/mo.jpeg"
+      }],
+    "attendees": 10
+  },
+  {
+    "title": "Outdoor Concert",
+    "event_photo": "/images/park.jpeg",
+    "location": "Boston Common",
+    "date": {
+      "day": 5,
+      "month": "May"
+    },
+    "time": "3 PM",
+    "cost": 35,
+    "hosts": [{
+      "first_name": "Daine",
+      "last_name": "Peterson",
+      "profile_picture": "/images/bw.jpeg"
+    }],
+    "attendees": 4
+  },
+  {
+    "title": "Lucky Daye - Lucky",
+    "event_photo": "/images/eee.jpeg",
+    "location": "Blue House",
+    "date": {
+      "day": 7,
+      "month": "May"
+    },
+    "time": "7 PM",
+    "cost": 65,
+    "hosts": [{
+      "first_name": "Stephanie",
+      "last_name": "Robin",
+      "profile_picture": "/images/scar.jpeg"
+    }],
+    "attendees": 3
+  },
+  {
+    "title": "Stand Up",
+    "event_photo": "/images/openm.jpeg",
+    "location": "Jazz Corner",
+    "date": {
+      "day": 15,
+      "month": "June"
+    },
+    "time": "6 PM",
+    "cost": 25,
+    "hosts": [{
+      "first_name": "Mar",
+      "last_name": "Flores",
+      "profile_picture": "/images/green.jpeg"
+    }],
+    "attendees": 5
+  },
+  {
+    "title": "ODIE - Little Lies",
+    "event_photo": "/images/odie.jpeg",
+    "location": "Boston University",
+    "date": {
+      "day": 25,
+      "month": "June"
+    },
+    "time": "7 PM",
+    "cost": 80,
+    "hosts": [ {
+      "first_name": "Kate",
+      "last_name": "Long",
+      "profile_picture": "/images/aka.jpeg"
+    },  {
+      "first_name": "Jamie",
+      "last_name": "Pereira",
+      "profile_picture": "/images/kim.jpeg"
+    }
+    ],
+    "attendees": 10
+  },
+  {
+    "title": "Lucky Daye - Lucky",
+    "event_photo": "/images/some.jpeg",
+    "location": "Blue House",
+    "time": "7 PM",
+    "cost": 45,
+    "hosts": [ {
+      "first_name": "Keith",
+      "last_name": "Nelson",
+      "profile_picture": "/images/ehe.jpeg"
+    }
+    ],
+    "attendees": 3
+  },
+  {
+    "title": "Amine - The Best Tour",
+    "event_photo": "/images/fff.jpeg",
+    "location": "Boston TD Garden",
+    "date": {
+      "day": 5,
+      "month": "July"
+    },
+    "time": "6 PM",
+    "cost": 50,
+    "hosts": [ {
+      "first_name": "Chris",
+      "last_name": "Kellu",
+      "profile_picture": "/images/shadow.jpeg"
+    }
+    ],
+    "attendees": 5
+  },
+  {
+    "title": "ODIE - Little Lies",
+    "event_photo": "/images/guit.jpeg",
+    "location": "Boston University",
+    "date": {
+      "day": 30,
+      "month": "July"
+    },
+    "time": "7 PM",
+    "cost": 50,
+    "hosts": [{
+      "first_name": "Sammy",
+      "last_name": "Heim",
+      "profile_picture": "/images/mo.jpeg"
+    }, {
+      "first_name": "Kate",
+      "last_name": "Long",
+      "profile_picture": "/images/aka.jpeg"
+    }],
+    "attendees": 10
+  },
+  {
+    "title": "Lucky Daye - Lucky",
+    "event_photo": "/images/indoor.jpeg",
+    "location": "Blue House",
+    "date": {
+      "day": 5,
+      "month": "August"
+    },
+    "time": "7 PM",
+    "hosts": [{
+      "first_name": "Thomas",
+      "last_name": "Miller",
+      "profile_picture": "/images/bo.jpeg"
+    }],
+    "attendees": 3
+  }
+
+
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "title": "ODIE - Little Lies",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
+    "hosts": [
+      {
+        "first_name": "Jamie",
+        "last_name": "Pereira",
+        "profile_picture": "/images/kim.jpeg"
+      },
+      {
+        "first_name": "Sammy",
+        "last_name": "Heim",
+        "profile_picture": "/images/mo.jpeg"
+      }
+    ],
+    "cost": 55,
+    "location": "Boston University",
+    "date": {
+      "day": 5,
+      "month": "August",
+      "hour": 7,
+      "minute": 0,
+      "time": "PM"
+    },
+    "spots": 10,
+    "attendees": [
+      "/images/bo.jpeg",
+      "/images/green.jpeg",
+      "/images/ehe.jpeg",
+      "/images/aka.jpeg"
+    ],
+    "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
+    "tags": [
+      "Concert",
+      "Music",
+      "Multiple",
+      "Indie"
+    ]
+  }
+]
