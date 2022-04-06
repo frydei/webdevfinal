@@ -2,7 +2,7 @@ import React from "react";
 
 const FilledButton = (param) => {
     return(
-        <button className="f-button orange">{param.name}</button>
+        <button className="f-button f-orange">{param.name}</button>
     );
 }
 

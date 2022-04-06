@@ -1,6 +1,6 @@
-[
-  {
+{
     "title": "ODIE - Little Lies",
+    "event_image": "/images/odie.jpeg",
     "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
     "hosts": [
       {
@@ -32,10 +32,21 @@
     ],
     "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
     "tags": [
-      "Concert",
-      "Music",
-      "Multiple",
-      "Indie"
+      {
+        "name": "Concert",
+        "color": "grey"
+      },
+      {
+        "name": "Music",
+        "color": "grey"
+      },
+      {
+        "name": "Multiple",
+        "color": "orange"
+      },
+      {
+        "name": "Indie",
+        "color": "grey"
+      }
     ]
   }
-]

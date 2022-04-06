@@ -1,35 +1,307 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 $fredoka: 'Fredoka', sans-serif;
+$title: 'Fredoka One', cursive;
 $orange: #EF8354;
-$black: #2D3142;
+$dark: #2D3142;
 $grey: #4F5D75;
 $white: #f7f7f7;
+$lightgrey: #DBDBDB;
+$background: #F4F4F4;
+$regular: 400;
+$medium: 500;
+$light: 300;
+$bold: 600;
+$black: 700;
 
+body, .container-fluid {
+  background-color: $background;
+}
 
 .main {
   background: $orange;
 }
 
 .f-button {
-  width: 110px;
+  padding: {
+    left: 15px;
+    right: 15px;
+  }
   height: 34px;
-  border: 2px solid $black;
+  border: 2px solid $dark;
   border-radius: 25px;
   background-color: transparent;
-  color: $black;
-  margin: 10px;
-
+  color: $dark;
   font: {
     family: $fredoka;
     size: 16px;
-    weight: normal;
+    weight: $regular;
   }
 }
 
-.orange {
+.f-orange, .f-tag {
   background-color: $orange;
   color: $white;
   border: 2px solid $orange;
 
+}
+
+.f-tag {
+  margin-right: 5px;
+  border-radius: 25px;
+  background-color: transparent;
+  font: {
+    family: $fredoka;
+    size: 10px;
+    weight: $regular;
+  }
+  color: $dark;
+  border: 2px solid $grey;
+}
+
+.f-view {
+  font-size: 13px;
+  background-color: $white;
+  color: $dark;
+  border: 2px solid $white;
+  width: 50px;
+  height: 25px;
+}
+
+
+.f-title {
+  font: {
+    family: $title;
+    size: 48px;
+  }
+  color: $orange;
+}
+
+.f-title-small {
+  font: {
+    family: $title;
+    size: 29px;
+  }
+  color: $orange;
+}
+
+.f-user-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.f-user-icon-small, .f-attendee-icon {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.f-user-icon-smallest {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.f-header-username {
+  font: {
+    family: $fredoka;
+    size: 14px;
+    weight: $bold;
+  }
+  color: $dark;
+  text-align: left;
+}
+
+.f-menu-list {
+  width: 120px;
+
+  .f-menu-item {
+    background-color: transparent;
+    border: 1px solid transparent;
+
+    .f-icon {
+      font-size: 12px;
+      color: $dark;
+    }
+  }
+
+  .f-divider {
+    color: $grey;
+  }
+}
+
+.f-section-header {
+  font: {
+    family: $fredoka;
+    size: 14px;
+    weight: $medium;
+  }
+  text-align: right;
+}
+
+.f-font-small, .f-menu-item-title {
+  font: {
+    family: $fredoka;
+    size: 12px;
+    weight: $regular;
+  }
+  text-align: right;
+}
+
+.f-event {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px #00000029;
+
+  .f-event-header {
+    width: 100%;
+
+    i {
+      font-size: 14px;
+      color: $dark;
+    }
+  }
+
+  .f-event-img-container {
+    .f-event-img {
+      object-fit: cover;
+      border-radius: 15px;
+    }
+  }
+}
+
+.f-search {
+  width: 220px;
+  height: 250px;
+
+  .f-event-img-container {
+    .f-event-img {
+      width: 190px;
+      height: 145px;
+    }
+  }
+}
+
+.f-explore {
+  width: 580px;
+  height: 400px;
+
+  .f-event-img-container {
+    .f-event-img {
+      width: 530px;
+      height: 250px;
+    }
+  }
+}
+
+.f-event-detail {
+  width: 100%;
+  font: {
+    family: $fredoka;
+  }
+
+  .f-event-title {
+    font: {
+      size: 14px;
+      weight: $medium;
+    }
+    color: $dark;
+  }
+
+  .f-event-detail-section {
+    color: $grey;
+    width: 100%;
+
+    .f-event-location, .f-event-attendees, .f-event-time, .f-event-cost {
+      font: {
+        size: 13px;
+        weight: $regular;
+      }
+
+      i {
+        font-size: 11px;
+      }
+    }
+
+    .f-medium {
+      font-size: 14px;
+    }
+
+    .f-medium-title {
+      font-size: 15px;
+    }
+
+  }
+}
+
+.f-event-detail-content {
+  font: {
+    family: $fredoka;
+    size: 13px;
+    weight: $regular;
+  }
+  color: $grey;
+
+  .f-event-detail-img {
+    .f-attendee-icon {
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+  }
+  .f-event-detail-section-header {
+    font: {
+      size: 15px;
+      weight: $medium;
+    }
+    color: $dark;
+    text-align: left;
+  }
+
+  .f-event-detail {
+    .f-host-icon {
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .f-event-title-box {
+      background-color: white;
+      border-radius: 15px;
+
+      .f-event-title {
+        font: {
+          size: 28px;
+          weight: $medium;
+        }
+        color: $dark;
+      }
+
+      .f-vent-desc {
+        color: $dark;
+      }
+    }
+    .f-event-detail-box {
+      background-color: white;
+      border-radius: 15px;
+      h3, span {
+        margin: 0;
+      }
+
+      .f-event-location, .f-event-cost, .f-event-time, .f-event-attendees, .f-event-hosts {
+        margin-bottom: 15px;
+      }
+    }
+  }
 }

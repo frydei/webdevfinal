@@ -4,10 +4,10 @@ import Button from "./Button";
 import Spacer from "./Spacer";
 
 
-const HeaderGuest = () => {
+const LargeHeaderGuest = () => {
     return(
         <div className="d-flex justify-content-between align-items-center pt-1">
-            <h1 className="f-title-small">Frydei</h1>
+            <h1 className="f-title large">Frydei</h1>
             <div className="d-flex justify-content-end">
                 <FilledButton name="Log In"/>
                 <Spacer size={15}/>
@@ -18,4 +18,4 @@ const HeaderGuest = () => {
     )
 }
 
-export default HeaderGuest;
+export default LargeHeaderGuest;

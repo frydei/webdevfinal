@@ -3,11 +3,10 @@ import UserIconName from "./UserIconName";
 import user from "../Data/user.json"
 
 
-const HeaderUser = () => {
+const LargeHeaderUser = () => {
     return(
         <div className="d-flex justify-content-between align-items-center pt-1">
-            <h1 className="f-title-small">Frydei</h1>
-
+            <h1 className="f-title">Frydei</h1>
             <div className="d-flex justify-content-end">
                 <UserIconName user={user}/>
             </div>
@@ -16,4 +15,4 @@ const HeaderUser = () => {
     )
 }
 
-export default HeaderUser;
+export default LargeHeaderUser;
