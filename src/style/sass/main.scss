@@ -25,8 +25,8 @@ body, .container-fluid {
 
 .f-button {
   padding: {
-    left: 15px;
-    right: 15px;
+    left: 25px;
+    right: 25px;
   }
   height: 34px;
   border: 2px solid $dark;
@@ -45,6 +45,9 @@ body, .container-fluid {
   color: $white;
   border: 2px solid $orange;
 
+}
+.f-orange-font {
+  color: $orange;
 }
 
 .f-tag {
@@ -93,7 +96,7 @@ body, .container-fluid {
   border-radius: 50%;
 }
 
-.f-user-icon-small, .f-attendee-icon {
+.f-user-icon-small {
   width: 46px;
   height: 46px;
   object-fit: cover;
@@ -239,6 +242,13 @@ body, .container-fluid {
   }
 }
 
+.f-host-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .f-event-detail-content {
   font: {
     family: $fredoka;
@@ -248,19 +258,22 @@ body, .container-fluid {
   color: $grey;
 
   .f-event-detail-img {
-    .f-attendee-icon {
+    .f-user-icon-small {
       width: 46px;
       height: 46px;
       object-fit: cover;
       border-radius: 50%;
     }
+
     img {
       width: 100%;
       object-fit: cover;
       border-radius: 15px;
     }
   }
+
   .f-event-detail-section-header {
+    margin-bottom: 5px;
     font: {
       size: 15px;
       weight: $medium;
@@ -270,12 +283,6 @@ body, .container-fluid {
   }
 
   .f-event-detail {
-    .f-host-icon {
-      width: 46px;
-      height: 46px;
-      object-fit: cover;
-      border-radius: 50%;
-    }
     .f-event-title-box {
       background-color: white;
       border-radius: 15px;
@@ -292,16 +299,124 @@ body, .container-fluid {
         color: $dark;
       }
     }
+
     .f-event-detail-box {
       background-color: white;
       border-radius: 15px;
-      h3, span {
+
+      span {
         margin: 0;
       }
 
       .f-event-location, .f-event-cost, .f-event-time, .f-event-attendees, .f-event-hosts {
         margin-bottom: 15px;
       }
+    }
+  }
+}
+
+.f-icon-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0;
+}
+
+.f-form {
+  .f-bg {
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .f-form-content {
+
+    input, textarea {
+      background-color: transparent;
+      border: 1px solid #616E83;
+      border-radius: 5px;
+      color: $grey;
+      opacity: 0.9;
+      font: {
+        family: $fredoka;
+        size: 12px;
+      }
+    }
+    input {
+      height: 25px;
+      padding: 6px;
+    }
+    textarea, #event-title {
+      border-color: transparent;
+      padding: 0;
+    }
+
+    #event-title {
+      height: 35px;
+      font: {
+        size: 28px;
+        weight: $medium;
+      }
+      color: $dark;
+      opacity: 1;
+    }
+
+      .f-image-upload {
+        width: 100%;
+        height: 700px;
+        background-color: $lightgrey;
+        border-radius: 15px;
+
+        label {
+          width: 140px;
+          height: 55px;
+          border-radius: 15px;
+          background-color: white;
+          color: #767676;
+          font: {
+            family: $fredoka;
+            size: 18px;
+            weight: $regular;
+          }
+          i {
+            color: $lightgrey;
+            font-size: 14px;
+          }
+        }
+      }
+    small {
+      margin: 0;
+      font: {
+        family: $fredoka;
+        size: 8px;
+      }
+
+    }
+    label {
+      font: {
+        family: $fredoka;
+        size: 12px;
+        weight: $medium;
+      }
+    }
+
+      .f-form-detail {
+        button {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          border: 2px solid $grey;
+          background-color: transparent;
+
+          i {
+            color: $grey;
+
+          }
+        }
+      }
+    .f-form-group {
+      border: 1px solid transparent;
+
     }
   }
 }

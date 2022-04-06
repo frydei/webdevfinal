@@ -11,7 +11,7 @@ const SearchEvent = (param) => {
             <div className="d-flex flex-column align-items-center justify-content-center">
                 <div className="f-event-img-container mb-2 d-flex flex-column align-items-center justify-content-center position-relative">
                     <img className="f-event-img" src="/images/fff.jpeg" alt=""/>
-                    <button className="f-button f-view position-absolute bottom-0 end-0">View</button>
+                    <button className="f-button f-view position-absolute bottom-0 end-0" style={{"paddingLeft": "0px", "paddingRight": "0px", }}>View</button>
                 </div>
                 <div className="f-event-detail">
                     <h3 className="f-event-title mb-1">{param.event.title}</h3>

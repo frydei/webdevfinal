@@ -1,6 +1,7 @@
 import React from "react";
 import Tag from "./Tag";
 import FilledButton from "./FilledButton";
+import Button from "./Button";
 
 const EventDetailGuest = (param) => {
     const event = param.event;
@@ -21,18 +22,16 @@ const EventDetailGuest = (param) => {
                     <img src={event.event_image} alt=""/>
                     <div className="f-event-detail-section">
                         <h3 className="f-event-detail-section-header mt-2">Attendees</h3>
-                        <div className="f-event-attendees">
+                        <div className="f-event-attendees m-0">
                             {
                                 event.attendees.map(att => {
                                     return <img src={att}
                                                 alt=""
-                                                className="f-attendee-icon me-1"
+                                                className="f-user-icon-small me-1"
                                     />;
                                 })
                             }
-
                         </div>
-
                     </div>
                 </div>
                 <div className="col-6 f-event-detail">
@@ -56,10 +55,8 @@ const EventDetailGuest = (param) => {
                                             />;
                                         })
                                     }
-
                                 </div>
                             </div>
-
                         </div>
                         <div className="f-event-detail-section">
                             <h3 className="f-event-detail-section-header">Cost</h3>
@@ -96,21 +93,19 @@ const EventDetailGuest = (param) => {
                         <div className="d-flex align-items-center justify-content-start">
                             {
                                 event.tags.map(tag => {
-                                    return <Tag tag={tag}/>
+                                    return <Tag tag={tag}/>;
                                 })
                             }
                         </div>
                     </div>
                     <div className="row f-button-box">
-                        <FilledButton name={"Please log in to join events"}/>
-
+                        <div className="p-0">
+                            <FilledButton name={"Join"}/>
+                        </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
-
     );
 };
 

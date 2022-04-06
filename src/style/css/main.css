@@ -9,8 +9,8 @@ body, .container-fluid {
 }
 
 .f-button {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
   height: 34px;
   border: 2px solid #2D3142;
   border-radius: 25px;
@@ -25,6 +25,10 @@ body, .container-fluid {
   background-color: #EF8354;
   color: #f7f7f7;
   border: 2px solid #EF8354;
+}
+
+.f-orange-font {
+  color: #EF8354;
 }
 
 .f-tag {
@@ -66,7 +70,7 @@ body, .container-fluid {
   border-radius: 50%;
 }
 
-.f-user-icon-small, .f-attendee-icon {
+.f-user-icon-small {
   width: 46px;
   height: 46px;
   object-fit: cover;
@@ -179,13 +183,20 @@ body, .container-fluid {
   font-size: 15px;
 }
 
+.f-host-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .f-event-detail-content {
   font-family: "Fredoka", sans-serif;
   font-size: 13px;
   font-weight: 400;
   color: #4F5D75;
 }
-.f-event-detail-content .f-event-detail-img .f-attendee-icon {
+.f-event-detail-content .f-event-detail-img .f-user-icon-small {
   width: 46px;
   height: 46px;
   object-fit: cover;
@@ -197,16 +208,11 @@ body, .container-fluid {
   border-radius: 15px;
 }
 .f-event-detail-content .f-event-detail-section-header {
+  margin-bottom: 5px;
   font-size: 15px;
   font-weight: 500;
   color: #2D3142;
   text-align: left;
-}
-.f-event-detail-content .f-event-detail .f-host-icon {
-  width: 46px;
-  height: 46px;
-  object-fit: cover;
-  border-radius: 50%;
 }
 .f-event-detail-content .f-event-detail .f-event-title-box {
   background-color: white;
@@ -224,11 +230,91 @@ body, .container-fluid {
   background-color: white;
   border-radius: 15px;
 }
-.f-event-detail-content .f-event-detail .f-event-detail-box h3, .f-event-detail-content .f-event-detail .f-event-detail-box span {
+.f-event-detail-content .f-event-detail .f-event-detail-box span {
   margin: 0;
 }
 .f-event-detail-content .f-event-detail .f-event-detail-box .f-event-location, .f-event-detail-content .f-event-detail .f-event-detail-box .f-event-cost, .f-event-detail-content .f-event-detail .f-event-detail-box .f-event-time, .f-event-detail-content .f-event-detail .f-event-detail-box .f-event-attendees, .f-event-detail-content .f-event-detail .f-event-detail-box .f-event-hosts {
   margin-bottom: 15px;
+}
+
+.f-icon-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0;
+}
+
+.f-form .f-bg {
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.f-form .f-form-content input, .f-form .f-form-content textarea {
+  background-color: transparent;
+  border: 1px solid #616E83;
+  border-radius: 5px;
+  color: #4F5D75;
+  opacity: 0.9;
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+}
+.f-form .f-form-content input {
+  height: 25px;
+  padding: 6px;
+}
+.f-form .f-form-content textarea, .f-form .f-form-content #event-title {
+  border-color: transparent;
+  padding: 0;
+}
+.f-form .f-form-content #event-title {
+  height: 35px;
+  font-size: 28px;
+  font-weight: 500;
+  color: #2D3142;
+  opacity: 1;
+}
+.f-form .f-form-content .f-image-upload {
+  width: 100%;
+  height: 700px;
+  background-color: #DBDBDB;
+  border-radius: 15px;
+}
+.f-form .f-form-content .f-image-upload label {
+  width: 140px;
+  height: 55px;
+  border-radius: 15px;
+  background-color: white;
+  color: #767676;
+  font-family: "Fredoka", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+.f-form .f-form-content .f-image-upload label i {
+  color: #DBDBDB;
+  font-size: 14px;
+}
+.f-form .f-form-content small {
+  margin: 0;
+  font-family: "Fredoka", sans-serif;
+  font-size: 8px;
+}
+.f-form .f-form-content label {
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+.f-form .f-form-content .f-form-detail button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #4F5D75;
+  background-color: transparent;
+}
+.f-form .f-form-content .f-form-detail button i {
+  color: #4F5D75;
+}
+.f-form .f-form-content .f-form-group {
+  border: 1px solid transparent;
 }
 
 /*# sourceMappingURL=main.css.map */

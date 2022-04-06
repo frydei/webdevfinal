@@ -13,6 +13,10 @@ import SearchEvent from "./Components/SearchEvent";
 import ExploreEvent from "./Components/ExploreEvent";
 import event from "./Data/event.json"
 import EventDetailGuest from "./Components/EventDetailGuest";
+import EventDetailUser from "./Components/EventDetailUser";
+import PastEventDetail from "./Components/PastEventDetail";
+import CreateEvent from "./Components/CreateEvent";
+import user from "./Data/user.json"
 
 const tag = {
     name: "More",
@@ -49,6 +53,9 @@ function App() {
             <SearchEvent event={search_event}/>
             <ExploreEvent event={search_event}/>
             <EventDetailGuest event={event}/>
+            <EventDetailUser event={event}/>
+            <PastEventDetail event={event}/>
+            <CreateEvent user={user}/>
         </div>
     );
 }
