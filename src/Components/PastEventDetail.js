@@ -1,11 +1,8 @@
 import React from "react";
 import Tag from "./Tag";
-import FilledButton from "./FilledButton";
 
-const EventDetail = (param) => {
+const PastEventDetail = (param) => {
     const event = param.event;
-    console.log(param.event);
-
     let min;
 
     if (event.date.minute === 0) {
@@ -102,4 +99,4 @@ const EventDetail = (param) => {
     );
 };
 
-export default EventDetail;
+export default PastEventDetail;

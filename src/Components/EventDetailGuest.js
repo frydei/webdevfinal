@@ -4,8 +4,6 @@ import FilledButton from "./FilledButton";
 
 const EventDetailGuest = (param) => {
     const event = param.event;
-    console.log(param.event);
-
     let min;
 
     if (event.date.minute === 0) {
@@ -18,7 +16,7 @@ const EventDetailGuest = (param) => {
         <div className="container-fluid">
             <div className="row f-event-detail-content">
                 <div className="col-6 f-event-detail-img">
-                    <img src={event.event_image} alt=""/>
+                    <img src={event.event_photo} alt=""/>
                     <div className="f-event-detail-section">
                         <h3 className="f-event-detail-section-header mt-2">Attendees</h3>
                         <div className="f-event-attendees m-0">

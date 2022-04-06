@@ -46,6 +46,7 @@ body, .container-fluid {
   border: 2px solid $orange;
 
 }
+
 .f-orange-font {
   color: $orange;
 }
@@ -342,10 +343,12 @@ body, .container-fluid {
         size: 12px;
       }
     }
+
     input {
       height: 25px;
       padding: 6px;
     }
+
     textarea, #event-title {
       border-color: transparent;
       padding: 0;
@@ -361,29 +364,31 @@ body, .container-fluid {
       opacity: 1;
     }
 
-      .f-image-upload {
-        width: 100%;
-        height: 700px;
-        background-color: $lightgrey;
-        border-radius: 15px;
+    .f-image-upload {
+      width: 100%;
+      height: 750px;
+      background-color: $lightgrey;
+      border-radius: 15px;
 
-        label {
-          width: 140px;
-          height: 55px;
-          border-radius: 15px;
-          background-color: white;
-          color: #767676;
-          font: {
-            family: $fredoka;
-            size: 18px;
-            weight: $regular;
-          }
-          i {
-            color: $lightgrey;
-            font-size: 14px;
-          }
+      label {
+        width: 140px;
+        height: 55px;
+        border-radius: 15px;
+        background-color: white;
+        color: #767676;
+        font: {
+          family: $fredoka;
+          size: 18px;
+          weight: $regular;
+        }
+
+        i {
+          color: $lightgrey;
+          font-size: 14px;
         }
       }
+    }
+
     small {
       margin: 0;
       font: {
@@ -392,6 +397,7 @@ body, .container-fluid {
       }
 
     }
+
     label {
       font: {
         family: $fredoka;
@@ -400,23 +406,67 @@ body, .container-fluid {
       }
     }
 
-      .f-form-detail {
-        button {
-          width: 35px;
-          height: 35px;
-          border-radius: 50%;
-          border: 2px solid $grey;
-          background-color: transparent;
+    .f-form-detail {
+      button {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 2px solid $grey;
+        background-color: transparent;
 
-          i {
-            color: $grey;
+        i {
+          color: $grey;
 
-          }
         }
       }
+    }
+
     .f-form-group {
       border: 1px solid transparent;
 
     }
+  }
+}
+
+.f-search-bar {
+
+  border-bottom: 2px solid $grey;
+
+  input {
+    font: {
+      family: $fredoka;
+      size: 26px;
+      weight: $medium;
+    }
+    color: $dark;
+    background-color: transparent;
+    padding: {
+      top: 0;
+      bottom: 0;
+    }
+    &:focus {
+      background-color: transparent;
+      outline: none !important;
+      padding: {
+        top: 0;
+        bottom: 0;
+      };
+    }
+
+  }
+
+
+  input::-webkit-search-cancel-button,
+  input::-webkit-search-decoration,
+  input::-webkit-search-results-button,
+  input::-webkit-search-results-decoration {
+    display: none;
+  }
+  input::-ms-clear, input::-ms-reveal {
+    display: none;
+    max-width: 0;
+  }
+  i {
+    font-size: 18px;
   }
 }

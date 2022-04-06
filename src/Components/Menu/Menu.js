@@ -4,7 +4,6 @@ import more_menu from "../../Data/more_menu.json";
 import MenuItem from "./MenuItem";
 
 const Menu = () => {
-    console.log(more_menu);
     return (
         <ul className="list-group d-flex justify-content-end f-menu-list">
             {

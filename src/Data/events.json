@@ -4,16 +4,18 @@
     "event_photo": "/images/four.jpeg",
     "location": "Boston TD Garden",
     "date": {
-      "day":5,
+      "day": 5,
       "month": "April"
     },
     "time": "6 PM",
     "cost": 31,
-    "hosts": [{
-      "first_name": "Julie",
-      "last_name": "Harris",
-      "profile_picture": "/images/anga.jpeg"
-    }],
+    "hosts": [
+      {
+        "first_name": "Julie",
+        "last_name": "Harris",
+        "profile_picture": "anga.jpeg"
+      }
+    ],
     "attendees": 5
   },
   {
@@ -30,13 +32,14 @@
       {
         "first_name": "Ryan",
         "last_name": "Bell",
-        "profile_picture": "/images/jo.jpeg"
+        "profile_picture": "jo.jpeg"
       },
       {
         "first_name": "Sammy",
         "last_name": "Heim",
-        "profile_picture": "/images/mo.jpeg"
-      }],
+        "profile_picture": "mo.jpeg"
+      }
+    ],
     "attendees": 10
   },
   {
@@ -49,11 +52,13 @@
     },
     "time": "3 PM",
     "cost": 35,
-    "hosts": [{
-      "first_name": "Daine",
-      "last_name": "Peterson",
-      "profile_picture": "/images/bw.jpeg"
-    }],
+    "hosts": [
+      {
+        "first_name": "Daine",
+        "last_name": "Peterson",
+        "profile_picture": "bw.jpeg"
+      }
+    ],
     "attendees": 4
   },
   {
@@ -66,11 +71,13 @@
     },
     "time": "7 PM",
     "cost": 65,
-    "hosts": [{
-      "first_name": "Stephanie",
-      "last_name": "Robin",
-      "profile_picture": "/images/scar.jpeg"
-    }],
+    "hosts": [
+      {
+        "first_name": "Stephanie",
+        "last_name": "Robin",
+        "profile_picture": "scar.jpeg"
+      }
+    ],
     "attendees": 3
   },
   {
@@ -83,11 +90,13 @@
     },
     "time": "6 PM",
     "cost": 25,
-    "hosts": [{
-      "first_name": "Mar",
-      "last_name": "Flores",
-      "profile_picture": "/images/green.jpeg"
-    }],
+    "hosts": [
+      {
+        "first_name": "Mar",
+        "last_name": "Flores",
+        "profile_picture": "green.jpeg"
+      }
+    ],
     "attendees": 5
   },
   {
@@ -100,15 +109,17 @@
     },
     "time": "7 PM",
     "cost": 80,
-    "hosts": [ {
-      "first_name": "Kate",
-      "last_name": "Long",
-      "profile_picture": "/images/aka.jpeg"
-    },  {
-      "first_name": "Jamie",
-      "last_name": "Pereira",
-      "profile_picture": "/images/kim.jpeg"
-    }
+    "hosts": [
+      {
+        "first_name": "Kate",
+        "last_name": "Long",
+        "profile_picture": "aka.jpeg"
+      },
+      {
+        "first_name": "Jamie",
+        "last_name": "Pereira",
+        "profile_picture": "kim.jpeg"
+      }
     ],
     "attendees": 10
   },
@@ -118,11 +129,12 @@
     "location": "Blue House",
     "time": "7 PM",
     "cost": 45,
-    "hosts": [ {
-      "first_name": "Keith",
-      "last_name": "Nelson",
-      "profile_picture": "/images/ehe.jpeg"
-    }
+    "hosts": [
+      {
+        "first_name": "Keith",
+        "last_name": "Nelson",
+        "profile_picture": "ehe.jpeg"
+      }
     ],
     "attendees": 3
   },
@@ -136,11 +148,12 @@
     },
     "time": "6 PM",
     "cost": 50,
-    "hosts": [ {
-      "first_name": "Chris",
-      "last_name": "Kellu",
-      "profile_picture": "/images/shadow.jpeg"
-    }
+    "hosts": [
+      {
+        "first_name": "Chris",
+        "last_name": "Kellu",
+        "profile_picture": "shadow.jpeg"
+      }
     ],
     "attendees": 5
   },
@@ -154,15 +167,18 @@
     },
     "time": "7 PM",
     "cost": 50,
-    "hosts": [{
-      "first_name": "Sammy",
-      "last_name": "Heim",
-      "profile_picture": "/images/mo.jpeg"
-    }, {
-      "first_name": "Kate",
-      "last_name": "Long",
-      "profile_picture": "/images/aka.jpeg"
-    }],
+    "hosts": [
+      {
+        "first_name": "Sammy",
+        "last_name": "Heim",
+        "profile_picture": "mo.jpeg"
+      },
+      {
+        "first_name": "Kate",
+        "last_name": "Long",
+        "profile_picture": "aka.jpeg"
+      }
+    ],
     "attendees": 10
   },
   {
@@ -174,13 +190,13 @@
       "month": "August"
     },
     "time": "7 PM",
-    "hosts": [{
-      "first_name": "Thomas",
-      "last_name": "Miller",
-      "profile_picture": "/images/bo.jpeg"
-    }],
+    "hosts": [
+      {
+        "first_name": "Thomas",
+        "last_name": "Miller",
+        "profile_picture": "bo.jpeg"
+      }
+    ],
     "attendees": 3
   }
-
-
 ]

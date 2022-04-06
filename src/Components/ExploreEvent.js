@@ -1,11 +1,8 @@
 import React from "react";
 import UserIcon from "./UserIcon";
-import ViewButton from "./ViewButton";
-import UserIconSmall from "./UserIconSmall";
-
-const link = "";
 
 const ExploreEvent = (param) => {
+    console.log(param.event.date.month, param.event.date.day)
     return (
         <div className="f-event f-explore d-flex flex-column align-items-center justify-content-center">
 
@@ -35,9 +32,7 @@ const ExploreEvent = (param) => {
                         <h3 className="f-event-cost f-medium mb-1">$ {param.event.cost}</h3></div>
                 </div>
             </div>
-
         </div>
-
     );
 };
 export default ExploreEvent;

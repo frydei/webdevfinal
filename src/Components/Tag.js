@@ -13,7 +13,7 @@ const Tag = (param) => {
         fcolor = "#2D3142";
     }  else {
         bgcolor = "#DBDBDB"
-        fcolor = "#4F5D75";
+        fcolor = "#2D3142";
     }
     return(
         <button className="f-tag" style={{"backgroundColor": `${bgcolor}`, "color": `${fcolor}`, "border": "1px solid transparent"}}>{param.tag.name}</button>

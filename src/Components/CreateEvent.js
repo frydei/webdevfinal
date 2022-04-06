@@ -1,13 +1,11 @@
 import React from "react";
-import Tag from "./Tag";
 import FilledButton from "./FilledButton";
-import Button from "./Button";
 
 const CreateEvent = (param) => {
     const user = param.user;
 
     return (
-        <form action="" className="f-form">
+        <form action="" className="f-form mt-4">
             <div className="row f-form-content d-flex align-items-center">
                 <div className="col f-image-upload d-flex align-items-center justify-content-center">
                     <div className="form-group f-form-group d-flex align-items-center justify-content-center">
