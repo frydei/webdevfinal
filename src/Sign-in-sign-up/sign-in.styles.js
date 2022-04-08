@@ -4,19 +4,17 @@ import styled from 'styled-components';
 
 
 export const CustomButtonContainer = styled.button`
-                                     min-width: 165px;
-width: auto;
-height: 50px;
-letter-spacing: 0.5px;
-line-height: 50px;
-padding: 0 35px 0 35px;
-font-size: 15px;
-text-transform: uppercase;
-font-family: 'Open Sans Condensed';
-font-weight: bolder;
-cursor: pointer;
-display: flex;
-justify-content: center;
+                                     
+top: 463px;
+left: 298px;
+width: 91px;
+height: 34px;
+border: 0px;
+background: var(--unnamed-color-ef8354) 0% 0% no-repeat padding-box;
+background: #EF8354 0% 0% no-repeat padding-box;
+border-radius: 25px;
+opacity: 1;
+color: white;
 `;
 
 export const SignUpContainer = styled.div`

@@ -1,29 +1,29 @@
-<<<<<<< HEAD
-import logo from './logo.svg';
-import './App.css';
-import SignInSignUpPage from "./Sign-in-sign-up/sign-in-sign-up";
-
-function App() {
-  return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-      <SignInSignUpPage/>
-  );
-=======
+// <<<<<<< HEAD
+// import logo from './logo.svg';
+// import './App.css';
+// import SignInSignUpPage from "./Sign-in-sign-up/sign-in-sign-up";
+//
+// function App() {
+//   return (
+//     // <div className="App">
+//     //   <header className="App-header">
+//     //     <img src={logo} className="App-logo" alt="logo" />
+//     //     <p>
+//     //       Edit <code>src/App.js</code> and save to reload.
+//     //     </p>
+//     //     <a
+//     //       className="App-link"
+//     //       href="https://reactjs.org"
+//     //       target="_blank"
+//     //       rel="noopener noreferrer"
+//     //     >
+//     //       Learn React
+//     //     </a>
+//     //   </header>
+//     // </div>
+//       <SignInSignUpPage/>
+//   );
+// =======
 //Libraries
 import './style/css/main.css';
 import "./Libraries/bootstrap/css/bootstrap.min.css";
@@ -49,6 +49,9 @@ import SearchResultsScreen from "./Screens/SearchResultsScreen";
 import ExploreEventsScreen from "./Screens/ExploreEventsScreen";
 import CreateEventScreen from "./Screens/CreateEventScreen";
 import ViewEventScreen from "./Screens/ViewEventScreen";
+import HomePageScreen from "./home-page/HomePageScreen";
+import SignInScreen from "./Sign-in-sign-up/SignInScreen";
+import SignUpScreen from "./Sign-in-sign-up/SignUpScreen";
 
 const search_event = {
     "title": "Amine - The Best Tour",
@@ -73,6 +76,16 @@ function App() {
         <Router>
             <div className="container-fluid">
                 <Routes>
+                    <Route path="/frydei/home"
+                           exact={true}
+                           element={<HomePageScreen/>}/>
+
+                    <Route path="/frydei/sign-in"
+                           exact={true}
+                           element={<SignInScreen/>}/>
+                    <Route path="/frydei/sign-up"
+                           exact={true}
+                           element={<SignUpScreen/>}/>
                     <Route path="/frydei/search"
                            exact={true}
                            element={<SearchResultsScreen logged_in={true}/>}/>
@@ -109,7 +122,6 @@ function App() {
             </div>
         </Router>
     );
->>>>>>> 1db1e4b1eb5476674f730c987f0ce36513799d29
 }
 
 export default App;

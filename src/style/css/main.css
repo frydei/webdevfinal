@@ -349,4 +349,20 @@ body, .container-fluid {
   font-size: 18px;
 }
 
+.f-search-note {
+
+  top: 87px;
+  left: 518px;
+  width: 244px;
+  height: 24px;
+
+  text-align: center;
+  font-family: "Fredoka", serif;
+  font-size: 16px;
+  font-weight: 550;
+  letter-spacing: 0px;
+  color: #2D3142;
+  opacity: 1;
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './sign-in.styles';
+// import './sign-in.styles';
 import { CustomButtonContainer } from './sign-in.styles';
 
 
@@ -57,14 +57,15 @@ class SignIn extends React.Component{
     render() {
         return (
             <div className='sign-in'>
-                <h2>I already have an account</h2>
-                <span>Sign in with your email and password</span>
+                <h2>Log in</h2>
+
                 <form onSubmit={this.handleSubmit}>
                     <FormInput
                         name="email"
                         type="email"
                         value={this.state.email}
-                        label ='email'
+                        // label ='email'
+                        placeHolder = 'Email address'
                         handleChange={this.handleChange}
                         required/>
 
@@ -72,12 +73,13 @@ class SignIn extends React.Component{
                         name="password"
                         type="password"
                         value={this.state.password}
-                        label='password'
+                        // label='password'
+                        placeHolder = 'Password'
                         handleChange={this.handleChange}
                         required/>
 
                     <div className = 'buttons'>
-                        <CustomButton type="submit" > Sign in</CustomButton>
+                        <CustomButton type="submit" > Log in</CustomButton>
                         {/*<CustomButton type="button" onClick={signInWithGoogle} isGoogleSignIn> {' '}Sign in with Google {' '}</CustomButton>*/}
 
                     </div>
