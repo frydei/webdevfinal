@@ -52,6 +52,7 @@ import ViewEventScreen from "./Screens/ViewEventScreen";
 import HomePageScreen from "./home-page/HomePageScreen";
 import SignInScreen from "./Sign-in-sign-up/SignInScreen";
 import SignUpScreen from "./Sign-in-sign-up/SignUpScreen";
+import PrivacyPolicyScreen from "./PrivacyPolicy/PrivacyPolicyScreen";
 
 const search_event = {
     "title": "Amine - The Best Tour",
@@ -79,7 +80,6 @@ function App() {
                     <Route path="/frydei/home"
                            exact={true}
                            element={<HomePageScreen/>}/>
-
                     <Route path="/frydei/sign-in"
                            exact={true}
                            element={<SignInScreen/>}/>
@@ -89,6 +89,9 @@ function App() {
                     <Route path="/frydei/search"
                            exact={true}
                            element={<SearchResultsScreen logged_in={true}/>}/>
+                    <Route path="/frydei/privacy-policy"
+                           exact={true}
+                           element={<PrivacyPolicyScreen/>}/>
                     <Route path="/frydei/explore"
                            exact={true}
                            element={<ExploreEventsScreen/>}/>

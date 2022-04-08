@@ -320,6 +320,11 @@ body, .container-fluid {
 .f-search-bar {
   border-bottom: 2px solid #4F5D75;
 }
+
+.f-search-bar-home {
+  margin-top: 200px;
+  border-bottom: 2px solid #4F5D75;
+}
 .f-search-bar input {
   font-family: "Fredoka", sans-serif;
   font-size: 26px;

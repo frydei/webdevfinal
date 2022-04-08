@@ -6,7 +6,7 @@ const SearchBar =() => {
         <div style={{"paddingLeft": "200px", "paddingRight": "200px", "paddingTop": "25px"}}>
             <form action="">
                 <div className="form-group">
-                    <label htmlFor="search-bar" className="d-flex align-items-center f-search-bar">
+                    <label htmlFor="search-bar" className="d-flex align-items-center f-search-bar f-search-bar-home">
                         <input id="search-bar" className="form-control border-0 ps-1" type="search"
                                placeholder="What are you in the mood for..."/>
                         <i className="fa-solid fa-magnifying-glass form-control-feedback pe-1"/>

@@ -9,8 +9,15 @@ import events from "../Data/events.json";
 import SearchEvent from "../Components/SearchEvent";
 import LargeHeaderGuest from "../Components/LargeHeaderGuest";
 import LargeHeaderUser from "../Components/LargeHeaderUser";
+import Footer from "./Footer";
 
 const HomePageScreen = (param) => {
+    const homePageItems = [];
+
+    for (let i = 0; i < 3; i++) {
+        homePageItems.push(events[i]);
+    }
+
     let header;
     if (param.logged_in) {
         header = <LargeHeaderUser user={user}/>;
@@ -23,11 +30,13 @@ const HomePageScreen = (param) => {
             <SearchBar/>
             <div className="d-flex flex-wrap justify-content-between">
                 {
-                    events.map(event => {
+                    homePageItems.map(event => {
                         return <SearchEvent event={event}/>
                     })
                 }
             </div>
+
+            <Footer/>
         </>
     );
 
