@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Nearby",
+    "color": "orange"
+  },
+  {
+    "name": "Today",
+    "color": "orange"
+  },
+  {
+    "name": "Tomorrow",
+    "color": "orange"
+  },
+  {
+    "name": "Weekend",
+    "color": "orange"
+  },
+  {
+    "name": "Single",
+    "color": ""
+  },
+  {
+    "name": "Multiple",
+    "color": ""
+  },
+  {
+    "name": "More",
+    "color": "grey"
+  }
+]

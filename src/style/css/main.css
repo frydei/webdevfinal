@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+body, .container-fluid {
+  background-color: #F4F4F4;
+}
+
+.main {
+  background: #EF8354;
+}
+
+.f-button {
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 34px;
+  border: 2px solid #2D3142;
+  border-radius: 25px;
+  background-color: transparent;
+  color: #2D3142;
+  font-family: "Fredoka", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.f-orange, .f-tag {
+  background-color: #EF8354;
+  color: #f7f7f7;
+  border: 2px solid #EF8354;
+}
+
+.f-orange-font {
+  color: #EF8354;
+}
+
+.f-tag {
+  margin-right: 5px;
+  border-radius: 25px;
+  background-color: transparent;
+  font-family: "Fredoka", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #2D3142;
+  border: 2px solid #4F5D75;
+}
+
+.f-view {
+  font-size: 13px;
+  background-color: #f7f7f7;
+  color: #2D3142;
+  border: 2px solid #f7f7f7;
+  width: 50px;
+  height: 25px;
+}
+
+.f-title {
+  font-family: "Fredoka One", cursive;
+  font-size: 48px;
+  color: #EF8354;
+}
+
+.f-title-small {
+  font-family: "Fredoka One", cursive;
+  font-size: 29px;
+  color: #EF8354;
+}
+
+.f-user-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.f-user-icon-small {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.f-user-icon-smallest {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.f-header-username {
+  font-family: "Fredoka", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2D3142;
+  text-align: left;
+}
+
+.f-menu-list {
+  width: 120px;
+}
+.f-menu-list .f-menu-item {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+.f-menu-list .f-menu-item .f-icon {
+  font-size: 12px;
+  color: #2D3142;
+}
+.f-menu-list .f-divider {
+  color: #4F5D75;
+}
+
+.f-section-header {
+  font-family: "Fredoka", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: right;
+}
+
+.f-font-small, .f-menu-item-title {
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: right;
+}
+
+.f-event {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1607843137);
+}
+.f-event .f-event-header {
+  width: 100%;
+}
+.f-event .f-event-header i {
+  font-size: 14px;
+  color: #2D3142;
+}
+.f-event .f-event-img-container .f-event-img {
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.f-search {
+  width: 220px;
+  height: 250px;
+}
+.f-search .f-event-img-container .f-event-img {
+  width: 190px;
+  height: 145px;
+}
+
+.f-explore {
+  width: 580px;
+  height: 400px;
+}
+.f-explore .f-event-img-container .f-event-img {
+  width: 530px;
+  height: 250px;
+}
+
+.f-event-detail {
+  width: 100%;
+  font-family: "Fredoka", sans-serif;
+}
+.f-event-detail .f-event-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2D3142;
+}
+.f-event-detail .f-event-detail-section {
+  color: #4F5D75;
+  width: 100%;
+}
+.f-event-detail .f-event-detail-section .f-event-location, .f-event-detail .f-event-detail-section .f-event-attendees, .f-event-detail .f-event-detail-section .f-event-time, .f-event-detail .f-event-detail-section .f-event-cost {
+  font-size: 13px;
+  font-weight: 400;
+}
+.f-event-detail .f-event-detail-section .f-event-location i, .f-event-detail .f-event-detail-section .f-event-attendees i, .f-event-detail .f-event-detail-section .f-event-time i, .f-event-detail .f-event-detail-section .f-event-cost i {
+  font-size: 11px;
+}
+.f-event-detail .f-event-detail-section .f-medium {
+  font-size: 14px;
+}
+.f-event-detail .f-event-detail-section .f-medium-title {
+  font-size: 15px;
+}
+
+.f-host-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.f-event-detail-content {
+  font-family: "Fredoka", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #4F5D75;
+}
+.f-event-detail-content .f-event-detail-img .f-user-icon-small {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.f-event-detail-content .f-event-detail-img img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.f-event-detail-content .f-event-detail-section-header {
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2D3142;
+  text-align: left;
+}
+.f-event-detail-content .f-event-detail .f-event-title-box {
+  background-color: white;
+  border-radius: 15px;
+}
+.f-event-detail-content .f-event-detail .f-event-title-box .f-event-title {
+  font-size: 28px;
+  font-weight: 500;
+  color: #2D3142;
+}
+.f-event-detail-content .f-event-detail .f-event-title-box .f-vent-desc {
+  color: #2D3142;
+}
+.f-event-detail-content .f-event-detail .f-event-detail-box {
+  background-color: white;
+  border-radius: 15px;
+}
+.f-event-detail-content .f-event-detail .f-event-detail-box span {
+  margin: 0;
+}
+.f-event-detail-content .f-event-detail .f-event-detail-box .f-event-location, .f-event-detail-content .f-event-detail .f-event-detail-box .f-event-cost, .f-event-detail-content .f-event-detail .f-event-detail-box .f-event-time, .f-event-detail-content .f-event-detail .f-event-detail-box .f-event-attendees, .f-event-detail-content .f-event-detail .f-event-detail-box .f-event-hosts {
+  margin-bottom: 15px;
+}
+
+.f-icon-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0;
+}
+
+.f-form .f-bg {
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.f-form .f-form-content input, .f-form .f-form-content textarea {
+  background-color: transparent;
+  border: 1px solid #616E83;
+  border-radius: 5px;
+  color: #4F5D75;
+  opacity: 0.9;
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+}
+.f-form .f-form-content input {
+  height: 25px;
+  padding: 6px;
+}
+.f-form .f-form-content textarea, .f-form .f-form-content #event-title {
+  border-color: transparent;
+  padding: 0;
+}
+.f-form .f-form-content #event-title {
+  height: 35px;
+  font-size: 28px;
+  font-weight: 500;
+  color: #2D3142;
+  opacity: 1;
+}
+.f-form .f-form-content .f-image-upload {
+  width: 100%;
+  height: 750px;
+  background-color: #DBDBDB;
+  border-radius: 15px;
+}
+.f-form .f-form-content .f-image-upload label {
+  width: 140px;
+  height: 55px;
+  border-radius: 15px;
+  background-color: white;
+  color: #767676;
+  font-family: "Fredoka", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+.f-form .f-form-content .f-image-upload label i {
+  color: #DBDBDB;
+  font-size: 14px;
+}
+.f-form .f-form-content small {
+  margin: 0;
+  font-family: "Fredoka", sans-serif;
+  font-size: 8px;
+}
+.f-form .f-form-content label {
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+.f-form .f-form-content .f-form-detail button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #4F5D75;
+  background-color: transparent;
+}
+.f-form .f-form-content .f-form-detail button i {
+  color: #4F5D75;
+}
+.f-form .f-form-content .f-form-group {
+  border: 1px solid transparent;
+}
+
+.f-search-bar {
+  border-bottom: 2px solid #4F5D75;
+}
+.f-search-bar input {
+  font-family: "Fredoka", sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: #2D3142;
+  background-color: transparent;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.f-search-bar input:focus {
+  background-color: transparent;
+  outline: none !important;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.f-search-bar input::-webkit-search-cancel-button,
+.f-search-bar input::-webkit-search-decoration,
+.f-search-bar input::-webkit-search-results-button,
+.f-search-bar input::-webkit-search-results-decoration {
+  display: none;
+}
+.f-search-bar input::-ms-clear, .f-search-bar input::-ms-reveal {
+  display: none;
+  max-width: 0;
+}
+.f-search-bar i {
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=main.css.map */
