@@ -4,7 +4,7 @@ import UserIcon from "./UserIcon";
 const ExploreEvent = (param) => {
     console.log(param.event.date.month, param.event.date.day)
     return (
-        <div className="f-event f-explore d-flex flex-column align-items-center justify-content-center">
+        <div className="f-event f-explore d-flex flex-column align-items-center justify-content-center mb-5">
 
             <div className="d-flex flex-column align-items-center justify-content-center">
                 <div
@@ -14,7 +14,7 @@ const ExploreEvent = (param) => {
                 </div>
                 <div
                     className="f-event-img-container mb-2 d-flex flex-column align-items-center justify-content-center position-relative">
-                    <img className="f-event-img" src="/images/fff.jpeg" alt=""/>
+                    <img className="f-event-img" src={param.event.event_photo} alt=""/>
                 </div>
                 <div className="f-event-detail">
                     <div className="f-event-detail-section d-flex align-items-center justify-content-between">

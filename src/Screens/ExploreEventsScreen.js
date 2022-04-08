@@ -15,7 +15,7 @@ const ExploreEventsScreen = (param) => {
     return (
         <>
             {header}
-            <div style={{"paddingLeft": "200px", "paddingRight": "200px", "paddingTop": "25px"}}>
+            <div className="d-flex flex-column align-items-center " style={{"paddingLeft": "200px", "paddingRight": "200px", "paddingTop": "25px"}}>
                 {
                     events.map(event => {
                         return <ExploreEvent event={event}/>

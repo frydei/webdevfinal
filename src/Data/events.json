@@ -124,21 +124,6 @@
     "attendees": 10
   },
   {
-    "title": "Lucky Daye - Lucky",
-    "event_photo": "/images/some.jpeg",
-    "location": "Blue House",
-    "time": "7 PM",
-    "cost": 45,
-    "hosts": [
-      {
-        "first_name": "Keith",
-        "last_name": "Nelson",
-        "profile_picture": "ehe.jpeg"
-      }
-    ],
-    "attendees": 3
-  },
-  {
     "title": "Amine - The Best Tour",
     "event_photo": "/images/fff.jpeg",
     "location": "Boston TD Garden",
@@ -190,6 +175,7 @@
       "month": "August"
     },
     "time": "7 PM",
+    "cost": 36,
     "hosts": [
       {
         "first_name": "Thomas",
@@ -198,5 +184,24 @@
       }
     ],
     "attendees": 3
+  },
+  {
+    "title": "Lucky Daye - Lucky",
+    "event_photo": "/images/some.jpeg",
+    "location": "Blue House",
+    "date": {
+      "day": 14,
+      "month": "September"
+    },
+    "cost": 45,
+    "hosts": [
+      {
+        "first_name": "Keith",
+        "last_name": "Nelson",
+        "profile_picture": "ehe.jpeg"
+      }
+    ],
+    "attendees": 3
   }
 ]
+
