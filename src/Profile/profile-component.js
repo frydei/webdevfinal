@@ -8,13 +8,16 @@ const ProfileItem = ({ first_name, city, profile_pic, state, biography }) => {
             <img  className="f-profile-pic"
                   src={profile_pic}
             />
-            <p><br/></p>
-            <span className="f-profile-name"> {first_name}</span>
+            <div>
+                <span className="f-profile-name"> {first_name}</span>
+            </div>
             <div>
                 <i className="fa-solid fa-location-dot"> {city}, {state}</i>
             </div>
+            <p><br/></p>
+            <div className="f-profile-bio">{biography}</div>
 
-            <div>{biography}</div>
+
 
         </div>
 
