@@ -12,7 +12,6 @@ const SignInScreen = () => (
         <HeaderGuest/>
         <SignIn/>
         <Footer/>
-        {/*<SignUp/>*/}
     </div>
 );
 

@@ -4,13 +4,14 @@ import React from 'react';
 import SignUp from './sign-up.component';
 
 import HeaderGuest from "../Components/HeaderGuest";
+import Footer from "../home-page/Footer";
 
 
 const SignUpScreen = () => (
     <div className='sign-in-sign-up'>
         <HeaderGuest/>
-        {/*<SignIn/>*/}
         <SignUp/>
+        <Footer/>
     </div>
 );
 

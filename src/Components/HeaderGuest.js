@@ -9,9 +9,13 @@ const HeaderGuest = () => {
         <div className="d-flex justify-content-between align-items-center pt-1">
             <h1 className="f-title-small">Frydei</h1>
             <div className="d-flex justify-content-end">
-                <FilledButton name="Log In"/>
+                <a href="/frydei/sign-in">
+                    <FilledButton name="Log In"/>
+                </a>
                 <Spacer size={15}/>
-                <Button name="Sign Up"/>
+                <a href="/frydei/sign-up">
+                    <Button name="Sign Up"/>
+                </a>
             </div>
         </div>
 

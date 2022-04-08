@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import {CustomButtonContainer, SignUpContainer, SignUpTitle} from "./sign-in.styles";
+import {CustomButtonContainer, SignUpContainer, SignUpTitle} from "./sign-up.styles";
 // import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
 const FormInput=({handleChange, label, ...otherProps}) => (
@@ -82,7 +82,7 @@ class SignUp extends React.Component {
                         value={username}
                         onChange={this.handleChange}
                         // label='firstname'
-                        placeHolder='firstname'
+                        placeholder='firstname'
                         required
                     />
                     <FormInput
@@ -91,7 +91,7 @@ class SignUp extends React.Component {
                         value={username}
                         onChange={this.handleChange}
                         // label='lastName'
-                        placeHolder='lastName'
+                        placeholder='lastName'
                         required
                     />
                     <FormInput
@@ -100,7 +100,7 @@ class SignUp extends React.Component {
                         value={username}
                         onChange={this.handleChange}
                         // label='Username'
-                        placeHolder='Username'
+                        placeholder='Username'
                         required
                     />
                     <FormInput
@@ -109,7 +109,7 @@ class SignUp extends React.Component {
                         value={email}
                         onChange={this.handleChange}
                         // label='Email'
-                        placeHolder='Email'
+                        placeholder='Email'
                         required
                     />
                     <FormInput
@@ -118,7 +118,7 @@ class SignUp extends React.Component {
                         value={password}
                         onChange={this.handleChange}
                         // label='Password'
-                        placeHolder = 'Password'
+                        placeholder = 'Password'
                         required
                     />
                     <FormInput
@@ -127,10 +127,10 @@ class SignUp extends React.Component {
                         value={confirmPassword}
                         onChange={this.handleChange}
                         // label='Confirm Password'
-                        placeHolder = 'Confirm Password'
+                        placeholder = 'Confirm Password'
                         required
                     />
-                    <CustomButton type='submit'>SIGN UP</CustomButton>
+                    <CustomButton type='submit'>Sign Up</CustomButton>
                 </form>
             </SignUpContainer>
         );

@@ -28,7 +28,7 @@ const HomePageScreen = (param) => {
         <>
             {header}
             <SearchBar/>
-            <div className="d-flex flex-wrap justify-content-between">
+            <div className="d-flex flex-wrap justify-content-center">
                 {
                     homePageItems.map(event => {
                         return <SearchEvent event={event}/>

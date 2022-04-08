@@ -319,6 +319,7 @@ body, .container-fluid {
 
 .f-search-bar {
   border-bottom: 2px solid #4F5D75;
+  margin-bottom: 50px;
 }
 
 .f-search-bar-home {
@@ -356,6 +357,8 @@ body, .container-fluid {
 
 .f-search-note {
 
+  margin-bottom: 10px;
+  margin-left: 300px;
   top: 87px;
   left: 518px;
   width: 244px;
