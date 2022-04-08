@@ -7,6 +7,7 @@ import LargeHeaderGuest from "../Components/LargeHeaderGuest";
 import HeaderGuest from "../Components/HeaderGuest";
 import EventDetailUser from "../Components/EventDetailUser";
 import EventDetailGuest from "../Components/EventDetailGuest";
+import Footer from "../Homepage/Footer";
 
 
 const ViewEventScreen = (param) => {
@@ -24,6 +25,7 @@ const ViewEventScreen = (param) => {
             <div style={{"paddingLeft": "100px", "paddingRight": "100px", "paddingTop": "25px"}}>
                 {view}
             </div>
+            <Footer/>
         </>
 
     )

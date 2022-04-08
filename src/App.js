@@ -23,10 +23,11 @@ import SearchResultsScreen from "./Screens/SearchResultsScreen";
 import ExploreEventsScreen from "./Screens/ExploreEventsScreen";
 import CreateEventScreen from "./Screens/CreateEventScreen";
 import ViewEventScreen from "./Screens/ViewEventScreen";
-import HomePageScreen from "./home-page/HomePageScreen";
+import HomePageScreen from "./Homepage/HomePageScreen";
 import SignInScreen from "./Sign-in-sign-up/SignInScreen";
 import SignUpScreen from "./Sign-in-sign-up/SignUpScreen";
 import PrivacyPolicyScreen from "./PrivacyPolicy/PrivacyPolicyScreen";
+import ProfileScreen from "./Profile/ProfileScreen";
 
 const search_event = {
     "title": "Amine - The Best Tour",
@@ -60,6 +61,9 @@ function App() {
                     <Route path="/frydei/sign-up"
                            exact={true}
                            element={<SignUpScreen/>}/>
+                    <Route path="/frydei/profile"
+                           exact={true}
+                           element={<ProfileScreen/>}/>
                     <Route path="/frydei/search"
                            exact={true}
                            element={<SearchResultsScreen logged_in={true}/>}/>

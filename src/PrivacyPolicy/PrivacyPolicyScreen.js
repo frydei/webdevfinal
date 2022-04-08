@@ -2,7 +2,7 @@ import user from "../Data/user.json";
 import React from "react";
 import HeaderUser from "../Components/HeaderUser";
 import HeaderGuest from "../Components/HeaderGuest";
-import Footer from "../home-page/Footer";
+import Footer from "../Homepage/Footer";
 import "./privacy-policy.css";
 
 const PrivacyPolicyScreen = (param) => {
