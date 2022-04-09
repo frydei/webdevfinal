@@ -9,15 +9,9 @@ import RequestEvent from "../Components/RequestEvent";
 
 
 const RequestScreen = (param) => {
-    let header;
-    if (param.logged_in) {
-        header = <HeaderUser user={user}/>;
-    } else {
-        header = <HeaderGuest/>;
-    }
+
     return (
         <>
-            {header}
             <div className="d-flex flex-column align-items-center " style={{"paddingLeft": "200px", "paddingRight": "200px", "paddingTop": "25px"}}>
                 {
                     events.map(event => {

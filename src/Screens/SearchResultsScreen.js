@@ -9,15 +9,8 @@ import SearchEvent from "../Components/SearchEvent";
 import Footer from "../Homepage/Footer";
 
 const SearchResultsScreen = (param) => {
-    let header;
-    if (param.logged_in) {
-        header = <LargeHeaderUser user={user}/>;
-    } else {
-        header = <LargeHeaderGuest/>;
-    }
     return (
         <>
-            {header}
             <div style={{"paddingLeft": "200px", "paddingRight": "200px", "paddingTop": "25px"}}>
 
                 <form action="">
@@ -46,7 +39,6 @@ const SearchResultsScreen = (param) => {
                 </div>
 
             </div>
-            <Footer/>
         </>
 
     );

@@ -9,11 +9,9 @@ import Footer from "../Homepage/Footer";
 const CreateEventScreen = () => {
     return (
         <>
-            <HeaderUser user={user}/>
             <div style={{"paddingLeft": "175px", "paddingRight": "175px", "paddingTop": "25px"}}>
                 <CreateEvent user={user}/>
             </div>
-            <Footer/>
         </>
 
     )

@@ -9,15 +9,9 @@ import UserDropdownMenu from "../Components/Menu/UserDropdownMenu";
 import Footer from "../Homepage/Footer";
 
 const ExploreEventsScreen = (param) => {
-    let header;
-    if (param.logged_in) {
-        header = <UserDropdownMenu/>
-    } else {
-        header = <HeaderGuest/>;
-    }
+
     return (
         <>
-            {header}
             <div className="d-flex flex-column align-items-center " style={{"paddingLeft": "200px", "paddingRight": "200px", "paddingTop": "25px"}}>
                 {
                     events.map(event => {
@@ -25,7 +19,6 @@ const ExploreEventsScreen = (param) => {
                     })
                 }
             </div>
-            <Footer/>
         </>
     );
 

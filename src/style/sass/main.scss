@@ -8,6 +8,7 @@ $dark: #2D3142;
 $grey: #4F5D75;
 $white: #f7f7f7;
 $lightgrey: #DBDBDB;
+$lightlightgrey: #e8e8e8;
 $background: #F4F4F4;
 $regular: 400;
 $medium: 500;
@@ -115,7 +116,7 @@ body, .container-fluid {
   font: {
     family: $fredoka;
     size: 14px;
-    weight: $bold;
+    weight: $medium;
   }
   color: $dark;
   text-align: left;
@@ -528,4 +529,9 @@ body, .container-fluid {
     color: $dark;
     font-size: 18px;
   }
+}
+
+.f-footer {
+  background-color: $lightlightgrey;
+  padding: 25px;
 }

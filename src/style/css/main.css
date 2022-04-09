@@ -87,7 +87,7 @@ body, .container-fluid {
 .f-header-username {
   font-family: "Fredoka", sans-serif;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   color: #2D3142;
   text-align: left;
 }
@@ -315,12 +315,6 @@ body, .container-fluid {
 
 .f-search-bar {
   border-bottom: 2px solid #4F5D75;
-  margin-bottom: 50px;
-}
-
-.f-search-bar-home {
-  margin-top: 200px;
-  border-bottom: 2px solid #4F5D75;
 }
 .f-search-bar input {
   font-family: "Fredoka", sans-serif;
@@ -397,22 +391,9 @@ body, .container-fluid {
   font-size: 18px;
 }
 
-.f-search-note {
-
-  margin-bottom: 10px;
-  margin-left: 300px;
-  top: 87px;
-  left: 518px;
-  width: 244px;
-  height: 24px;
-
-  text-align: center;
-  font-family: "Fredoka", serif;
-  font-size: 16px;
-  font-weight: 550;
-  letter-spacing: 0px;
-  color: #2D3142;
-  opacity: 1;
+.f-footer {
+  background-color: #e8e8e8;
+  padding: 25px;
 }
 
 /*# sourceMappingURL=main.css.map */
