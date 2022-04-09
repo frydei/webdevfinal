@@ -6,6 +6,7 @@ import React from "react";
 import ExploreEvent from "../Components/ExploreEvent";
 import Request from "../Components/Request";
 import UserDropdownMenu from "../Components/Menu/UserDropdownMenu";
+import Footer from "../Homepage/Footer";
 
 const ExploreEventsScreen = (param) => {
     let header;
@@ -24,6 +25,7 @@ const ExploreEventsScreen = (param) => {
                     })
                 }
             </div>
+            <Footer/>
         </>
     );
 

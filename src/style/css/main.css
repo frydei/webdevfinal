@@ -315,6 +315,12 @@ body, .container-fluid {
 
 .f-search-bar {
   border-bottom: 2px solid #4F5D75;
+  margin-bottom: 50px;
+}
+
+.f-search-bar-home {
+  margin-top: 200px;
+  border-bottom: 2px solid #4F5D75;
 }
 .f-search-bar input {
   font-family: "Fredoka", sans-serif;
@@ -389,6 +395,24 @@ body, .container-fluid {
   padding-right: 7px;
   color: #2D3142;
   font-size: 18px;
+}
+
+.f-search-note {
+
+  margin-bottom: 10px;
+  margin-left: 300px;
+  top: 87px;
+  left: 518px;
+  width: 244px;
+  height: 24px;
+
+  text-align: center;
+  font-family: "Fredoka", serif;
+  font-size: 16px;
+  font-weight: 550;
+  letter-spacing: 0px;
+  color: #2D3142;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=main.css.map */

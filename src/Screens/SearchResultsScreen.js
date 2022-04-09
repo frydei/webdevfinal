@@ -6,6 +6,7 @@ import user from "../Data/user.json";
 import LargeHeaderGuest from "../Components/LargeHeaderGuest";
 import Tag from "../Components/Tag";
 import SearchEvent from "../Components/SearchEvent";
+import Footer from "../Homepage/Footer";
 
 const SearchResultsScreen = (param) => {
     let header;
@@ -45,6 +46,7 @@ const SearchResultsScreen = (param) => {
                 </div>
 
             </div>
+            <Footer/>
         </>
 
     );
