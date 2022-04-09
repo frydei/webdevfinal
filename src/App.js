@@ -26,7 +26,7 @@ import ViewEventScreen from "./Screens/ViewEventScreen";
 import RequestEvent from "./Components/RequestEvent";
 import RequestScreen from "./Screens/RequestsScreen";
 import UserDropdownMenu from "./Components/Menu/UserDropdownMenu";
-import Footer from "./Components/Footer";
+import Footer from "./Homepage/Footer";
 import HomePageScreen from "./Homepage/HomePageScreen";
 import SignInScreen from "./Sign-in-sign-up/SignInScreen";
 import SignUpScreen from "./Sign-in-sign-up/SignUpScreen";
