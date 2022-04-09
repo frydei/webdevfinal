@@ -27,7 +27,7 @@ const CreateEvent = (param) => {
                     <div className="f-form-detail f-bg">
                         <div className="form-group f-form-group d-flex flex-column form-control p-0">
                             <label htmlFor="event-host">Host(s)</label>
-                            <div><img src={user.profile_pic} alt="" className="f-host-icon me-1"/>
+                            <div><img src={`/images/${user.profile_picture}`} alt="" className="f-icon-small me-1"/>
                                 <button className="f-add-button">
                                     <i className="fa-solid fa-plus"/>
                                 </button>

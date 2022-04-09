@@ -95,17 +95,6 @@ body, .container-fluid {
 .f-menu-list {
   width: 120px;
 }
-.f-menu-list .f-menu-item {
-  background-color: transparent;
-  border: 1px solid transparent;
-}
-.f-menu-list .f-menu-item .f-icon {
-  font-size: 12px;
-  color: #2D3142;
-}
-.f-menu-list .f-divider {
-  color: #4F5D75;
-}
 
 .f-section-header {
   font-family: "Fredoka", sans-serif;
@@ -147,9 +136,16 @@ body, .container-fluid {
   height: 145px;
 }
 
+.f-request-box {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
 .f-explore {
   width: 580px;
-  height: 400px;
+  overflow: auto;
 }
 .f-explore .f-event-img-container .f-event-img {
   width: 530px;
@@ -183,7 +179,7 @@ body, .container-fluid {
   font-size: 15px;
 }
 
-.f-host-icon {
+.f-icon-small {
   width: 35px;
   height: 35px;
   object-fit: cover;
@@ -347,6 +343,46 @@ body, .container-fluid {
 }
 .f-search-bar i {
   font-size: 18px;
+}
+
+.f-small-regular {
+  font-family: "Fredoka", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4F5D75;
+}
+
+.f-medium-medium {
+  font-family: "Fredoka", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2D3142;
+}
+
+.btn.primary:active, .btn.primary.active {
+  background-color: red;
+}
+
+.f-dropdown-title {
+  width: 130px;
+}
+.f-dropdown-title .f-menu-link {
+  text-decoration: none;
+}
+.f-dropdown-title .f-dropdown-menu .f-menu-item {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+.f-dropdown-title .f-dropdown-menu .f-menu-item .f-icon {
+  font-size: 12px;
+  color: #2D3142;
+}
+.f-dropdown-title .f-dropdown-menu .f-divider {
+  color: #4F5D75;
+}
+.f-dropdown-title .f-dropdown-toggle::after {
+  content: none;
+  display: none !important;
 }
 
 /*# sourceMappingURL=main.css.map */

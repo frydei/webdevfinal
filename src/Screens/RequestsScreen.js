@@ -5,12 +5,13 @@ import HeaderGuest from "../Components/HeaderGuest";
 import React from "react";
 import ExploreEvent from "../Components/ExploreEvent";
 import Request from "../Components/Request";
-import UserDropdownMenu from "../Components/Menu/UserDropdownMenu";
+import RequestEvent from "../Components/RequestEvent";
 
-const ExploreEventsScreen = (param) => {
+
+const RequestScreen = (param) => {
     let header;
     if (param.logged_in) {
-        header = <UserDropdownMenu/>
+        header = <HeaderUser user={user}/>;
     } else {
         header = <HeaderGuest/>;
     }
@@ -20,7 +21,9 @@ const ExploreEventsScreen = (param) => {
             <div className="d-flex flex-column align-items-center " style={{"paddingLeft": "200px", "paddingRight": "200px", "paddingTop": "25px"}}>
                 {
                     events.map(event => {
-                        return <ExploreEvent event={event}/>
+                        return <RequestEvent event={event}
+                                             user={user}
+                        />
                     })
                 }
             </div>
@@ -29,4 +32,4 @@ const ExploreEventsScreen = (param) => {
 
 }
 
-export default ExploreEventsScreen;
+export default RequestScreen;

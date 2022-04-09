@@ -50,7 +50,7 @@ const EventDetailGuest = (param) => {
                                         event.hosts.map(host => {
                                             return <img src={host.profile_picture}
                                                         alt=""
-                                                        className="f-host-icon me-1"
+                                                        className="f-icon-small me-1"
                                             />;
                                         })
                                     }

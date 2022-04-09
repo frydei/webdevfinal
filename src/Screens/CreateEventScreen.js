@@ -9,7 +9,7 @@ const CreateEventScreen = () => {
     return (
         <>
             <HeaderUser user={user}/>
-            <div style={{"paddingLeft": "100px", "paddingRight": "100px", "paddingTop": "25px"}}>
+            <div style={{"paddingLeft": "175px", "paddingRight": "175px", "paddingTop": "25px"}}>
                 <CreateEvent user={user}/>
             </div>
         </>

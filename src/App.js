@@ -23,6 +23,9 @@ import SearchResultsScreen from "./Screens/SearchResultsScreen";
 import ExploreEventsScreen from "./Screens/ExploreEventsScreen";
 import CreateEventScreen from "./Screens/CreateEventScreen";
 import ViewEventScreen from "./Screens/ViewEventScreen";
+import RequestEvent from "./Components/RequestEvent";
+import RequestScreen from "./Screens/RequestsScreen";
+import UserDropdownMenu from "./Components/Menu/UserDropdownMenu";
 
 const search_event = {
     "title": "Amine - The Best Tour",
@@ -45,14 +48,22 @@ const search_event = {
 function App() {
     return (
         <Router>
-            <div className="container-fluid">
+            <div className="container-fluid p-3">
                 <Routes>
+                    <Route path="/"
+                           exavt={true}
+                           element={<LargeHeaderUser/>}
+                    />
                     <Route path="/frydei/search"
                            exact={true}
                            element={<SearchResultsScreen logged_in={true}/>}/>
                     <Route path="/frydei/explore"
                            exact={true}
-                           element={<ExploreEventsScreen/>}/>
+                           element={<ExploreEventsScreen logged_in={true}
+                           />}/>
+                    <Route path="/frydei/requests"
+                           exact={true}
+                           element={<RequestScreen logged_in={true}/>}/>
                     <Route path="/frydei/create"
                            exact={true}
                            element={<CreateEventScreen user={user}/>}/>
@@ -64,9 +75,17 @@ function App() {
                                    logged_in={true}
                                />}/>
                 </Routes>
-                {//<SearchResultsScreen logged_in={true}/>
+            </div>
+        </Router>
+    );
+}
 
-                    /*<HeaderGuest/>
+export default App;
+
+                {/*
+              <SearchResultsScreen logged_in={true}/>
+
+                    <HeaderGuest/>
             <HeaderUser/>
             <LargeHeaderGuest/>
             <LargeHeaderUser/>
@@ -78,11 +97,8 @@ function App() {
             <EventDetailGuest event={event}/>
             <EventDetailUser event={event}/>
             <PastEventDetail event={event}/>
-            <CreateEvent user={user}/>*/
-                }
-            </div>
-        </Router>
-    );
-}
+            <CreateEvent user={user}/>
 
-export default App;
+            </div>*/  }
+
+

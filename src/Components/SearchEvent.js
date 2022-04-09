@@ -1,5 +1,5 @@
 import React from "react";
-import UserIconSmall from "./UserIconSmall";
+import UserIconSmallest from "./UserIconSmallest";
 
 const link = "";
 
@@ -24,7 +24,7 @@ const SearchEvent = (param) => {
                         <div>
                             {
                                 param.event.hosts.map(host => {
-                                    return <UserIconSmall user={host}/>;
+                                    return <UserIconSmallest user={host}/>;
                                 })
                             }
                         </div>
