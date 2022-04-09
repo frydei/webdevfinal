@@ -7,7 +7,7 @@ const Request = (param) => {
     return(
         <div className="d-flex align-items-center justify-content-between f-request-box pb-3">
             <div className="d-flex align-items-center">
-                <UserIconSmall user={param.user}/>
+                <UserIconSmall user={param.user}/>ls
                 <h3 className="ms-2 f-small-regular">{param.user.first_name} {param.user.last_name} wants to join your event.</h3>
             </div>
             <div>
