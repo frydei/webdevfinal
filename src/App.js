@@ -62,6 +62,7 @@ function App() {
                     />
                     <Route path="/frydei/home"
                            exact={true}
+
                            element={<HomePageScreen/>}/>
                     <Route path="/frydei/sign-in"
                            exact={true}
