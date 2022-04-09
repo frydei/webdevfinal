@@ -26,6 +26,7 @@ import ViewEventScreen from "./Screens/ViewEventScreen";
 import RequestEvent from "./Components/RequestEvent";
 import RequestScreen from "./Screens/RequestsScreen";
 import UserDropdownMenu from "./Components/Menu/UserDropdownMenu";
+import Footer from "./Components/Footer";
 
 const search_event = {
     "title": "Amine - The Best Tour",
@@ -52,7 +53,7 @@ function App() {
                 <Routes>
                     <Route path="/"
                            exavt={true}
-                           element={<LargeHeaderUser/>}
+                           element={<Footer/>}
                     />
                     <Route path="/frydei/search"
                            exact={true}

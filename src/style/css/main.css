@@ -385,4 +385,10 @@ body, .container-fluid {
   display: none !important;
 }
 
+.f-social-icons .f-social-icon {
+  padding-right: 7px;
+  color: #2D3142;
+  font-size: 18px;
+}
+
 /*# sourceMappingURL=main.css.map */
