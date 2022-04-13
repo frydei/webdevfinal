@@ -47,16 +47,16 @@ const CreateEvent = (param) => {
                         <div className="form-group f-form-group">
                             <label htmlFor="event-location">Location<span className="f-orange-font">*</span></label>
                             <input type="text" className="form-control" id="event-location"
-                                   placeholder="How much is the entrance fee for this event?"/>
-                        </div>
-                        <div className="form-group f-form-group">
-                            <label htmlFor="event-date">Date<span className="f-orange-font">*</span></label>
-                            <input type="text" className="form-control" id="event-date"
                                    placeholder="Where will this event take place?"/>
                         </div>
                         <div className="form-group f-form-group">
+                            <label htmlFor="event-date">Date<span className="f-orange-font">*</span></label>
+                            <input type="date" className="form-control" id="event-date"
+                                   placeholder="What date will this event take place?"/>
+                        </div>
+                        <div className="form-group f-form-group">
                             <label htmlFor="event-time">Time<span className="f-orange-font">*</span></label>
-                            <input type="text" className="form-control" id="event-time"
+                            <input type="time" className="form-control" id="event-time"
                                    placeholder="What time will this event take place?"/>
                         </div>
                         <div className="form-group f-form-group">

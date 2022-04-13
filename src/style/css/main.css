@@ -233,6 +233,25 @@ body, .container-fluid {
   margin-bottom: 15px;
 }
 
+.f-form-content-sign {
+  width: 280px;
+  border-radius: 3px;
+  padding: 0;
+}
+.f-form-content-sign .f-bg {
+  height: 31px;
+}
+.f-form-content-sign input {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #4F5D75;
+  opacity: 0.9;
+  padding: 0;
+  font-family: "Fredoka", sans-serif;
+  font-size: 14px;
+}
+
 .f-icon-button {
   background-color: transparent;
   border: 1px solid transparent;
@@ -253,6 +272,9 @@ body, .container-fluid {
   opacity: 0.9;
   font-family: "Fredoka", sans-serif;
   font-size: 12px;
+}
+.f-form .f-form-content .f-disabled {
+  background-color: #DBDBDB;
 }
 .f-form .f-form-content input {
   height: 25px;
@@ -311,6 +333,39 @@ body, .container-fluid {
 }
 .f-form .f-form-content .f-form-group {
   border: 1px solid transparent;
+}
+
+.f-search-bar-home {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+}
+.f-search-bar-home input {
+  font-family: "Fredoka", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #2D3142;
+  padding: 0;
+}
+.f-search-bar-home input:focus {
+  background-color: #ffffff;
+  outline: none !important;
+  padding: 0;
+}
+.f-search-bar-home input::-webkit-search-cancel-button,
+.f-search-bar-home input::-webkit-search-decoration,
+.f-search-bar-home input::-webkit-search-results-button,
+.f-search-bar-home input::-webkit-search-results-decoration {
+  display: none;
+  outline: none !important;
+}
+.f-search-bar-home input::-ms-clear, .f-search-bar-home input::-ms-reveal {
+  display: none;
+  max-width: 0;
+  outline: none !important;
+}
+.f-search-bar-home i {
+  font-size: 18px;
 }
 
 .f-search-bar {
@@ -394,6 +449,26 @@ body, .container-fluid {
 .f-footer {
   background-color: #e8e8e8;
   padding: 25px;
+}
+
+.f-form-header {
+  font-family: "Fredoka", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0px;
+}
+
+.f-link {
+  text-decoration: none;
+  color: inherit;
+}
+.f-link:focus, .f-link::after, .f-link:hover {
+  color: inherit;
+}
+
+.f-icon {
+  font-size: 16px;
+  color: #2D3142;
 }
 
 /*# sourceMappingURL=main.css.map */

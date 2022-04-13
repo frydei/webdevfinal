@@ -33,6 +33,9 @@ import SignUpScreen from "./Sign-in-sign-up/SignUpScreen";
 import PrivacyPolicyScreen from "./PrivacyPolicy/PrivacyPolicyScreen";
 import ProfileScreen from "./Profile/ProfileScreen";
 import Frydei from "./Components/Frydei";
+import MenuDropdownMenu from "./Components/Menu/MenuDropdownMenu";
+import MenuHeader from "./Components/MenuHeader";
+import ComplaintsScreen from "./Screens/ComplaintsScreen";
 
 const search_event = {
     "title": "Amine - The Best Tour",
@@ -43,7 +46,7 @@ const search_event = {
         "month": "April"
     },
     "time": "6 PM",
-    "cost": 31,
+    "cost": 32,
     "hosts": [{
         "first_name": "Julie",
         "last_name": "Harris",
@@ -57,6 +60,8 @@ function App() {
         <Router>
             <div className="container-fluid p-0">
                 <Routes>
+                    <Route path=""
+                           element={<MenuHeader/>}/>
                     <Route path="frydei"
                            element={<Frydei logged_in={true}
                                             user={user}/>}>
@@ -66,10 +71,10 @@ function App() {
                                element={<HomePageScreen/>}/>
                         <Route path="sign-in"
                                exact={true}
-                               element={<SignInScreen/>}/>
+                               element={<SignInScreen />}/>
                         <Route path="sign-up"
                                exact={true}
-                               element={<SignUpScreen/>}/>
+                               element={<SignUpScreen />}/>
                         <Route path="profile"
                                exact={true}
                                element={<ProfileScreen/>}/>
@@ -89,12 +94,17 @@ function App() {
                         <Route path="create"
                                exact={true}
                                element={<CreateEventScreen user={user}/>}/>
+                        <Route path="complaints"
+                               exact={true}
+                               element={<ComplaintsScreen user={user}
+                                                          event={event}
+                               />}/>
                         <Route path="detail"
                                exact={true}
                                element={
                                    <ViewEventScreen
                                        event={event}
-                                       logged_in={true}
+                                       logged_in={false}
                                    />}/>
 
 

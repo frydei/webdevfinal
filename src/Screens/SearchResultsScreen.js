@@ -11,7 +11,7 @@ import Footer from "../Homepage/Footer";
 const SearchResultsScreen = (param) => {
     return (
         <>
-            <div style={{"paddingLeft": "200px", "paddingRight": "200px", "paddingTop": "25px"}}>
+            <div style={{"paddingLeft": "350px", "paddingRight": "350px", "paddingTop": "25px"}}>
 
                 <form action="">
                     <div className="form-group">
@@ -30,7 +30,7 @@ const SearchResultsScreen = (param) => {
                         })
                     }
                 </div>
-                <div className="d-flex flex-wrap justify-content-between">
+                <div className="d-flex flex-wrap justify-content-start">
                     {
                         events.map(event => {
                             return <SearchEvent event={event}/>

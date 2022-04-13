@@ -18,7 +18,7 @@ const ViewEventScreen = (param) => {
     }
     return (
         <>
-            <div style={{"paddingLeft": "100px", "paddingRight": "100px", "paddingTop": "25px"}}>
+            <div style={{"paddingLeft": "350px", "paddingRight": "350px", "paddingTop": "25px"}}>
                 {view}
             </div>
         </>
