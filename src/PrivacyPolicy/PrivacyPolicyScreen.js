@@ -6,16 +6,8 @@ import Footer from "../Homepage/Footer";
 import "./privacy-policy.css";
 
 const PrivacyPolicyScreen = (param) => {
-    let header;
-    if (param.logged_in) {
-        header = <HeaderUser user={user}/>;
-    } else {
-        header = <HeaderGuest/>;
-    }
-
     return (
         <>
-            {header}
             <div className="f-privacy-policy">
                 <p><br/></p>
                 <h2><strong>Privacy Policy for My Website</strong></h2>
@@ -94,7 +86,6 @@ const PrivacyPolicyScreen = (param) => {
                 <p><strong>Questions</strong></p>
                 <p>If you have any questions about this Privacy Policy, please contact us.</p>
             </div>
-            <Footer/>
         </>
     )
 }

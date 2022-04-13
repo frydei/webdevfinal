@@ -8,9 +8,7 @@ import Footer from "../Homepage/Footer";
 
 const SignUpScreen = () => (
     <div className='sign-in-sign-up'>
-        <HeaderGuest/>
         <SignUp/>
-        <Footer/>
     </div>
 );
 
