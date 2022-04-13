@@ -6,6 +6,7 @@ import menu from "../../Data/menu.json";
 import more_menu from "../../Data/more_menu.json";
 import MenuItem from "./MenuItem";
 import UserIconName from "../UserIconName";
+import {Link} from "react-router-dom";
 
 const UserDropdownMenu = () => {
     const [dropdown, setDropdown] = useState(false);
@@ -31,7 +32,9 @@ const UserDropdownMenu = () => {
                 {
                     more_menu.map(item => {
                         return <Dropdown.Item className="bg-transparent border-0">
-                            <li className="list-group-item d-flex align-items-center justify-content-end f-menu-item p-0 mb-1 f-menu-item-title ">{item}</li>
+                            <Link to={`/frydei/${item.link}`} className="f-link">
+                                <li className="list-group-item d-flex align-items-center justify-content-end f-menu-item p-0 mb-1 f-menu-item-title ">{item.menu}</li>
+                            </Link>
                         </Dropdown.Item>;
                     })
                 }
