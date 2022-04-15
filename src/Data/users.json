@@ -15,7 +15,9 @@
         "events_attended": 12,
         "messages": 3,
         "requests": 4,
-        "connections": 132
+        "connections": 132,
+        "admin_access": false
+
     },
     {
         "_id": "000002",
@@ -33,7 +35,9 @@
         "events_attended": 112,
         "messages": 12,
         "requests": 42,
-        "connections": 1132
+        "connections": 1132,
+        "admin_access": false
+
     },
     {
         "_id": "000003",
@@ -51,7 +55,9 @@
         "events_attended": 4,
         "messages": 5,
         "requests": 0,
-        "connections": 112
+        "connections": 112,
+        "admin_access": false
+
     },
     {
         "_id": "000004",
@@ -69,6 +75,8 @@
         "events_attended": 42,
         "messages": 6,
         "requests": 4,
-        "connections": 234
+        "connections": 234,
+        "admin_access": false
+
     }
 ]

@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 body, .container-fluid {
   background-color: #F4F4F4;
+  font-family: "Fredoka", sans-serif;
 }
 
 .main {
@@ -49,6 +50,10 @@ body, .container-fluid {
   border: 2px solid #f7f7f7;
   width: 50px;
   height: 25px;
+}
+
+.f-view {
+  width: 70px;
 }
 
 .f-title {
@@ -352,6 +357,22 @@ body, .container-fluid {
   outline: none !important;
   padding: 0;
 }
+.f-search-bar-home input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #2D3142;
+}
+.f-search-bar-home input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #2D3142;
+}
+.f-search-bar-home input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #2D3142;
+}
+.f-search-bar-home input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #2D3142;
+}
 .f-search-bar-home input::-webkit-search-cancel-button,
 .f-search-bar-home input::-webkit-search-decoration,
 .f-search-bar-home input::-webkit-search-results-button,
@@ -462,7 +483,7 @@ body, .container-fluid {
   font-family: "Fredoka", sans-serif;
   font-size: 24px;
   font-weight: 500;
-  margin: 0px;
+  margin: 0;
 }
 
 .f-link {
@@ -666,6 +687,23 @@ body, .container-fluid {
 .f-msg-input button i {
   color: #4F5D75;
   font-size: 12px;
+}
+
+.f-number-card {
+  width: 160px;
+  height: 90px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+.f-number-card h6 {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}
+.f-number-card .f-num-card {
+  font-size: 28px;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=main.css.map */

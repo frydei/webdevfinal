@@ -14,7 +14,8 @@
   "events_attended": 12,
   "messages": 3,
   "requests": 4,
-  "connections": 132
+  "connections": 132,
+  "admin_access": true
 }
 
 

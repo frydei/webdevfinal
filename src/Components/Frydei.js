@@ -3,7 +3,7 @@ import HeaderUser from "./HeaderUser";
 import HeaderGuest from "./HeaderGuest";
 import {Outlet} from "react-router-dom";
 import Footer from "../Components/Footer";
-import MenuHeader from "./MenuHeader";
+import MenuHeader from "./Menu/MenuHeader";
 
 const Frydei = (param) => {
     let header;

@@ -1,6 +1,5 @@
 import React, {useState} from "react";
-import {Dropdown, NavDropdown} from "react-bootstrap";
-import UserIcon from "../UserIcon";
+import {Dropdown} from "react-bootstrap";
 import user from "../../Data/user.json";
 import menu from "../../Data/menu.json";
 import more_menu from "../../Data/more_menu.json";
@@ -9,6 +8,12 @@ import UserIconName from "../UserIconName";
 import {Link} from "react-router-dom";
 
 const UserDropdownMenu = () => {
+    let more;
+    if (user.admin_access) {
+        const admin = {menu: "Admin Dashboard", link: "admin"};
+        more = [...more_menu, admin]
+    }
+
     const [dropdown, setDropdown] = useState(false);
     return (
         <Dropdown onMouseLeave={() => setDropdown(false)}
@@ -17,7 +22,7 @@ const UserDropdownMenu = () => {
                   className="f-dropdown-title bg-transparent border-0 me-3"
         >
             <Dropdown.Toggle className="f-dropdown-toggle bg-transparent border-0">
-                <UserIconName user={user}/>
+                <Link to="/frydei/profile" className="f-link"><UserIconName user={user}/></Link>
             </Dropdown.Toggle>
             <Dropdown.Menu className="f-dropdown-menu bg-transparent border-0">
                 {
@@ -30,7 +35,7 @@ const UserDropdownMenu = () => {
 
                 <h3 className="f-section-header mt-4 pe-3 ">More Information</h3>
                 {
-                    more_menu.map(item => {
+                    more.map(item => {
                         return <Dropdown.Item className="bg-transparent border-0">
                             <Link to={`/frydei/${item.link}`} className="f-link">
                                 <li className="list-group-item d-flex align-items-center justify-content-end f-menu-item p-0 mb-1 f-menu-item-title ">{item.menu}</li>

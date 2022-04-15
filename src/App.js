@@ -34,9 +34,10 @@ import PrivacyPolicyScreen from "./PrivacyPolicy/PrivacyPolicyScreen";
 import ProfileScreen from "./Profile/ProfileScreen";
 import Frydei from "./Components/Frydei";
 import MenuDropdownMenu from "./Components/Menu/MenuDropdownMenu";
-import MenuHeader from "./Components/MenuHeader";
+import MenuHeader from "./Components/Menu/MenuHeader";
 import ComplaintsScreen from "./Screens/ComplaintsScreen";
 import ChatScreen from "./Screens/ChatScreen";
+import DashboardScreen from "./Screens/DashboardScreen";
 
 const search_event = {
     "title": "Amine - The Best Tour",
@@ -62,7 +63,7 @@ function App() {
             <div className="container-fluid p-0">
                 <Routes>
                     <Route path=""
-                           element={<MenuHeader/>}/>
+                           element={<MenuHeader user={user}/>}/>
                     <Route path="frydei"
                            element={<Frydei logged_in={true}
                                             user={user}/>}>
@@ -100,10 +101,13 @@ function App() {
                                element={<ComplaintsScreen user={user}
                                                           event={event}
                                />}/>
-                        <Route path="chat"
+                        <Route path="messages"
                                exact={true}
                                element={<ChatScreen user={user}
                                />}/>
+                        <Route path="admin"
+                               exact={true}
+                               element={<DashboardScreen/>}/>
                         <Route path="detail"
                                exact={true}
                                element={

@@ -19,6 +19,9 @@ $black: 700;
 
 body, .container-fluid {
   background-color: $background;
+  font: {
+    family: $fredoka;
+  }
 }
 
 .main {
@@ -73,6 +76,10 @@ body, .container-fluid {
   border: 2px solid $white;
   width: 50px;
   height: 25px;
+}
+
+.f-view {
+  width: 70px;
 }
 
 
@@ -477,6 +484,18 @@ body, .container-fluid {
       padding: 0;
 
     }
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $dark;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: $dark;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: $dark;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: $dark;
+    }
   }
 
   input::-webkit-search-cancel-button,
@@ -626,7 +645,7 @@ body, .container-fluid {
     size: 24px;
     weight: $medium;
   }
-  margin: 0px;
+  margin: 0;
 }
 
 .f-link {
@@ -889,4 +908,30 @@ body, .container-fluid {
       font-size: 12px;
     }
   }
+}
+
+//DASHBOARD
+.f-number-card {
+  width: 160px;
+  height: 90px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  h6 {
+    font: {
+      size: 18px;
+      weight: $regular;
+    }
+    text-align: center;
+    margin: 0;
+  }
+  .f-num-card {
+    font: {
+      size: 28px;
+      weight: $medium;
+    }
+  }
+}
+
+.f-dash-box {
+
 }
