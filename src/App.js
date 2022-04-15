@@ -61,7 +61,7 @@ function App() {
                     <Route path="/frydei/sign-up"
                            exact={true}
                            element={<SignUpScreen/>}/>
-                    <Route path="/frydei/profile"
+                    <Route path="/frydei/profile/*"
                            exact={true}
                            element={<ProfileScreen/>}/>
                     <Route path="/frydei/search"
