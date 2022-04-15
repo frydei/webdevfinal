@@ -1,0 +1,226 @@
+[
+    {
+        "chat_id": "0000011",
+        "type": "single",
+        "participants": [
+            {
+                "user_id": "000002",
+                "first_name": "Susan",
+                "last_name": "May",
+                "city": "Boston",
+                "state": "MA",
+                "biography": "Born and raised in Boston. A fan of indie, music and picnics.",
+                "profile_picture": "green.jpeg",
+                "upcoming_events": [],
+                "past_events": [],
+                "favorited": [],
+                "media": [],
+                "events_hosted": 44,
+                "events_attended": 112,
+                "messages": 12,
+                "requests": 42,
+                "connections": 1132
+            }
+        ],
+        "recent_activity": {
+            "hh": 9,
+            "mm": 15,
+            "time": "AM"
+        },
+        "new_messages": 1,
+        "last_message": "You accepted Susan's request!",
+        "event": {
+            "title": "Outdoor Concert",
+            "event_photo": "/images/park.jpeg",
+            "location": "Boston Common",
+            "date": {
+                "day": 5,
+                "month": "May"
+            },
+            "time": "3 PM",
+            "cost": 35,
+            "hosts": [
+                {
+                    "first_name": "Daine",
+                    "last_name": "Peterson",
+                    "profile_picture": "bw.jpeg"
+                }
+            ],
+            "attendees": 4
+        },
+        "messages": [
+            {
+                "sender": "Frydei",
+                "message": "You accepted Susan's request!"
+            }
+        ]
+    },
+    {
+        "chat_id": "0000012",
+        "type": "group",
+        "participants": [
+            {
+                "user_id": "000004",
+                "first_name": "Mary",
+                "last_name": "Anne",
+                "city": "Medford",
+                "state": "MA",
+                "biography": "Born and raised in Boston. A fan of indie, music and picnics.",
+                "profile_picture": "axe.jpeg",
+                "upcoming_events": [],
+                "past_events": [],
+                "favorited": [],
+                "media": [],
+                "events_hosted": 3,
+                "events_attended": 42,
+                "messages": 6,
+                "requests": 4,
+                "connections": 234
+            },
+            {
+                "user_id": "000003",
+                "first_name": "Daniel",
+                "last_name": "Peterson",
+                "city": "New York",
+                "state": "NY",
+                "biography": "Born and raised in Boston. A fan of indie, music and picnics.",
+                "profile_picture": "bo.jpeg",
+                "upcoming_events": [],
+                "past_events": [],
+                "favorited": [],
+                "media": [],
+                "events_hosted": 0,
+                "events_attended": 4,
+                "messages": 5,
+                "requests": 0,
+                "connections": 112
+            },
+            {
+                "user_id": "000002",
+                "first_name": "Susan",
+                "last_name": "May",
+                "city": "Boston",
+                "state": "MA",
+                "biography": "Born and raised in Boston. A fan of indie, music and picnics.",
+                "profile_picture": "green.jpeg",
+                "upcoming_events": [],
+                "past_events": [],
+                "favorited": [],
+                "media": [],
+                "events_hosted": 44,
+                "events_attended": 112,
+                "messages": 12,
+                "requests": 42,
+                "connections": 1132
+            }
+        ],
+        "recent_activity": {
+            "hh": 11,
+            "mm": 2,
+            "time": "PM"
+        },
+        "new_messages": 0,
+        "last_message": "Super excited as well! Thanks for putting this together.",
+        "event": {
+            "title": "ODIE - Little Lies",
+            "event_photo": "/images/jnk.jpeg",
+            "location": "Boston University",
+            "date": {
+                "day": 12,
+                "month": "April"
+            },
+            "time": "7 PM",
+            "cost": 55,
+            "hosts": [
+                {
+                    "first_name": "Ryan",
+                    "last_name": "Bell",
+                    "profile_picture": "jo.jpeg"
+                },
+                {
+                    "first_name": "Sammy",
+                    "last_name": "Heim",
+                    "profile_picture": "mo.jpeg"
+                }
+            ],
+            "attendees": 10
+        },
+        "messages": [
+            {
+                "sender": "Mary Anne",
+                "cover": "Ma",
+                "message": "Can't wait for the concert."
+            },
+            {
+                "sender": "Frydei",
+                "cover": "Fr",
+                "message": "Your request for ODIE - Little Lies was accepted!"
+            },
+            {
+                "sender": "Daniel Peterson",
+                "cover": "Dp",
+                "message": "Super excited you can join us for this event!"
+            },
+            {
+                "sender": "Susan May",
+                "cover": "Sm",
+                "message": "Yes, totally excited! Can’t wait to see you there. Meeting spot is near the T on State Street."
+            },
+            {
+                "sender": "Millow Green",
+                "cover": "Mg",
+                "message": "Super excited as well! Thanks for putting this together."
+            }
+        ]
+    },
+    {
+        "chat_id": "0000013",
+        "type": "single",
+        "participants": [
+            {
+                "user_id": "000003",
+                "first_name": "Daniel",
+                "last_name": "Peterson",
+                "city": "New York",
+                "state": "NY",
+                "biography": "Born and raised in Boston. A fan of indie, music and picnics.",
+                "profile_picture": "bo.jpeg",
+                "upcoming_events": [],
+                "past_events": [],
+                "favorited": [],
+                "media": [],
+                "events_hosted": 0,
+                "events_attended": 4,
+                "messages": 5,
+                "requests": 0,
+                "connections": 112
+            }
+        ],
+        "recent_activity": {
+            "hh": 8,
+            "mm": 37,
+            "time": "AM"
+        },
+        "new_messages": 2,
+        "last_message": "Mee too!",
+        "event": {
+        },
+        "messages": [
+            {
+                "sender": "Frydei",
+                "cover": "Fr",
+                "message": "You accepted Mary's request!"
+            },
+            {
+                "sender": "Mary Anne",
+                "cover": "Ma",
+                "message": "I can't wait!"
+            },
+            {
+                "sender": "Millow Green",
+                "cover": "Mg",
+                "message": "Mee too!"
+            }
+        ]
+    }
+]

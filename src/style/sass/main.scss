@@ -633,3 +633,51 @@ body, .container-fluid {
   font-size: 16px;
   color: $dark;
 }
+
+//Chat
+.f-chat-label {
+  width: 280px;
+  height: 70px;
+  background-color: #ffffff;
+  border-radius: 3px;
+
+  .f-chat-cover, .f-cover-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+  .f-cover-img {
+    object-fit: cover;
+  }
+    .f-cover {
+      background-color: #ffffff;
+
+      border: 2px solid $dark;
+      padding: 5px;
+      margin: 0;
+      font: {
+        family: $fredoka;
+        size: 13px;
+        weight: $medium;
+      }
+      color: $dark;
+      h3 {
+        font: {
+          size: 13px;
+        }
+      }
+    }
+
+  font: {
+    family: $fredoka;
+    size: 12px;
+    weight: $regular;
+  }
+  color: $dark;
+
+}
+
+
+  .f-chat-box {
+
+}

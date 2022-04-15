@@ -1,6 +1,0 @@
-Routes
-
-home -> HomeScreen
-<Header/>
-<Outlet/>
-<Footer/>

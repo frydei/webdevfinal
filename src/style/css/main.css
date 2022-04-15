@@ -471,4 +471,36 @@ body, .container-fluid {
   color: #2D3142;
 }
 
+.f-chat-label {
+  width: 280px;
+  height: 70px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #2D3142;
+}
+.f-chat-label .f-chat-cover, .f-chat-label .f-cover-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.f-chat-label .f-cover-img {
+  object-fit: cover;
+}
+.f-chat-label .f-cover {
+  background-color: #ffffff;
+  border: 2px solid #2D3142;
+  padding: 5px;
+  margin: 0;
+  font-family: "Fredoka", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2D3142;
+}
+.f-chat-label .f-cover h3 {
+  font-size: 13px;
+}
+
 /*# sourceMappingURL=main.css.map */
