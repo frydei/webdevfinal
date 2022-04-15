@@ -1,11 +1,11 @@
 import React from "react";
-import UserIconSmall from "./UserIconSmall";
+import UserIconSmallest from "./UserIconSmallest";
 
 const link = "";
 
 const SearchEvent = (param) => {
     return (
-        <div className="f-event f-search d-flex align-items-center justify-content-center mt-3 me-2">
+        <div className="f-event f-search d-flex align-items-center justify-content-center mt-3 me-1 ms-1">
             <div className="d-flex flex-column align-items-center justify-content-center">
                 <div
                     className="f-event-img-container mb-2 d-flex flex-column align-items-center justify-content-center position-relative">
@@ -24,7 +24,7 @@ const SearchEvent = (param) => {
                         <div>
                             {
                                 param.event.hosts.map(host => {
-                                    return <UserIconSmall user={host}/>;
+                                    return <UserIconSmallest user={host}/>;
                                 })
                             }
                         </div>

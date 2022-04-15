@@ -2,7 +2,7 @@
 import './style/css/main.css';
 import "./Libraries/bootstrap/css/bootstrap.min.css";
 import tags from "./Data/tags.json";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, Outlet} from "react-router-dom";
 
 import HeaderGuest from "./Components/HeaderGuest";
 import HeaderUser from "./Components/HeaderUser";
@@ -23,11 +23,20 @@ import SearchResultsScreen from "./Screens/SearchResultsScreen";
 import ExploreEventsScreen from "./Screens/ExploreEventsScreen";
 import CreateEventScreen from "./Screens/CreateEventScreen";
 import ViewEventScreen from "./Screens/ViewEventScreen";
+import RequestEvent from "./Components/RequestEvent";
+import RequestScreen from "./Screens/RequestsScreen";
+import UserDropdownMenu from "./Components/Menu/UserDropdownMenu";
+import Footer from "./Components/Footer";
 import HomePageScreen from "./Homepage/HomePageScreen";
 import SignInScreen from "./Sign-in-sign-up/SignInScreen";
 import SignUpScreen from "./Sign-in-sign-up/SignUpScreen";
 import PrivacyPolicyScreen from "./PrivacyPolicy/PrivacyPolicyScreen";
 import ProfileScreen from "./Profile/ProfileScreen";
+import Frydei from "./Components/Frydei";
+import MenuDropdownMenu from "./Components/Menu/MenuDropdownMenu";
+import MenuHeader from "./Components/MenuHeader";
+import ComplaintsScreen from "./Screens/ComplaintsScreen";
+import ChatScreen from "./Screens/ChatScreen";
 
 const search_event = {
     "title": "Amine - The Best Tour",
@@ -38,7 +47,7 @@ const search_event = {
         "month": "April"
     },
     "time": "6 PM",
-    "cost": 31,
+    "cost": 32,
     "hosts": [{
         "first_name": "Julie",
         "last_name": "Harris",
@@ -50,43 +59,74 @@ const search_event = {
 function App() {
     return (
         <Router>
-            <div className="container-fluid">
+            <div className="container-fluid p-0">
                 <Routes>
-                    <Route path="/frydei/home"
-                           exact={true}
-                           element={<HomePageScreen/>}/>
-                    <Route path="/frydei/sign-in"
-                           exact={true}
-                           element={<SignInScreen/>}/>
-                    <Route path="/frydei/sign-up"
-                           exact={true}
-                           element={<SignUpScreen/>}/>
-                    <Route path="/frydei/profile/*"
-                           exact={true}
-                           element={<ProfileScreen/>}/>
-                    <Route path="/frydei/search"
-                           exact={true}
-                           element={<SearchResultsScreen logged_in={true}/>}/>
-                    <Route path="/frydei/privacy"
-                           exact={true}
-                           element={<PrivacyPolicyScreen/>}/>
-                    <Route path="/frydei/explore"
-                           exact={true}
-                           element={<ExploreEventsScreen/>}/>
-                    <Route path="/frydei/create"
-                           exact={true}
-                           element={<CreateEventScreen user={user}/>}/>
-                    <Route path="/frydei/detail"
-                           exact={true}
-                           element={
-                               <ViewEventScreen
-                                   event={event}
-                                   logged_in={true}
+                    <Route path=""
+                           element={<MenuHeader/>}/>
+                    <Route path="frydei"
+                           element={<Frydei logged_in={true}
+                                            user={user}/>}>
+                        <Route index element={<HomePageScreen/>}/>
+                        <Route path="home"
+                               extact={true}
+                               element={<HomePageScreen/>}/>
+                        <Route path="sign-in"
+                               exact={true}
+                               element={<SignInScreen />}/>
+                        <Route path="sign-up"
+                               exact={true}
+                               element={<SignUpScreen />}/>
+                        <Route path="profile"
+                               exact={true}
+                               element={<ProfileScreen/>}/>
+                        <Route path="search"
+                               exact={true}
+                               element={<SearchResultsScreen logged_in={true}/>}/>
+                        <Route path="privacy-policy"
+                               exact={true}
+                               element={<PrivacyPolicyScreen/>}/>
+                        <Route path="explore"
+                               exact={true}
+                               element={<ExploreEventsScreen logged_in={true}/>}/>
+                        <Route path="requests"
+                               exact={true}
+                               element={<RequestScreen logged_in={true}/>}/>
+                        <Route path="create"
+                               exact={true}
+                               element={<CreateEventScreen user={user}/>}/>
+                        <Route path="complaints"
+                               exact={true}
+                               element={<ComplaintsScreen user={user}
+                                                          event={event}
                                />}/>
-                </Routes>
-                {//<SearchResultsScreen logged_in={true}/>
+                        <Route path="chat"
+                               exact={true}
+                               element={<ChatScreen user={user}
+                               />}/>
+                        <Route path="detail"
+                               exact={true}
+                               element={
+                                   <ViewEventScreen
+                                       event={event}
+                                       logged_in={false}
+                                   />}/>
 
-                    /*<HeaderGuest/>
+
+                    </Route>
+
+
+                </Routes>
+            </div>
+        </Router>
+    );
+}
+
+export default App;
+
+{/*
+              <SearchResultsScreen logged_in={true}/>
+
+                    <HeaderGuest/>
             <HeaderUser/>
             <LargeHeaderGuest/>
             <LargeHeaderUser/>
@@ -98,11 +138,9 @@ function App() {
             <EventDetailGuest event={event}/>
             <EventDetailUser event={event}/>
             <PastEventDetail event={event}/>
-            <CreateEvent user={user}/>*/
-                }
-            </div>
-        </Router>
-    );
+            <CreateEvent user={user}/>
+
+            </div>*/
 }
 
-export default App;
+

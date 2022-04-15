@@ -2,11 +2,11 @@ import users from "../Data/user.json"
 import "./profile.css"
 import React from "react";
 
-const ProfileItem = ({ first_name, city, profile_pic, state, biography }) => {
+const ProfileItem = ({ first_name, city, profile_picture, state, biography }) => {
     return(
         <div className="f-profile">
             <img  className="f-profile-pic"
-                  src={profile_pic}
+                  src={profile_picture}
             />
             <div>
                 <span className="f-profile-name"> {first_name}</span>

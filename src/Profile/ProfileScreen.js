@@ -7,10 +7,9 @@ import ProfileNav from "./profileNav";
 
 const ProfileScreen = () => (
     <div className='profile'>
-        <HeaderUser/>
         <ProfileComponent/>
         <ProfileNav/>
-        <Footer/>
+
     </div>
 );
 

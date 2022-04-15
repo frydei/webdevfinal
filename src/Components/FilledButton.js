@@ -2,7 +2,10 @@ import React from "react";
 
 const FilledButton = (param) => {
     return(
-        <button className="f-button f-orange">{param.name}</button>
+        <button type="submit"
+                onSubmit={param.handleSubmit}
+                className="f-button f-orange">{param.name}
+        </button>
     );
 }
 

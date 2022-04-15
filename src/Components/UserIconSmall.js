@@ -1,10 +1,10 @@
 import React from "react";
 
-const UserIconSmall = (param) => {
+const UserIconSmallest = (param) => {
     console.log(param)
     return (
-        <img src={`/images/${param.user.profile_picture}`} className="f-user-icon-smallest me-1" alt="" />
+        <img src={`/images/${param.user.profile_picture}`} className="f-user-icon-small me-1" alt="" />
     );
 };
 
-export default UserIconSmall;
+export default UserIconSmallest;

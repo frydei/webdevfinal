@@ -27,7 +27,7 @@ const CreateEvent = (param) => {
                     <div className="f-form-detail f-bg">
                         <div className="form-group f-form-group d-flex flex-column form-control p-0">
                             <label htmlFor="event-host">Host(s)</label>
-                            <div><img src={user.profile_pic} alt="" className="f-host-icon me-1"/>
+                            <div><img src={`/images/${user.profile_picture}`} alt="" className="f-icon-small me-1"/>
                                 <button className="f-add-button">
                                     <i className="fa-solid fa-plus"/>
                                 </button>
@@ -47,16 +47,16 @@ const CreateEvent = (param) => {
                         <div className="form-group f-form-group">
                             <label htmlFor="event-location">Location<span className="f-orange-font">*</span></label>
                             <input type="text" className="form-control" id="event-location"
-                                   placeholder="How much is the entrance fee for this event?"/>
-                        </div>
-                        <div className="form-group f-form-group">
-                            <label htmlFor="event-date">Date<span className="f-orange-font">*</span></label>
-                            <input type="text" className="form-control" id="event-date"
                                    placeholder="Where will this event take place?"/>
                         </div>
                         <div className="form-group f-form-group">
+                            <label htmlFor="event-date">Date<span className="f-orange-font">*</span></label>
+                            <input type="date" className="form-control" id="event-date"
+                                   placeholder="What date will this event take place?"/>
+                        </div>
+                        <div className="form-group f-form-group">
                             <label htmlFor="event-time">Time<span className="f-orange-font">*</span></label>
-                            <input type="text" className="form-control" id="event-time"
+                            <input type="time" className="form-control" id="event-time"
                                    placeholder="What time will this event take place?"/>
                         </div>
                         <div className="form-group f-form-group">

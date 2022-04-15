@@ -4,10 +4,12 @@
 $fredoka: 'Fredoka', sans-serif;
 $title: 'Fredoka One', cursive;
 $orange: #EF8354;
+$lightorange: #F2A985;
 $dark: #2D3142;
 $grey: #4F5D75;
 $white: #f7f7f7;
 $lightgrey: #DBDBDB;
+$lightlightgrey: #e8e8e8;
 $background: #F4F4F4;
 $regular: 400;
 $medium: 500;
@@ -115,7 +117,7 @@ body, .container-fluid {
   font: {
     family: $fredoka;
     size: 14px;
-    weight: $bold;
+    weight: $medium;
   }
   color: $dark;
   text-align: left;
@@ -123,21 +125,8 @@ body, .container-fluid {
 
 .f-menu-list {
   width: 120px;
-
-  .f-menu-item {
-    background-color: transparent;
-    border: 1px solid transparent;
-
-    .f-icon {
-      font-size: 12px;
-      color: $dark;
-    }
-  }
-
-  .f-divider {
-    color: $grey;
-  }
 }
+
 
 .f-section-header {
   font: {
@@ -160,7 +149,7 @@ body, .container-fluid {
 .f-event {
   background-color: white;
   border-radius: 15px;
-  box-shadow: 0px 4px 10px #00000029;
+  box-shadow: 0 4px 10px #00000029;
 
   .f-event-header {
     width: 100%;
@@ -191,9 +180,19 @@ body, .container-fluid {
   }
 }
 
+.f-request-box {
+  width: 100%;
+  padding: {
+    left: 20px;
+    right: 20px;
+    bottom: 10px;
+  };
+}
+
+
 .f-explore {
   width: 580px;
-  height: 400px;
+  overflow: auto;
 
   .f-event-img-container {
     .f-event-img {
@@ -243,7 +242,7 @@ body, .container-fluid {
   }
 }
 
-.f-host-icon {
+.f-icon-small {
   width: 35px;
   height: 35px;
   object-fit: cover;
@@ -316,10 +315,35 @@ body, .container-fluid {
   }
 }
 
+.f-form-content-sign {
+  .f-bg {
+    height: 31px;
+  }
+
+  width: 280px;
+  border-radius: 3px;
+  padding: 0;
+
+  input {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: $grey;
+    opacity: 0.9;
+    padding: 0;
+    font: {
+      family: $fredoka;
+      size: 14px;
+    }
+
+  }
+}
+
 .f-icon-button {
   background-color: transparent;
   border: 1px solid transparent;
   padding: 0;
+
 }
 
 .f-form {
@@ -342,6 +366,11 @@ body, .container-fluid {
         family: $fredoka;
         size: 12px;
       }
+    }
+
+    .f-disabled {
+      background-color: $lightgrey;
+
     }
 
     input {
@@ -428,6 +457,47 @@ body, .container-fluid {
   }
 }
 
+.f-search-bar-home {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+
+  input {
+    font: {
+      family: $fredoka;
+      size: 26px;
+      weight: $regular;
+    }
+    color: $dark;
+    padding: 0;
+
+    &:focus {
+      background-color: #ffffff;
+      outline: none !important;
+      padding: 0;
+
+    }
+  }
+
+  input::-webkit-search-cancel-button,
+  input::-webkit-search-decoration,
+  input::-webkit-search-results-button,
+  input::-webkit-search-results-decoration {
+    display: none;
+    outline: none !important;
+  }
+
+  input::-ms-clear, input::-ms-reveal {
+    display: none;
+    max-width: 0;
+    outline: none !important;
+  }
+
+  i {
+    font-size: 18px;
+  }
+}
+
 .f-search-bar {
 
   border-bottom: 2px solid $grey;
@@ -444,6 +514,7 @@ body, .container-fluid {
       top: 0;
       bottom: 0;
     }
+
     &:focus {
       background-color: transparent;
       outline: none !important;
@@ -462,11 +533,360 @@ body, .container-fluid {
   input::-webkit-search-results-decoration {
     display: none;
   }
+
   input::-ms-clear, input::-ms-reveal {
     display: none;
     max-width: 0;
   }
+
   i {
     font-size: 18px;
+  }
+}
+
+
+.f-small-regular {
+  font: {
+    family: $fredoka;
+    size: 14px;
+    weight: $regular;
+  }
+  color: $grey;
+}
+
+.f-medium-medium {
+  font: {
+    family: $fredoka;
+    size: 15px;
+    weight: $medium;
+  }
+  color: $dark;
+}
+
+.f-medium-regular {
+  font: {
+    family: $fredoka;
+    size: 15px;
+    weight: $regular;
+  }
+  color: $dark;
+}
+
+.btn.primary:active, .btn.primary.active {
+  background-color: red;
+}
+
+.f-dropdown-title {
+  width: 130px;
+
+  .f-menu-link {
+    text-decoration: none;
+  }
+
+  .f-dropdown-menu {
+    .f-menu-item {
+      background-color: transparent;
+      border: 1px solid transparent;
+
+      .f-icon {
+        font-size: 12px;
+        color: $dark;
+      }
+    }
+
+    .f-divider {
+      color: $grey;
+    }
+  }
+
+  .f-dropdown-toggle {
+    &::after {
+      content: none;
+      display: none !important;
+    }
+  }
+}
+
+.f-social-icons {
+  .f-social-icon {
+    padding-right: 7px;
+    color: $dark;
+    font-size: 18px;
+  }
+}
+
+.f-footer {
+  background-color: $lightlightgrey;
+  padding: 25px;
+}
+
+.f-form-header {
+  font: {
+    family: $fredoka;
+    size: 24px;
+    weight: $medium;
+  }
+  margin: 0px;
+}
+
+.f-link {
+  text-decoration: none;
+  color: inherit;
+
+  &:focus, &::after, &:hover {
+    color: inherit;
+  }
+}
+
+
+.f-icon {
+  font-size: 16px;
+  color: $dark;
+}
+
+//Chat
+.f-chat-label {
+
+  width: 100%;
+  height: 70px;
+  border-radius: 3px;
+  padding: 8px;
+  text-align: left;
+  border: 1px solid transparent;
+
+  .f-chat-cover, .f-cover-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+
+  }
+
+  .f-cover-img {
+    object-fit: cover;
+  }
+
+  .f-chat-cover {
+    border: 2px solid $dark;
+    color: $dark;
+
+    h3 {
+      font: {
+        family: $fredoka;
+        size: 13px;
+        weight: $medium;
+      }
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .f-chat-info {
+    width: 100%;
+    padding-left: 10px;
+    h4, h5, span {
+      font: {
+        size: 12px;
+      }
+      padding: 0;
+      margin: 0;
+      text-overflow: ellipsis;
+      max-width: 54ch;
+      overflow: hidden;
+      white-space: nowrap;
+
+    }
+
+    h4 {
+      margin-bottom: 2px;
+    }
+
+    h5 {
+      font-weight: $regular;
+      color: $grey;
+      width: 100%;
+    }
+
+    .f-chat-time-circle {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: $lightorange;
+      padding: 4px;
+
+      h5 {
+        padding: 0;
+        margin: 0;
+        color: #ffffff;
+      }
+
+    }
+
+    .f-chat-title {
+      width: 215px;
+      text-overflow: ellipsis;
+    }
+  }
+
+  font: {
+    family: $fredoka;
+  }
+  color: $dark;
+
+}
+
+.f-chat-search {
+  width: 100%;
+
+  border-radius: 3px;
+  border: 1px solid transparent;
+  font: {
+    family: $fredoka;
+    size: 12px;
+    weight: $regular;
+  }
+
+  input {
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    padding: 0 0 0 5px;
+  }
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background-color: #ffffff;
+  border-radius: 3px;
+
+}
+
+.f-chat-box {
+  background-color: #ffffff;
+  width: 100%;
+
+}
+
+.f-empty-box {
+  i {
+    color: $dark;
+  }
+}
+
+.f-chat-header {
+  .f-cover-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  h5 {
+    font: {
+      family: $fredoka;
+      size: 12px;
+      weight: $regular;
+    }
+
+    span {
+      font-weight: $medium;
+    }
+  }
+}
+
+.f-msg-content {
+  font: {
+    family: $fredoka;
+    size: 12px;
+    weight: $regular;
+  }
+
+  .f-msg-cover {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: $orange;
+    color: #ffffff;
+    font: {
+      weight: $medium;
+      size: 14px;
+    }
+
+  }
+
+  .f-msg {
+    width: 65%;
+    h5, h6 {
+      padding: 0;
+      margin: 0;
+    }
+
+    h6 {
+      font: {
+        weight: $regular;
+        size: 10px;
+      }
+      color: $grey;
+      margin-bottom: 2px;
+    }
+
+    h5 {
+      font: {
+        weight: $regular;
+        size: 12px;
+      }
+    }
+  }
+
+
+
+}
+
+.f-msg-input {
+  width: 100%;
+  background-color: $lightlightgrey;
+  border-radius: 3px;
+  padding: 5px;
+  font: {
+    family: $fredoka;
+    size: 12px;
+    weight: $regular;
+  }
+  textarea {
+    border: 1px solid transparent;
+    background-color: $lightlightgrey;
+    color: $grey;
+    padding: 0;
+    border-radius: 3px;
+    width: 95%;
+    resize: none;
+    &:focus {
+      outline: none !important;
+    }
+
+  }
+  textarea::-webkit-search-cancel-button,
+  textarea::-webkit-search-decoration,
+  textarea::-webkit-search-results-button,
+  textarea::-webkit-search-results-decoration {
+    display: none;
+    outline: none !important;
+  }
+
+  textarea::-ms-clear, textarea::-ms-reveal {
+    display: none;
+    max-width: 0;
+    outline: none !important;
+  }
+  button {
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0;
+    i {
+      color: $grey;
+      font-size: 12px;
+    }
   }
 }

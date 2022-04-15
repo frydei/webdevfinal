@@ -7,25 +7,20 @@ import LargeHeaderGuest from "../Components/LargeHeaderGuest";
 import HeaderGuest from "../Components/HeaderGuest";
 import EventDetailUser from "../Components/EventDetailUser";
 import EventDetailGuest from "../Components/EventDetailGuest";
-import Footer from "../Homepage/Footer";
 
 
 const ViewEventScreen = (param) => {
-    let header, view;
+    let  view;
     if (param.logged_in) {
-        header = <HeaderUser user={user}/>;
         view = <EventDetailUser event={param.event}/>;
     } else {
-        header = <HeaderGuest/>;
         view = <EventDetailGuest event={param.event}/>
     }
     return (
         <>
-            {header}
-            <div style={{"paddingLeft": "100px", "paddingRight": "100px", "paddingTop": "25px"}}>
+            <div style={{"paddingLeft": "350px", "paddingRight": "350px", "paddingTop": "25px"}}>
                 {view}
             </div>
-            <Footer/>
         </>
 
     )

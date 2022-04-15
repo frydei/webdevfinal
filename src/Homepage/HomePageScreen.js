@@ -26,7 +26,6 @@ const HomePageScreen = (param) => {
     }
     return (
         <>
-            {header}
             <SearchBar/>
             <div className="d-flex flex-wrap justify-content-center">
                 {
@@ -35,8 +34,6 @@ const HomePageScreen = (param) => {
                     })
                 }
             </div>
-
-            <Footer/>
         </>
     );
 

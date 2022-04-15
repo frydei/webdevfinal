@@ -1,1 +1,15 @@
-["Privacy Policy", "About Us", "Feedback"]
+[
+  {
+    "menu": "Privacy Policy",
+    "link": "privacy-policy"
+  },
+  {
+    "menu": "About Us",
+    "link": "about-us"
+  },
+  {
+    "menu": "Feedback",
+    "link": "feedback"
+  }
+]
+
