@@ -1,25 +1,26 @@
-[{
-  "title":"Home",
-  "icon": "fa-solid fa-house"
-}, {
-  "title":"Create Event",
-  "icon": "fa-solid fa-plus"
-}, {
-  "title":"Messages",
-  "icon": "fa-solid fa-comment"
-}, {
-  "title":"Explore",
-  "icon": "fa-solid fa-compass"
-}, {
-  "title":"Requests",
-  "icon": "fa-solid fa-bell"
-}, {
-  "title":"Connections",
-  "icon": "fa-solid fa-user-group"
-}, {
-  "title":"Events",
-  "icon": "fa-solid fa-calendar"
-}, {
-  "title":"Settings",
-  "icon": "fa-solid fa-gear"
-}]
+[
+    {
+        "title": "Home",
+        "icon": "fa-solid fa-house"
+    },
+    {
+        "title": "Create Event",
+        "icon": "fa-solid fa-plus"
+    },
+    {
+        "title": "Messages",
+        "icon": "fa-solid fa-comment"
+    },
+    {
+        "title": "Explore",
+        "icon": "fa-solid fa-compass"
+    },
+    {
+        "title": "Requests",
+        "icon": "fa-solid fa-bell"
+    },
+    {
+        "title": "Events",
+        "icon": "fa-solid fa-calendar"
+    }
+]
