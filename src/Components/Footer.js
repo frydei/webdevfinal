@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 
 const Footer = () => {
@@ -14,7 +15,8 @@ const Footer = () => {
                         style={{"textAlign": "left", "fontSize": "14px", "fontWeight": "500"}}>Services
                     </li>
                     <li className="list-group-item f-menu-item-title bg-transparent border-0 p-0 mb-2"
-                        style={{"textAlign": "left"}}>Privacy Policy
+                        style={{"textAlign": "left"}}>
+                        <Link to="/frydei/privacy-policy">Privacy Policy</Link>
                     </li>
                 </ul>
                 <ul className="list-group bg-transparent border-0">

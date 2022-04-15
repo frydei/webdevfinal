@@ -1,7 +1,5 @@
 import {Link} from "react-router-dom";
-import SearchEvent from "../Components/SearchEvent";
 import React from "react";
-import events from "../Data/events.json";
 import "./profile.css"
 
 const ProfileNav = () => {

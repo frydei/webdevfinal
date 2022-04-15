@@ -9,6 +9,7 @@
     width: 120px;
     height: 120px;
     border-radius: 25px;
+    object-fit: cover;
     /* UI Properties */
     /*background: transparent url('img/Ellipse 1.png') 0% 0% no-repeat padding-box;*/
     opacity: 1;
@@ -29,4 +30,9 @@
 
 .f-profile-bio {
     font: normal normal normal 15px/11px Fredoka;
+}
+
+.f-profile-tabs {
+
+    text-align: center;
 }

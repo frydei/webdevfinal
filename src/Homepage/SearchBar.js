@@ -22,10 +22,3 @@ const SearchBar =() => {
 
 export default SearchBar
 
-
-// const searchBar = document.getElementById('searchBar');
-//
-// searchBar.addEventListener("keyup", e => {
-//     const searchString = e.target.value;
-// });
-

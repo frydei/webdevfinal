@@ -1,6 +1,5 @@
 import React from 'react';
 
-// import './sign-in.styles';
 import {CustomButtonContainer, SignUpContainer} from './sign-up.styles';
 import FilledButton from "../Components/FilledButton";
 import Spacer from "../Components/Spacer";
