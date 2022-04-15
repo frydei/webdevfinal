@@ -1,6 +1,6 @@
 [
     {
-        "user_id": "000001",
+        "_id": "000001",
         "first_name": "Millow",
         "last_name": "Greeen",
         "city": "Boston",
@@ -18,7 +18,7 @@
         "connections": 132
     },
     {
-        "user_id": "000002",
+        "_id": "000002",
         "first_name": "Susan",
         "last_name": "May",
         "city": "Boston",
@@ -36,7 +36,7 @@
         "connections": 1132
     },
     {
-        "user_id": "000003",
+        "_id": "000003",
         "first_name": "Daniel",
         "last_name": "Peterson",
         "city": "New York",
@@ -54,7 +54,7 @@
         "connections": 112
     },
     {
-        "user_id": "000004",
+        "_id": "000004",
         "first_name": "Mary",
         "last_name": "Anne",
         "city": "Medford",

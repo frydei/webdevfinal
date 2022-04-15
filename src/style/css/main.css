@@ -113,7 +113,7 @@ body, .container-fluid {
 .f-event {
   background-color: white;
   border-radius: 15px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1607843137);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1607843137);
 }
 .f-event .f-event-header {
   width: 100%;
@@ -414,6 +414,13 @@ body, .container-fluid {
   color: #2D3142;
 }
 
+.f-medium-regular {
+  font-family: "Fredoka", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #2D3142;
+}
+
 .btn.primary:active, .btn.primary.active {
   background-color: red;
 }
@@ -472,13 +479,13 @@ body, .container-fluid {
 }
 
 .f-chat-label {
-  width: 280px;
+  width: 100%;
   height: 70px;
-  background-color: #ffffff;
   border-radius: 3px;
+  padding: 8px;
+  text-align: left;
+  border: 1px solid transparent;
   font-family: "Fredoka", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
   color: #2D3142;
 }
 .f-chat-label .f-chat-cover, .f-chat-label .f-cover-img {
@@ -489,18 +496,176 @@ body, .container-fluid {
 .f-chat-label .f-cover-img {
   object-fit: cover;
 }
-.f-chat-label .f-cover {
-  background-color: #ffffff;
+.f-chat-label .f-chat-cover {
   border: 2px solid #2D3142;
-  padding: 5px;
-  margin: 0;
+  color: #2D3142;
+}
+.f-chat-label .f-chat-cover h3 {
   font-family: "Fredoka", sans-serif;
   font-size: 13px;
   font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+.f-chat-label .f-chat-info {
+  width: 100%;
+  padding-left: 10px;
+}
+.f-chat-label .f-chat-info h4, .f-chat-label .f-chat-info h5, .f-chat-label .f-chat-info span {
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  text-overflow: ellipsis;
+  max-width: 54ch;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.f-chat-label .f-chat-info h4 {
+  margin-bottom: 2px;
+}
+.f-chat-label .f-chat-info h5 {
+  font-weight: 400;
+  color: #4F5D75;
+  width: 100%;
+}
+.f-chat-label .f-chat-info .f-chat-time-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #F2A985;
+  padding: 4px;
+}
+.f-chat-label .f-chat-info .f-chat-time-circle h5 {
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+}
+.f-chat-label .f-chat-info .f-chat-title {
+  width: 215px;
+  text-overflow: ellipsis;
+}
+
+.f-chat-search {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+.f-chat-search input {
+  width: 100%;
+  height: 30px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  padding: 0 0 0 5px;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+
+.f-chat-box {
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.f-empty-box i {
   color: #2D3142;
 }
-.f-chat-label .f-cover h3 {
-  font-size: 13px;
+
+.f-chat-header .f-cover-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.f-chat-header h5 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+.f-chat-header h5 span {
+  font-weight: 500;
+}
+
+.f-msg-content {
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+.f-msg-content .f-msg-cover {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #EF8354;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+}
+.f-msg-content .f-msg {
+  width: 65%;
+}
+.f-msg-content .f-msg h5, .f-msg-content .f-msg h6 {
+  padding: 0;
+  margin: 0;
+}
+.f-msg-content .f-msg h6 {
+  font-weight: 400;
+  font-size: 10px;
+  color: #4F5D75;
+  margin-bottom: 2px;
+}
+.f-msg-content .f-msg h5 {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.f-msg-input {
+  width: 100%;
+  background-color: #e8e8e8;
+  border-radius: 3px;
+  padding: 5px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+.f-msg-input textarea {
+  border: 1px solid transparent;
+  background-color: #e8e8e8;
+  color: #4F5D75;
+  padding: 0;
+  border-radius: 3px;
+  width: 95%;
+  resize: none;
+}
+.f-msg-input textarea:focus {
+  outline: none !important;
+}
+.f-msg-input textarea::-webkit-search-cancel-button,
+.f-msg-input textarea::-webkit-search-decoration,
+.f-msg-input textarea::-webkit-search-results-button,
+.f-msg-input textarea::-webkit-search-results-decoration {
+  display: none;
+  outline: none !important;
+}
+.f-msg-input textarea::-ms-clear, .f-msg-input textarea::-ms-reveal {
+  display: none;
+  max-width: 0;
+  outline: none !important;
+}
+.f-msg-input button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0;
+}
+.f-msg-input button i {
+  color: #4F5D75;
+  font-size: 12px;
 }
 
 /*# sourceMappingURL=main.css.map */

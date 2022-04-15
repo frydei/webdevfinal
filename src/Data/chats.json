@@ -34,10 +34,10 @@
             "event_photo": "/images/park.jpeg",
             "location": "Boston Common",
             "date": {
-                "day": 5,
+                "day": "5th",
                 "month": "May"
             },
-            "time": "3 PM",
+            "time": "3PM",
             "cost": 35,
             "hosts": [
                 {
@@ -50,7 +50,9 @@
         },
         "messages": [
             {
+                "_id": "1111",
                 "sender": "Frydei",
+                "cover": "Fr",
                 "message": "You accepted Susan's request!"
             }
         ]
@@ -116,7 +118,7 @@
         ],
         "recent_activity": {
             "hh": 11,
-            "mm": 2,
+            "mm": 20,
             "time": "PM"
         },
         "new_messages": 0,
@@ -126,10 +128,10 @@
             "event_photo": "/images/jnk.jpeg",
             "location": "Boston University",
             "date": {
-                "day": 12,
+                "day": "12th",
                 "month": "April"
             },
-            "time": "7 PM",
+            "time": "7PM",
             "cost": 55,
             "hosts": [
                 {
@@ -147,26 +149,31 @@
         },
         "messages": [
             {
+                "_id": "1111",
                 "sender": "Mary Anne",
                 "cover": "Ma",
                 "message": "Can't wait for the concert."
             },
             {
+                "_id": "1111",
                 "sender": "Frydei",
                 "cover": "Fr",
                 "message": "Your request for ODIE - Little Lies was accepted!"
             },
             {
+                "_id": "1111",
                 "sender": "Daniel Peterson",
                 "cover": "Dp",
                 "message": "Super excited you can join us for this event!"
             },
             {
+                "_id": "1111",
                 "sender": "Susan May",
                 "cover": "Sm",
                 "message": "Yes, totally excited! Can’t wait to see you there. Meeting spot is near the T on State Street."
             },
             {
+                "_id": "000001",
                 "sender": "Millow Green",
                 "cover": "Mg",
                 "message": "Super excited as well! Thanks for putting this together."
@@ -204,19 +211,45 @@
         "new_messages": 2,
         "last_message": "Mee too!",
         "event": {
+            "title": "Outdoor Concert",
+            "event_photo": "/images/park.jpeg",
+            "location": "Boston Common",
+            "date": {
+                "day": "5th",
+                "month": "May"
+            },
+            "time": "3PM",
+            "cost": 35,
+            "hosts": [
+                {
+                    "first_name": "Daine",
+                    "last_name": "Peterson",
+                    "profile_picture": "bw.jpeg"
+                }
+            ],
+            "attendees": 4
         },
         "messages": [
             {
+                "_id": "1111",
                 "sender": "Frydei",
                 "cover": "Fr",
                 "message": "You accepted Mary's request!"
             },
             {
+                "_id": "000001",
+                "sender": "Millow Green",
+                "cover": "Mg",
+                "message": "wertyui too!"
+            },
+            {
+                "_id": "1111",
                 "sender": "Mary Anne",
                 "cover": "Ma",
                 "message": "I can't wait!"
             },
             {
+                "_id": "000001",
                 "sender": "Millow Green",
                 "cover": "Mg",
                 "message": "Mee too!"

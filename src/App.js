@@ -36,6 +36,7 @@ import Frydei from "./Components/Frydei";
 import MenuDropdownMenu from "./Components/Menu/MenuDropdownMenu";
 import MenuHeader from "./Components/MenuHeader";
 import ComplaintsScreen from "./Screens/ComplaintsScreen";
+import ChatScreen from "./Screens/ChatScreen";
 
 const search_event = {
     "title": "Amine - The Best Tour",
@@ -98,6 +99,10 @@ function App() {
                                exact={true}
                                element={<ComplaintsScreen user={user}
                                                           event={event}
+                               />}/>
+                        <Route path="chat"
+                               exact={true}
+                               element={<ChatScreen user={user}
                                />}/>
                         <Route path="detail"
                                exact={true}
