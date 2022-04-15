@@ -67,7 +67,7 @@ function App() {
                     <Route path="/frydei/search"
                            exact={true}
                            element={<SearchResultsScreen logged_in={true}/>}/>
-                    <Route path="/frydei/privacy-policy"
+                    <Route path="/frydei/privacy"
                            exact={true}
                            element={<PrivacyPolicyScreen/>}/>
                     <Route path="/frydei/explore"
