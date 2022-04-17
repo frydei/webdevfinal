@@ -78,7 +78,7 @@ function App() {
                                element={<SignUpScreen />}/>
                         <Route path="profile"
                                exact={true}
-                               element={<ProfileScreen/>}/>
+                               element={<ProfileScreen user={user}/>}/>
                         <Route path="search"
                                exact={true}
                                element={<SearchResultsScreen logged_in={true}/>}/>
