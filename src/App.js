@@ -1,39 +1,21 @@
 //Libraries
 import './style/css/main.css';
 import "./Libraries/bootstrap/css/bootstrap.min.css";
-import tags from "./Data/tags.json";
-import {BrowserRouter as Router, Routes, Route, Outlet} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
-import HeaderGuest from "./Components/HeaderGuest";
-import HeaderUser from "./Components/HeaderUser";
-import Menu from "./Components/Menu/Menu";
-import UserIcon from "./Components/UserIcon";
-import LargeHeaderGuest from "./Components/LargeHeaderGuest";
-import LargeHeaderUser from "./Components/LargeHeaderUser";
-import Tag from "./Components/Tag";
-import SearchEvent from "./Components/SearchEvent";
-import ExploreEvent from "./Components/ExploreEvent";
 import event from "./Data/event.json";
-import EventDetailGuest from "./Components/EventDetailGuest";
-import EventDetailUser from "./Components/EventDetailUser";
-import PastEventDetail from "./Components/PastEventDetail";
-import CreateEvent from "./Components/CreateEvent";
 import user from "./Data/user.json";
 import SearchResultsScreen from "./Screens/SearchResultsScreen";
 import ExploreEventsScreen from "./Screens/ExploreEventsScreen";
 import CreateEventScreen from "./Screens/CreateEventScreen";
 import ViewEventScreen from "./Screens/ViewEventScreen";
-import RequestEvent from "./Components/RequestEvent";
 import RequestScreen from "./Screens/RequestsScreen";
-import UserDropdownMenu from "./Components/Menu/UserDropdownMenu";
-import Footer from "./Components/Footer";
 import HomePageScreen from "./Homepage/HomePageScreen";
 import SignInScreen from "./Sign-in-sign-up/SignInScreen";
 import SignUpScreen from "./Sign-in-sign-up/SignUpScreen";
 import PrivacyPolicyScreen from "./PrivacyPolicy/PrivacyPolicyScreen";
 import ProfileScreen from "./Profile/ProfileScreen";
 import Frydei from "./Components/Frydei";
-import MenuDropdownMenu from "./Components/Menu/MenuDropdownMenu";
 import MenuHeader from "./Components/Menu/MenuHeader";
 import ComplaintsScreen from "./Screens/ComplaintsScreen";
 import ChatScreen from "./Screens/ChatScreen";
@@ -79,7 +61,7 @@ function App() {
                                element={<SignUpScreen />}/>
                         <Route path="profile"
                                exact={true}
-                               element={<ProfileScreen/>}/>
+                               element={<ProfileScreen user={user}/>}/>
                         <Route path="search"
                                exact={true}
                                element={<SearchResultsScreen logged_in={true}/>}/>
@@ -88,8 +70,7 @@ function App() {
                                element={<PrivacyPolicyScreen/>}/>
                         <Route path="explore"
                                exact={true}
-                               element={<ExploreEventsScreen logged_in={true}
-                               />}/>
+                               element={<ExploreEventsScreen logged_in={true}/>}/>
                         <Route path="requests"
                                exact={true}
                                element={<RequestScreen logged_in={true}/>}/>
@@ -127,25 +108,5 @@ function App() {
 }
 
 export default App;
-
-{/*
-              <SearchResultsScreen logged_in={true}/>
-
-                    <HeaderGuest/>
-            <HeaderUser/>
-            <LargeHeaderGuest/>
-            <LargeHeaderUser/>
-            <UserIcon user={search_event.hosts[0]}/>
-            <Menu/>
-            <Tag tag={tag}/>
-            <SearchEvent event={search_event}/>
-            <ExploreEvent event={search_event}/>
-            <EventDetailGuest event={event}/>
-            <EventDetailUser event={event}/>
-            <PastEventDetail event={event}/>
-            <CreateEvent user={user}/>
-
-            </div>*/
-}
 
 
