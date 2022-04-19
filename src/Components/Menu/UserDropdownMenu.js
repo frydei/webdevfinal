@@ -14,9 +14,9 @@ const UserDropdownMenu = () => {
         more = [...more_menu, admin];
     }
 
-    const [dropdown, setDropdown] = useState(true);
+    const [dropdown, setDropdown] = useState(false);
     return (
-        <Dropdown onMouseLeave={() => setDropdown(true)}
+        <Dropdown onMouseLeave={() => setDropdown(false)}
                   onMouseEnter={() => setDropdown(true)}
                   show={dropdown}
                   className="f-dropdown-title bg-transparent border-0 me-3"
