@@ -120,7 +120,7 @@
   "messages": 3,
   "requests": 4,
   "connections": 132,
-  "admin_access": true
+  "admin_access": false
 }
 
 

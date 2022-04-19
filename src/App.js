@@ -47,7 +47,7 @@ function App() {
                     <Route path=""
                            element={<MenuHeader user={user}/>}/>
                     <Route path="frydei"
-                           element={<Frydei logged_in={true}
+                           element={<Frydei logged_in={false}
                                             user={user}/>}>
                         <Route index element={<HomePageScreen/>}/>
                         <Route path="home"
