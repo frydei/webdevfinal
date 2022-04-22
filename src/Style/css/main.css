@@ -1,0 +1,828 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+body, .container-fluid {
+  background-color: #F4F4F4;
+  font-family: "Fredoka", sans-serif;
+}
+
+button:focus, button:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.main {
+  background: #EF8354;
+}
+
+.f-button {
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 34px;
+  border: 2px solid #2D3142;
+  border-radius: 25px;
+  background-color: transparent;
+  color: #2D3142;
+  font-family: "Fredoka", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.f-orange, .f-tag {
+  background-color: #EF8354;
+  color: #f7f7f7;
+  border: 2px solid #EF8354;
+}
+
+.f-orange-font {
+  color: #EF8354;
+}
+
+.f-tag {
+  margin-right: 5px;
+  border-radius: 25px;
+  background-color: transparent;
+  font-family: "Fredoka", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2D3142;
+  border: 2px solid #4F5D75;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.f-view {
+  font-size: 13px;
+  background-color: #f7f7f7;
+  color: #2D3142;
+  border: 2px solid #f7f7f7;
+  width: 50px;
+  height: 25px;
+}
+
+.f-view {
+  width: 70px;
+}
+
+.f-title {
+  font-family: "Fredoka One", cursive;
+  font-size: 48px;
+  color: #EF8354;
+}
+
+.f-title-small {
+  font-family: "Fredoka One", cursive;
+  font-size: 29px;
+  color: #EF8354;
+}
+
+.f-user-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.f-user-icon-large {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.f-user-icon-small {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.f-user-icon-smallest {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.f-header-username {
+  font-family: "Fredoka", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2D3142;
+  text-align: left;
+}
+
+.f-menu-list {
+  width: 120px;
+}
+
+.f-section-header {
+  font-family: "Fredoka", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: right;
+}
+
+.f-font-small, .f-menu-item-title {
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: right;
+}
+
+.f-event {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1607843137);
+}
+.f-event .f-event-header {
+  width: 100%;
+}
+.f-event .f-event-header i {
+  font-size: 14px;
+  color: #2D3142;
+}
+.f-event .f-event-img-container .f-event-img {
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.f-search {
+  width: 220px;
+  height: 250px;
+}
+.f-search .f-event-img-container .f-event-img {
+  width: 190px;
+  height: 145px;
+}
+
+.f-home {
+  width: 220px;
+  height: 250px;
+}
+.f-home .f-event-img, .f-home .f-link {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.f-home h3 {
+  margin-bottom: 2px;
+}
+.f-home i {
+  color: #f7f7f7;
+}
+
+.f-request-box {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+.f-explore {
+  width: 580px;
+  overflow: auto;
+}
+.f-explore .f-event-img-container .f-event-img {
+  width: 530px;
+  height: 250px;
+}
+
+.f-event-detail {
+  width: 100%;
+  font-family: "Fredoka", sans-serif;
+}
+.f-event-detail .f-event-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2D3142;
+}
+.f-event-detail .f-event-detail-section {
+  color: #4F5D75;
+  width: 100%;
+}
+.f-event-detail .f-event-detail-section .f-event-location, .f-event-detail .f-event-detail-section .f-event-attendees, .f-event-detail .f-event-detail-section .f-event-time, .f-event-detail .f-event-detail-section .f-event-cost {
+  font-size: 13px;
+  font-weight: 400;
+}
+.f-event-detail .f-event-detail-section .f-event-location i, .f-event-detail .f-event-detail-section .f-event-attendees i, .f-event-detail .f-event-detail-section .f-event-time i, .f-event-detail .f-event-detail-section .f-event-cost i {
+  font-size: 11px;
+}
+.f-event-detail .f-event-detail-section .f-medium {
+  font-size: 14px;
+}
+.f-event-detail .f-event-detail-section .f-medium-title {
+  font-size: 15px;
+}
+
+.f-icon-small {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.f-event-detail-content {
+  font-family: "Fredoka", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #4F5D75;
+}
+.f-event-detail-content .f-event-detail-img .f-user-icon-small {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.f-event-detail-content .f-event-detail-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.f-event-detail-content .f-event-detail-section-header {
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2D3142;
+  text-align: left;
+}
+.f-event-detail-content .f-event-detail .f-event-title-box {
+  background-color: white;
+  border-radius: 15px;
+}
+.f-event-detail-content .f-event-detail .f-event-title-box .f-event-title {
+  font-size: 28px;
+  font-weight: 500;
+  color: #2D3142;
+}
+.f-event-detail-content .f-event-detail .f-event-title-box .f-vent-desc {
+  color: #2D3142;
+}
+.f-event-detail-content .f-event-detail .f-event-detail-box {
+  background-color: white;
+  border-radius: 15px;
+}
+.f-event-detail-content .f-event-detail .f-event-detail-box span {
+  margin: 0;
+}
+.f-event-detail-content .f-event-detail .f-event-detail-box .f-event-location, .f-event-detail-content .f-event-detail .f-event-detail-box .f-event-cost, .f-event-detail-content .f-event-detail .f-event-detail-box .f-event-time, .f-event-detail-content .f-event-detail .f-event-detail-box .f-event-attendees, .f-event-detail-content .f-event-detail .f-event-detail-box .f-event-hosts {
+  margin-bottom: 15px;
+}
+
+.f-form-content-sign {
+  width: 280px;
+  border-radius: 3px;
+  padding: 0;
+}
+.f-form-content-sign .f-bg {
+  height: 31px;
+}
+.f-form-content-sign input {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #4F5D75;
+  opacity: 0.9;
+  padding: 0;
+  font-family: "Fredoka", sans-serif;
+  font-size: 14px;
+}
+
+.f-icon-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0;
+}
+.f-icon-button .f-dark {
+  color: #2D3142;
+}
+
+.f-form .f-bg {
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.f-form .f-form-content input, .f-form .f-form-content textarea, .f-form .f-form-content select {
+  background-color: transparent;
+  border: 1px solid #616E83;
+  border-radius: 5px;
+  color: #4F5D75;
+  opacity: 0.9;
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  resize: none;
+}
+.f-form .f-form-content .f-disabled {
+  background-color: #DBDBDB;
+}
+.f-form .f-form-content input {
+  height: 25px;
+  padding: 6px;
+}
+.f-form .f-form-content select {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 6px;
+}
+.f-form .f-form-content textarea, .f-form .f-form-content #event-title {
+  border-color: transparent;
+  padding: 0;
+}
+.f-form .f-form-content #event-title {
+  height: 35px;
+  font-size: 28px;
+  font-weight: 500;
+  color: #2D3142;
+  opacity: 1;
+}
+.f-form .f-form-content .f-image-upload {
+  width: 100%;
+  height: 750px;
+  background-color: #DBDBDB;
+  border-radius: 15px;
+}
+.f-form .f-form-content .f-image-upload label {
+  width: 140px;
+  height: 55px;
+  border-radius: 15px;
+  background-color: white;
+  color: #767676;
+  font-family: "Fredoka", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+.f-form .f-form-content .f-image-upload label i {
+  color: #DBDBDB;
+  font-size: 14px;
+}
+.f-form .f-form-content small {
+  margin: 0;
+  font-family: "Fredoka", sans-serif;
+  font-size: 8px;
+}
+.f-form .f-form-content label {
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+.f-form .f-form-content .f-form-detail button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #4F5D75;
+  background-color: transparent;
+}
+.f-form .f-form-content .f-form-detail button i {
+  color: #4F5D75;
+}
+.f-form .f-form-content .f-form-group {
+  border: 1px solid transparent;
+}
+
+.f-search-bar-home {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+}
+.f-search-bar-home input {
+  font-family: "Fredoka", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #2D3142;
+  padding: 0;
+}
+.f-search-bar-home input:focus {
+  background-color: #ffffff;
+  outline: none !important;
+  padding: 0;
+}
+.f-search-bar-home input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #2D3142;
+}
+.f-search-bar-home input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #2D3142;
+}
+.f-search-bar-home input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #2D3142;
+}
+.f-search-bar-home input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #2D3142;
+}
+.f-search-bar-home input::-webkit-search-cancel-button,
+.f-search-bar-home input::-webkit-search-decoration,
+.f-search-bar-home input::-webkit-search-results-button,
+.f-search-bar-home input::-webkit-search-results-decoration {
+  display: none;
+  outline: none !important;
+}
+.f-search-bar-home input::-ms-clear, .f-search-bar-home input::-ms-reveal {
+  display: none;
+  max-width: 0;
+  outline: none !important;
+}
+.f-search-bar-home i {
+  font-size: 18px;
+}
+
+.f-search-bar {
+  border-bottom: 2px solid #4F5D75;
+}
+.f-search-bar input {
+  font-family: "Fredoka", sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: #2D3142;
+  background-color: transparent;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.f-search-bar input:focus {
+  background-color: transparent;
+  outline: none !important;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.f-search-bar input::-webkit-search-cancel-button,
+.f-search-bar input::-webkit-search-decoration,
+.f-search-bar input::-webkit-search-results-button,
+.f-search-bar input::-webkit-search-results-decoration {
+  display: none;
+}
+.f-search-bar input::-ms-clear, .f-search-bar input::-ms-reveal {
+  display: none;
+  max-width: 0;
+}
+.f-search-bar i {
+  font-size: 18px;
+}
+
+.f-small-regular {
+  font-family: "Fredoka", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4F5D75;
+}
+
+.f-medium-medium {
+  font-family: "Fredoka", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2D3142;
+}
+
+.f-medium-regular {
+  font-family: "Fredoka", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #2D3142;
+}
+
+.btn.primary:active, .btn.primary.active {
+  background-color: red;
+}
+
+.f-dropdown-title {
+  width: 130px;
+}
+.f-dropdown-title .f-menu-link {
+  text-decoration: none;
+}
+.f-dropdown-title .f-dropdown-menu:focus, .f-dropdown-title .f-dropdown-menu:active {
+  outline: none !important;
+  box-shadow: none;
+}
+.f-dropdown-title .f-dropdown-menu .f-menu-item {
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+.f-dropdown-title .f-dropdown-menu .f-menu-item .f-icon {
+  font-size: 12px;
+  color: #2D3142;
+}
+.f-dropdown-title .f-dropdown-menu .f-divider {
+  color: #4F5D75;
+}
+.f-dropdown-title .f-dropdown-toggle::after {
+  content: none;
+  display: none !important;
+}
+
+.f-social-icons .f-social-icon {
+  padding-right: 7px;
+  color: #2D3142;
+  font-size: 18px;
+}
+
+.f-footer {
+  background-color: #e8e8e8;
+  padding: 25px;
+}
+
+.f-form-header {
+  font-family: "Fredoka", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.f-link {
+  text-decoration: none;
+  color: inherit;
+}
+.f-link:focus, .f-link::after, .f-link:hover {
+  color: inherit;
+}
+
+.f-icon {
+  font-size: 16px;
+  color: #2D3142;
+}
+
+.f-chat-label {
+  width: 100%;
+  height: 70px;
+  border-radius: 3px;
+  padding: 8px;
+  text-align: left;
+  border: 1px solid transparent;
+  font-family: "Fredoka", sans-serif;
+  color: #2D3142;
+}
+.f-chat-label .f-chat-cover, .f-chat-label .f-cover-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.f-chat-label .f-cover-img {
+  object-fit: cover;
+}
+.f-chat-label .f-chat-cover {
+  border: 2px solid #2D3142;
+  color: #2D3142;
+}
+.f-chat-label .f-chat-cover h3 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+.f-chat-label .f-chat-info {
+  width: 100%;
+  padding-left: 10px;
+}
+.f-chat-label .f-chat-info h4, .f-chat-label .f-chat-info h5, .f-chat-label .f-chat-info span {
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  text-overflow: ellipsis;
+  max-width: 54ch;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.f-chat-label .f-chat-info h4 {
+  margin-bottom: 2px;
+}
+.f-chat-label .f-chat-info h5 {
+  font-weight: 400;
+  color: #4F5D75;
+  width: 100%;
+}
+.f-chat-label .f-chat-info .f-chat-time-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #F2A985;
+  padding: 4px;
+}
+.f-chat-label .f-chat-info .f-chat-time-circle h5 {
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+}
+.f-chat-label .f-chat-info .f-chat-title {
+  width: 215px;
+  text-overflow: ellipsis;
+}
+
+.f-chat-search {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+.f-chat-search input {
+  width: 100%;
+  height: 30px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  padding: 0 0 0 5px;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+
+.f-chat-box {
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.f-empty-box i {
+  color: #2D3142;
+}
+
+.f-chat-header .f-cover-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.f-chat-header h5 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+.f-chat-header h5 span {
+  font-weight: 500;
+}
+
+.f-msg-content {
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+.f-msg-content .f-msg-cover {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #EF8354;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+}
+.f-msg-content .f-msg {
+  width: 65%;
+}
+.f-msg-content .f-msg h5, .f-msg-content .f-msg h6 {
+  padding: 0;
+  margin: 0;
+}
+.f-msg-content .f-msg h6 {
+  font-weight: 400;
+  font-size: 10px;
+  color: #4F5D75;
+  margin-bottom: 2px;
+}
+.f-msg-content .f-msg h5 {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.f-msg-input {
+  width: 100%;
+  background-color: #e8e8e8;
+  border-radius: 3px;
+  padding: 5px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+.f-msg-input textarea {
+  border: 1px solid transparent;
+  background-color: #e8e8e8;
+  color: #4F5D75;
+  padding: 0;
+  border-radius: 3px;
+  width: 95%;
+  resize: none;
+}
+.f-msg-input textarea:focus {
+  outline: none !important;
+}
+.f-msg-input textarea::-webkit-search-cancel-button,
+.f-msg-input textarea::-webkit-search-decoration,
+.f-msg-input textarea::-webkit-search-results-button,
+.f-msg-input textarea::-webkit-search-results-decoration {
+  display: none;
+  outline: none !important;
+}
+.f-msg-input textarea::-ms-clear, .f-msg-input textarea::-ms-reveal {
+  display: none;
+  max-width: 0;
+  outline: none !important;
+}
+.f-msg-input button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0;
+}
+.f-msg-input button i {
+  color: #4F5D75;
+  font-size: 12px;
+}
+
+.f-number-card {
+  width: 23%;
+  height: 90px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+.f-number-card h6 {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}
+.f-number-card .f-num-card {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.f-profile .f-profile-name {
+  font-size: 24px;
+  font-weight: 500;
+}
+.f-profile .f-profile-location h4, .f-profile .f-profile-bio h4 {
+  font-size: 15px;
+  font-weight: 400;
+}
+.f-profile .f-profile-tabs .f-link {
+  text-decoration: none;
+  color: inherit;
+  padding: 0;
+}
+.f-profile .f-profile-tabs .f-link:focus, .f-profile .f-profile-tabs .f-link::after, .f-profile .f-profile-tabs .f-link:hover, .f-profile .f-profile-tabs .f-link:active, .f-profile .f-profile-tabs .f-link:current {
+  color: inherit;
+}
+.f-profile .f-nav {
+  width: 25%;
+}
+.f-profile .f-nav:hover, .f-profile .selected {
+  font-weight: 500;
+}
+
+.f-dash .f-dash-box {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 2%;
+}
+.f-dash .f-dash-box .f-search, .f-dash .f-dash-box .f-event {
+  width: 250px;
+  height: 270px;
+}
+.f-dash .f-dash-box .f-search .f-event-img, .f-dash .f-dash-box .f-event .f-event-img {
+  width: 225px;
+  height: 165px;
+}
+.f-dash .f-dash-box .f-search h3, .f-dash .f-dash-box .f-event h3 {
+  margin: 0;
+}
+.f-dash .f-dash-box h3 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.f-complaint-card {
+  background-color: #f7f7f7;
+  padding: 4%;
+  border-radius: 15px;
+}
+.f-complaint-card h3, .f-complaint-card h4, .f-complaint-card span {
+  margin: 0;
+}
+.f-complaint-card span, .f-complaint-card h4, .f-complaint-card p {
+  font-size: 13px;
+  font-weight: 400;
+}
+.f-complaint-card span span, .f-complaint-card h4 span, .f-complaint-card p span {
+  font-weight: 500;
+}
+.f-complaint-card p {
+  line-height: 15px;
+  margin-top: 10px;
+}
+.f-complaint-card h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.f-complaint-card button {
+  width: 50%;
+}
+
+/*# sourceMappingURL=main.css.map */

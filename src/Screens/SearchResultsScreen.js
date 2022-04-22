@@ -1,17 +1,13 @@
 import React from "react";
 import events from "../Data/events.json";
 import tags from "../Data/tags.json";
-import LargeHeaderUser from "../Components/LargeHeaderUser";
-import user from "../Data/user.json";
-import LargeHeaderGuest from "../Components/LargeHeaderGuest";
 import Tag from "../Components/Tag";
 import SearchEvent from "../Components/SearchEvent";
-import Footer from "../Homepage/Footer";
 
 const SearchResultsScreen = (param) => {
     return (
         <>
-            <div style={{"paddingLeft": "350px", "paddingRight": "350px", "paddingTop": "25px"}}>
+            <div style={{"paddingLeft": "175px", "paddingRight": "175px", "paddingTop": "25px"}}>
 
                 <form action="">
                     <div className="form-group">
@@ -23,14 +19,14 @@ const SearchResultsScreen = (param) => {
 
                     </div>
                 </form>
-                <div className="d-flex justify-content-between mt-3 mb-1 ms-1">
+                <div className="d-flex justify-content-between flex-wrap align-items-center mt-3 mb-1 ms-1" style={{"width": "100%"}}>
                     {
                         tags.map(tag => {
                             return <Tag tag={tag}/>
                         })
                     }
                 </div>
-                <div className="d-flex flex-wrap justify-content-start">
+                <div className="d-flex flex-wrap justify-content-between">
                     {
                         events.map(event => {
                             return <SearchEvent event={event}/>

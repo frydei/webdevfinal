@@ -1,14 +1,14 @@
 import React from "react";
 
-const Tag = (param) => {
+const Tag = ({tag}) => {
     let bgcolor, fcolor;
-    if (param.tag.color === "grey") {
+    if (tag.color === "grey") {
         bgcolor = "#4F5D75"
         fcolor = "#f7f7f7";
-    } else if (param.tag.color === "orange") {
+    } else if (tag.color === "orange") {
         bgcolor = "#EF8354"
         fcolor = "#f7f7f7";
-    } else if (param.tag.color === "white") {
+    } else if (tag.color === "white") {
         bgcolor = "#F7F7F7"
         fcolor = "#2D3142";
     }  else {
@@ -16,7 +16,8 @@ const Tag = (param) => {
         fcolor = "#2D3142";
     }
     return(
-        <button className="f-tag" style={{"backgroundColor": `${bgcolor}`, "color": `${fcolor}`, "border": "1px solid transparent"}}>{param.tag.name}</button>
+        <button className="f-tag d-flex align-items-center justify-content-center mb-2" style={{"backgroundColor": `${bgcolor}`, "color": `${fcolor}`, "border": "1px" +
+                " solid transparent"}}>{tag.name}</button>
     );
 }
 

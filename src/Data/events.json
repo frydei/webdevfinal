@@ -1,207 +1,509 @@
 [
-  {
-    "title": "Amine - The Best Tour",
-    "event_photo": "/images/four.jpeg",
-    "location": "Boston TD Garden",
-    "date": {
-      "day": 5,
-      "month": "April"
+    {
+        "event_id": 1111,
+        "title": "Amine - The Best Tour",
+        "event_photo": "four.jpeg",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
+        "location": "Boston TD Garden",
+        "date": {
+            "day": 5,
+            "month": "August",
+            "year": 2022,
+            "hour": 7,
+            "minute": 0,
+            "time": "PM"
+        },
+        "cost": 31,
+        "hosts": [
+            {
+                "first_name": "Susan",
+                "last_name": "May",
+                "profile_picture": "anga.jpeg"
+            }
+        ],
+        "spots": 10,
+        "attendees": [
+            "bo.jpeg",
+            "green.jpeg",
+            "ehe.jpeg",
+            "aka.jpeg"
+        ],
+        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
+        "tags": [
+            {
+                "name": "Concert",
+                "color": "grey"
+            },
+            {
+                "name": "Music",
+                "color": "grey"
+            },
+            {
+                "name": "Multiple",
+                "color": "orange"
+            },
+            {
+                "name": "Indie",
+                "color": "grey"
+            }
+        ]
     },
-    "time": "6 PM",
-    "cost": 31,
-    "hosts": [
-      {
-        "first_name": "Julie",
-        "last_name": "Harris",
-        "profile_picture": "anga.jpeg"
-      }
-    ],
-    "attendees": 5
-  },
-  {
-    "title": "ODIE - Little Lies",
-    "event_photo": "/images/jnk.jpeg",
-    "location": "Boston University",
-    "date": {
-      "day": 12,
-      "month": "April"
+    {
+        "event_id": 1112,
+        "title": "ODIE - Little Lies",
+        "event_photo": "jnk.jpeg",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
+        "location": "Boston University",
+        "date": {
+            "day": 5,
+            "month": "August",
+            "year":  2022,
+            "hour": 7,
+            "minute": 0,
+            "time": "PM"
+        },
+        "cost": 55,
+        "hosts": [
+            {
+                "first_name": "Susan",
+                "last_name": "May",
+                "profile_picture": "jo.jpeg"
+            },
+            {
+                "first_name": "Mary",
+                "last_name": "Anne",
+                "profile_picture": "mo.jpeg"
+            }
+        ],
+        "spots": 10,
+        "attendees": [
+            "bo.jpeg",
+            "green.jpeg",
+            "ehe.jpeg",
+            "aka.jpeg"
+        ],
+        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
+        "tags": [
+            {
+                "name": "Concert",
+                "color": "grey"
+            },
+            {
+                "name": "Music",
+                "color": "grey"
+            },
+            {
+                "name": "Multiple",
+                "color": "orange"
+            },
+            {
+                "name": "Indie",
+                "color": "grey"
+            }
+        ]
     },
-    "time": "7 PM",
-    "cost": 55,
-    "hosts": [
-      {
-        "first_name": "Ryan",
-        "last_name": "Bell",
-        "profile_picture": "jo.jpeg"
-      },
-      {
-        "first_name": "Sammy",
-        "last_name": "Heim",
-        "profile_picture": "mo.jpeg"
-      }
-    ],
-    "attendees": 10
-  },
-  {
-    "title": "Outdoor Concert",
-    "event_photo": "/images/park.jpeg",
-    "location": "Boston Common",
-    "date": {
-      "day": 5,
-      "month": "May"
+    {
+        "event_id": 1113,
+        "title": "Outdoor Concert",
+        "event_photo": "park.jpeg",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
+        "location": "Boston Common",
+        "date": {
+            "day": 5,
+            "month": "August",
+            "year":  2022,
+            "hour": 7,
+            "minute": 0,
+            "time": "PM"
+        },
+        "time": "3 PM",
+        "cost": 35,
+        "hosts": [
+            {
+                "first_name": "Daine",
+                "last_name": "Peterson",
+                "profile_picture": "bw.jpeg"
+            }
+        ],
+        "spots": 10,
+        "attendees": [
+            "bo.jpeg",
+            "green.jpeg",
+            "ehe.jpeg",
+            "aka.jpeg"
+        ],
+        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
+        "tags": [
+            {
+                "name": "Concert",
+                "color": "grey"
+            },
+            {
+                "name": "Music",
+                "color": "grey"
+            },
+            {
+                "name": "Multiple",
+                "color": "orange"
+            },
+            {
+                "name": "Indie",
+                "color": "grey"
+            }
+        ]
     },
-    "time": "3 PM",
-    "cost": 35,
-    "hosts": [
-      {
-        "first_name": "Daine",
-        "last_name": "Peterson",
-        "profile_picture": "bw.jpeg"
-      }
-    ],
-    "attendees": 4
-  },
-  {
-    "title": "Lucky Daye - Lucky",
-    "event_photo": "/images/eee.jpeg",
-    "location": "Blue House",
-    "date": {
-      "day": 7,
-      "month": "May"
+    {
+        "event_id": 1114,
+        "title": "Lucky Daye - Lucky",
+        "event_photo": "eee.jpeg",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
+        "location": "Blue House",
+        "date": {
+            "day": 5,
+            "month": "August",
+            "year":  2022,
+            "hour": 7,
+            "minute": 0,
+            "time": "PM"
+        },
+        "cost": 65,
+        "hosts": [
+            {
+                "first_name": "Stephanie",
+                "last_name": "Robin",
+                "profile_picture": "scar.jpeg"
+            }
+        ],
+        "spots": 10,
+        "attendees": [
+            "bo.jpeg",
+            "green.jpeg",
+            "ehe.jpeg",
+            "aka.jpeg"
+        ],
+        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
+        "tags": [
+            {
+                "name": "Concert",
+                "color": "grey"
+            },
+            {
+                "name": "Music",
+                "color": "grey"
+            },
+            {
+                "name": "Multiple",
+                "color": "orange"
+            },
+            {
+                "name": "Indie",
+                "color": "grey"
+            }
+        ]
     },
-    "time": "7 PM",
-    "cost": 65,
-    "hosts": [
-      {
-        "first_name": "Stephanie",
-        "last_name": "Robin",
-        "profile_picture": "scar.jpeg"
-      }
-    ],
-    "attendees": 3
-  },
-  {
-    "title": "Stand Up",
-    "event_photo": "/images/openm.jpeg",
-    "location": "Jazz Corner",
-    "date": {
-      "day": 15,
-      "month": "June"
+    {
+        "event_id": 1115,
+        "title": "Stand Up",
+        "event_photo": "openm.jpeg",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
+        "location": "Jazz Corner",
+        "date": {
+            "day": 5,
+            "month": "August",
+            "year":  2022,
+            "hour": 7,
+            "minute": 0,
+            "time": "PM"
+        },
+        "cost": 25,
+        "hosts": [
+            {
+                "first_name": "Mar",
+                "last_name": "Flores",
+                "profile_picture": "green.jpeg"
+            }
+        ],
+        "spots": 10,
+        "attendees": [
+            "bo.jpeg",
+            "green.jpeg",
+            "ehe.jpeg",
+            "aka.jpeg"
+        ],
+        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
+        "tags": [
+            {
+                "name": "Concert",
+                "color": "grey"
+            },
+            {
+                "name": "Music",
+                "color": "grey"
+            },
+            {
+                "name": "Multiple",
+                "color": "orange"
+            },
+            {
+                "name": "Indie",
+                "color": "grey"
+            }
+        ]
     },
-    "time": "6 PM",
-    "cost": 25,
-    "hosts": [
-      {
-        "first_name": "Mar",
-        "last_name": "Flores",
-        "profile_picture": "green.jpeg"
-      }
-    ],
-    "attendees": 5
-  },
-  {
-    "title": "ODIE - Little Lies",
-    "event_photo": "/images/odie.jpeg",
-    "location": "Boston University",
-    "date": {
-      "day": 25,
-      "month": "June"
+    {
+        "event_id": 1116,
+        "title": "ODIE - Little Lies",
+        "event_photo": "odie.jpeg",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
+        "location": "Boston University",
+        "date": {
+            "day": 5,
+            "month": "August",
+            "year":  2022,
+            "hour": 7,
+            "minute": 0,
+            "time": "PM"
+        },
+        "cost": 80,
+        "hosts": [
+            {
+                "first_name": "Kate",
+                "last_name": "Long",
+                "profile_picture": "aka.jpeg"
+            },
+            {
+                "first_name": "Jamie",
+                "last_name": "Pereira",
+                "profile_picture": "kim.jpeg"
+            }
+        ],
+        "spots": 10,
+        "attendees": [
+            "bo.jpeg",
+            "green.jpeg",
+            "ehe.jpeg",
+            "aka.jpeg"
+        ],
+        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
+        "tags": [
+            {
+                "name": "Concert",
+                "color": "grey"
+            },
+            {
+                "name": "Music",
+                "color": "grey"
+            },
+            {
+                "name": "Multiple",
+                "color": "orange"
+            },
+            {
+                "name": "Indie",
+                "color": "grey"
+            }
+        ]
     },
-    "time": "7 PM",
-    "cost": 80,
-    "hosts": [
-      {
-        "first_name": "Kate",
-        "last_name": "Long",
-        "profile_picture": "aka.jpeg"
-      },
-      {
-        "first_name": "Jamie",
-        "last_name": "Pereira",
-        "profile_picture": "kim.jpeg"
-      }
-    ],
-    "attendees": 10
-  },
-  {
-    "title": "Amine - The Best Tour",
-    "event_photo": "/images/fff.jpeg",
-    "location": "Boston TD Garden",
-    "date": {
-      "day": 5,
-      "month": "July"
+    {
+        "event_id": 1117,
+        "title": "Amine - The Best Tour",
+        "event_photo": "fff.jpeg",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
+        "location": "Boston TD Garden",
+        "date": {
+            "day": 5,
+            "month": "August",
+            "year":  2022,
+            "hour": 7,
+            "minute": 0,
+            "time": "PM"
+        },
+        "cost": 50,
+        "hosts": [
+            {
+                "first_name": "Chris",
+                "last_name": "Kellu",
+                "profile_picture": "shadow.jpeg"
+            }
+        ],
+        "spots": 10,
+        "attendees": [
+            "bo.jpeg",
+            "green.jpeg",
+            "ehe.jpeg",
+            "aka.jpeg"
+        ],
+        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
+        "tags": [
+            {
+                "name": "Concert",
+                "color": "grey"
+            },
+            {
+                "name": "Music",
+                "color": "grey"
+            },
+            {
+                "name": "Multiple",
+                "color": "orange"
+            },
+            {
+                "name": "Indie",
+                "color": "grey"
+            }
+        ]
     },
-    "time": "6 PM",
-    "cost": 50,
-    "hosts": [
-      {
-        "first_name": "Chris",
-        "last_name": "Kellu",
-        "profile_picture": "shadow.jpeg"
-      }
-    ],
-    "attendees": 5
-  },
-  {
-    "title": "ODIE - Little Lies",
-    "event_photo": "/images/guit.jpeg",
-    "location": "Boston University",
-    "date": {
-      "day": 30,
-      "month": "July"
+    {
+        "event_id": 1118,
+        "title": "ODIE - Little Lies",
+        "event_photo": "guit.jpeg",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
+        "location": "Boston University",
+        "date": {
+            "day": 5,
+            "month": "August",
+            "year":  2022,
+            "hour": 7,
+            "minute": 0,
+            "time": "PM"
+        },
+        "cost": 50,
+        "hosts": [
+            {
+                "first_name": "Sammy",
+                "last_name": "Heim",
+                "profile_picture": "mo.jpeg"
+            },
+            {
+                "first_name": "Kate",
+                "last_name": "Long",
+                "profile_picture": "aka.jpeg"
+            }
+        ],
+        "spots": 10,
+        "attendees": [
+            "bo.jpeg",
+            "green.jpeg",
+            "ehe.jpeg",
+            "aka.jpeg"
+        ],
+        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
+        "tags": [
+            {
+                "name": "Concert",
+                "color": "grey"
+            },
+            {
+                "name": "Music",
+                "color": "grey"
+            },
+            {
+                "name": "Multiple",
+                "color": "orange"
+            },
+            {
+                "name": "Indie",
+                "color": "grey"
+            }
+        ]
     },
-    "time": "7 PM",
-    "cost": 50,
-    "hosts": [
-      {
-        "first_name": "Sammy",
-        "last_name": "Heim",
-        "profile_picture": "mo.jpeg"
-      },
-      {
-        "first_name": "Kate",
-        "last_name": "Long",
-        "profile_picture": "aka.jpeg"
-      }
-    ],
-    "attendees": 10
-  },
-  {
-    "title": "Lucky Daye - Lucky",
-    "event_photo": "/images/indoor.jpeg",
-    "location": "Blue House",
-    "date": {
-      "day": 5,
-      "month": "August"
+    {
+        "event_id": 1119,
+        "title": "Lucky Daye - Lucky",
+        "event_photo": "indoor.jpeg",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
+        "location": "Blue House",
+        "date": {
+            "day": 5,
+            "month": "August",
+            "year":  2022,
+            "hour": 7,
+            "minute": 0,
+            "time": "PM"
+        },
+        "cost": 36,
+        "hosts": [
+            {
+                "first_name": "Thomas",
+                "last_name": "Miller",
+                "profile_picture": "bo.jpeg"
+            }
+        ],
+        "spots": 10,
+        "attendees": [
+            "bo.jpeg",
+            "green.jpeg",
+            "ehe.jpeg",
+            "aka.jpeg"
+        ],
+        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
+        "tags": [
+            {
+                "name": "Concert",
+                "color": "grey"
+            },
+            {
+                "name": "Music",
+                "color": "grey"
+            },
+            {
+                "name": "Multiple",
+                "color": "orange"
+            },
+            {
+                "name": "Indie",
+                "color": "grey"
+            }
+        ]
     },
-    "time": "7 PM",
-    "cost": 36,
-    "hosts": [
-      {
-        "first_name": "Thomas",
-        "last_name": "Miller",
-        "profile_picture": "bo.jpeg"
-      }
-    ],
-    "attendees": 3
-  },
-  {
-    "title": "Lucky Daye - Lucky",
-    "event_photo": "/images/some.jpeg",
-    "location": "Blue House",
-    "date": {
-      "day": 14,
-      "month": "September"
-    },
-    "cost": 45,
-    "hosts": [
-      {
-        "first_name": "Keith",
-        "last_name": "Nelson",
-        "profile_picture": "ehe.jpeg"
-      }
-    ],
-    "attendees": 3
-  }
+    {
+        "event_id": 1110,
+        "title": "Lucky Daye - Lucky",
+        "event_photo": "some.jpeg",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
+        "location": "Blue House",
+        "date": {
+            "day": 5,
+            "month": "August",
+            "year":  2022,
+            "hour": 7,
+            "minute": 0,
+            "time": "PM"
+        },
+        "cost": 45,
+        "hosts": [
+            {
+                "first_name": "Keith",
+                "last_name": "Nelson",
+                "profile_picture": "ehe.jpeg"
+            }
+        ],
+        "spots": 10,
+        "attendees": [
+            "bo.jpeg",
+            "green.jpeg",
+            "ehe.jpeg",
+            "aka.jpeg"
+        ],
+        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
+        "tags": [
+            {
+                "name": "Concert",
+                "color": "grey"
+            },
+            {
+                "name": "Music",
+                "color": "grey"
+            },
+            {
+                "name": "Multiple",
+                "color": "orange"
+            },
+            {
+                "name": "Indie",
+                "color": "grey"
+            }
+        ]
+    }
 ]
 

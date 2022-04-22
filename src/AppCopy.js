@@ -1,5 +1,5 @@
 //Libraries
-import './style/css/main.css';
+import './Style/css/main.css';
 import "./Libraries/bootstrap/css/bootstrap.min.css";
 import tags from "./Data/tags.json";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";

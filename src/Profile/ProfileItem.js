@@ -1,30 +1,27 @@
-import users from "../Data/user.json"
-import "./profile.css"
 import React from "react";
+import LargeUserIcon from "../Components/LargeUserIcon";
 
 const ProfileItem = ({user}) => {
     return(
-        <div className="f-profile">
-            <img  className="f-profile-pic"
-                  src={`/images/${user.profile_picture}`}
-                  alt={""}/>
-            <div>
-                <span className="f-profile-name"> {user.first_name}</span>
+        <div className="f-profile d-flex flex-column align-items-center">
+            <LargeUserIcon user={user}/>
+            <h3 className="f-profile-name mt-2"> {user.first_name}</h3>
+            <div className="f-profile-location d-flex align-items-center ">
+                <i className="fa-solid fa-location-dot me-2"/>
+                <h4 className=" m-0">{user.city}, {user.state}</h4>
             </div>
-            <div>
-                <i className="fa-solid fa-location-dot"> {user.city}, {user.state}</i>
+            <div className="f-profile-bio mt-3">
+                <h4>{user.biography}</h4>
             </div>
-            <p><br/></p>
-            <div className="f-profile-bio">{user.biography}</div>
         </div>
 
     )
 }
 
-const ProfileComponent = () => {
+const ProfileComponent = ({user}) => {
     return (
         <div className="f-profile-view">
-            <ProfileItem user={users}/>
+            <ProfileItem user={user}/>
         </div>
     );
 }

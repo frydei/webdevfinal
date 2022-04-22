@@ -12,8 +12,10 @@ const UserDropdownMenu = () => {
     if (user.admin_access) {
         const admin = {menu: "Admin Dashboard", link: "admin"};
         more = [...more_menu, admin];
+    } else {
+        more = more_menu
     }
-
+    let username = user.first_name.toLowerCase().split("")[0] + user.last_name.toLowerCase();
     const [dropdown, setDropdown] = useState(false);
     return (
         <Dropdown onMouseLeave={() => setDropdown(false)}
@@ -22,7 +24,7 @@ const UserDropdownMenu = () => {
                   className="f-dropdown-title bg-transparent border-0 me-3"
         >
             <Dropdown.Toggle className="f-dropdown-toggle bg-transparent border-0">
-                <Link to="/frydei/profile" className="f-link"><UserIconName user={user}/></Link>
+                <Link to={`/frydei/profile/${username}`} className="f-link"><UserIconName user={user}/></Link>
             </Dropdown.Toggle>
             <Dropdown.Menu className="f-dropdown-menu bg-transparent border-0">
                 {

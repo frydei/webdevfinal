@@ -1,6 +1,7 @@
 import React from "react";
 import Tag from "./Tag";
 import FilledButton from "./FilledButton";
+import {Link} from "react-router-dom";
 
 const EventDetailGuest = (param) => {
     const event = param.event;
@@ -16,13 +17,13 @@ const EventDetailGuest = (param) => {
         <div className="container-fluid">
             <div className="row f-event-detail-content">
                 <div className="col-6 f-event-detail-img">
-                    <img src={event.event_photo} alt=""/>
+                    <img src={`/images/${event.event_photo}`} alt=""/>
                     <div className="f-event-detail-section">
                         <h3 className="f-event-detail-section-header mt-2">Attendees</h3>
                         <div className="f-event-attendees m-0">
                             {
                                 event.attendees.map(att => {
-                                    return <img src={att}
+                                    return <img src={`/images/${att}`}
                                                 alt=""
                                                 className="f-user-icon-small me-1"
                                     />;
@@ -46,10 +47,10 @@ const EventDetailGuest = (param) => {
                                 <div className="f-event-attendees">
                                     {
                                         event.hosts.map(host => {
-                                            return <img src={host.profile_picture}
-                                                        alt=""
-                                                        className="f-icon-small me-1"
-                                            />;
+                                            return <Link className="f-link"
+                                                         to={`/frydei/profile/${host.first_name.toLowerCase().split("")[0] + host.last_name.toLowerCase()}`}>
+                                                <img src={`/images/${host.profile_picture}`} alt="" className="f-icon-small me-1"/>
+                                            </Link>
                                         })
                                     }
                                 </div>

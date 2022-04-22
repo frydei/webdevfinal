@@ -1,5 +1,5 @@
 //Libraries
-import './style/css/main.css';
+import './Style/css/main.css';
 import "./Libraries/bootstrap/css/bootstrap.min.css";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
@@ -20,6 +20,7 @@ import MenuHeader from "./Components/Menu/MenuHeader";
 import ComplaintsScreen from "./Screens/ComplaintsScreen";
 import ChatScreen from "./Screens/ChatScreen";
 import DashboardScreen from "./Screens/DashboardScreen";
+import PastEventDetailScreen from "./Screens/PastEventDetailScreen";
 
 const search_event = {
     "title": "Amine - The Best Tour",
@@ -45,23 +46,27 @@ function App() {
             <div className="container-fluid p-0">
                 <Routes>
                     <Route path=""
-                           element={<MenuHeader user={user}/>}/>
+                           element={<HomePageScreen logged_in={false}/>}/>
+                    <Route path="sign-in"
+                           exact={true}
+                           element={<SignInScreen />}/>
+                    <Route path="sign-up"
+                           exact={true}
+                           element={<SignUpScreen />}/>
                     <Route path="frydei"
-                           element={<Frydei logged_in={false}
+                           element={<Frydei logged_in={true}
                                             user={user}/>}>
-                        <Route index element={<HomePageScreen/>}/>
+                        <Route index element={<HomePageScreen logged_in={true}/>}/>
                         <Route path="home"
                                extact={true}
-                               element={<HomePageScreen/>}/>
-                        <Route path="sign-in"
-                               exact={true}
-                               element={<SignInScreen />}/>
-                        <Route path="sign-up"
-                               exact={true}
-                               element={<SignUpScreen />}/>
+                               element={<HomePageScreen logged_in={true}/>}/>
                         <Route path="profile"
                                exact={true}
                                element={<ProfileScreen user={user}/>}/>
+                        <Route path="profile/:username"
+                               exact={true}
+                               element={<ProfileScreen/>}/>
+                        <Route path="profile/pastevents/:eventid" element={<PastEventDetailScreen/>}/>
                         <Route path="search"
                                exact={true}
                                element={<SearchResultsScreen logged_in={true}/>}/>
@@ -77,11 +82,10 @@ function App() {
                         <Route path="create"
                                exact={true}
                                element={<CreateEventScreen user={user}/>}/>
-                        <Route path="complaints"
+                        <Route path="explore/:eventid" element={<ViewEventScreen/>}/>
+                        <Route path="profile/pastevents/:eventid/complaint"
                                exact={true}
-                               element={<ComplaintsScreen user={user}
-                                                          event={event}
-                               />}/>
+                               element={<ComplaintsScreen user={user}/>}/>
                         <Route path="messages"
                                exact={true}
                                element={<ChatScreen user={user}
@@ -89,18 +93,7 @@ function App() {
                         <Route path="admin"
                                exact={true}
                                element={<DashboardScreen/>}/>
-                        <Route path="detail"
-                               exact={true}
-                               element={
-                                   <ViewEventScreen
-                                       event={event}
-                                       logged_in={false}
-                                   />}/>
-
-
                     </Route>
-
-
                 </Routes>
             </div>
         </Router>

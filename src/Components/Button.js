@@ -2,7 +2,7 @@ import React from "react";
 
 const Button = (param) => {
     return(
-        <button className="f-button">{param.name}</button>
+        <button className="f-button shadow-none">{param.name}</button>
     );
 }
 

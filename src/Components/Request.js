@@ -1,18 +1,32 @@
 import React from "react";
-import Spacer from "./Spacer";
-
+import {Link} from "react-router-dom";
 import UserIconSmall from "./UserIconSmall";
 
-const Request = (param) => {
+const Request = ({user}) => {
+
+    const acceptClick = () => {
+
+    }
+
+    const rejectClick = () => {
+
+    }
     return(
         <div className="d-flex align-items-center justify-content-between f-request-box pb-3">
             <div className="d-flex align-items-center">
-                <UserIconSmall user={param.user}/>ls
-                <h3 className="ms-2 f-small-regular">{param.user.first_name} {param.user.last_name} wants to join your event.</h3>
+                <Link className="f-link"
+                      to={`/frydei/profile/${user.first_name.toLowerCase().split("")[0] + user.last_name.toLowerCase()}`}><UserIconSmall user={user}/>
+                </Link>
+                <h3 className="ms-2 f-small-regular">{user.first_name} {user.last_name} wants to join your event.</h3>
             </div>
-            <div>
-                <button className="f-icon-button f-orange-font me-2"><i className="far fa-check-circle"/></button>
-                <button className="f-icon-button"><i className="far fa-times-circle"/></button>
+            <div className="d-flex justify-content-between" style={{"width": "8%"}}>
+                <button className="f-icon-button f-orange-font"
+                        id="accept" onClick={acceptClick}>
+                    <i className="far fa-check-circle"/>
+                </button>
+                <button className="f-icon-button" id="reject" onClick={rejectClick}>
+                    <i className="far fa-times-circle f-dark"/>
+                </button>
             </div>
         </div>
 

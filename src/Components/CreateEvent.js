@@ -9,7 +9,8 @@ const CreateEvent = (param) => {
             <div className="row f-form-content d-flex align-items-center">
                 <div className="col f-image-upload d-flex align-items-center justify-content-center">
                     <div className="form-group f-form-group d-flex align-items-center justify-content-center">
-                        <label htmlFor="image-upload" className="d-flex align-items-center justify-content-center">
+                        <label htmlFor="image-upload"
+                               className="shadow-none d-flex align-items-center justify-content-center">
                             Add Image
                         </label>
                         <input id="image-upload" type="file" style={{"display": "none"}}/>
@@ -17,18 +18,18 @@ const CreateEvent = (param) => {
                 </div>
                 <div className="col">
                     <div className="form-group f-form-group f-bg ">
-                        <input type="text" className="form-control" id="event-title"
+                        <input type="text" className="form-control shadow-none" id="event-title"
                                placeholder="Enter title here"/>
                     </div>
                     <div className="form-group f-form-group f-bg">
-                        <textarea className="form-control" id="event-desc" rows="4"
+                        <textarea className="form-control" id="event-desc shadow-none" rows="4"
                                   placeholder="Enter title here">Enter description here</textarea>
                     </div>
                     <div className="f-form-detail f-bg">
                         <div className="form-group f-form-group d-flex flex-column form-control p-0">
                             <label htmlFor="event-host">Host(s)</label>
                             <div><img src={`/images/${user.profile_picture}`} alt="" className="f-icon-small me-1"/>
-                                <button className="f-add-button">
+                                <button className="f-add-button shadow-none">
                                     <i className="fa-solid fa-plus"/>
                                 </button>
                             </div>
@@ -36,7 +37,7 @@ const CreateEvent = (param) => {
                         <div className="form-group f-form-group">
                             <label htmlFor="event-cost">Cost<span className="f-orange-font">*</span></label>
                             <input type="text"
-                                   className="form-control" id="event-cost"
+                                   className="form-control shadow-none" id="event-cost"
                                    placeholder="How much is the entrance fee for this event?"
                                    aria-describedby="cost-help"
                             />
@@ -46,27 +47,27 @@ const CreateEvent = (param) => {
                         </div>
                         <div className="form-group f-form-group">
                             <label htmlFor="event-location">Location<span className="f-orange-font">*</span></label>
-                            <input type="text" className="form-control" id="event-location"
+                            <input type="text" className="form-control shadow-none" id="event-location"
                                    placeholder="Where will this event take place?"/>
                         </div>
                         <div className="form-group f-form-group">
                             <label htmlFor="event-date">Date<span className="f-orange-font">*</span></label>
-                            <input type="date" className="form-control" id="event-date"
+                            <input type="date" className="form-control shadow-none" id="event-date"
                                    placeholder="What date will this event take place?"/>
                         </div>
                         <div className="form-group f-form-group">
                             <label htmlFor="event-time">Time<span className="f-orange-font">*</span></label>
-                            <input type="time" className="form-control" id="event-time"
+                            <input type="time" className="form-control shadow-none" id="event-time"
                                    placeholder="What time will this event take place?"/>
                         </div>
                         <div className="form-group f-form-group">
                             <label htmlFor="event-attendee">Attendees<span className="f-orange-font">*</span></label>
-                            <input type="text" className="form-control" id="event-attendee"
+                            <input type="text" className="form-control shadow-none" id="event-attendee"
                                    placeholder="How many people can attend, not including the host(s)?"/>
                         </div>
                         <div className="form-group f-form-group">
                             <label htmlFor="event-tags">Tags<span className="f-orange-font">*</span></label>
-                            <input type="text" className="form-control" id="event-tags"
+                            <input type="text" className="form-control shadow-none" id="event-tags"
                                    placeholder="Choose at least three appropriate tags for your event"
                                    aria-describedby="tag-help"
                             />
@@ -78,8 +79,10 @@ const CreateEvent = (param) => {
 
                     </div>
                     <div className="form-group f-form-group f-bg">
-                        <textarea className="form-control" id="event-restrictions" rows="4"
-                                  placeholder="Enter title here">Special Restrictions</textarea>
+                        <textarea className="form-control shadow-none" id="event-restrictions" rows="4"
+                                  value={"Special Restrictions"}
+                                  onFocus={(e) => e.target.value = ""}
+                        />
                     </div>
                     <div className="row d-flex justify-content-end">
                         <label htmlFor="form-submit" className="d-flex justify-content-end">

@@ -3,21 +3,21 @@ import React from "react";
 
 const SearchBar =() => {
     return (
-        <div className="d-flex align-items-center flex-column "
+        <div className="d-flex align-items-center flex-column mt-5"
             style={{"paddingLeft": "300px", "paddingRight": "300px", "paddingTop": "25px", "width": "100%"}}>
-            <form action="" style={{"width": "100%"}} className="mb-5 f-form-home">
-                <div className="form-group" style={{"width": "100%"}}>
-                    <label htmlFor="search-bar" className="d-flex align-items-center f-search-bar-home"
-                    style={{"width": "100%"}}>
-                        <input id="search-bar" className="form-control border-0" type="search"
+            <form action="" style={{"width": "100%"}} className="mb-5 mt-5 f-form-home">
+                <div className="form-group d-flex justify-content-center mt-5" style={{"width": "100%"}}>
+                    <label htmlFor="search-bar" className="d-flex align-items-center justify-content-center f-search-bar-home"
+                    style={{"width": "90%"}}>
+                        <input id="search-bar" className="form-control border-0 ps-2" type="search"
                                placeholder="What are you in the mood for?"
                                style={{"width": "100%"}}/>
-                        <i className="fa-solid fa-magnifying-glass form-control-feedback pe-1"/>
+                        <i className="fa-solid fa-magnifying-glass form-control-feedback pe-2"/>
                     </label>
 
                 </div>
             </form>
-            <div className={"f-search-note"}><h3 className="f-medium-medium" style={{"fontSize":"20px"}}>Events happening near you</h3></div>
+            <div className={"f-search-note"}><h3 className="f-medium-medium mt-4" style={{"fontSize":"20px"}}>Events happening near you</h3></div>
         </div>
     )
 }

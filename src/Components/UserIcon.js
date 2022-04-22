@@ -1,9 +1,9 @@
 import React from "react";
 
-const UserIcon = (param) => {
+const LargeUserIcon = ({user}) => {
     return (
-        <img src={`/images/${param.user.profile_picture}`} className="f-user-icon-small" alt=""/>
+        <img src={`/images/${user.profile_picture}`} className="f-user-icon" alt=""/>
     );
 };
 
-export default UserIcon;
+export default LargeUserIcon;

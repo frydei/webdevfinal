@@ -10,7 +10,7 @@ const FormInput=({handleChange, label, ...otherProps}) => (
 
     <div className="form-group f-form-group f-bg d-flex align-items-center"
          style={{"padding": "0px 0px 0px 10px", "borderRadius": "3px", "width": "100%"}}>
-        <input className={`form-input`}
+        <input className="form-input shadow-none"
                onChange={handleChange} {...otherProps}/>
         {
             label ?

@@ -4,7 +4,7 @@ const FilledButton = (param) => {
     return(
         <button type="submit"
                 onSubmit={param.handleSubmit}
-                className="f-button f-orange">{param.name}
+                className="f-button f-orange shadow-none">{param.name}
         </button>
     );
 }

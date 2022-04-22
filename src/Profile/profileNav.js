@@ -9,22 +9,22 @@ const ProfileNav = ({changeTab}) => {
             <hr/>
             <nav className="f-profile-tabs">
                 <ul className="nav justify-content-center profile-tabs">
-                    <li className="nav-item selected">
+                    <li className="nav-item f-nav selected">
                         {/*<Link className="nav-link active" to="#upcoming">Upcoming Events</Link>*/}
-                        <a className="nav-link" onClick={() => changeTab("UPCOMING_EVENTS")}>Upcoming Events</a>
+                        <Link to="/" className="nav-link f-link" onClick={() => changeTab("UPCOMING_EVENTS")}>Upcoming Events</Link>
 
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item f-nav">
                         {/*<Link className="nav-link" to="#past">Past Events</Link>*/}
-                        <a className="nav-link" onClick={() => changeTab("PAST_EVENTS")}>Past Events</a>
+                        <Link to="/" className="nav-link f-link" onClick={() => changeTab("PAST_EVENTS")}>Past Events</Link>
 
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item f-nav">
                         {/*<Link className="nav-link" to="#favoriyes">Favorited</Link>*/}
-                        <a className="nav-link" onClick={() => changeTab("FAVORITED_EVENTS")}>Favorited</a>
+                        <Link to="/" className="nav-link f-link" onClick={() => changeTab("FAVORITED_EVENTS")}>Favorited</Link>
                     </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="#media">Media</Link>
+                    <li className="nav-item f-nav">
+                        <Link className="nav-link f-link" to="#media">Media</Link>
                     </li>
                 </ul>
             </nav>

@@ -2,12 +2,13 @@ import React from "react";
 import FilledButton from "./FilledButton";
 import Button from "./Button";
 import Spacer from "./Spacer";
+import {Link} from "react-router-dom";
 
 
 const LargeHeaderGuest = () => {
     return(
         <div className="d-flex justify-content-between align-items-center pt-1">
-            <h1 className="f-title large">Frydei</h1>
+            <Link to="/" className="f-link"><h1 className="f-title large">Frydei</h1></Link>
             <div className="d-flex justify-content-end">
                 <a href="/frydei/sign-in">
                     <FilledButton name="Log In"/>

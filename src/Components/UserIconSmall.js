@@ -1,8 +1,8 @@
 import React from "react";
 
-const UserIconSmallest = (param) => {
+const UserIconSmallest = ({user}) => {
     return (
-        <img src={`/images/${param.user.profile_picture}`} className="f-user-icon-small me-1" alt="" />
+        <img src={`/images/${user.profile_picture}`} className="f-user-icon-small me-1" alt="" />
     );
 };
 

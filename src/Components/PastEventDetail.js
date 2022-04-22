@@ -1,10 +1,15 @@
 import React from "react";
 import Tag from "./Tag";
+import {useParams} from "react-router";
+import events from "../Data/events.json"
+import EllipseDropdownMenu from "./Menu/EllipseDropdownMenu";
 
-const PastEventDetail = (param) => {
-    const event = param.event;
+const PastEventDetail = () => {
+    const param = useParams();
+    const eventid = param.eventid;
+
+    const event = events.find(f => f.event_id.toString() === eventid)
     let min;
-
     if (event.date.minute === 0) {
         min = "";
     } else {
@@ -15,13 +20,13 @@ const PastEventDetail = (param) => {
         <div className="container-fluid">
             <div className="row f-event-detail-content">
                 <div className="col-6 f-event-detail-img">
-                    <img src={event.event_image} alt=""/>
+                    <img src={`/images/${event.event_photo}`} alt="" className="f-event-image"/>
                     <div className="f-event-detail-section">
                         <h3 className="f-event-detail-section-header mt-2">Attendees</h3>
                         <div className="f-event-attendees">
                             {
                                 event.attendees.map(att => {
-                                    return <img src={att}
+                                    return <img src={`/images/${att}`}
                                                 alt=""
                                                 className="f-user-icon-small me-1"
                                     />;
@@ -37,17 +42,17 @@ const PastEventDetail = (param) => {
                             <p className="f-event-desc m-0">{event.desc}</p>
                         </div>
                     </div>
-                    <div className="row f-event-detail-box p-3 mb-2">
+                    <div className="row f-event-detail-box p-3">
                         <div className="f-event-detail-section">
                             <div className="d-flex align-items-center justify-content-between">
                                 <h3 className="f-event-detail-section-header">Host(s)</h3>
-                                <i className="fa-solid fa-ellipsis"/>
+                                <EllipseDropdownMenu />
                             </div>
                             <div className="f-event-hosts d-flex align-items-start ">
                                 <div className="f-event-attendees m-0">
                                     {
                                         event.hosts.map(host => {
-                                            return <img src={host.profile_picture}
+                                            return <img src={`/images/${host.profile_picture}`}
                                                         alt=""
                                                         className="f-icon-small me-1"
                                             />;
