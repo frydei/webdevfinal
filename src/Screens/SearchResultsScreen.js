@@ -1,19 +1,86 @@
-import React from "react";
-import events from "../Data/events.json";
+import React, {useState} from "react";
 import tags from "../Data/tags.json";
-import Tag from "../Components/Tag";
 import SearchEvent from "../Components/SearchEvent";
+import {month_num} from "../Components/Complaints";
+import ActionTag from "../Components/ActionTag";
+import {useSelector} from "react-redux";
 
-const SearchResultsScreen = (param) => {
+const SearchResultsScreen = () => {
+    const events = useSelector(state => state.events)
+    const [searchEvent, setSearchEvent] = useState(events)
+    const [input, setInput] = useState();
+    const date = new Date()
+
+    const getDate = (e) => {
+        let m = month_num[e.date.month]
+        m = m.split("")[0] === "0" ? m[1] : m;
+        return new Date(e.date.year + "/" + m + "/" + e.date.day)
+    }
+
+    const isTomorrow = (d) => {
+        const tomorrow = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1)
+        return d.getMonth() === tomorrow.getMonth() && d.getDate() === tomorrow.getDate() && d.getFullYear() === tomorrow.getFullYear();
+    }
+
+    const isToday = (d) => {
+        return d.getMonth() === date.getMonth() && d.getDate() === date.getDate() && d.getFullYear() === date.getFullYear();
+    }
+
+    const isWeekend = (d) => {
+        return d.getDay() === 6 ||  d.getDay() === 0;
+    }
+
+    const handleClick = (name) => {
+       if (name === "Nearby") {
+            setSearchEvent(events)
+        } else if (name === "Tomorrow") {
+            setSearchEvent(events.filter(
+                e =>  isTomorrow(getDate(e))
+            ))
+        } else if (name === "Today") {
+           setSearchEvent(events.filter(
+               e =>  isToday(getDate(e))
+           ))
+       } else if (name === "Weekend") {
+           setSearchEvent(events.filter(
+               e =>  isWeekend(getDate(e))
+           ))
+       }
+
+    }
+    const isMatch = (e) => {
+        return e.title.toLowerCase().includes(input.toString().toLowerCase())
+            || e.desc.toLowerCase().includes(input.toString().toLowerCase())
+            || e.location.toLowerCase().includes(input.toString().toLowerCase())
+            || e.restrictions.toLowerCase().includes(input.toString().toLowerCase())
+    }
+
+    const searchHandlerChange = (value) => {
+        setInput(value)
+        setSearchEvent(events.filter(e => isMatch(e)))
+        console.log(input)
+
+    }
+
+    const searchHandlerSubmit = (e) => {
+        e.preventDefault();
+        setInput(e.target.search.value)
+        setSearchEvent(events.filter(e => isMatch(e)))
+
+    }
     return (
         <>
             <div style={{"paddingLeft": "175px", "paddingRight": "175px", "paddingTop": "25px"}}>
 
-                <form action="">
+                <form action="" name="search-form" onSubmit={(e) => searchHandlerSubmit(e)}>
                     <div className="form-group">
                         <label htmlFor="search-bar" className="d-flex align-items-center f-search-bar">
-                            <input id="search-bar" className="form-control border-0 ps-1" type="search"
-                                   value="indie concert"/>
+                            <input id="search-bar"
+                                   className="form-control border-0 ps-1 shadow-none"
+                                   name="search"
+                                   type="search"
+                                   onChange={(e) => searchHandlerChange(e.target.value)}
+                                   value={input}/>
                             <i className="fa-solid fa-magnifying-glass form-control-feedback pe-1"/>
                         </label>
 
@@ -22,13 +89,13 @@ const SearchResultsScreen = (param) => {
                 <div className="d-flex justify-content-between flex-wrap align-items-center mt-3 mb-1 ms-1" style={{"width": "100%"}}>
                     {
                         tags.map(tag => {
-                            return <Tag tag={tag}/>
+                            return <ActionTag tag={tag} handleClick={handleClick}/>
                         })
                     }
                 </div>
                 <div className="d-flex flex-wrap justify-content-between">
                     {
-                        events.map(event => {
+                        searchEvent.map(event => {
                             return <SearchEvent event={event}/>
                         })
                     }

@@ -21,6 +21,7 @@ import ComplaintsScreen from "./Screens/ComplaintsScreen";
 import ChatScreen from "./Screens/ChatScreen";
 import DashboardScreen from "./Screens/DashboardScreen";
 import PastEventDetailScreen from "./Screens/PastEventDetailScreen";
+import AboutUs from "./Screens/AboutUs";
 
 const search_event = {
     "title": "Amine - The Best Tour",
@@ -46,16 +47,15 @@ function App() {
             <div className="container-fluid p-0">
                 <Routes>
                     <Route path=""
-                           element={<HomePageScreen logged_in={false}/>}/>
+                           element={<HomePageScreen logged_in={true}/>}/>
                     <Route path="sign-in"
                            exact={true}
-                           element={<SignInScreen />}/>
+                           element={<SignInScreen/>}/>
                     <Route path="sign-up"
                            exact={true}
-                           element={<SignUpScreen />}/>
+                           element={<SignUpScreen/>}/>
                     <Route path="frydei"
-                           element={<Frydei logged_in={true}
-                                            user={user}/>}>
+                           element={<Frydei logged_in={true} user={user}/>}>
                         <Route index element={<HomePageScreen logged_in={true}/>}/>
                         <Route path="home"
                                extact={true}
@@ -66,13 +66,17 @@ function App() {
                         <Route path="profile/:username"
                                exact={true}
                                element={<ProfileScreen/>}/>
-                        <Route path="profile/pastevents/:eventid" element={<PastEventDetailScreen/>}/>
+                        <Route path="profile/pastevents/:eventid"
+                               element={<PastEventDetailScreen/>}/>
                         <Route path="search"
                                exact={true}
                                element={<SearchResultsScreen logged_in={true}/>}/>
                         <Route path="privacy-policy"
                                exact={true}
                                element={<PrivacyPolicyScreen/>}/>
+                        <Route path="about-us"
+                               exact={true}
+                               element={<AboutUs/>}/>
                         <Route path="explore"
                                exact={true}
                                element={<ExploreEventsScreen logged_in={true}/>}/>
@@ -82,14 +86,14 @@ function App() {
                         <Route path="create"
                                exact={true}
                                element={<CreateEventScreen user={user}/>}/>
-                        <Route path="explore/:eventid" element={<ViewEventScreen/>}/>
+                        <Route path="explore/:eventid"
+                               element={<ViewEventScreen logged_in={true}/>}/>
                         <Route path="profile/pastevents/:eventid/complaint"
                                exact={true}
                                element={<ComplaintsScreen user={user}/>}/>
                         <Route path="messages"
                                exact={true}
-                               element={<ChatScreen user={user}
-                               />}/>
+                               element={<ChatScreen user={user}/>}/>
                         <Route path="admin"
                                exact={true}
                                element={<DashboardScreen/>}/>

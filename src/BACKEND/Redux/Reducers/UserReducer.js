@@ -1,7 +1,10 @@
 import user from "../../../Data/user.json"
 
 const UserReducer = (state = user, action) => {
-    return (state)
+    switch(action.type) {
+        default:
+            return user;
+    }
 }
 
 export default UserReducer;

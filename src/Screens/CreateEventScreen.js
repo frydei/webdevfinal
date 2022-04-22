@@ -1,12 +1,9 @@
 import React from "react";
-import HeaderUser from "../Components/HeaderUser";
-import user from "../Data/user.json";
 import CreateEvent from "../Components/CreateEvent";
-import Footer from "../Homepage/Footer";
-
-
+import {useSelector} from "react-redux";
 
 const CreateEventScreen = () => {
+    const user = useSelector(state => state.users[0])
     return (
         <>
             <div style={{"paddingLeft": "175px", "paddingRight": "175px", "paddingTop": "25px"}}>

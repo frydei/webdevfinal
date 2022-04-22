@@ -9,7 +9,7 @@ const EventsReducer = (state = events, action) => {
         case "update-event":
             return state;
         default:
-            return state;
+            return events;
     }
 
 }

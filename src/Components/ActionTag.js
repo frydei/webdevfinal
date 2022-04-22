@@ -1,6 +1,6 @@
 import React from "react";
 
-const Tag = ({tag}) => {
+const ActionTag = ({tag, handleClick}) => {
     let bgcolor, fcolor;
     if (tag.color === "grey") {
         bgcolor = "#4F5D75"
@@ -19,8 +19,9 @@ const Tag = ({tag}) => {
         <button className="f-tag d-flex align-items-center justify-content-center mb-2"
                 style={{"backgroundColor": `${bgcolor}`, "color": `${fcolor}`, "border": "1px" +
                 " solid transparent"}}
+                onClick={() => handleClick(tag.name)}
         >{tag.name}</button>
     );
 }
 
-export default Tag;
+export default ActionTag;

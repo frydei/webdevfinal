@@ -1,7 +1,10 @@
-import user from "../../../Data/user.json";
+import complaints from "../../../Data/complaints.json";
 
-const ComplaintReducer = (state = user, action) => {
-    return(state)
+const ComplaintReducer = (state = complaints, action) => {
+    switch(action.type) {
+        default:
+            return complaints;
+    }
 
 }
 

@@ -1,18 +1,13 @@
 import React from "react";
-import HeaderUser from "../Components/HeaderUser";
-import user from "../Data/user.json";
-import events from "../Data/events.json"
-import CreateEvent from "../Components/CreateEvent";
-import Footer from "../Homepage/Footer";
 import Complaints from "../Components/Complaints";
-import {Link} from "react-router-dom";
 import {useParams} from "react-router";
-
-
+import {useSelector} from "react-redux";
 
 const CreateEventScreen = () => {
     const param = useParams();
     const eventid = param.eventid;
+    const events = useSelector(state => state.events)
+    const user = useSelector(state => state.users[0])
 
     let event = events.find(f => f.event_id.toString() === eventid);
     return (

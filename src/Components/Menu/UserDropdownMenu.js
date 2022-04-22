@@ -23,7 +23,7 @@ const UserDropdownMenu = () => {
                   show={dropdown}
                   className="f-dropdown-title bg-transparent border-0 me-3"
         >
-            <Dropdown.Toggle className="f-dropdown-toggle bg-transparent border-0">
+            <Dropdown.Toggle className="f-dropdown-toggle bg-transparent border-0 shadow-none">
                 <Link to={`/frydei/profile/${username}`} className="f-link"><UserIconName user={user}/></Link>
             </Dropdown.Toggle>
             <Dropdown.Menu className="f-dropdown-menu bg-transparent border-0">

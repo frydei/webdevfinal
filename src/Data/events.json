@@ -56,7 +56,7 @@
         "location": "Boston University",
         "date": {
             "day": 5,
-            "month": "August",
+            "month": "November",
             "year":  2022,
             "hour": 7,
             "minute": 0,
@@ -109,8 +109,8 @@
         "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
         "location": "Boston Common",
         "date": {
-            "day": 5,
-            "month": "August",
+            "day": 23,
+            "month": "April",
             "year":  2022,
             "hour": 7,
             "minute": 0,
@@ -208,8 +208,8 @@
         "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
         "location": "Jazz Corner",
         "date": {
-            "day": 5,
-            "month": "August",
+            "day": 22,
+            "month": "April",
             "year":  2022,
             "hour": 7,
             "minute": 0,

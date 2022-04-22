@@ -9,7 +9,7 @@ const SearchBar =() => {
                 <div className="form-group d-flex justify-content-center mt-5" style={{"width": "100%"}}>
                     <label htmlFor="search-bar" className="d-flex align-items-center justify-content-center f-search-bar-home"
                     style={{"width": "90%"}}>
-                        <input id="search-bar" className="form-control border-0 ps-2" type="search"
+                        <input id="search-bar" className="form-control border-0 ps-2 shadow-none" type="search"
                                placeholder="What are you in the mood for?"
                                style={{"width": "100%"}}/>
                         <i className="fa-solid fa-magnifying-glass form-control-feedback pe-2"/>

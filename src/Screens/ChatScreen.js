@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import ChatLabel from "../Components/Messenger/ChatLabel";
 import EmptyChat from "../Components/Messenger/EmptyChat"
-import chats from "../Data/chats.json"
 import ChatSearch from "../Components/Messenger/ChatSearch";
 import ChatBox from "../Components/Messenger/ChatBox";
+import {useSelector} from "react-redux";
 
-const ChatScreen = (param) => {
-    const user = param.user;
+const ChatScreen = () => {
+    const chats = useSelector(state => state.chats)
     let [activeChat, setActiveChat] = useState({})
 
     const switchChat = (params) => {

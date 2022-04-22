@@ -1,4 +1,10 @@
 import event from "../../../Data/event.json";
 
-export const EventReducer = (state = event, action) => {
+const EventReducer = (state = event, action) => {
+    switch(action.type) {
+        default:
+            return event;
+    }
 }
+
+export default EventReducer;

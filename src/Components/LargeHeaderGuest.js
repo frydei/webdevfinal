@@ -10,13 +10,13 @@ const LargeHeaderGuest = () => {
         <div className="d-flex justify-content-between align-items-center pt-1">
             <Link to="/" className="f-link"><h1 className="f-title large">Frydei</h1></Link>
             <div className="d-flex justify-content-end">
-                <a href="/frydei/sign-in">
+                <Link to="/sign-in">
                     <FilledButton name="Log In"/>
-                </a>
+                </Link>
                 <Spacer size={15}/>
-                <a href="/frydei/sign-up">
+                <Link to="/sign-up">
                     <Button name="Sign Up"/>
-                </a>
+                </Link>
             </div>
         </div>
 

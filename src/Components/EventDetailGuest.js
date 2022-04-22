@@ -90,8 +90,8 @@ const EventDetailGuest = ({event}) => {
                         </div>
 
                     </div>
-                    <div className="row f-tag-box d-flex align-items-center mb-2" style={{"width": "100%"}}>
-                        <div className="d-flex align-items-center justify-content-between" style={{"width": "100%"}}>
+                    <div className="row f-tag-box d-flex align-items-center justify-content-start ps-0 mb-2" style={{"width": "100%"}}>
+                        <div className="d-flex align-items-center justify-content-start ps-0" style={{"width": "100%"}}>
                             {
                                 event.tags.map(tag => {
                                     return <Tag tag={tag}/>
@@ -101,7 +101,7 @@ const EventDetailGuest = ({event}) => {
                     </div>
                     <div className="row f-button-box">
                         <div className="p-0">
-                            <FilledButton name={"Please log in to join events"}/>
+                            <Link to="/sign-in" className="f-link"><FilledButton name={"Please log in to join events"}/></Link>
                         </div>
                     </div>
 

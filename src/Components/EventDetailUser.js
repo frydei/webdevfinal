@@ -2,6 +2,7 @@ import React from "react";
 import Tag from "./Tag";
 import FilledButton from "./FilledButton";
 import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
 
 const EventDetailGuest = (param) => {
     const event = param.event;
@@ -12,6 +13,9 @@ const EventDetailGuest = (param) => {
     } else {
         min = ":" + event.date.minute;
     }
+
+    const dispatch = useDispatch();
+
 
     return (
         <div className="container-fluid">
@@ -87,8 +91,8 @@ const EventDetailGuest = (param) => {
                         </div>
 
                     </div>
-                    <div className="row f-tag-box d-flex align-items-center justify-content-start mb-2">
-                        <div className="d-flex align-items-center justify-content-start">
+                    <div className="row f-tag-box d-flex align-items-center justify-content-start ps-0 mb-2" style={{"width": "100%"}}>
+                        <div className="d-flex align-items-center justify-content-start ps-0" style={{"width": "100%"}}>
                             {
                                 event.tags.map(tag => {
                                     return <Tag tag={tag}/>;

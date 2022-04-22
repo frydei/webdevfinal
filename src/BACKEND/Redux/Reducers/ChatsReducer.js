@@ -1,7 +1,10 @@
 import chats from "../../../Data/chats.json"
 
-const ChatsReducer = (state = chats, actions) => {
-    return(state)
+const ChatsReducer = (state = chats, action) => {
+    switch(action.type) {
+        default:
+            return chats;
+    }
 
 }
 

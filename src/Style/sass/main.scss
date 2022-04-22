@@ -24,6 +24,12 @@ body, .container-fluid {
   }
 }
 
+input {
+  outline: none !important;
+  &:focus {
+    outline: none !important;
+  }
+}
 button {
   &:focus, &:active{
     outline: none !important;

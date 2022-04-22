@@ -1,6 +1,4 @@
 import React from "react";
-import UserIconName from "./UserIconName";
-import user from "../Data/user.json"
 import UserDropdownMenu from "./Menu/UserDropdownMenu";
 import {Link} from "react-router-dom";
 

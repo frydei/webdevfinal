@@ -1,14 +1,12 @@
-import HeaderUser from "../Components/HeaderUser";
 import user from "../Data/user.json";
 import events from "../Data/events.json"
-import HeaderGuest from "../Components/HeaderGuest";
 import React from "react";
-import ExploreEvent from "../Components/ExploreEvent";
-import Request from "../Components/Request";
 import RequestEvent from "../Components/RequestEvent";
+import {useSelector} from "react-redux";
 
 
-const RequestScreen = (param) => {
+const RequestScreen = () => {
+    const events = useSelector(state => state.events)
 
     return (
         <>
