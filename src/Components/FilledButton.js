@@ -1,10 +1,12 @@
 import React from "react";
 
-const FilledButton = (param) => {
+const FilledButton = (props) => {
+    const name = props.name;
+    const handleSubmit = props.handleSubmit
     return(
         <button type="submit"
-                onSubmit={param.handleSubmit}
-                className="f-button f-orange shadow-none">{param.name}
+                onClick={handleSubmit}
+                className="f-button f-orange shadow-none">{name}
         </button>
     );
 }

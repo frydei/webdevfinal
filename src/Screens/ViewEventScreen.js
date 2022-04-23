@@ -8,7 +8,7 @@ import {useSelector} from "react-redux";
 
 const ViewEventScreen = ({logged_in}) => {
     const events = useSelector(state => state.events)
-    let path = useLocation();
+    const user = useSelector(state => state.users[0])
     let param = useParams();
     let eventid = param.eventid
     let  view;

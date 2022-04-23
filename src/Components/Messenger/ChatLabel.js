@@ -6,7 +6,7 @@ const ChatLabel = ({chat, handleClick, active}) => {
     const event = chat.event;
     if (chat.type === "single") {
         const user = chat.participants[0];
-        cover = <img className="f-cover-img" src={`/images/${user.profile_picture}`} alt=""/>;
+        cover = <img className="f-cover-img" src={`/Images/${user.profile_picture}`} alt=""/>;
         title = user.first_name + " " + user.last_name;
     } else {
         cover = <div className="f-chat-cover d-flex align-items-center justify-content-center">

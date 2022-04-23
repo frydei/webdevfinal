@@ -6,7 +6,7 @@ const ProfileEvent = ({event}) => {
             <div className="d-flex flex-column align-items-center justify-content-center">
                 <div
                     className="f-event-img-container mb-2 d-flex flex-column align-items-center justify-content-center position-relative">
-                    <img className="f-event-img" src={`/images/${event.event_photo}`} alt=""/>
+                    <img className="f-event-img" src={`/Images/${event.event_photo}`} alt=""/>
                     <button className="f-button f-view position-absolute bottom-0 end-0"
                             style={{"paddingLeft": "0px", "paddingRight": "0px", "margin": "0px 5px 5px 0px"}}>View
                     </button>

@@ -17,7 +17,7 @@ const SignInScreen = () => (
 
            </div>
            <div className="col f-event-img-container">
-               <img src="/images/picn.jpeg" style={{"width": "100%", "objectFit": "cover", "borderRadius": "15px"}} alt=""/>
+               <img src="/Images/picn.jpeg" style={{"width": "100%", "objectFit": "cover", "borderRadius": "15px"}} alt=""/>
 
            </div>
 

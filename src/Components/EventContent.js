@@ -24,7 +24,7 @@ const EventContent = ({event}) => {
             <div
                 className="f-event-img-container mb-2 d-flex flex-column align-items-center justify-content-center position-relative">
                 <Link to={`/frydei/explore/${event.event_id}`} className="f-link">
-                    <img className="f-event-img" src={`/images/${event.event_photo}`} alt=""/>
+                    <img className="f-event-img" src={`/Images/${event.event_photo}`} alt=""/>
                 </Link>
             </div>
             <div className="f-event-detail">

@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const EditProfile = ({ formValues, setFormValues }) => {
     const { name, biography, location } = formValues
     const updateFormValue = (e) => {

@@ -350,6 +350,7 @@ button:focus, button:active {
   height: 750px;
   background-color: #DBDBDB;
   border-radius: 15px;
+  padding: 0;
 }
 .f-form .f-form-content .f-image-upload label {
   width: 140px;
@@ -387,6 +388,24 @@ button:focus, button:active {
 }
 .f-form .f-form-content .f-form-group {
   border: 1px solid transparent;
+  height: inherit;
+  width: 100%;
+}
+.f-form .f-form-content .f-form-group .f-uploaded-img {
+  height: inherit;
+  object-fit: cover;
+  border-radius: 15px;
+  width: 100%;
+}
+.f-form .f-form-content .f-form-group button {
+  outline: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+.f-form .f-form-content .f-form-group button .fa-xmark {
+  padding: 10px;
+  font-size: 26px;
+  color: #f7f7f7;
 }
 
 .f-search-bar-home {

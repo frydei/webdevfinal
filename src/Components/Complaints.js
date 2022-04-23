@@ -10,7 +10,7 @@ export const month_num = {
     June: "06",
     July: "07",
     August: "08",
-    Septembet: "09",
+    September: "09",
     October: "10",
     November: "11",
     December: "12"
@@ -48,7 +48,7 @@ const Complaint = (param) => {
                     <div className="form-group f-form-group d-flex flex-column form-control p-0">
                         <label htmlFor="event-host">Host(s)</label>
                         <div>
-                            <img src={`/images/${user.profile_picture}`} alt="" className="f-icon-small me-1"/>
+                            <img src={`/Images/${user.profile_picture}`} alt="" className="f-icon-small me-1"/>
                         </div>
                     </div>
                     <div className="form-group f-form-group">

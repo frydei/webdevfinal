@@ -31,7 +31,7 @@
         "last_message": "You accepted Susan's request!",
         "event": {
             "title": "Outdoor Concert",
-            "event_photo": "/images/park.jpeg",
+            "event_photo": "park.jpeg",
             "location": "Boston Common",
             "date": {
                 "day": "5th",
@@ -125,7 +125,7 @@
         "last_message": "Super excited as well! Thanks for putting this together.",
         "event": {
             "title": "ODIE - Little Lies",
-            "event_photo": "/images/jnk.jpeg",
+            "event_photo": "jnk.jpeg",
             "location": "Boston University",
             "date": {
                 "day": "12th",
@@ -212,7 +212,7 @@
         "last_message": "Mee too!",
         "event": {
             "title": "Outdoor Concert",
-            "event_photo": "/images/park.jpeg",
+            "event_photo": "park.jpeg",
             "location": "Boston Common",
             "date": {
                 "day": "5th",

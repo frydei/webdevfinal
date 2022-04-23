@@ -25,7 +25,7 @@ import AboutUs from "./Screens/AboutUs";
 
 const search_event = {
     "title": "Amine - The Best Tour",
-    "event_photo": "/images/four.jpeg",
+    "event_photo": "four.jpeg",
     "location": "Boston TD Garden",
     "date": {
         "day": 5,

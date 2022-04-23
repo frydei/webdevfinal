@@ -462,6 +462,7 @@ button {
       height: 750px;
       background-color: $lightgrey;
       border-radius: 15px;
+      padding: 0;
 
       label {
         width: 140px;
@@ -480,6 +481,8 @@ button {
           font-size: 14px;
         }
       }
+
+
     }
 
     small {
@@ -516,6 +519,25 @@ button {
 
     .f-form-group {
       border: 1px solid transparent;
+      height: inherit;
+      width: 100%;
+      .f-uploaded-img {
+        height: inherit;
+        object-fit: cover;
+        border-radius: 15px;
+        width: 100%;
+      }
+      button {
+        outline: none;
+        background-color: transparent;
+        border: 1px solid transparent;
+        .fa-xmark {
+          padding: 10px;
+          font-size: 26px;
+          color: $white;
+
+        }
+      }
 
     }
   }

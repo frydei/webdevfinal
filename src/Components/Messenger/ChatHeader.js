@@ -7,7 +7,7 @@ const ChatHeader = ({chat}) => {
             <div>
                 {
                     chat.participants.map(p => {
-                            return <img className="f-cover-img me-1 ms-1 mb-3 mt-3" src={`/images/${p.profile_picture}`} alt=""/>;
+                            return <img className="f-cover-img me-1 ms-1 mb-3 mt-3" src={`/Images/${p.profile_picture}`} alt=""/>;
                         }
                     )
                 }

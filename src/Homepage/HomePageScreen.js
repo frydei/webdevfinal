@@ -1,18 +1,21 @@
-import React from 'react';
-import user from "../Data/user.json";
+import React, {useEffect, useState} from 'react';
 import SearchBar from "./SearchBar";
-import events from "../Data/events.json";
-import SearchEvent from "../Components/SearchEvent";
 import LargeHeaderGuest from "../Components/LargeHeaderGuest";
-import LargeHeaderUser from "../Components/LargeHeaderUser";
 import Footer from "./../Components/Footer";
 import HomeEvent from "../Components/HomeEvent";
+import {useDispatch, useSelector} from "react-redux";
+import {getEvents} from "../BACKEND/Actions/EventsActions";
 
 const HomePageScreen = ({logged_in}) => {
+    const [test, setTest] = useState([])
+    const db_events = useSelector(state => state.events)
+    const dispatch = useDispatch()
+    useEffect(() => getEvents(dispatch), [])
+
     const homePageItems = [];
 
     for (let i = 0; i < 3; i++) {
-        homePageItems.push(events[i]);
+        homePageItems.push(db_events[i]);
     }
 
     let header, footer;

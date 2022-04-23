@@ -8,14 +8,18 @@
         "biography": "Born and raised in Boston. A fan of indie, music and picnics.",
         "profile_picture": "sample.jpeg",
         "upcoming_events": [  {
+            "event_id": 4444,
             "title": "Amine - The Best Tour",
             "event_photo": "fff.jpeg",
             "location": "Boston TD Garden",
             "date": {
                 "day": 5,
-                "month": "July"
+                "month": "September",
+                "year": 2022,
+                "hour": 7,
+                "minute": 0,
+                "time": "PM"
             },
-            "time": "6 PM",
             "cost": 50,
             "hosts": [
                 {
@@ -25,16 +29,43 @@
                 }
             ],
             "attendees": 5
-        }],
+        },
+            {
+                "event_id": 4444,
+                "title": "Amine - The Best Tour",
+                "event_photo": "guit.jpeg",
+                "location": "Boston TD Garden",
+                "date": {
+                    "day": 5,
+                    "month": "April",
+                    "year": 2022,
+                    "hour": 7,
+                    "minute": 0,
+                    "time": "PM"
+                },
+                "cost": 50,
+                "hosts": [
+                    {
+                        "first_name": "Chris",
+                        "last_name": "Kellu",
+                        "profile_picture": "shadow.jpeg"
+                    }
+                ],
+                "attendees": 5
+            }
+        ],
         "past_events": [  {
             "title": "Lucky Daye - Lucky",
             "event_photo": "indoor.jpeg",
             "location": "Blue House",
             "date": {
                 "day": 5,
-                "month": "August"
+                "month": "August",
+                "year": 2022,
+                "hour": 7,
+                "minute": 0,
+                "time": "PM"
             },
-            "time": "7 PM",
             "cost": 36,
             "hosts": [
                 {
@@ -50,8 +81,12 @@
                 "event_photo": "some.jpeg",
                 "location": "Blue House",
                 "date": {
-                    "day": 14,
-                    "month": "September"
+                    "day": 5,
+                    "month": "August",
+                    "year": 2022,
+                    "hour": 7,
+                    "minute": 0,
+                    "time": "PM"
                 },
                 "cost": 45,
                 "hosts": [

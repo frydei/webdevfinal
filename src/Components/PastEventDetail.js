@@ -20,13 +20,13 @@ const PastEventDetail = () => {
         <div className="container-fluid">
             <div className="row f-event-detail-content">
                 <div className="col-6 f-event-detail-img">
-                    <img src={`/images/${event.event_photo}`} alt="" className="f-event-image"/>
+                    <img src={`/Images/${event.event_photo}`} alt="" className="f-event-image"/>
                     <div className="f-event-detail-section">
                         <h3 className="f-event-detail-section-header mt-2">Attendees</h3>
                         <div className="f-event-attendees">
                             {
                                 event.attendees.map(att => {
-                                    return <img src={`/images/${att}`}
+                                    return <img src={`/Images/${att}`}
                                                 alt=""
                                                 className="f-user-icon-small me-1"
                                     />;
@@ -52,7 +52,7 @@ const PastEventDetail = () => {
                                 <div className="f-event-attendees m-0">
                                     {
                                         event.hosts.map(host => {
-                                            return <img src={`/images/${host.profile_picture}`}
+                                            return <img src={`/Images/${host.profile_picture}`}
                                                         alt=""
                                                         className="f-icon-small me-1"
                                             />;

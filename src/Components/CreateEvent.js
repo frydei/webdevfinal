@@ -1,19 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 import FilledButton from "./FilledButton";
 
 const CreateEvent = (param) => {
     const user = param.user;
+    const [imageUploader, setImageUploader] = useState(true);
+    const [image, setImage] = useState("anga.jpeg");
 
     return (
         <form action="" className="f-form mt-4">
             <div className="row f-form-content d-flex align-items-center">
                 <div className="col f-image-upload d-flex align-items-center justify-content-center">
-                    <div className="form-group f-form-group d-flex align-items-center justify-content-center">
-                        <label htmlFor="image-upload"
-                               className="shadow-none d-flex align-items-center justify-content-center">
-                            Add Image
-                        </label>
-                        <input id="image-upload" type="file" style={{"display": "none"}}/>
+                    <div className="form-group f-form-group d-flex align-items-center justify-content-center position-relative">
+                        {imageUploader ?
+                            <>
+                                <img src={`/Images/${image}`} alt="" className="f-uploaded-img"/>
+                                <button
+                                    className="position-absolute top-0 end-0 shadow-none"
+                                    onClick={() => setImageUploader(false)}
+                                >
+                                    <i className="fa-solid fa-xmark"/>
+                                </button>
+                            </>
+                            :
+                            <label htmlFor="image-upload"
+                                   className="shadow-none d-flex align-items-center justify-content-center">
+                                Add Image
+                                <input id="image-upload" type="file" style={{"display": "none"}}/>
+                            </label>}
+
                     </div>
                 </div>
                 <div className="col">
@@ -28,7 +42,7 @@ const CreateEvent = (param) => {
                     <div className="f-form-detail f-bg">
                         <div className="form-group f-form-group d-flex flex-column form-control p-0">
                             <label htmlFor="event-host">Host(s)</label>
-                            <div><img src={`/images/${user.profile_picture}`} alt="" className="f-icon-small me-1"/>
+                            <div><img src={`/Images/${user.profile_picture}`} alt="" className="f-icon-small me-1"/>
                                 <button className="f-add-button shadow-none">
                                     <i className="fa-solid fa-plus"/>
                                 </button>

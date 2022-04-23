@@ -1,17 +1,20 @@
-import events from "../../../Data/events.json";
-
-const EventsReducer = (state = events, action) => {
+import {GET_EVENTS, GET_EVENT_BY_ID, UPDATE_EVENT, CREATE_EVENT, DELETE_EVENT} from "../../Actions/EventsActions";
+const EventsReducer = (state = [], action) => {
     switch (action.type) {
-        case "create-event":
-            return state;
-        case "delete-event":
-            return state;
-        case "update-event":
-            return state;
+        case GET_EVENTS:
+            return action.events;
+        case GET_EVENT_BY_ID:
+            return action.event;
+        case DELETE_EVENT:
+            return state.filter(event => event._id !== action.event_id);
+        case UPDATE_EVENT:
+            return state.map(event => event._id === action.event._id ? action.event : event);
+        case CREATE_EVENT:
+            return [action.event, ...state];
         default:
-            return events;
+            return state;
     }
 
-}
+};
 
 export default EventsReducer;
