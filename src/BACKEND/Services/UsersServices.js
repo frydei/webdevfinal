@@ -5,7 +5,6 @@ const USERS = `${API_BASE}/users`
 
 export const getUsers = async () => {
     const res = await axios.get(USERS)
-    console.log(USERS)
     return res.data;
 }
 
@@ -14,8 +13,8 @@ export const getUserById = async (user_id) => {
     return res.data;
 }
 
-export const getUserByProfile = async (profile) => {
-    const res = await axios.get(`${USERS}/profile/${profile}`)
+export const getUserByUsername= async (username) => {
+    const res = await axios.get(`${USERS}/profile/${username}`)
     return res.data;
 }
 

@@ -8,9 +8,10 @@ export const GET_EVENT_BY_ID = "GET_EVENT_BY_ID";
 
 export const getEvents = async (dispatch) => {
     const events = await events_services.getEvents();
+    console.log(events)
     dispatch({
         type: GET_EVENTS,
-        events: events
+        all_events: events
     });
 };
 

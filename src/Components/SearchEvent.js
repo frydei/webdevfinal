@@ -6,7 +6,7 @@ const link = "";
 
 const SearchEvent = ({event}) => {
     return (
-        <div className="f-event f-search d-flex align-items-center justify-content-center mt-3 me-1 ms-1">
+        <div className="f-event f-search col-4 d-flex align-items-center justify-content-center mt-3 me-1 ms-1">
             <div className="d-flex flex-column align-items-center justify-content-center">
                 <div
                     className="f-event-img-container mb-2 d-flex flex-column align-items-center justify-content-center position-relative">

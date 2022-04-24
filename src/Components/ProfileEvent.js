@@ -1,6 +1,7 @@
 import React from "react";
 
 const ProfileEvent = ({event}) => {
+    const date = new Date(event.date)
     return (
         <div className="f-event f-search d-flex align-items-center justify-content-center mt-3 me-1 ms-1">
             <div className="d-flex flex-column align-items-center justify-content-center">
@@ -13,7 +14,7 @@ const ProfileEvent = ({event}) => {
                 </div>
                 <div className="f-event-detail">
                     <div className="f-event-detail-section d-flex align-items-center justify-content-between">
-                        <h3 className="f-event-time f-medium mb-1">{event.date.month} {event.date.day}th, {event.time}</h3>
+                        <h3 className="f-event-time f-medium mb-1">{date.toLocaleTimeString("en-US", {month: "long"})} {date.getDate()}th, {date.getHours()}</h3>
                         <button className="f-icon-button"><i className="fa-regular fa-heart"/></button>
                     </div>
                     <h3 className="f-event-title mb-1">{event.title}</h3>

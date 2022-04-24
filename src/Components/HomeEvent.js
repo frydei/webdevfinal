@@ -3,18 +3,22 @@ import {Link} from "react-router-dom";
 
 const HomeEvent = ({event, page}) => {
     let time, heart;
-    const date = event.date;
+    const date = new Date(event.date);
+    let hour = date.getHours() % 12 || 12;
+    let date_time = date.getHours() >= 12 ? "PM" : "AM"
+    let month = date.toLocaleString('en-US', {month: 'long'});
+    console.log()
     if (page === "Home") {
-        time = date.hour + " " + date.time;
+        time = hour + (date.getMinutes() > 0 ? ":" + date.getMinutes() : "") + " " + date_time;
         heart = "";
     } else if (page === "Favorited") {
-        time = date.month + " " + date.day + ", " + date.hour + " " + date.time;
+        time = month + " " + date.getDate() + ", " + hour + " " + date_time;
         heart = <i className="fa-solid fa-heart position-absolute top-0 end-0 pt-2 pe-2"/>;
     } else if (page === "Past") {
-        time = date.month + " " + date.day + ", " + date.year;
+        time = month + " " + date.getDate() + ", " + date.getFullYear();
         heart = "";
     } else {
-        time = date.month + " " + date.day + ", " + date.hour + " " + date.time;
+        time = month + " " + date.getDate() + ", " + hour + " " + date_time;
         heart = "";
     }
 
@@ -23,7 +27,7 @@ const HomeEvent = ({event, page}) => {
         <div className="f-event f-home d-flex flex-column align-items-center justify-content-center mt-3 me-1 ms-1">
             <div className="position-relative" style={{"width": "100%"}}>
                 {heart}
-                <Link to={`/frydei/explore/${event.event_id}`} className="f-link">
+                <Link to={`/frydei/explore/${event._id}`} className="f-link">
                     <img className="f-event-img" src={`/Images/${event.event_photo}`} alt=""/>
                 </Link>
             </div>

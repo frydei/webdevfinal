@@ -1,14 +1,13 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Dropdown} from "react-bootstrap";
 import menu from "../../Data/menu.json";
 import more_menu from "../../Data/more_menu.json";
 import MenuItem from "./MenuItem";
 import UserIconName from "../UserIconName";
 import {Link} from "react-router-dom";
-import {useSelector} from "react-redux";
 
-const UserDropdownMenu = () => {
-    const user = useSelector(state => state.users[0])
+const UserDropdownMenu = ({user}) => {
+    //const [current_user, setCurrentUser] = useState([])
     let more;
     if (user.admin_access) {
         const admin = {menu: "Admin Dashboard", link: "admin"};
@@ -16,6 +15,7 @@ const UserDropdownMenu = () => {
     } else {
         more = more_menu
     }
+    //console.log("MENU___" + user)
     let username = user.first_name.toLowerCase().split("")[0] + user.last_name.toLowerCase();
     const [dropdown, setDropdown] = useState(false);
     return (

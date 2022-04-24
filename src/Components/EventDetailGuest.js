@@ -5,11 +5,14 @@ import {Link} from "react-router-dom";
 
 const EventDetailGuest = ({event}) => {
     let min;
+    let date = new Date(event.date)
+    const time = date.getHours() >= 12 ? "PM" : "AM";
 
-    if (event.date.minute === 0) {
+
+    if (date.getMinutes() === 0) {
         min = "";
     } else {
-        min = ":" + event.date.minute;
+        min = ":" + date.getMinutes();
     }
 
     return (
@@ -72,7 +75,7 @@ const EventDetailGuest = ({event}) => {
                         <div className="f-event-detail-section">
                             <h3 className="f-event-detail-section-header">Date and Time</h3>
                             <h3 className="f-event-time">
-                                {event.date.month} {event.date.day}th, {event.date.hour}{min} {event.date.time}</h3>
+                                {date.toLocaleDateString("en-US", {month: "long"})} {date.getDate()}th, {date.getHours() % 12 || 12}{min} {time}</h3>
 
                         </div>
                         <div className="f-event-detail-section">

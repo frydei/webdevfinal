@@ -1,9 +1,8 @@
-import user from "../../../Data/user.json"
 
-const UserReducer = (state = user, action) => {
+const UserReducer = (state = [], action) => {
     switch(action.type) {
         default:
-            return user;
+            return state;
     }
 }
 

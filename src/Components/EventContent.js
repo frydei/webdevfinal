@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 const EventContent = ({event}) => {
     const user = event.hosts[0];
     const [heart, setHeart] = useState("regular");
+    const date = new Date(event.date)
 
     const likeHandler = () => {
         heart === "regular" ? setHeart("solid") : setHeart("regular");
@@ -29,7 +30,7 @@ const EventContent = ({event}) => {
             </div>
             <div className="f-event-detail">
                 <div className="f-event-detail-section d-flex align-items-center justify-content-between">
-                    <h3 className="f-event-time f-medium mb-1">{event.date.month} {event.date.day}th, {event.time}</h3>
+                    <h3 className="f-event-time f-medium mb-1">{date.toLocaleDateString("en-US", {month: "long"})} {date.getDate()}th, {date.getHours() >= 12 ? "PM" : "AM"}</h3>
                     <button className="f-icon-button" onClick={likeHandler}>
                         <i className={`fa-${heart} fa-heart f-dark`}/>
                     </button>

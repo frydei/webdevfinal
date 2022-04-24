@@ -1,7 +1,8 @@
 import React from "react";
 
 const ChatHeader = ({chat}) => {
-    console.log(chat);
+    const date = new Date(chat.most_recent_activity)
+    const event_date = new Date(chat.event.date)
     return (
         <div className="f-chat-header d-flex flex-column align-items-center">
             <div>
@@ -12,7 +13,7 @@ const ChatHeader = ({chat}) => {
                     )
                 }
             </div>
-            <h5><span>{chat.event.title}</span>, {chat.event.date.month} {chat.event.date.day}, {chat.event.time}, {chat.event.location}</h5>
+            <h5><span>{chat.event.title}</span>, {event_date.toLocaleDateString("en-US", {month: "long"})} {event_date.getDate()}, {event_date.getHours() % 12 || 12} {event_date.getHours() >= 12 ? "PM" : "AM"}, {chat.event.location}</h5>
 
         </div>
     );

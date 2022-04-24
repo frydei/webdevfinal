@@ -3,15 +3,15 @@ import {
     CREATE_USER,
     DELETE_USER,
     GET_USER_BY_ID,
-    GET_USER_BY_PROFILE,
-    UPDATE_USER
+    UPDATE_USER,
+    GET_USER_BY_USERNAME
 } from "../../Actions/UsersActions";
 
-const UsersReducer = (state = [], action) => {
+const UsersReducer = (state =  [], action) => {
     switch (action.type) {
         case GET_USERS:
             return action.users;
-        case GET_USER_BY_PROFILE:
+        case GET_USER_BY_USERNAME:
             return action.user;
         case GET_USER_BY_ID:
             return action.user;

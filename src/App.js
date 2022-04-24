@@ -3,8 +3,6 @@ import './Style/css/main.css';
 import "./Libraries/bootstrap/css/bootstrap.min.css";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
-import event from "./Data/event.json";
-import user from "./Data/user.json";
 import SearchResultsScreen from "./Screens/SearchResultsScreen";
 import ExploreEventsScreen from "./Screens/ExploreEventsScreen";
 import CreateEventScreen from "./Screens/CreateEventScreen";
@@ -16,12 +14,14 @@ import SignUpScreen from "./Sign-in-sign-up/SignUpScreen";
 import PrivacyPolicyScreen from "./PrivacyPolicy/PrivacyPolicyScreen";
 import ProfileScreen from "./Profile/ProfileScreen";
 import Frydei from "./Components/Frydei";
-import MenuHeader from "./Components/Menu/MenuHeader";
 import ComplaintsScreen from "./Screens/ComplaintsScreen";
 import ChatScreen from "./Screens/ChatScreen";
 import DashboardScreen from "./Screens/DashboardScreen";
 import PastEventDetailScreen from "./Screens/PastEventDetailScreen";
 import AboutUs from "./Screens/AboutUs";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+import {getUserByUsername} from "./BACKEND/Actions/UsersActions";
 
 const search_event = {
     "title": "Amine - The Best Tour",
@@ -42,7 +42,9 @@ const search_event = {
 };
 
 function App() {
+
     return (
+
         <Router>
             <div className="container-fluid p-0">
                 <Routes>
@@ -55,14 +57,14 @@ function App() {
                            exact={true}
                            element={<SignUpScreen/>}/>
                     <Route path="frydei"
-                           element={<Frydei logged_in={true} user={user}/>}>
+                           element={<Frydei logged_in={true}/>}>
                         <Route index element={<HomePageScreen logged_in={true}/>}/>
                         <Route path="home"
                                extact={true}
                                element={<HomePageScreen logged_in={true}/>}/>
                         <Route path="profile"
                                exact={true}
-                               element={<ProfileScreen user={user}/>}/>
+                               element={<ProfileScreen/>}/>
                         <Route path="profile/:username"
                                exact={true}
                                element={<ProfileScreen/>}/>
@@ -85,15 +87,15 @@ function App() {
                                element={<RequestScreen logged_in={true}/>}/>
                         <Route path="create"
                                exact={true}
-                               element={<CreateEventScreen user={user}/>}/>
+                               element={<CreateEventScreen/>}/>
                         <Route path="explore/:eventid"
                                element={<ViewEventScreen logged_in={true}/>}/>
                         <Route path="profile/pastevents/:eventid/complaint"
                                exact={true}
-                               element={<ComplaintsScreen user={user}/>}/>
+                               element={<ComplaintsScreen/>}/>
                         <Route path="messages"
                                exact={true}
-                               element={<ChatScreen user={user}/>}/>
+                               element={<ChatScreen/>}/>
                         <Route path="admin"
                                exact={true}
                                element={<DashboardScreen/>}/>

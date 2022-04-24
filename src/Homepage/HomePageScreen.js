@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import SearchBar from "./SearchBar";
 import LargeHeaderGuest from "../Components/LargeHeaderGuest";
 import Footer from "./../Components/Footer";
@@ -7,15 +7,13 @@ import {useDispatch, useSelector} from "react-redux";
 import {getEvents} from "../BACKEND/Actions/EventsActions";
 
 const HomePageScreen = ({logged_in}) => {
-    const [test, setTest] = useState([])
-    const db_events = useSelector(state => state.events)
     const dispatch = useDispatch()
-    useEffect(() => getEvents(dispatch), [])
+    useEffect(() =>  getEvents(dispatch), [])
+    const events = useSelector(state => state.events)
 
     const homePageItems = [];
-
     for (let i = 0; i < 3; i++) {
-        homePageItems.push(db_events[i]);
+        homePageItems.push(events[i]);
     }
 
     let header, footer;
@@ -33,13 +31,14 @@ const HomePageScreen = ({logged_in}) => {
                 <SearchBar/>
                 <div className="d-flex flex-wrap justify-content-center mt-2">
                     {
-                        homePageItems.map(event => {
+                        events.map && homePageItems.map(event => {
                             return <HomeEvent event={event} page={"Home"}/>;
                         })
                     }
                 </div>
             </div>
-            {footer}</>
+            {footer}
+        </>
 
     );
 

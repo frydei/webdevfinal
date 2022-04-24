@@ -5,6 +5,7 @@ const EVENTS = `${API_BASE}/events`
 
 export const getEvents = async () => {
     const res = await axios.get(EVENTS)
+    //console.log(res.data)
     return res.data;
 }
 

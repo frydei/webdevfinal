@@ -786,18 +786,21 @@ button:focus, button:active {
   font-size: 15px;
   font-weight: 400;
 }
-.f-profile .f-profile-tabs .f-link {
+.f-profile .f-profile-tabs li .f-link {
   text-decoration: none;
+  border: none;
   color: inherit;
   padding: 0;
+  background-color: transparent;
+  width: 100%;
 }
-.f-profile .f-profile-tabs .f-link:focus, .f-profile .f-profile-tabs .f-link::after, .f-profile .f-profile-tabs .f-link:hover, .f-profile .f-profile-tabs .f-link:active, .f-profile .f-profile-tabs .f-link:current {
+.f-profile .f-profile-tabs li .f-link:focus, .f-profile .f-profile-tabs li .f-link::after, .f-profile .f-profile-tabs li .f-link:hover, .f-profile .f-profile-tabs li .f-link:active, .f-profile .f-profile-tabs li .f-link:current {
   color: inherit;
 }
 .f-profile .f-nav {
   width: 25%;
 }
-.f-profile .f-nav:hover, .f-profile .selected {
+.f-profile .selected button {
   font-weight: 500;
 }
 
@@ -849,6 +852,23 @@ button:focus, button:active {
 }
 .f-complaint-card button {
   width: 50%;
+}
+
+.f-media-card {
+  width: 25%;
+  margin: 5px;
+}
+.f-media-card img {
+  width: 100%;
+  min-width: 250px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.f-event-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 /*# sourceMappingURL=main.css.map */

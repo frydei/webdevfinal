@@ -9,11 +9,12 @@ const PastEventDetail = () => {
     const eventid = param.eventid;
 
     const event = events.find(f => f.event_id.toString() === eventid)
+    const date = new Date(event.date)
     let min;
-    if (event.date.minute === 0) {
+    if (date.getMinutes() === 0) {
         min = "";
     } else {
-        min = ":" + event.date.minute;
+        min = ":" + date.getMinutes();
     }
 
     return (
@@ -73,7 +74,7 @@ const PastEventDetail = () => {
                         <div className="f-event-detail-section">
                             <h3 className="f-event-detail-section-header">Date and Time</h3>
                             <h3 className="f-event-time">
-                                {event.date.month} {event.date.day}th, {event.date.hour}{min} {event.date.time}</h3>
+                                {date.toLocaleTimeString("en-US", {month: "long"})} {date.getDate()}th, {date.getHours() % 12 || 12}{min} {date.getHours() >= 12 ? "PM" : "AM"}</h3>
                         </div>
                         <div className="f-event-detail-section">
                             <h3 className="f-event-detail-section-header">Special Restrictions</h3>

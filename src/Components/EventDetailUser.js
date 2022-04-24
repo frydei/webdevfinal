@@ -7,11 +7,12 @@ import {useDispatch, useSelector} from "react-redux";
 const EventDetailUser = ({event}) => {
     let min;
     const user = useSelector(state => state.users[0]);
+    const date = new Date(event.date)
 
-    if (event.date.minute === 0) {
+    if (date.getMinutes() === 0) {
         min = "";
     } else {
-        min = ":" + event.date.minute;
+        min = ":" + date.getMinutes();
     }
 
     const dispatch = useDispatch();
@@ -97,7 +98,7 @@ const EventDetailUser = ({event}) => {
                         <div className="f-event-detail-section">
                             <h3 className="f-event-detail-section-header">Date and Time</h3>
                             <h3 className="f-event-time">
-                                {event.date.month} {event.date.day}th, {event.date.hour}{min} {event.date.time}</h3>
+                                {date.toLocaleDateString("en-US", {month: "long"})} {date.getDate()}th, {date.getHours() % 12 || 12}{min} {date.getHours() >= 12 ? "PM" : "AM"}</h3>
 
                         </div>
                         <div className="f-event-detail-section">

@@ -1,20 +1,23 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import tags from "../Data/tags.json";
 import SearchEvent from "../Components/SearchEvent";
 import {month_num} from "../Components/Complaints";
 import ActionTag from "../Components/ActionTag";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {getEvents} from "../BACKEND/Actions/EventsActions";
 
 const SearchResultsScreen = () => {
+    const dispatch = useDispatch();
     const events = useSelector(state => state.events)
     const [searchEvent, setSearchEvent] = useState(events)
+    useEffect(() => getEvents(dispatch), [])
+
     const [input, setInput] = useState();
+
     const date = new Date()
 
     const getDate = (e) => {
-        let m = month_num[e.date.month]
-        m = m.split("")[0] === "0" ? m[1] : m;
-        return new Date(e.date.year + "/" + m + "/" + e.date.day)
+        return new Date(e.date)
     }
 
     const isTomorrow = (d) => {
@@ -93,9 +96,9 @@ const SearchResultsScreen = () => {
                         })
                     }
                 </div>
-                <div className="d-flex flex-wrap justify-content-between">
+                <div className="f-event-grid container">
                     {
-                        searchEvent.map(event => {
+                        searchEvent.map && searchEvent.map(event => {
                             return <SearchEvent event={event}/>
                         })
                     }
