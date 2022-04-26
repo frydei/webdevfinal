@@ -1,13 +1,13 @@
 import React from "react";
 import Complaints from "../Components/Complaints";
-import {useParams} from "react-router";
+import {useOutletContext, useParams} from "react-router";
 import {useSelector} from "react-redux";
 
 const CreateEventScreen = () => {
     const param = useParams();
     const eventid = param.eventid;
     const events = useSelector(state => state.events)
-    const user = useSelector(state => state.users[0])
+    const [logged_in, current_user, setCurrentUser] = useOutletContext()
 
     let event = events.find(f => f.event_id.toString() === eventid);
     return (
@@ -16,7 +16,7 @@ const CreateEventScreen = () => {
                 <h3 className="f-form-header mb-1">Submit a complaint</h3>
                 <h3 className="f-form-header" style={{"fontSize": "13px"}}><span style={{"fontWeight": "normal"}}>We take all violations very seriously.</span> </h3>
 
-                <Complaints user={user}
+                <Complaints user={current_user}
                             event={event}
                 />
             </div>

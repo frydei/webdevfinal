@@ -11,10 +11,8 @@ import HeaderUser from "../Components/HeaderUser";
 import {useOutletContext} from "react-router";
 import {useLocation} from "react-router-dom";
 
-const HomePageScreen = () => {
+const GuestHomePageScreen = () => {
     const dispatch = useDispatch();
-    const location = useLocation()
-    const [logged_in, current_user, setCurrentUser] = useOutletContext()
 
     useEffect(async () => {
         await getEvents(dispatch);
@@ -27,18 +25,10 @@ const HomePageScreen = () => {
         homePageItems.push(events[i]);
     }
 
-    let header, footer;
-    if (logged_in) {
-        header = "";
-        footer = "";
-    } else {
-        header = <LargeHeaderGuest/>;
-        footer = <Footer/>;
-    }
     return (
         <>
             <div className="p-4">
-                {header}
+                <LargeHeaderGuest/>
                 <SearchBar/>
                 <div className="d-flex flex-wrap justify-content-center mt-2">
                     {
@@ -48,11 +38,11 @@ const HomePageScreen = () => {
                     }
                 </div>
             </div>
-            {footer}
+            <Footer/>
         </>
 
     );
 
 };
 
-export default HomePageScreen;
+export default GuestHomePageScreen;

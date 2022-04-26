@@ -13,6 +13,9 @@ export const getEvents = async (dispatch) => {
         type: GET_EVENTS,
         all_events: events
     });
+
+    return events;
+
 };
 
 export const getEventById = async (dispatch, event_id) => {

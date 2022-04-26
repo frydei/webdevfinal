@@ -1,9 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import UserIconSmall from "./UserIconSmall";
+import {useNavigate} from "react-router";
 
 const Request = ({user}) => {
-
+    const navigate = useNavigate()
     const acceptClick = () => {
 
     }
@@ -11,12 +12,21 @@ const Request = ({user}) => {
     const rejectClick = () => {
 
     }
+
+    const navigateToProfile = () => {
+        navigate(`/frydei/profile/${user.username}`, {
+            state: {
+                user: "USER"
+            }
+        });
+
+    }
     return(
         <div className="d-flex align-items-center justify-content-between f-request-box pb-3">
             <div className="d-flex align-items-center">
-                <Link className="f-link"
-                      to={`/frydei/profile/${user.first_name.toLowerCase().split("")[0] + user.last_name.toLowerCase()}`}><UserIconSmall user={user}/>
-                </Link>
+                <button className="f-link-button" onClick={() => navigateToProfile}>
+                    <UserIconSmall user={user}/>
+                </button>
                 <h3 className="ms-2 f-small-regular">{user.first_name} {user.last_name} wants to join your event.</h3>
             </div>
             <div className="d-flex justify-content-between" style={{"width": "8%"}}>

@@ -1,25 +1,51 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import UserIcon from "./UserIcon";
 import UserIconSmall from "./UserIconSmall";
 import {Link} from "react-router-dom";
+import {getCurrentUser} from "../BACKEND/Services/AuthServices";
+import {useNavigate} from "react-router";
 
 const EventContent = ({event}) => {
-    const user = event.hosts[0];
+    const navigate = useNavigate();
+    const [current_user, setUser] = useState([]);
+    //const user = useSelector((state) => state.users)
+    useEffect(() => {
+        getCurrentUser().then(r => setUser(r));
+    }, []);
+
+    const host = event.hosts[0];
     const [heart, setHeart] = useState("regular");
-    const date = new Date(event.date)
+    const date = new Date(event.date);
 
     const likeHandler = () => {
         heart === "regular" ? setHeart("solid") : setHeart("regular");
+    };
+
+    let user;
+    if (current_user.username === host.username) {
+        user = "CURRENT";
+    } else {
+        user = "USER"
+    }
+    console.log(host.first_name.toLowerCase().split("")[0] + host.last_name.toLowerCase())
+
+
+    const navigateToProfile = () => {
+        navigate(`/frydei/profile/${host.username}`, {
+            state: {
+                user: user
+            }
+        });
+
     };
 
     return (
         <div className="d-flex flex-column align-items-center justify-content-center p-3">
             <div
                 className="f-event-header f-explore-header d-flex align-items-center justify-content-between ps-1 pe-1 mb-3">
-                <Link className="f-link"
-                      to={`/frydei/profile/${user.first_name.toLowerCase().split("")[0] + user.last_name.toLowerCase()}`}>
-                    <UserIconSmall user={user}/>
-                </Link>
+                <button className="f-link-button" onClick={() => navigateToProfile}>
+                    <UserIconSmall user={host}/>
+                </button>
                 <button className="f-icon-button"><i className="fa-solid fa-ellipsis"/></button>
             </div>
             <div

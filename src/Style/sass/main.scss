@@ -387,8 +387,19 @@ button {
       family: $fredoka;
       size: 14px;
     }
-
   }
+  .f-user-image-upload {
+    font: {
+      family: $fredoka;
+      size: 14px;
+    }
+    color: $grey;
+  width: 100%;
+  background-color: white;
+  padding: 10%;
+  border-radius: 5px;
+}
+
 }
 
 .f-icon-button {
@@ -1139,4 +1150,19 @@ button {
 .f-event-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+}
+
+
+.f-invalid {
+  width: 100%;
+  font-size:  12px;
+  padding: 2%;
+  text-align: center;
+  color: #f51c1c;
+}
+
+.f-link-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
 }

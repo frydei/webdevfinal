@@ -3,9 +3,11 @@ import events from "../Data/events.json"
 import React from "react";
 import RequestEvent from "../Components/RequestEvent";
 import {useSelector} from "react-redux";
+import {useOutletContext} from "react-router";
 
 
 const RequestScreen = () => {
+    const [logged_in, current_user] = useOutletContext()
     const events = useSelector(state => state.events)
 
     return (

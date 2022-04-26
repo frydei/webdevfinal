@@ -4,8 +4,10 @@ import EmptyChat from "../Components/Messenger/EmptyChat"
 import ChatSearch from "../Components/Messenger/ChatSearch";
 import ChatBox from "../Components/Messenger/ChatBox";
 import {useSelector} from "react-redux";
+import {useOutletContext} from "react-router";
 
 const ChatScreen = () => {
+    const [logged_in, current_user, setCurrentUser] = useOutletContext()
     const chats = useSelector(state => state.chats)
     let [activeChat, setActiveChat] = useState({})
 

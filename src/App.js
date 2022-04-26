@@ -1,7 +1,7 @@
 //Libraries
 import './Style/css/main.css';
 import "./Libraries/bootstrap/css/bootstrap.min.css";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 
 import SearchResultsScreen from "./Screens/SearchResultsScreen";
 import ExploreEventsScreen from "./Screens/ExploreEventsScreen";
@@ -22,6 +22,8 @@ import AboutUs from "./Screens/AboutUs";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {getUserByUsername} from "./BACKEND/Actions/UsersActions";
+import DetailsScreen from "./Sign-in-sign-up/DetailsScreen";
+import GuestHomePageScreen from "./Homepage/GuestHomePageScreen";
 
 const search_event = {
     "title": "Amine - The Best Tour",
@@ -49,16 +51,19 @@ function App() {
             <div className="container-fluid p-0">
                 <Routes>
                     <Route path=""
-                           element={<HomePageScreen logged_in={true}/>}/>
+                           element={<Navigate replace to="frydei"/>}/>
                     <Route path="sign-in"
                            exact={true}
                            element={<SignInScreen/>}/>
                     <Route path="sign-up"
                            exact={true}
                            element={<SignUpScreen/>}/>
+                    <Route path="details"
+                           exact={true}
+                           element={<DetailsScreen/>}/>
                     <Route path="frydei"
-                           element={<Frydei logged_in={true}/>}>
-                        <Route index element={<HomePageScreen logged_in={true}/>}/>
+                           element={<Frydei/>}>
+                        <Route index element={<HomePageScreen/>}/>
                         <Route path="home"
                                extact={true}
                                element={<HomePageScreen logged_in={true}/>}/>
@@ -89,7 +94,7 @@ function App() {
                                exact={true}
                                element={<CreateEventScreen/>}/>
                         <Route path="explore/:eventid"
-                               element={<ViewEventScreen logged_in={true}/>}/>
+                               element={<ViewEventScreen/>}/>
                         <Route path="profile/pastevents/:eventid/complaint"
                                exact={true}
                                element={<ComplaintsScreen/>}/>

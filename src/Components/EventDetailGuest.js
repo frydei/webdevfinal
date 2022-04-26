@@ -1,10 +1,14 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Tag from "./Tag";
 import FilledButton from "./FilledButton";
 import {Link} from "react-router-dom";
+import {getCurrentUser} from "../BACKEND/Services/AuthServices";
+import {useNavigate} from "react-router";
 
 const EventDetailGuest = ({event}) => {
+    //const user = useSelector((state) => state.users)
     let min;
+    const navigate = useNavigate();
     let date = new Date(event.date)
     const time = date.getHours() >= 12 ? "PM" : "AM";
 
@@ -14,6 +18,21 @@ const EventDetailGuest = ({event}) => {
     } else {
         min = ":" + date.getMinutes();
     }
+
+    if (event._id === undefined) {
+        return null
+    }
+
+    const navigateToProfile = (host) => {
+
+        navigate(`/frydei/profile/${host.username}`, {
+            state: {
+                user: "USER"
+            }
+        });
+
+    };
+
 
     return (
         <div className="container-fluid">
@@ -25,7 +44,7 @@ const EventDetailGuest = ({event}) => {
                         <div className="f-event-attendees m-0">
                             {
                                 event.attendees.map(att => {
-                                    return <img src={`/Images/${att}`}
+                                    return <img src={`/Images/${att.image}`}
                                                 alt=""
                                                 className="f-user-icon-small me-1"
                                     />;
@@ -51,10 +70,9 @@ const EventDetailGuest = ({event}) => {
                                 <div className="f-event-attendees">
                                     {
                                         event.hosts.map(host => {
-                                            return <Link className="f-link"
-                                                         to={`/frydei/profile/${host.first_name.toLowerCase().split("")[0] + host.last_name.toLowerCase()}`}>
+                                            return <button className="f-link-button" onClick={() => navigateToProfile(host)}>
                                                 <img src={`/Images/${host.profile_picture}`} alt="" className="f-icon-small me-1"/>
-                                            </Link>
+                                            </button>
                                         })
                                     }
 
@@ -82,7 +100,7 @@ const EventDetailGuest = ({event}) => {
                             <h3 className="f-event-detail-section-header">Spots Left</h3>
                             <span className="f-event-attendees d-flex align-items-center">
                                 {event.spots - event.attendees.length}
-                                <i className="fa-solid fa-user-group"/>
+                                <i className="fa-solid fa-user-group ms-1"/>
                             </span>
 
                         </div>
@@ -94,7 +112,7 @@ const EventDetailGuest = ({event}) => {
 
                     </div>
                     <div className="row f-tag-box d-flex align-items-center justify-content-start ps-0 mb-2" style={{"width": "100%"}}>
-                        <div className="d-flex align-items-center justify-content-start ps-0" style={{"width": "100%"}}>
+                        <div className="d-flex align-items-center justify-content-start ps-0 mt-2" style={{"width": "100%"}}>
                             {
                                 event.tags.map(tag => {
                                     return <Tag tag={tag}/>

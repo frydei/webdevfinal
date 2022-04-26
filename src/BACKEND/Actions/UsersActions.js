@@ -3,6 +3,8 @@ import * as users_services from "../Services/UsersServices";
 export const CREATE_USER = "CREATE_USER";
 export const DELETE_USER = "DELETE_USER";
 export const GET_USER_BY_USERNAME = "GET_USER_BY_USERNAME";
+export const GET_USER_BY_EMAIL = "GET_USER_BY_EMAIL";
+export const GET_USER_BY_CREDS = "GET_USER_BY_CREDS";
 export const UPDATE_USER = "UPDATE_USER";
 export const GET_USERS = "GET_USERS";
 export const GET_USER_BY_ID = "GET_USER_BY_ID";
@@ -28,6 +30,24 @@ export const getUserByUsername = async (dispatch, username) => {
     const user = await users_services.getUserByUsername(username);
     dispatch({
         type: GET_USER_BY_USERNAME,
+        user: user
+    });
+    return user
+};
+
+export const getUserByEmail = async (dispatch, email) => {
+    const user = await users_services.getUserByEmail(email);
+    dispatch({
+        type: GET_USER_BY_EMAIL,
+        user: user
+    });
+    return user
+};
+
+export const getUserByCredentials = async (dispatch, username, password) => {
+    const user = await users_services.getUserByCredentials(username, password);
+    dispatch({
+        type: GET_USER_BY_CREDS,
         user: user
     });
     return user

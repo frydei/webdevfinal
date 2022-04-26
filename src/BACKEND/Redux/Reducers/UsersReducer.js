@@ -4,7 +4,9 @@ import {
     DELETE_USER,
     GET_USER_BY_ID,
     UPDATE_USER,
-    GET_USER_BY_USERNAME
+    GET_USER_BY_USERNAME,
+    GET_USER_BY_EMAIL,
+    GET_USER_BY_CREDS
 } from "../../Actions/UsersActions";
 
 const UsersReducer = (state =  [], action) => {
@@ -15,7 +17,12 @@ const UsersReducer = (state =  [], action) => {
             return action.user;
         case GET_USER_BY_ID:
             return action.user;
+        case GET_USER_BY_EMAIL:
+            return action.user;
+        case GET_USER_BY_CREDS:
+            return action.user;
         case UPDATE_USER:
+            console.log(state)
             return state.map(user => user._id === action.user._id ? action.user : user);
         case CREATE_USER:
             return [action.user, ...state];

@@ -5,9 +5,12 @@ import {month_num} from "../Components/Complaints";
 import ActionTag from "../Components/ActionTag";
 import {useDispatch, useSelector} from "react-redux";
 import {getEvents} from "../BACKEND/Actions/EventsActions";
+import {useOutletContext} from "react-router";
 
 const SearchResultsScreen = () => {
     const dispatch = useDispatch();
+    const [logged_in, current_user] = useOutletContext()
+
     const events = useSelector(state => state.events)
     const [searchEvent, setSearchEvent] = useState(events)
     useEffect(() => getEvents(dispatch), [])
@@ -96,7 +99,7 @@ const SearchResultsScreen = () => {
                         })
                     }
                 </div>
-                <div className="f-event-grid container">
+                <div className="f-event-grid">
                     {
                         searchEvent.map && searchEvent.map(event => {
                             return <SearchEvent event={event}/>

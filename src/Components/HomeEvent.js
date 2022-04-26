@@ -1,13 +1,19 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {useNavigate, useOutletContext} from "react-router";
 
 const HomeEvent = ({event, page}) => {
+    const [logged_in, current_user, setCurrentUser] = useOutletContext()
+    const navigate = useNavigate()
+    if (!event) {
+        return null;
+    }
+
     let time, heart;
     const date = new Date(event.date);
     let hour = date.getHours() % 12 || 12;
     let date_time = date.getHours() >= 12 ? "PM" : "AM"
     let month = date.toLocaleString('en-US', {month: 'long'});
-    console.log()
     if (page === "Home") {
         time = hour + (date.getMinutes() > 0 ? ":" + date.getMinutes() : "") + " " + date_time;
         heart = "";
@@ -22,14 +28,18 @@ const HomeEvent = ({event, page}) => {
         heart = "";
     }
 
+    const viewEvent = () => {
+        navigate(`/frydei/explore/${event._id}`, {state: {logged_in: logged_in}})
+    }
+
 
     return (
         <div className="f-event f-home d-flex flex-column align-items-center justify-content-center mt-3 me-1 ms-1">
             <div className="position-relative" style={{"width": "100%"}}>
                 {heart}
-                <Link to={`/frydei/explore/${event._id}`} className="f-link">
+                <button className="f-link f-link-button" onClick={() => viewEvent()}>
                     <img className="f-event-img" src={`/Images/${event.event_photo}`} alt=""/>
-                </Link>
+                </button>
             </div>
             <div className="f-event-detail d-flex flex-column align-items-center justify-content-start">
 

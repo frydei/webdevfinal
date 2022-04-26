@@ -1,91 +1,75 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 
 import {CustomButtonContainer, SignUpContainer} from './sign-up.styles';
 import FilledButton from "../Components/FilledButton";
 import Spacer from "../Components/Spacer";
-
-
-// import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
-
-const FormInput = ({handleChange, label, ...otherProps}) => (
-    <div className="form-group f-form-group f-bg d-flex align-items-center"
-         style={{"padding": "0px 0px 0px 10px", "borderRadius": "3px", "width": "100%"}}>
-        <input className="form-input shadow-none" onChange={handleChange} {...otherProps}/>
-        {
-            label ?
-                (<label className={`${otherProps.value.length ? 'shrink' : ''} form-input-label`}>
-                    {label}
-
-                </label>)
-                : null
-        }
-
-    </div>
-);
+import FormInput from "./FormInput";
+import {getUserByCredentials} from "../BACKEND/Actions/UsersActions";
+import {getCurrentUser, signIn} from "../BACKEND/Services/AuthServices";
+import {useNavigate} from "react-router";
+import {useDispatch} from "react-redux";
+import {useLocation} from "react-router-dom";
 
 const CustomButton = ({children, ...props}) => (
     <CustomButtonContainer {...props}>{children}</CustomButtonContainer>
 );
 
-class SignIn extends React.Component {
-    constructor(props) {
-        super(props);
+const SignIn = () => {
+    const usernameRef = useRef();
+    const passwordRef = useRef();
+    const formRef = useRef();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const dispatch = useDispatch();
+    const [user, setUser] = useState();
+    const [error_msg, setErrorMsg] = useState(false);
 
-        this.state = {
-            email: '',
-            password: ''
-        };
-    }
-
-    handleSubmit = async event => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        const {email, password} = this.state;
 
-        try {
-            // await auth.signInWithEmailAndPassword(email, password);
-            this.setState({email: '', password: ''});
-        } catch (error) {
-            console.log(error);
+        const creds = {
+            username: usernameRef.current.value,
+            password: passwordRef.current.value
+
         }
-
+        signIn(creds).then(r => {
+           if (!r) {
+               setErrorMsg(true);
+               formRef.current.reset()
+           } else {
+               navigate(`/frydei/profile/${r.username}`, {state: {from: "CURRENT"}})
+           }
+        })
     };
 
-    handleChange = event => {
-        const {value, name} = event.target;
-        this.setState({[name]: value});
 
-    };
+    return (
+        <form onSubmit={handleSubmit} className="f-form d-flex  flex-column align-items-center justify-content-center"
+              ref={formRef}
+              style={{"width": "100%"}}>
+            <div className="f-form-content-sign d-flex flex-column align-items-center justify-content-center">
+                <FormInput
+                    name={"username"}
+                    type={"text"}
+                    ref={usernameRef}
+                    placeholder={"Username"}
+                    required/>
 
-    render() {
-        return (
-           <form onSubmit={this.handleSubmit} className="f-form d-flex align-items-center justify-content-center" style={{"width": "100%"}}>
-                    <div className="f-form-content-sign d-flex flex-column align-items-center justify-content-center">
-                        <FormInput
-                        name="email"
-                        type="email"
-                        value={this.state.email}
-                        // label ='email'
-                        placeholder="Email address"
-                        handleChange={this.handleChange}
-                        required/>
+                <FormInput
+                    name={"password"}
+                    type={"password"}
+                    ref={passwordRef}
+                    // label='password'
+                    placeholder={"Password"}
+                    required
+                />
+                <Spacer size={24}/>
+                <FilledButton name={"Log in"} handleSubmit={handleSubmit}/>
+            </div>
+            {error_msg ? <div className="f-invalid mb-1"> Please check your username and password and try again. </div> : null}
 
-                        <FormInput
-                            name="password"
-                            type="password"
-                            value={this.state.password}
-                            // label='password'
-                            placeholder="Password"
-                            handleChange={this.handleChange}
-                            required/>
-                        <Spacer size={24}/>
-                        <FilledButton name={"Log in"} handleSubmit={this.handleSubmit}/>
-                    </div>
-
-
-
-                </form>
-                );
-    }
-}
+        </form>
+    );
+};
 
 export default SignIn;

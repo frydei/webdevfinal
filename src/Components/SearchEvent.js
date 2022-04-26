@@ -1,17 +1,29 @@
 import React from "react";
 import UserIconSmallest from "./UserIconSmallest";
 import {Link} from "react-router-dom";
+import {useNavigate} from "react-router";
 
 const link = "";
 
+
 const SearchEvent = ({event}) => {
+    const navigate = useNavigate()
+    const navigateToProfile = (host) => {
+
+        navigate(`/frydei/profile/${host.username}`, {
+            state: {
+                user: "USER"
+            }
+        });
+    }
+
     return (
-        <div className="f-event f-search col-4 d-flex align-items-center justify-content-center mt-3 me-1 ms-1">
+        <div className="f-event f-search d-flex align-items-center justify-content-center mt-3 me-1 ms-1">
             <div className="d-flex flex-column align-items-center justify-content-center">
                 <div
                     className="f-event-img-container mb-2 d-flex flex-column align-items-center justify-content-center position-relative">
-                    <Link to={`/frydei/explore/${event.event_id}`} className="f-link"><img className="f-event-img" src={`/Images/${event.event_photo}`} alt=""/></Link>
-                    <Link to={`/frydei/explore/${event.event_id}`} className="f-button f-link f-view d-flex justify-content-center align-items-center position-absolute bottom-0 end-0"
+                    <Link to={`/frydei/explore/${event._id}`} className="f-link"><img className="f-event-img" src={`/Images/${event.event_photo}`} alt=""/></Link>
+                    <Link to={`/frydei/explore/${event._id}`} className="f-button f-link f-view d-flex justify-content-center align-items-center position-absolute bottom-0 end-0"
                             style={{"paddingLeft": "0px", "paddingRight": "0px", "margin": "0px 5px 5px 0px"}}>View
                     </Link>
                 </div>
@@ -25,10 +37,9 @@ const SearchEvent = ({event}) => {
                         <div>
                             {
                                 event.hosts.map(host => {
-                                    return <Link className="f-link"
-                                                 to={`/frydei/profile/${host.first_name.toLowerCase().split("")[0] + host.last_name.toLowerCase()}`}>
+                                    return <button className="f-link-button" onClick={() => navigateToProfile(host)}>
                                         <UserIconSmallest user={host}/>
-                                    </Link>
+                                    </button>
                                 })
                             }
                         </div>

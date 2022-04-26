@@ -13,10 +13,26 @@ export const getUserById = async (user_id) => {
     return res.data;
 }
 
-export const getUserByUsername= async (username) => {
-    const res = await axios.get(`${USERS}/profile/${username}`)
+
+export const getUserByUsername = async (username) => {
+    const res = await axios.get(`${USERS}/username/${username}`)
     return res.data;
 }
+
+export const getUserByEmail  = async (email) => {
+    const res = await axios.get(`${USERS}/email/${email}`)
+    return res.data;
+}
+
+export const getUserByCredentials = async (username, password) => {
+    const creds = {
+        username: username,
+        password: password
+    }
+    const res = await axios.post(`${USERS}/credentials`, creds)
+    return res.data;
+}
+
 
 export const createUser = async (user) => {
     const res = await axios.post(USERS, user)

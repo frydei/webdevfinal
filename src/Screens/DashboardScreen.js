@@ -4,6 +4,7 @@ import EventCard from "../Components/Dashboard/EventCard";
 import SearchEvent from "../Components/SearchEvent";
 import ComplaintCard from "../Components/Dashboard/ComplaintCard";
 import {useSelector} from "react-redux";
+import {useOutletContext} from "react-router";
 
 const data = [
     {
@@ -25,6 +26,7 @@ const data = [
 ];
 
 const DashboardScreen = () => {
+    const [logged_in, current_user, setCurrentUser] = useOutletContext()
     const events = useSelector(state => state.events);
     const complaints = useSelector(state => state.complaints);
 

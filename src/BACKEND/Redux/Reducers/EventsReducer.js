@@ -1,5 +1,5 @@
 import {GET_EVENTS, GET_EVENT_BY_ID, UPDATE_EVENT, CREATE_EVENT, DELETE_EVENT} from "../../Actions/EventsActions";
-const EventsReducer = (state = {events: []}, action) => {
+const EventsReducer = (state = [], action) => {
     switch (action.type) {
         case GET_EVENTS:
             //console.log("GET_EVENTS")
