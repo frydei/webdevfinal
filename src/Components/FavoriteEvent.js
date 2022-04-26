@@ -5,35 +5,44 @@ import {getUserById, updateUser} from "../BACKEND/Actions/UsersActions";
 import {useDispatch} from "react-redux";
 import {updateSession} from "../BACKEND/Services/AuthServices";
 
-const HomeEvent = ({event, page}) => {
-    const [logged_in, current_user, setCurrentUser] = useOutletContext()
+const FavoriteEvent = ({event, page, logged_in, current_user, setCurrentUser, update}) => {
+    const [heart, setHeart] = useState(<i className="fa-solid fa-heart"/>)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     if (!event) {
         return null;
     }
 
-    let time;
     const date = new Date(event.date);
     let hour = date.getHours() % 12 || 12;
     let date_time = date.getHours() >= 12 ? "PM" : "AM"
     let month = date.toLocaleString('en-US', {month: 'long'});
-    if (page === "Home") {
-        time = hour + (date.getMinutes() > 0 ? ":" + date.getMinutes() : "") + " " + date_time;
-    } else if (page === "Past") {
-        time = month + " " + date.getDate() + ", " + date.getFullYear();
-    } else {
-        time = month + " " + date.getDate() + ", " + hour + " " + date_time;
-    }
+    let time = month + " " + date.getDate() + ", " + hour + " " + date_time;
+
 
     const viewEvent = () => {
         navigate(`/frydei/explore/${event._id}`, {state: {logged_in: logged_in}})
+    }
+
+    const unlike = async () => {
+        let db_user = await getUserById(dispatch, current_user._id);
+        let updated_user = {
+            ...db_user,
+            favorited: db_user.favorited.filter(e => e._id !== event._id)
+        };
+        updateUser(dispatch, updated_user).then(r => console.log(r));
+        setCurrentUser(await updateSession(updated_user));
+        setHeart(<i className="fa-regular fa-heart"/>);
+        update(current_user)
     }
 
 
     return (
         <div className="f-event f-home d-flex flex-column align-items-center justify-content-center mt-3 me-1 ms-1">
             <div className="position-relative" style={{"width": "100%"}}>
+                <button className="f-icon-button position-absolute top-0 end-0 pt-2 pe-2" onClick={unlike}>
+                    {heart}
+                </button>
                 <button className="f-link f-link-button" onClick={() => viewEvent()}>
                     <img className="f-event-img" src={`/Images/${event.event_photo}`} alt=""/>
                 </button>
@@ -53,4 +62,4 @@ const HomeEvent = ({event, page}) => {
 
     );
 };
-export default HomeEvent;
+export default FavoriteEvent;

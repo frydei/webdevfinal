@@ -43,7 +43,7 @@ const EventDetailUser = ({event}) => {
             setCurrentUser(await updateSession(updated_user))
         }
 
-        let event_added = current_user.upcoming_events.find(e => e._id === current_event._id)
+        let event_added = current_user.upcoming_events.find(e => e._id === current_event._id || e.title === current_event.title)
         if (!event_added) {
             let updated_event = {
                 ...current_event, attendees: [...current_event.attendees, {...new_attendee}]

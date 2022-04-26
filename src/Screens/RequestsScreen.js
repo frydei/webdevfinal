@@ -7,17 +7,14 @@ import {useOutletContext} from "react-router";
 
 
 const RequestScreen = () => {
-    const [logged_in, current_user] = useOutletContext()
-    const events = useSelector(state => state.events)
+    const [logged_in, current_user, setCurrentuser] = useOutletContext()
 
     return (
         <>
             <div className="d-flex flex-column align-items-center " style={{"paddingLeft": "200px", "paddingRight": "200px", "paddingTop": "25px"}}>
                 {
-                    events.map(event => {
-                        return <RequestEvent event={event}
-                                             user={user}
-                        />
+                    current_user.user_events.map(event => {
+                        return <RequestEvent event={event}/>
                     })
                 }
             </div>

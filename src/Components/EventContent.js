@@ -2,33 +2,54 @@ import React, {useEffect, useState} from "react";
 import UserIcon from "./UserIcon";
 import UserIconSmall from "./UserIconSmall";
 import {Link} from "react-router-dom";
-import {getCurrentUser} from "../BACKEND/Services/AuthServices";
-import {useNavigate} from "react-router";
+import {getCurrentUser, updateSession} from "../BACKEND/Services/AuthServices";
+import {useNavigate, useOutletContext} from "react-router";
+import {getUserById, updateUser} from "../BACKEND/Actions/UsersActions";
+import {useDispatch} from "react-redux";
 
-const EventContent = ({event}) => {
+const EventContent = ({event, is_favorite}) => {
     const navigate = useNavigate();
-    const [current_user, setUser] = useState([]);
-    //const user = useSelector((state) => state.users)
-    useEffect(() => {
-        getCurrentUser().then(r => setUser(r));
-    }, []);
-
+    const dispatch = useDispatch();
+    const [logged_in, current_user, setCurrentUser] = useOutletContext();
     const host = event.hosts[0];
-    const [heart, setHeart] = useState("regular");
-    const date = new Date(event.date);
+    const [heart, setHeart] = useState(is_favorite);
 
-    const likeHandler = () => {
-        heart === "regular" ? setHeart("solid") : setHeart("regular");
+    //const [favorite, setFavorite] = useState("solid");
+    const date = new Date(event.date);
+    if (current_user._id === undefined) {
+        return null;
+    }
+
+    const likeHandler = async () => {
+        heart === "regular" ? setHeart("solid") : setHeart("regular")
+        let in_favorited = current_user.favorited.find(e => e._id === event._id || e.title === event.title);
+        let db_user = await getUserById(dispatch, current_user._id);
+        let updated_user;
+        if (!in_favorited) {
+            updated_user = {
+                ...db_user,
+                favorited: [{...event}, ...db_user.favorited]
+            };
+            updateUser(dispatch, updated_user).then(r => console.log(r));
+            setCurrentUser(await updateSession(updated_user));
+
+        } else {
+            updated_user = {
+                ...db_user,
+                favorited: db_user.favorited.filter(e => e._id !== event._id)
+            };
+            updateUser(dispatch, updated_user).then(r => console.log(r));
+            setCurrentUser(await updateSession(updated_user));
+        }
+
     };
 
     let user;
     if (current_user.username === host.username) {
         user = "CURRENT";
     } else {
-        user = "USER"
+        user = "USER";
     }
-    console.log(host.first_name.toLowerCase().split("")[0] + host.last_name.toLowerCase())
-
 
     const navigateToProfile = () => {
         navigate(`/frydei/profile/${host.username}`, {
@@ -50,7 +71,7 @@ const EventContent = ({event}) => {
             </div>
             <div
                 className="f-event-img-container mb-2 d-flex flex-column align-items-center justify-content-center position-relative">
-                <Link to={`/frydei/explore/${event.event_id}`} className="f-link">
+                <Link to={`/frydei/explore/${event._id}`} className="f-link">
                     <img className="f-event-img" src={`/Images/${event.event_photo}`} alt=""/>
                 </Link>
             </div>
