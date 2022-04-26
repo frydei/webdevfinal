@@ -7,7 +7,7 @@ import {useNavigate, useOutletContext} from "react-router";
 import {getUserById, updateUser} from "../BACKEND/Actions/UsersActions";
 import {useDispatch} from "react-redux";
 
-const EventContent = ({event, is_favorite}) => {
+const EventContent = ({event, is_favorite, menu}) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [logged_in, current_user, setCurrentUser] = useOutletContext();
@@ -67,7 +67,7 @@ const EventContent = ({event, is_favorite}) => {
                 <button className="f-link-button" onClick={() => navigateToProfile}>
                     <UserIconSmall user={host}/>
                 </button>
-                <button className="f-icon-button"><i className="fa-solid fa-ellipsis"/></button>
+                {menu}
             </div>
             <div
                 className="f-event-img-container mb-2 d-flex flex-column align-items-center justify-content-center position-relative">

@@ -13,7 +13,7 @@ const ExploreEvent = ({event}) => {
 
     return (
         <div className="f-event f-explore d-flex flex-column align-items-center justify-content-center mb-5">
-            <EventContent event={event} is_favorite={is_favorited}/>
+            <EventContent event={event} is_favorite={is_favorited} menu={null}/>
         </div>
     );
 };

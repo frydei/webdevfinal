@@ -7,7 +7,7 @@ import {useOutletContext} from "react-router";
 
 
 const RequestScreen = () => {
-    const [logged_in, current_user, setCurrentuser] = useOutletContext()
+    const [logged_in, current_user, setCurrentUser] = useOutletContext()
 
     return (
         <>
