@@ -1,509 +1,154 @@
-[
+[{
+  "_id": {
+    "$oid": "62641cdb620b0aece3698285"
+  },
+  "title": "Salem Arts Festival 2022",
+  "event_photo": "festival.jpeg",
+  "desc": "Celebrate the arts, culture, creativity, and community at the 14th annual Salem Arts Festival April 25 through 29. This free and popular family-friendly event will feature a variety of art, music, dance, and theatre performances throughout downtown Salem.",
+  "hosts": [
     {
-        "event_id": 1111,
-        "title": "Amine - The Best Tour",
-        "event_photo": "four.jpeg",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
-        "location": "Boston TD Garden",
-        "date": {
-            "day": 5,
-            "month": "August",
-            "year": 2022,
-            "hour": 7,
-            "minute": 0,
-            "time": "PM"
-        },
-        "cost": 31,
-        "hosts": [
-            {
-                "first_name": "Susan",
-                "last_name": "May",
-                "profile_picture": "anga.jpeg"
-            }
-        ],
-        "spots": 10,
-        "attendees": [
-            "bo.jpeg",
-            "green.jpeg",
-            "ehe.jpeg",
-            "aka.jpeg"
-        ],
-        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
-        "tags": [
-            {
-                "name": "Concert",
-                "color": "grey"
-            },
-            {
-                "name": "Music",
-                "color": "grey"
-            },
-            {
-                "name": "Multiple",
-                "color": "orange"
-            },
-            {
-                "name": "Indie",
-                "color": "grey"
-            }
-        ]
-    },
-    {
-        "event_id": 1112,
-        "title": "ODIE - Little Lies",
-        "event_photo": "jnk.jpeg",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
-        "location": "Boston University",
-        "date": {
-            "day": 5,
-            "month": "November",
-            "year":  2022,
-            "hour": 7,
-            "minute": 0,
-            "time": "PM"
-        },
-        "cost": 55,
-        "hosts": [
-            {
-                "first_name": "Susan",
-                "last_name": "May",
-                "profile_picture": "jo.jpeg"
-            },
-            {
-                "first_name": "Mary",
-                "last_name": "Anne",
-                "profile_picture": "mo.jpeg"
-            }
-        ],
-        "spots": 10,
-        "attendees": [
-            "bo.jpeg",
-            "green.jpeg",
-            "ehe.jpeg",
-            "aka.jpeg"
-        ],
-        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
-        "tags": [
-            {
-                "name": "Concert",
-                "color": "grey"
-            },
-            {
-                "name": "Music",
-                "color": "grey"
-            },
-            {
-                "name": "Multiple",
-                "color": "orange"
-            },
-            {
-                "name": "Indie",
-                "color": "grey"
-            }
-        ]
-    },
-    {
-        "event_id": 1113,
-        "title": "Outdoor Concert",
-        "event_photo": "park.jpeg",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
-        "location": "Boston Common",
-        "date": {
-            "day": 23,
-            "month": "April",
-            "year":  2022,
-            "hour": 7,
-            "minute": 0,
-            "time": "PM"
-        },
-        "time": "3 PM",
-        "cost": 35,
-        "hosts": [
-            {
-                "first_name": "Daine",
-                "last_name": "Peterson",
-                "profile_picture": "bw.jpeg"
-            }
-        ],
-        "spots": 10,
-        "attendees": [
-            "bo.jpeg",
-            "green.jpeg",
-            "ehe.jpeg",
-            "aka.jpeg"
-        ],
-        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
-        "tags": [
-            {
-                "name": "Concert",
-                "color": "grey"
-            },
-            {
-                "name": "Music",
-                "color": "grey"
-            },
-            {
-                "name": "Multiple",
-                "color": "orange"
-            },
-            {
-                "name": "Indie",
-                "color": "grey"
-            }
-        ]
-    },
-    {
-        "event_id": 1114,
-        "title": "Lucky Daye - Lucky",
-        "event_photo": "eee.jpeg",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
-        "location": "Blue House",
-        "date": {
-            "day": 5,
-            "month": "August",
-            "year":  2022,
-            "hour": 7,
-            "minute": 0,
-            "time": "PM"
-        },
-        "cost": 65,
-        "hosts": [
-            {
-                "first_name": "Stephanie",
-                "last_name": "Robin",
-                "profile_picture": "scar.jpeg"
-            }
-        ],
-        "spots": 10,
-        "attendees": [
-            "bo.jpeg",
-            "green.jpeg",
-            "ehe.jpeg",
-            "aka.jpeg"
-        ],
-        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
-        "tags": [
-            {
-                "name": "Concert",
-                "color": "grey"
-            },
-            {
-                "name": "Music",
-                "color": "grey"
-            },
-            {
-                "name": "Multiple",
-                "color": "orange"
-            },
-            {
-                "name": "Indie",
-                "color": "grey"
-            }
-        ]
-    },
-    {
-        "event_id": 1115,
-        "title": "Stand Up",
-        "event_photo": "openm.jpeg",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
-        "location": "Jazz Corner",
-        "date": {
-            "day": 22,
-            "month": "April",
-            "year":  2022,
-            "hour": 7,
-            "minute": 0,
-            "time": "PM"
-        },
-        "cost": 25,
-        "hosts": [
-            {
-                "first_name": "Mar",
-                "last_name": "Flores",
-                "profile_picture": "green.jpeg"
-            }
-        ],
-        "spots": 10,
-        "attendees": [
-            "bo.jpeg",
-            "green.jpeg",
-            "ehe.jpeg",
-            "aka.jpeg"
-        ],
-        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
-        "tags": [
-            {
-                "name": "Concert",
-                "color": "grey"
-            },
-            {
-                "name": "Music",
-                "color": "grey"
-            },
-            {
-                "name": "Multiple",
-                "color": "orange"
-            },
-            {
-                "name": "Indie",
-                "color": "grey"
-            }
-        ]
-    },
-    {
-        "event_id": 1116,
-        "title": "ODIE - Little Lies",
-        "event_photo": "odie.jpeg",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
-        "location": "Boston University",
-        "date": {
-            "day": 5,
-            "month": "August",
-            "year":  2022,
-            "hour": 7,
-            "minute": 0,
-            "time": "PM"
-        },
-        "cost": 80,
-        "hosts": [
-            {
-                "first_name": "Kate",
-                "last_name": "Long",
-                "profile_picture": "jmoore.jpeg"
-            },
-            {
-                "first_name": "Jamie",
-                "last_name": "Pereira",
-                "profile_picture": "kim.jpeg"
-            }
-        ],
-        "spots": 10,
-        "attendees": [
-            "bo.jpeg",
-            "green.jpeg",
-            "ehe.jpeg",
-            "aka.jpeg"
-        ],
-        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
-        "tags": [
-            {
-                "name": "Concert",
-                "color": "grey"
-            },
-            {
-                "name": "Music",
-                "color": "grey"
-            },
-            {
-                "name": "Multiple",
-                "color": "orange"
-            },
-            {
-                "name": "Indie",
-                "color": "grey"
-            }
-        ]
-    },
-    {
-        "event_id": 1117,
-        "title": "Amine - The Best Tour",
-        "event_photo": "fff.jpeg",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
-        "location": "Boston TD Garden",
-        "date": {
-            "day": 5,
-            "month": "August",
-            "year":  2022,
-            "hour": 7,
-            "minute": 0,
-            "time": "PM"
-        },
-        "cost": 50,
-        "hosts": [
-            {
-                "first_name": "Chris",
-                "last_name": "Kellu",
-                "profile_picture": "shadow.jpeg"
-            }
-        ],
-        "spots": 10,
-        "attendees": [
-            "bo.jpeg",
-            "green.jpeg",
-            "ehe.jpeg",
-            "aka.jpeg"
-        ],
-        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
-        "tags": [
-            {
-                "name": "Concert",
-                "color": "grey"
-            },
-            {
-                "name": "Music",
-                "color": "grey"
-            },
-            {
-                "name": "Multiple",
-                "color": "orange"
-            },
-            {
-                "name": "Indie",
-                "color": "grey"
-            }
-        ]
-    },
-    {
-        "event_id": 1118,
-        "title": "ODIE - Little Lies",
-        "event_photo": "guit.jpeg",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
-        "location": "Boston University",
-        "date": {
-            "day": 5,
-            "month": "August",
-            "year":  2022,
-            "hour": 7,
-            "minute": 0,
-            "time": "PM"
-        },
-        "cost": 50,
-        "hosts": [
-            {
-                "first_name": "Sammy",
-                "last_name": "Heim",
-                "profile_picture": "mo.jpeg"
-            },
-            {
-                "first_name": "Kate",
-                "last_name": "Long",
-                "profile_picture": "jmooore.jpeg"
-            }
-        ],
-        "spots": 10,
-        "attendees": [
-            "bo.jpeg",
-            "green.jpeg",
-            "ehe.jpeg",
-            "aka.jpeg"
-        ],
-        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
-        "tags": [
-            {
-                "name": "Concert",
-                "color": "grey"
-            },
-            {
-                "name": "Music",
-                "color": "grey"
-            },
-            {
-                "name": "Multiple",
-                "color": "orange"
-            },
-            {
-                "name": "Indie",
-                "color": "grey"
-            }
-        ]
-    },
-    {
-        "event_id": 1119,
-        "title": "Lucky Daye - Lucky",
-        "event_photo": "indoor.jpeg",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
-        "location": "Blue House",
-        "date": {
-            "day": 5,
-            "month": "August",
-            "year":  2022,
-            "hour": 7,
-            "minute": 0,
-            "time": "PM"
-        },
-        "cost": 36,
-        "hosts": [
-            {
-                "first_name": "Thomas",
-                "last_name": "Miller",
-                "profile_picture": "bo.jpeg"
-            }
-        ],
-        "spots": 10,
-        "attendees": [
-            "bo.jpeg",
-            "green.jpeg",
-            "ehe.jpeg",
-            "aka.jpeg"
-        ],
-        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
-        "tags": [
-            {
-                "name": "Concert",
-                "color": "grey"
-            },
-            {
-                "name": "Music",
-                "color": "grey"
-            },
-            {
-                "name": "Multiple",
-                "color": "orange"
-            },
-            {
-                "name": "Indie",
-                "color": "grey"
-            }
-        ]
-    },
-    {
-        "event_id": 1110,
-        "title": "Lucky Daye - Lucky",
-        "event_photo": "some.jpeg",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
-        "location": "Blue House",
-        "date": {
-            "day": 5,
-            "month": "August",
-            "year":  2022,
-            "hour": 7,
-            "minute": 0,
-            "time": "PM"
-        },
-        "cost": 45,
-        "hosts": [
-            {
-                "first_name": "Keith",
-                "last_name": "Nelson",
-                "profile_picture": "ehe.jpeg"
-            }
-        ],
-        "spots": 10,
-        "attendees": [
-            "bo.jpeg",
-            "green.jpeg",
-            "ehe.jpeg",
-            "aka.jpeg"
-        ],
-        "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
-        "tags": [
-            {
-                "name": "Concert",
-                "color": "grey"
-            },
-            {
-                "name": "Music",
-                "color": "grey"
-            },
-            {
-                "name": "Multiple",
-                "color": "orange"
-            },
-            {
-                "name": "Indie",
-                "color": "grey"
-            }
-        ]
+      "first_name": "Will",
+      "last_name": "Mcdonell",
+      "username": "willmc",
+      "profile_picture": "willmc.jpeg"
     }
-]
-
+  ],
+  "cost": 0,
+  "location": "Downtown Salem District",
+  "date": {
+    "$date": {
+      "$numberLong": "1650888000000"
+    }
+  },
+  "spots": 4,
+  "attendees": [
+    {
+      "name": "Julie Moore",
+      "profile_picture": "jmoore.jpeg"
+    }
+  ],
+  "restrictions": "",
+  "tags": [
+    "Art",
+    "Festival",
+    "Outside"
+  ]
+},{
+  "_id": {
+    "$oid": "62641f41620b0aece3698287"
+  },
+  "title": "miXx it up! 2022",
+  "event_photo": "dance.jpeg",
+  "desc": "Come out to watch your favorite K-Pop songs performed by our talented and hardworking dancers of miXx at Metcalf Hall located on the second floor of GSU.",
+  "hosts": [
+    {
+      "first_name": "Kelly",
+      "last_name": "Garcia",
+      "username": "kgarcia",
+      "profile_picture": "kgarcia.jpeg"
+    }
+  ],
+  "cost": 0,
+  "location": "BU Metcalf Hall",
+  "date": {
+    "$date": {
+      "$numberLong": "1650825000000"
+    }
+  },
+  "spots": 5,
+  "attendees": [],
+  "restrictions": "Covid-19 Vaccination required",
+  "tags": [
+    "Art",
+    "Dance",
+    "Music"
+  ]
+},{
+  "_id": {
+    "$oid": "62641f41620b0aece3698288"
+  },
+  "title": "BrunchSOHard Boston",
+  "event_photo": "brunch.jpeg",
+  "desc": "Come #BrunchSoHard With Us This Sunday! Enjoy Great Music & Great People",
+  "hosts": [
+    {
+      "first_name": "Diane",
+      "last_name": "King",
+      "username": "dking",
+      "profile_picture": "dking.jpeg"
+    }
+  ],
+  "cost": 0,
+  "location": "Society On High",
+  "date": {
+    "$date": {
+      "$numberLong": "1650819600000"
+    }
+  },
+  "spots": 10,
+  "attendees": [],
+  "restrictions": "Covid-19 Vaccination required",
+  "tags": [
+    "Food"
+  ]
+},{
+  "_id": {
+    "$oid": "62659005620b0aece369829e"
+  },
+  "title": "miXx it up! 2022",
+  "event_photo": "dance.jpeg",
+  "desc": "Come out to watch your favorite K-Pop songs performed by our talented and hardworking dancers of miXx at Metcalf Hall located on the second floor of GSU.",
+  "hosts": [
+    {
+      "first_name": "Kelly",
+      "last_name": "Garcia",
+      "username": "kgarcia",
+      "profile_picture": "kgarcia.jpeg"
+    }
+  ],
+  "cost": 0,
+  "location": "BU Metcalf Hall",
+  "date": {
+    "$date": {
+      "$numberLong": "1650825000000"
+    }
+  },
+  "spots": 5,
+  "attendees": [],
+  "restrictions": "Covid-19 Vaccination required",
+  "tags": [
+    "Art",
+    "Dance",
+    "Music"
+  ]
+},{
+  "_id": {
+    "$oid": "6265900a620b0aece369829f"
+  },
+  "title": "miXx it up! 2022",
+  "event_photo": "dance.jpeg",
+  "desc": "Come out to watch your favorite K-Pop songs performed by our talented and hardworking dancers of miXx at Metcalf Hall located on the second floor of GSU.",
+  "hosts": [
+    {
+      "first_name": "Kelly",
+      "last_name": "Garcia",
+      "username": "kgarcia",
+      "profile_picture": "kgarcia.jpeg"
+    }
+  ],
+  "cost": 0,
+  "location": "BU Metcalf Hall",
+  "date": {
+    "$date": {
+      "$numberLong": "1650825000000"
+    }
+  },
+  "spots": 5,
+  "attendees": [],
+  "restrictions": "Covid-19 Vaccination required",
+  "tags": [
+    "Art",
+    "Dance",
+    "Music"
+  ]
+}]

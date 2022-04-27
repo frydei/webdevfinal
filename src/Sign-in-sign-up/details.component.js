@@ -5,6 +5,7 @@ import {CustomButtonContainer, SignUpContainer, SignUpTitle} from "./sign-up.sty
 import FilledButton from "../Components/FilledButton";
 import Spacer from "../Components/Spacer";
 import {uploadFile} from "../BACKEND/Services/FileServices";
+import axios from "axios";
 const Details = ({user}) => {
     const city = useRef();
     const state = useRef();
@@ -24,6 +25,13 @@ const Details = ({user}) => {
         console.log(profile.current.files[0])
         data.append("file", profile.current.files[0])
         uploadFile(data).then(r => console.log(r))
+        axios.post("http://localhost:4000/fr/api/upload", data, {
+            // receive two    parameter endpoint url ,form data
+        })
+            .then(res => { // then print response status
+                console.log(res.statusText)
+            })
+
         //console.log(data)
 
     };

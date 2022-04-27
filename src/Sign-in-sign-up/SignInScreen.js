@@ -13,7 +13,7 @@ const SignInScreen = () => (
            <div className="col d-flex align-items-center flex-column justify-content-center" style={{"width": "100%", "paddingRight": "85px"}}>
                <h3 className="f-form-header mb-5">Log in</h3>
                <SignIn/>
-               <h3 className="f-form-header mt-3" style={{"fontSize": "13px"}}><span style={{"fontWeight": "normal"}}>New?</span> <Link to="/frydei/sign-up" className="f-link"> Sign up</Link></h3>
+               <h3 className="f-form-header mt-3" style={{"fontSize": "13px"}}><span style={{"fontWeight": "normal"}}>New?</span> <Link to="/sign-up" className="f-link"> Sign up</Link></h3>
 
            </div>
            <div className="col f-event-img-container">

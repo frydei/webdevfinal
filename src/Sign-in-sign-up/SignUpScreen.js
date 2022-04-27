@@ -19,7 +19,7 @@ const SignUpScreen = () => (
                     style={{"fontSize": "13px"}}>
                 <span style={{"fontWeight": "normal"}}>Already have an account?
                 </span>
-                    <Link to="/frydei/sign-in" className="f-link"> Log in</Link>
+                    <Link to="/sign-in" className="f-link"> Log in</Link>
                 </h3>
 
             </div>
