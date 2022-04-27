@@ -18,6 +18,19 @@ const ProfileScreen = () => {
 
     const [user, setUser] = useState(current_user);
 
+    // const [profile, setProfile] = useState()
+    // const getProfile = async () =>{
+    //     try {
+    //         const p = await service.signin(
+    //             email,
+    //             password
+    //         )
+    //         setProfile(p)
+    //     } catch (e) {
+    //         throw e
+    //     }
+    // }
+
     useEffect(async () => {
         if (location.state.user !== "CURRENT") {
             const url_user = await getUserByUsername(dispatch, username);

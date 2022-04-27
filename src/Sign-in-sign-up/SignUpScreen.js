@@ -3,8 +3,6 @@ import React from 'react';
 import SignUp from './sign-up.component';
 
 import HeaderGuest from "../Components/HeaderGuest";
-import Footer from "../Homepage/Footer";
-import SignIn from "./sign-in.component";
 import {Link} from "react-router-dom";
 
 

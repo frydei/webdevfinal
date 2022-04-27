@@ -120,7 +120,9 @@
   "messages": 3,
   "requests": 4,
   "connections": 132,
-  "admin_access": false
+  "admin_access": false,
+  "password": 123,
+  "username" : "Millow"
 }
 
 

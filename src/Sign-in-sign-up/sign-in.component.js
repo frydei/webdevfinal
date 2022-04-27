@@ -59,7 +59,7 @@ const SignIn = () => {
                     name={"password"}
                     type={"password"}
                     ref={passwordRef}
-                    // label='password'
+                    label='password'
                     placeholder={"Password"}
                     required
                 />

@@ -1,221 +1,271 @@
-[
+[{
+  "_id": {
+    "$oid": "62641868620b0aece369827b"
+  },
+  "first_name": "Julie",
+  "last_name": "Moore",
+  "city": "Boston",
+  "state": "Ma",
+  "biography": "Extreme social media practitioner and web enthusiast. I love bacon.",
+  "profile_picture": "jmoore.jpeg",
+  "upcoming_events": [
     {
-        "_id": "000001",
-        "first_name": "Millow",
-        "last_name": "Greeen",
-        "city": "Boston",
-        "state": "MA",
-        "biography": "Born and raised in Boston. A fan of indie, music and picnics.",
-        "profile_picture": "sample.jpeg",
-        "upcoming_events": [  {
-            "event_id": 4444,
-            "title": "Amine - The Best Tour",
-            "event_photo": "fff.jpeg",
-            "location": "Boston TD Garden",
-            "date": {
-                "day": 5,
-                "month": "September",
-                "year": 2022,
-                "hour": 7,
-                "minute": 0,
-                "time": "PM"
-            },
-            "cost": 50,
-            "hosts": [
-                {
-                    "first_name": "Chris",
-                    "last_name": "Kellu",
-                    "profile_picture": "shadow.jpeg"
-                }
-            ],
-            "attendees": 5
-        },
-            {
-                "event_id": 4444,
-                "title": "Amine - The Best Tour",
-                "event_photo": "guit.jpeg",
-                "location": "Boston TD Garden",
-                "date": {
-                    "day": 5,
-                    "month": "April",
-                    "year": 2022,
-                    "hour": 7,
-                    "minute": 0,
-                    "time": "PM"
-                },
-                "cost": 50,
-                "hosts": [
-                    {
-                        "first_name": "Chris",
-                        "last_name": "Kellu",
-                        "profile_picture": "shadow.jpeg"
-                    }
-                ],
-                "attendees": 5
-            }
-        ],
-        "past_events": [  {
-            "title": "Lucky Daye - Lucky",
-            "event_photo": "indoor.jpeg",
-            "location": "Blue House",
-            "date": {
-                "day": 5,
-                "month": "August",
-                "year": 2022,
-                "hour": 7,
-                "minute": 0,
-                "time": "PM"
-            },
-            "cost": 36,
-            "hosts": [
-                {
-                    "first_name": "Thomas",
-                    "last_name": "Miller",
-                    "profile_picture": "bo.jpeg"
-                }
-            ],
-            "attendees": 3
-        },
-            {
-                "title": "Lucky Daye - Lucky",
-                "event_photo": "some.jpeg",
-                "location": "Blue House",
-                "date": {
-                    "day": 5,
-                    "month": "August",
-                    "year": 2022,
-                    "hour": 7,
-                    "minute": 0,
-                    "time": "PM"
-                },
-                "cost": 45,
-                "hosts": [
-                    {
-                        "first_name": "Keith",
-                        "last_name": "Nelson",
-                        "profile_picture": "ehe.jpeg"
-                    }
-                ],
-                "attendees": 3
-            }],
-        "favorited": [{
-            "title": "ODIE - Little Lies",
-            "event_photo": "odie.jpeg",
-            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porttitor sapien a elementum laoreet. Proin commodo blandit velit, non rutrum odio mollis at. In finibus imperdiet massa, eget ullamcorper est euismod pharetra. Cras sed sapien sodales, viverra enim a, luctus urna.",
-            "hosts": [
-                {
-                    "first_name": "Jamie",
-                    "last_name": "Pereira",
-                    "profile_picture": "kim.jpeg"
-                },
-                {
-                    "first_name": "Sammy",
-                    "last_name": "Heim",
-                    "profile_picture": "mo.jpeg"
-                }
-            ],
-            "cost": 55,
-            "location": "Boston University",
-            "date": {
-                "day": 5,
-                "month": "August",
-                "hour": 7,
-                "minute": 0,
-                "time": "PM"
-            },
-            "spots": 10,
-            "attendees": [
-                "bo.jpeg",
-                "green.jpeg",
-                "ehe.jpeg",
-                "aka.jpeg"
-            ],
-            "restrictions": "Vestibulum consequat gravida imperdiet. Vestibulum vitae imperdiet lorem. Donec sodales justo at sodales pharetra.",
-            "tags": [
-                {
-                    "name": "Concert",
-                    "color": "grey"
-                },
-                {
-                    "name": "Music",
-                    "color": "grey"
-                },
-                {
-                    "name": "Multiple",
-                    "color": "orange"
-                },
-                {
-                    "name": "Indie",
-                    "color": "grey"
-                }
-            ]
-        }],
-        "media": [],
-        "events_hosted": 4,
-        "events_attended": 12,
-        "messages": 3,
-        "requests": 4,
-        "connections": 132,
-        "admin_access": false
-    },
-    {
-        "_id": "000002",
-        "first_name": "Susan",
-        "last_name": "May",
-        "city": "Boston",
-        "state": "MA",
-        "biography": "Born and raised in Boston. A fan of indie, music and picnics.",
-        "profile_picture": "green.jpeg",
-        "upcoming_events": [],
-        "past_events": [],
-        "favorited": [],
-        "media": [],
-        "events_hosted": 44,
-        "events_attended": 112,
-        "messages": 12,
-        "requests": 42,
-        "connections": 1132,
-        "admin_access": false
-
-    },
-    {
-        "_id": "000003",
-        "first_name": "Daniel",
-        "last_name": "Peterson",
-        "city": "New York",
-        "state": "NY",
-        "biography": "Born and raised in Boston. A fan of indie, music and picnics.",
-        "profile_picture": "bo.jpeg",
-        "upcoming_events": [],
-        "past_events": [],
-        "favorited": [],
-        "media": [],
-        "events_hosted": 0,
-        "events_attended": 4,
-        "messages": 5,
-        "requests": 0,
-        "connections": 112,
-        "admin_access": false
-
-    },
-    {
-        "_id": "000004",
-        "first_name": "Mary",
-        "last_name": "Anne",
-        "city": "Medford",
-        "state": "MA",
-        "biography": "Born and raised in Boston. A fan of indie, music and picnics.",
-        "profile_picture": "axe.jpeg",
-        "upcoming_events": [],
-        "past_events": [],
-        "favorited": [],
-        "media": [],
-        "events_hosted": 3,
-        "events_attended": 42,
-        "messages": 6,
-        "requests": 4,
-        "connections": 234,
-        "admin_access": false
-
+      "_id": "62641cdb620b0aece3698285",
+      "title": "Salem Arts Festival 2022",
+      "event_photo": "festival.jpeg",
+      "desc": "Celebrate the arts, culture, creativity, and community at the 14th annual Salem Arts Festival April 25 through 29. This free and popular family-friendly event will feature a variety of art, music, dance, and theatre performances throughout downtown Salem.",
+      "hosts": [
+        {
+          "first_name": "Will",
+          "last_name": "Mcdonell",
+          "username": "willmc",
+          "profile_picture": "willmc.jpeg"
+        }
+      ],
+      "cost": 0,
+      "location": "Downtown Salem District",
+      "date": "2022-04-25T12:00:00.000Z",
+      "spots": 4,
+      "attendees": [
+        {
+          "name": "Julie Moore",
+          "image": "jmoore.jpeg"
+        }
+      ],
+      "restrictions": "",
+      "tags": [
+        "Art",
+        "Festival",
+        "Outside"
+      ]
     }
-]
+  ],
+  "past_events": [
+    {
+      "title": "miXx it up! 2022",
+      "event_photo": "dance.jpeg",
+      "desc": "Come out to watch your favorite K-Pop songs performed by our talented and hardworking dancers of miXx at Metcalf Hall located on the second floor of GSU.",
+      "hosts": [
+        {
+          "first_name": "Kelly",
+          "last_name": "Garcia",
+          "profile_picture": "kgarcia.jpeg"
+        }
+      ],
+      "cost": 0,
+      "location": "BU Metcalf Hall",
+      "date": "2022-04-24T18:30:00.000Z",
+      "spots": 5,
+      "attendees": [],
+      "restrictions": "Covid-19 Vaccination required",
+      "tags": [
+        "Art",
+        "Dance",
+        "Music"
+      ]
+    }
+  ],
+  "favorited": [],
+  "media": [
+    {
+      "content": "street.jpeg",
+      "caption": "Sunset at the end of that day is the way to finish any day",
+      "time_stamp": "2022-02-24T05:00:00.000Z"
+    },
+    {
+      "content": "eee.jpeg",
+      "caption": "Boats Boats Boats",
+      "time_stamp": "2022-02-24T05:00:00.000Z"
+    }
+  ],
+  "events_hosted": 2,
+  "events_attended": 3,
+  "messages": 4,
+  "requests": 4,
+  "connections": 122,
+  "admin_access": true,
+  "username": "jmoore",
+  "email": "jmoore@fmail.com",
+  "password": "jmoore",
+  "user_events": []
+},{
+  "_id": {
+    "$oid": "62641a81620b0aece369827d"
+  },
+  "first_name": "Derek",
+  "last_name": "Hunter",
+  "city": "Austin",
+  "state": "TX",
+  "biography": "I have a passion for games and books. Avocado is my fuel.",
+  "profile_picture": ".dhunter.jpeg",
+  "upcoming_events": [],
+  "past_events": [],
+  "favorited": [],
+  "media": [
+    {
+      "content": "theater.jpeg",
+      "caption": "I’m not perfect but I am Loyal",
+      "time_stamp": {
+        "$date": {
+          "$numberLong": "1648785600000"
+        }
+      }
+    }
+  ],
+  "events_hosted": 1,
+  "events_attended": 2,
+  "messages": 3,
+  "requests": 4,
+  "connections": 322,
+  "admin_access": false,
+  "username": "dhunter",
+  "email": "dhunter@fmail.com",
+  "password": "dhunter",
+  "user_events": []
+},{
+  "_id": {
+    "$oid": "62641a81620b0aece369827e"
+  },
+  "first_name": "Will",
+  "last_name": "Mcdonell",
+  "city": "New York",
+  "state": "NY",
+  "biography": "Award-winning travel ninja. Pop culture enthusiast.",
+  "profile_picture": "willmc.jpeg",
+  "upcoming_events": [],
+  "past_events": [],
+  "favorited": [],
+  "media": [],
+  "events_hosted": 0,
+  "events_attended": 0,
+  "messages": 3,
+  "requests": 4,
+  "connections": 232,
+  "admin_access": false,
+  "username": "willmc",
+  "email": "willmc@fmail.com",
+  "password": "willmc",
+  "user_events": []
+},{
+  "_id": {
+    "$oid": "62641a81620b0aece369827f"
+  },
+  "first_name": "Diana",
+  "last_name": "King",
+  "city": "Chicago",
+  "state": "IL",
+  "biography": "I like coming up with big ideas and then bring them to life. Love good music.",
+  "profile_picture": "dking.jpeg",
+  "upcoming_events": [],
+  "past_events": [],
+  "favorited": [],
+  "media": [],
+  "events_hosted": 4,
+  "events_attended": 7,
+  "messages": 2,
+  "requests": 3,
+  "connections": 478,
+  "admin_access": false,
+  "username": "dking",
+  "email": "dking@fmail.com",
+  "password": "dking",
+  "user_events": []
+},{
+  "_id": {
+    "$oid": "62641a81620b0aece3698280"
+  },
+  "first_name": "Kelly",
+  "last_name": "Garcia",
+  "city": "New York",
+  "state": "NY",
+  "biography": "I love playing tennis, running and watching cat videos. Coffee is my friend.",
+  "profile_picture": "kgarcia.jpeg",
+  "upcoming_events": [],
+  "past_events": [],
+  "favorited": [],
+  "media": [],
+  "events_hosted": 4,
+  "events_attended": 11,
+  "messages": 2,
+  "requests": 3,
+  "connections": 123,
+  "admin_access": false,
+  "username": "kgarcia",
+  "email": "kgarcia@fmail.com",
+  "password": "kgarcia",
+  "user_events": []
+},{
+  "_id": {
+    "$oid": "62641a81620b0aece3698281"
+  },
+  "first_name": "Leo",
+  "last_name": "Gray",
+  "city": "Pittsburgh",
+  "state": "PA",
+  "biography": "Unapologetic reader and proud communicator. Bacon and coffee everyday.",
+  "profile_picture": "lgray.jpeg",
+  "upcoming_events": [],
+  "past_events": [],
+  "favorited": [],
+  "media": [],
+  "events_hosted": 4,
+  "events_attended": 4,
+  "messages": 5,
+  "requests": 1,
+  "connections": 102,
+  "admin_access": false,
+  "username": "lgray",
+  "email": "lgray@fmail.com",
+  "password": "lgray",
+  "user_events": []
+},{
+  "_id": {
+    "$oid": "6266ba02dd87f2083964f96f"
+  },
+  "first_name": "Kevin",
+  "last_name": "Dunn",
+  "username": "kdunn",
+  "email": "kdunn@fmail.com",
+  "password": "kdunn",
+  "city": "Medford",
+  "state": "Ma",
+  "biography": "What can I say? I'm bored.",
+  "profile_picture": "kdunn.jpeg",
+  "upcoming_events": [],
+  "past_events": [],
+  "favorited": [],
+  "media": [],
+  "events_hosted": 2,
+  "events_attended": 3,
+  "messages": 4,
+  "requests": 4,
+  "connections": 122,
+  "admin_access": true,
+  "__v": 0,
+  "user_events": []
+},{
+  "_id": {
+    "$oid": "6266ee324a7ac47f4a9cde14"
+  },
+  "first_name": "Kevin",
+  "last_name": "Jim",
+  "username": "kjim",
+  "email": "kjim@fmail.com",
+  "password": "kjim",
+  "city": "Boston",
+  "state": "Ma",
+  "biography": "What can I say? I'm bored.",
+  "profile_picture": "kjim.jpeg",
+  "upcoming_events": [],
+  "past_events": [],
+  "favorited": [],
+  "media": [],
+  "events_hosted": 2,
+  "events_attended": 3,
+  "messages": 4,
+  "requests": 4,
+  "connections": 122,
+  "admin_access": true,
+  "__v": 0,
+  "user_events": []
+}]

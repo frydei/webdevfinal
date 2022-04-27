@@ -33,7 +33,7 @@ const HomePageScreen = () => {
         footer = "";
     } else {
         header = <LargeHeaderGuest/>;
-        footer = <Footer/>;
+        // footer = <Footer/>;
     }
     return (
         <>
