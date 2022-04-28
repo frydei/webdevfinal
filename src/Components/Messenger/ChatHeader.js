@@ -1,4 +1,5 @@
 import React from "react";
+import {REACT_APP_BASE} from "../../App";
 
 const ChatHeader = ({chat}) => {
     const date = new Date(chat.most_recent_activity)
@@ -8,7 +9,7 @@ const ChatHeader = ({chat}) => {
             <div>
                 {
                     chat.participants.map(p => {
-                            return <img className="f-cover-img me-1 ms-1 mb-3 mt-3" src={`/Images/${p.profile_picture}`} alt=""/>;
+                            return <img className="f-cover-img me-1 ms-1 mb-3 mt-3" src={`${REACT_APP_BASE}/${p.profile_picture}`} alt=""/>;
                         }
                     )
                 }

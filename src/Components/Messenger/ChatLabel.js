@@ -1,12 +1,13 @@
 import React from "react";
 import UserIconSmall from "../UserIconSmall";
+import {REACT_APP_BASE} from "../../App";
 
 const ChatLabel = ({chat, handleClick, active}) => {
     let cover, title;
     const event = chat.event;
     if (chat.type === "single") {
         const user = chat.participants[0];
-        cover = <img className="f-cover-img" src={`/Images/${user.profile_picture}`} alt=""/>;
+        cover = <img className="f-cover-img" src={`${REACT_APP_BASE}/${user.profile_picture}`} alt=""/>;
         title = user.first_name + " " + user.last_name;
     } else {
         cover = <div className="f-chat-cover d-flex align-items-center justify-content-center">

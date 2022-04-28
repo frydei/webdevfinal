@@ -302,8 +302,8 @@ button:focus, button:active {
   color: #4F5D75;
   width: 100%;
   background-color: white;
-  padding: 10%;
   border-radius: 5px;
+  height: 31px;
 }
 
 .f-icon-button {

@@ -6,6 +6,7 @@ import {getCurrentUser, updateSession} from "../BACKEND/Services/AuthServices";
 import {useNavigate, useOutletContext} from "react-router";
 import {getUserById, updateUser} from "../BACKEND/Actions/UsersActions";
 import {useDispatch} from "react-redux";
+import {REACT_APP_BASE} from "../App";
 
 const EventContent = ({event, is_favorite, menu}) => {
     const navigate = useNavigate();
@@ -72,7 +73,7 @@ const EventContent = ({event, is_favorite, menu}) => {
             <div
                 className="f-event-img-container mb-2 d-flex flex-column align-items-center justify-content-center position-relative">
                 <Link to={`/frydei/explore/${event._id}`} className="f-link">
-                    <img className="f-event-img" src={`/Images/${event.event_photo}`} alt=""/>
+                    <img className="f-event-img" src={`${REACT_APP_BASE}/${event.event_photo}`} alt=""/>
                 </Link>
             </div>
             <div className="f-event-detail">

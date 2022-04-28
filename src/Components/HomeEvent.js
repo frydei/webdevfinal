@@ -4,6 +4,7 @@ import {useNavigate, useOutletContext} from "react-router";
 import {getUserById, updateUser} from "../BACKEND/Actions/UsersActions";
 import {useDispatch} from "react-redux";
 import {updateSession} from "../BACKEND/Services/AuthServices";
+import {REACT_APP_BASE} from "../App";
 
 const HomeEvent = ({event, page}) => {
     const [logged_in, current_user, setCurrentUser] = useOutletContext()
@@ -35,7 +36,7 @@ const HomeEvent = ({event, page}) => {
         <div className="f-event f-home d-flex flex-column align-items-center justify-content-center mt-3 me-1 ms-1">
             <div className="position-relative" style={{"width": "100%"}}>
                 <button className="f-link f-link-button" onClick={() => viewEvent()}>
-                    <img className="f-event-img" src={`/Images/${event.event_photo}`} alt=""/>
+                    <img className="f-event-img" src={`${REACT_APP_BASE}/${event.event_photo}`} alt=""/>
                 </button>
             </div>
             <div className="f-event-detail d-flex flex-column align-items-center justify-content-start">

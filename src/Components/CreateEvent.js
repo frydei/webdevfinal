@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import FilledButton from "./FilledButton";
+import {REACT_APP_BASE} from "../App";
+
 
 const CreateEvent = (param) => {
     const user = param.user;
@@ -13,7 +15,7 @@ const CreateEvent = (param) => {
                     <div className="form-group f-form-group d-flex align-items-center justify-content-center position-relative">
                         {imageUploader ?
                             <>
-                                <img src={`/Images/${image}`} alt="" className="f-uploaded-img"/>
+                                <img src={`${REACT_APP_BASE}/${image}`} alt="" className="f-uploaded-img"/>
                                 <button
                                     className="position-absolute top-0 end-0 shadow-none"
                                     onClick={() => setImageUploader(false)}
@@ -42,7 +44,7 @@ const CreateEvent = (param) => {
                     <div className="f-form-detail f-bg">
                         <div className="form-group f-form-group d-flex flex-column form-control p-0">
                             <label htmlFor="event-host">Host(s)</label>
-                            <div><img src={`/Images/${user.profile_picture}`} alt="" className="f-icon-small me-1"/>
+                            <div><img src={`${REACT_APP_BASE}/${user.profile_picture}`} alt="" className="f-icon-small me-1"/>
                                 <button className="f-add-button shadow-none">
                                     <i className="fa-solid fa-plus"/>
                                 </button>

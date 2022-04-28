@@ -25,6 +25,9 @@ import {getUserByUsername} from "./BACKEND/Actions/UsersActions";
 import DetailsScreen from "./Sign-in-sign-up/DetailsScreen";
 import GuestHomePageScreen from "./Homepage/GuestHomePageScreen";
 
+export const REACT_APP_BASE = process.env.REACT_APP_BASE || "http://localhost:4000"
+console.log(REACT_APP_BASE)
+
 const search_event = {
     "title": "Amine - The Best Tour",
     "event_photo": "four.jpeg",

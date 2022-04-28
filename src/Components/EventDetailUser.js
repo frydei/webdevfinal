@@ -6,6 +6,7 @@ import {useNavigate, useOutletContext} from "react-router";
 import {updateUser, getUserById} from "../BACKEND/Actions/UsersActions";
 import {updateEvent} from "../BACKEND/Actions/EventsActions";
 import {updateSession} from "../BACKEND/Services/AuthServices";
+import {REACT_APP_BASE} from "../App";
 
 
 const EventDetailUser = ({event}) => {
@@ -72,13 +73,13 @@ const EventDetailUser = ({event}) => {
         <div className="container-fluid">
             <div className="row f-event-detail-content">
                 <div className="col-6 f-event-detail-img">
-                    <img src={`/Images/${current_event.event_photo}`} alt=""/>
+                    <img src={`${REACT_APP_BASE}/${current_event.event_photo}`} alt=""/>
                     <div className="f-event-detail-section">
                         <h3 className="f-event-detail-section-header mt-2">Attendees</h3>
                         <div className="f-event-attendees m-0">
                             {
                                 current_event.attendees.map(att => {
-                                    return <img src={`/Images/${att.image}`}
+                                    return <img src={`${REACT_APP_BASE}/${att.profile_picture}`}
                                                 alt=""
                                                 className="f-user-icon-small me-1"
                                     />;
@@ -103,7 +104,7 @@ const EventDetailUser = ({event}) => {
                                     {
                                         current_event.hosts.map(host => {
                                             return <button className="f-link-button" onClick={() => navigateToProfile((host))}>
-                                                <img src={`/Images/${host.profile_picture}`} alt=""
+                                                <img src={`${REACT_APP_BASE}/${host.profile_picture}`} alt=""
                                                      className="f-icon-small me-1"/>
                                             </button>;
                                         })

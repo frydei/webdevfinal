@@ -4,6 +4,7 @@ import {useNavigate, useOutletContext} from "react-router";
 import {getUserById, updateUser} from "../BACKEND/Actions/UsersActions";
 import {useDispatch} from "react-redux";
 import {updateSession} from "../BACKEND/Services/AuthServices";
+import {REACT_APP_BASE} from "../App";
 
 const FavoriteEvent = ({event, page, logged_in, current_user, setCurrentUser, update}) => {
     const [heart, setHeart] = useState(<i className="fa-solid fa-heart"/>)
@@ -44,7 +45,7 @@ const FavoriteEvent = ({event, page, logged_in, current_user, setCurrentUser, up
                     {heart}
                 </button>
                 <button className="f-link f-link-button" onClick={() => viewEvent()}>
-                    <img className="f-event-img" src={`/Images/${event.event_photo}`} alt=""/>
+                    <img className="f-event-img" src={`${REACT_APP_BASE}/${event.event_photo}`} alt=""/>
                 </button>
             </div>
             <div className="f-event-detail d-flex flex-column align-items-center justify-content-start">

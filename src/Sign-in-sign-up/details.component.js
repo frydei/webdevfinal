@@ -1,59 +1,57 @@
-import React, {useRef} from 'react';
-
-
-import {CustomButtonContainer, SignUpContainer, SignUpTitle} from "./sign-up.styles";
+import React, {useRef, useState} from 'react';
 import FilledButton from "../Components/FilledButton";
 import Spacer from "../Components/Spacer";
 import {uploadFile} from "../BACKEND/Services/FileServices";
 import axios from "axios";
+import FormInput from "./FormInput";
+import {REACT_APP_BASE} from "../App";
+
 const Details = ({user}) => {
     const city = useRef();
     const state = useRef();
     const profile = useRef()
+    const [image, setImage] = useState("")
 
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
-       /* event.preventDefault();
         let new_user = {
             ...user,
             city: city.current.value,
             state: state.current.value
         }
-        console.log(new_user)*/
         const data = new FormData()
-        console.log(profile.current.files[0])
-        data.append("file", profile.current.files[0])
-        uploadFile(data).then(r => console.log(r))
-
-        //provider to get the user info from previous page
-        //r.path
-        //post the user info to the date
-
-
-
-
-    };
-
-    const handleChange = (event) => {
-
+        data.append("file", profile.current.files[0],  user.username + ".jpeg")
+        await uploadFile(data)
     };
 
     return (
         <form className="f-form d-flex align-items-center justify-content-center " onSubmit={handleSubmit}>
             <div className="f-form-content-sign d-flex flex-column align-items-center justify-content-center">
+                <FormInput
+                    type={"text"}
+                    name={"city"}
+                    placeholder={"City"}
+
+                    ref={city}
+                />
+                <FormInput
+                    type={"text"}
+                    name={"state"}
+                    ref={state}
+                    placeholder={"State"}
+                />
                 <label htmlFor="f-profile-upload"
-                       className="f-user-image-upload shadow-none d-flex align-items-center justify-content-center mt-3"
-               >
-                    Upload Profile
+                       className="f-user-image-upload shadow-none d-flex align-items-center justify-content-center "
+                >
+                    {profile.current ? "Upload Picture" : user.username + ".jpeg"}
                     <input className="f-profile-upload"
                            ref={profile}
                            id="f-profile-upload"
                            type="file"
-                           style={{"display": "none"}}/>
+                           style={{"display": "none"}}
+                    />
                 </label>
-
-
                 <Spacer size={24}/>
 
                 <FilledButton name={"Sign Up"} handleSubmit={handleSubmit}/>

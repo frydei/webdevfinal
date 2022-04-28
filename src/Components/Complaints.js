@@ -1,6 +1,8 @@
 import React from "react";
 import FilledButton from "./FilledButton";
 import Button from "./Button";
+import {REACT_APP_BASE} from "../App";
+
 export const month_num = {
     January: "01",
     February: "02",
@@ -48,7 +50,7 @@ const Complaint = (param) => {
                     <div className="form-group f-form-group d-flex flex-column form-control p-0">
                         <label htmlFor="event-host">Host(s)</label>
                         <div>
-                            <img src={`/Images/${user.profile_picture}`} alt="" className="f-icon-small me-1"/>
+                            <img src={`${REACT_APP_BASE}/${user.profile_picture}`} alt="" className="f-icon-small me-1"/>
                         </div>
                     </div>
                     <div className="form-group f-form-group">

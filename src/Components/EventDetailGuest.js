@@ -4,6 +4,7 @@ import FilledButton from "./FilledButton";
 import {Link} from "react-router-dom";
 import {getCurrentUser} from "../BACKEND/Services/AuthServices";
 import {useNavigate} from "react-router";
+import {REACT_APP_BASE} from "../App";
 
 const EventDetailGuest = ({event}) => {
     //const user = useSelector((state) => state.users)
@@ -38,13 +39,13 @@ const EventDetailGuest = ({event}) => {
         <div className="container-fluid">
             <div className="row f-event-detail-content">
                 <div className="col-6 f-event-detail-img">
-                    <img src={`/Images/${event.event_photo}`} alt=""/>
+                    <img src={`${REACT_APP_BASE}/${event.event_photo}`} alt=""/>
                     <div className="f-event-detail-section">
                         <h3 className="f-event-detail-section-header mt-2">Attendees</h3>
                         <div className="f-event-attendees m-0">
                             {
                                 event.attendees.map(att => {
-                                    return <img src={`/Images/${att.image}`}
+                                    return <img src={`${REACT_APP_BASE}/${att.profile_picture}`}
                                                 alt=""
                                                 className="f-user-icon-small me-1"
                                     />;
@@ -71,7 +72,7 @@ const EventDetailGuest = ({event}) => {
                                     {
                                         event.hosts.map(host => {
                                             return <button className="f-link-button" onClick={() => navigateToProfile(host)}>
-                                                <img src={`/Images/${host.profile_picture}`} alt="" className="f-icon-small me-1"/>
+                                                <img src={`${REACT_APP_BASE}/${host.profile_picture}`} alt="" className="f-icon-small me-1"/>
                                             </button>
                                         })
                                     }
