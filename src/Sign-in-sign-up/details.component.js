@@ -29,6 +29,10 @@ const Details = ({user}) => {
         //provider to get the user info from previous page
         //r.path
         //post the user info to the date
+
+
+
+
     };
 
     const handleChange = (event) => {
