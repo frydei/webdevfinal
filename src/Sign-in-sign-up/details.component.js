@@ -25,15 +25,10 @@ const Details = ({user}) => {
         console.log(profile.current.files[0])
         data.append("file", profile.current.files[0])
         uploadFile(data).then(r => console.log(r))
-        axios.post("http://localhost:4000/fr/api/upload", data, {
-            // receive two    parameter endpoint url ,form data
-        })
-            .then(res => { // then print response status
-                console.log(res.statusText)
-            })
 
-        //console.log(data)
-
+        //provider to get the user info from previous page
+        //r.path
+        //post the user info to the date
     };
 
     const handleChange = (event) => {
