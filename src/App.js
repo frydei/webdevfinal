@@ -24,6 +24,8 @@ import {useEffect} from "react";
 import {getUserByUsername} from "./BACKEND/Actions/UsersActions";
 import DetailsScreen from "./Sign-in-sign-up/DetailsScreen";
 import GuestHomePageScreen from "./Homepage/GuestHomePageScreen";
+import SignUpG from "./Sign-in-sign-up/sign-up-g";
+import SignUpGScreen from "./Sign-in-sign-up/SignUpGScreen";
 
 export const REACT_APP_BASE = process.env.REACT_APP_BASE || "http://localhost:4000"
 console.log(REACT_APP_BASE)
@@ -61,6 +63,9 @@ function App() {
                     <Route path="sign-up"
                            exact={true}
                            element={<SignUpScreen/>}/>
+                    <Route path="sign-up-g"
+                           exact={true}
+                           element={<SignUpGScreen/>}/>
                     <Route path="details"
                            exact={true}
                            element={<DetailsScreen/>}/>

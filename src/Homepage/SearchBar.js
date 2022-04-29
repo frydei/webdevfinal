@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 
 const SearchBar =() => {
@@ -12,7 +13,7 @@ const SearchBar =() => {
                         <input id="search-bar" className="form-control border-0 ps-2 shadow-none" type="search"
                                placeholder="What are you in the mood for?"
                                style={{"width": "100%"}}/>
-                        <i className="fa-solid fa-magnifying-glass form-control-feedback pe-2"/>
+                        <Link to="search" className="f-link"><i className="fa-solid fa-magnifying-glass form-control-feedback pe-2" /></Link>
                     </label>
 
                 </div>

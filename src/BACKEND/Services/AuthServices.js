@@ -14,6 +14,13 @@ export const signIn = async (user) => {
     //console.log(res.data)
 }
 
+export const signInWithGoogle = async (idToken) => {
+    console.log("idToken: ")
+    console.log(idToken)
+    const res = await api.post(`${AUTH}/googleLogIn`, idToken)
+    return res.data
+}
+
 export const updateSession = async (user) => {
     //console.log(user)
     const res = await api.post(`${AUTH}/update`, user)

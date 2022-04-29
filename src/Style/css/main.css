@@ -424,7 +424,7 @@ button:focus, button:active {
 }
 .f-search-bar-home input {
   font-family: "Fredoka", sans-serif;
-  font-size: 26px;
+  /*font-size: 26px;*/
   font-weight: 400;
   color: #2D3142;
   padding: 0;
