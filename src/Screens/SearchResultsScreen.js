@@ -36,9 +36,20 @@ const SearchResultsScreen = () => {
         return d.getDay() === 6 ||  d.getDay() === 0;
     }
 
+
     const handleClick = (name) => {
        if (name === "Nearby") {
-            setSearchEvent(events)
+           const success = (position) => {
+               console.log(position)
+               setSearchEvent(events)
+           }
+           const error=() => {
+               alert('Unable to retrieve your location.');
+           }
+
+           navigator.geolocation.getCurrentPosition(success, error)
+            // setSearchEvent(events)
+
         } else if (name === "Tomorrow") {
             setSearchEvent(events.filter(
                 e =>  isTomorrow(getDate(e))
