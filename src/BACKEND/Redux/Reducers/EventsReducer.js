@@ -2,8 +2,7 @@ import {GET_EVENTS, GET_EVENT_BY_ID, UPDATE_EVENT, CREATE_EVENT, DELETE_EVENT} f
 const EventsReducer = (state = [], action) => {
     switch (action.type) {
         case GET_EVENTS:
-            //console.log("GET_EVENTS")
-            return action.all_events;
+            return state = [...action.all_events];
         case GET_EVENT_BY_ID:
             return action.event;
         case DELETE_EVENT:
@@ -13,8 +12,6 @@ const EventsReducer = (state = [], action) => {
         case CREATE_EVENT:
             return [action.event, ...state];
         default:
-            //console.log("DEFAULT")
-
             return state;
     }
 

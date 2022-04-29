@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import DashHeader from "../Components/Dashboard/DashHeader";
 import EventCard from "../Components/Dashboard/EventCard";
 import SearchEvent from "../Components/SearchEvent";
 import ComplaintCard from "../Components/Dashboard/ComplaintCard";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useOutletContext} from "react-router";
+import {getEvents} from "../BACKEND/Actions/EventsActions"
 
 const data = [
     {
@@ -27,6 +28,13 @@ const data = [
 
 const DashboardScreen = () => {
     const [logged_in, current_user, setCurrentUser] = useOutletContext()
+    const dispatch = useDispatch()
+    useEffect(() => {
+        async function fetch() {
+            getEvents(dispatch())
+        }
+        fetch()
+    }, [])
     const events = useSelector(state => state.events);
     const complaints = useSelector(state => state.complaints);
 

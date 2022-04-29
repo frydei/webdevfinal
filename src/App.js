@@ -19,11 +19,7 @@ import ChatScreen from "./Screens/ChatScreen";
 import DashboardScreen from "./Screens/DashboardScreen";
 import PastEventDetailScreen from "./Screens/PastEventDetailScreen";
 import AboutUs from "./Screens/AboutUs";
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
-import {getUserByUsername} from "./BACKEND/Actions/UsersActions";
 import DetailsScreen from "./Sign-in-sign-up/DetailsScreen";
-import GuestHomePageScreen from "./Homepage/GuestHomePageScreen";
 
 export const REACT_APP_BASE = process.env.REACT_APP_BASE || "http://localhost:4000"
 console.log(REACT_APP_BASE)

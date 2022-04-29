@@ -37,6 +37,7 @@ const SignIn = () => {
                setErrorMsg(true);
                formRef.current.reset()
            } else {
+               localStorage.setItem("user_logged_in", "TRUE")
                navigate(`/frydei/profile/${r.username}`, {state: {from: "CURRENT"}})
            }
         })

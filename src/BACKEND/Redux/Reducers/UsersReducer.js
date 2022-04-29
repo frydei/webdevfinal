@@ -12,7 +12,7 @@ import {
 const UsersReducer = (state =  [], action) => {
     switch (action.type) {
         case GET_USERS:
-            return action.users;
+            return state = [...action.users];
         case GET_USER_BY_USERNAME:
             return action.user;
         case GET_USER_BY_ID:

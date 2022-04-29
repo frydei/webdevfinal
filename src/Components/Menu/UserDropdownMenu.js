@@ -22,13 +22,6 @@ const UserDropdownMenu = ({user}) => {
     let username = user.first_name.toLowerCase().split("")[0] + user.last_name.toLowerCase();
     const [dropdown, setDropdown] = useState(false);
 
-    const signUserOut = () => {
-        console.log("clicked!")
-        signOut().then(r => {
-            navigate("/")
-        });
-    }
-
     const navigateToProfile = () => {
 
         navigate(`/frydei/profile/${user.username}`, {
@@ -72,8 +65,9 @@ const UserDropdownMenu = ({user}) => {
                             style={{"backgroundColor": "transparent", "border": "1px solid transparent"}}
                             onClick={() => {
                                 signOut().then(r => {
+                                    localStorage.clear()
                                     navigate("/")
-                                });;
+                                });
                             }}
                     >Sign out
                     </button>

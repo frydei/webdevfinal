@@ -22,7 +22,7 @@ const Frydei = () => {
     if (current_user._id !== undefined) {
         header = <HeaderUser user={current_user}/>
 
-        logged_in = true;
+        logged_in = localStorage.getItem("user_logged_in",);
 
     } else {
         if (location.pathname === "/frydei" || location.pathname === "" ) {
@@ -30,7 +30,7 @@ const Frydei = () => {
         } else {
             header = <HeaderGuest/>
         }
-        logged_in = false;
+        logged_in = localStorage.getItem("user_logged_in");
     }
 
     return (

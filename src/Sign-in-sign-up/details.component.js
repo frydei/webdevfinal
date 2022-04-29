@@ -2,16 +2,17 @@ import React, {useRef, useState} from 'react';
 import FilledButton from "../Components/FilledButton";
 import Spacer from "../Components/Spacer";
 import {uploadFile} from "../BACKEND/Services/FileServices";
+import {signUp} from "../BACKEND/Services/AuthServices";
 import axios from "axios";
 import FormInput from "./FormInput";
 import {REACT_APP_BASE} from "../App";
+import {useNavigate} from "react-router";
 
 const Details = ({user}) => {
+    const navigate = useNavigate()
     const city = useRef();
     const state = useRef();
     const profile = useRef()
-    const [image, setImage] = useState("")
-
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -22,7 +23,13 @@ const Details = ({user}) => {
         }
         const data = new FormData()
         data.append("file", profile.current.files[0],  user.username + ".jpeg")
-        await uploadFile(data)
+        uploadFile(data).then(() => {
+            signUp(new_user).then(() => {
+                localStorage.setItem("user_logged_in", "TRUE")
+                navigate(`/frydei/profile/${new_user.username}`, {state: {from: "CURRENT"}})
+            })
+        })
+
     };
 
     return (
