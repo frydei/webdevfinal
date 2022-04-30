@@ -5,7 +5,7 @@ const ProfileItem = ({user}) => {
     return(
         <div className="f-profile d-flex flex-column align-items-center">
             <LargeUserIcon user={user}/>
-            <h3 className="f-profile-name mt-2"> {user.first_name}</h3>
+            <h3 className="f-profile-name mt-2"> {user.username}</h3>
             <div className="f-profile-location d-flex align-items-center ">
                 <i className="fa-solid fa-location-dot me-2"/>
                 <h4 className=" m-0">{user.city}, {user.state}</h4>
