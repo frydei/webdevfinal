@@ -1,25 +1,39 @@
 import {useOutletContext, useParams} from "react-router";
 import {useDispatch} from "react-redux";
 import {useLocation, useNavigate} from "react-router-dom";
-import React, {useEffect, useState} from "react";
-import {getUserByUsername} from "../BACKEND/Actions/UsersActions";
+import React, {useEffect, useRef, useState} from "react";
+import {
+    getUserByUsername,
+    UPDATE_PROFILE,
+    UPDATE_USER,
+    updateUser
+} from "../BACKEND/Actions/UsersActions";
 import ProfileNav from "./profileNav";
 import HomeEvent from "../Components/HomeEvent";
 import FavoriteEvent from "../Components/FavoriteEvent";
 import MediaCard from "../Components/MediaCard";
 import SelfProfileItem from "./SelfProfileItem";
-import EditProfile from "./EditProfile";
+import {Modal} from "react-bootstrap";
+import {updateSession} from "../BACKEND/Services/AuthServices";
 
 const SelfProfileScreen = () => {
+    const navigate = useNavigate();
     const {username} = useParams();
     let [editing, setEditing] = useState(false)
     const dispatch = useDispatch();
     const location = useLocation();
     const [logged_in, current_user, setCurrentUser] = useOutletContext()
 
-    const [user, setUser] = useState(current_user);
+    let [user, setUser] = useState(current_user);
+    const [modal, setModal] = useState(false);
 
-
+    const uname = useRef();
+    const fname= useRef();
+    const lname= useRef();
+    const email= useRef();
+    const city= useRef();
+    const state= useRef();
+    const bio= useRef();
 
     useEffect(async () => {
         if (location.state.user !== "CURRENT") {
@@ -27,23 +41,34 @@ const SelfProfileScreen = () => {
             setUser(url_user);
         }
     }, []);
-    const [formValues, setFormValues] = useState({
-                                                     username: user.username,
-                                                     first_name: user.first_name,
-                                                     last_name: user.last_name,
-                                                     email: user.email,
-                                                     biography: user.biography,
-                                                     city: user.city,
-                                                     state: user.state
-                                                 })
-    const submitForm = (values) => {
-        console.log(values)
 
-        dispatch({
-                     type: 'update-profile',
-                     profileData: values
-                 });
+    const updateItem = (e) => {
+        // e.preventDefault();
+        let updated_user;
+        updated_user = {
+            ...user,
+            username : uname.current.value,
+            first_name: fname.current.value,
+            last_name: lname.current.value,
+            email: email.current.value,
+            city: city.current.value,
+            state: state.current.value,
+            biography : bio.current.value
+
+        }
+        updateUser(dispatch, updated_user).then(r => console.log(r));
+        setCurrentUser(updateSession(updated_user));
+        // console.log (uname.current.value)
+        // setModal(false);
     }
+
+    const showModal = () => {
+        setModal(true);
+    };
+    const hideModal = () => {
+        setModal(false);
+    };
+
 
 
     const [tab, changeTab] = useState("UPCOMING_EVENTS");
@@ -99,51 +124,23 @@ const SelfProfileScreen = () => {
 
 */
     return (
-        <div className="f-profile" style={{"paddingLeft": "175px", "paddingRight": "175px", "paddingTop": "25px"}}>
-            {/*<div className="f-profile-view">*/}
-            {/*    {user._id === undefined ? null : <SelfProfileItem user={user}/>}*/}
-            {/*</div>*/}
-            <div className='me-4'>
-                {editing ?
-                 <i
-                     className="fas fa-times"
-                     onClick={() => {
-                         setEditing(false)
-                     }}
-                 /> :
-                 <i/>
-                }
-            </div>
-            {editing ?
-             <div>
-                 <h5 className='profile-header'>Edit profile</h5>
-                 {/*<EditProfile formValues={formValues} setFormValues={setFormValues} /> :*/}
-             </div>
-              :
-                <div className="f-profile-view">
-                    {user._id === undefined ? null : <SelfProfileItem user={user}/>}
-                </div>
-            }
-            {editing &&
-             <button
-                 onClick={() => {
-                     submitForm(formValues)
-                     setEditing(false)
-                 }}
-                 className='btn btn-light'
-             >
-                 Save
-             </button>
-            }
 
+
+        <div className="f-profile" style={{"paddingLeft": "175px", "paddingRight": "175px", "paddingTop": "25px"}}>
+            <div className="f-profile-view">
+                {user._id === undefined ? null : <SelfProfileItem user={user}/>}
+            </div>
             {!editing &&
              <button
-                 onClick={() => setEditing(true)}
+                 onClick={() => showModal()}
                  className='btn btn-secondary'
              >
                  Edit profile
              </button>
+
             }
+
+
 
             <ProfileNav changeTab={changeTab} selected={selected}/>
 
@@ -166,6 +163,65 @@ const SelfProfileScreen = () => {
                 {tab === "MEDIA" &&
                  (user._id === undefined ? null : user.media.map(med => <MediaCard media={med}/>))}
             </div>
+
+            <Modal className="c-modal d-flex justify-content-center" show={modal} onHide={hideModal}>
+                <Modal.Header closeButton>
+                </Modal.Header>
+                <Modal.Body className="d-flex flex-column justify-content-center align-items-center">
+                    <h4 className="c-medium-bold">Edit Item</h4>
+                    <form
+                        className="c-small-normal c-modal-form d-flex flex-column align-items-center justify-content-center">
+                        <label className="c-table-label c-xsmall-medium" htmlFor="username">
+                            Username
+                            <input className="c-table-input" id="name" type="text" form="user-form" ref={uname}
+                                   placeholder={user.username}
+                                   // onChange={updateItem}
+                            />
+                        </label>
+                        <label className="c-table-label c-xsmall-medium" htmlFor="first_name">
+                            First Name
+                            <input className="c-table-input" id="first_name" ref={fname}
+                                   type="text" form="user-form" placeholder={user.first_name}
+                                   onChange={updateItem}
+                            />
+                        </label>
+                        <label className="c-table-label c-xsmall-medium"
+                               htmlFor="last_name">
+                            Last Name
+                            <input className="c-table-input" id="last_name" ref={lname}
+                                   type="text" form="user-form" placeholder={user.last_name}
+                                   onChange={updateItem}
+                            />
+                        </label>
+                        <label className="c-table-label c-xsmall-medium" htmlFor="email"> Email
+                            <input className="c-table-input" ref={email}
+                                   id="email" type="tel" form="user-form" placeholder={user.email}
+                                   onChange={updateItem}
+                            />
+                        </label>
+                        <label className="c-table-label c-xsmall-medium" htmlFor="city"> City
+                            <input className="c-table-input" id="city" ref={city}
+                                   placeholder={user.city} form="item-form" onChange={updateItem}/>
+                        </label>
+                        <label className="c-table-label c-xsmall-medium" htmlFor="state"> State
+                            <input className="c-table-input" id="state" ref={state}
+                                   placeholder={user.state} form="item-form" onChange={updateItem}/>
+                        </label>
+
+                        <label className="c-table-label c-xsmall-medium" htmlFor="biography"> Bio
+                            <textarea className="c-table-input" id="biography" ref={bio}
+                                      placeholder={user.biography} onChange={updateItem}
+                                      rows="5" form="item-form"/>
+                        </label>
+
+                        <div className="d-flex justify-content-center">
+                            <input className="c-submit c-small-medium" form="user-form" type="submit"
+                                   onClick={(e) => updateItem() }
+                                   value="Update Item"/>
+                        </div>
+                    </form>
+                </Modal.Body>
+            </Modal>
 
         </div>
     );
