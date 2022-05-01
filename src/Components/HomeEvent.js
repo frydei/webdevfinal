@@ -43,7 +43,7 @@ const HomeEvent = ({event, page}) => {
             <div className="f-event-detail d-flex flex-column align-items-start justify-content-start">
 
                 <div className="f-event-detail p-2 d-flex flex-column align-items-start justify-content-start">
-                    <h3 className="f-event-title">{event.title}</h3>
+                    <h3 className="f-event-title" style={{"textAlign": "left"}}>{event.title}</h3>
                     <div className="f-event-detail-section d-flex flex-column align-items-start justify-content-center">
                         <h3 className="f-event-location">{event.location}</h3>
                         <h3 className="f-event-time">{time}</h3>

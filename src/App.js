@@ -100,9 +100,6 @@ function App() {
                         <Route path="explore"
                                exact={true}
                                element={<ExploreEventsScreen logged_in={true}/>}/>
-                        <Route path="requests"
-                               exact={true}
-                               element={<RequestScreen logged_in={true}/>}/>
                         <Route path="create"
                                exact={true}
                                element={<CreateEventScreen/>}/>

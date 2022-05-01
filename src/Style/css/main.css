@@ -215,6 +215,7 @@ button:focus, button:active {
   font-family: "Fredoka", sans-serif;
 }
 .f-event-detail .f-event-title {
+  width: 90%;
   font-size: 14px;
   font-weight: 500;
   color: #2D3142;
@@ -809,10 +810,6 @@ button:focus, button:active {
   font-size: 15px;
   font-weight: 400;
 }
-/*.f-profile .f-profile-location h4, .f-profile .f-profile-info h4 {*/
-/*  font-size: 15px;*/
-/*  font-weight: 400;*/
-/*}*/
 .f-profile .f-profile-tabs li .f-link {
   text-decoration: none;
   border: none;

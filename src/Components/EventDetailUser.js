@@ -91,7 +91,6 @@ const EventDetailUser = ({event}) => {
             addUser().then(() => {
                 setButton("Joined")
                 setEvent(getEventsById(c_event._id))
-                console.log(c_event)
             })
         }
 

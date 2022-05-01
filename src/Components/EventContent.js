@@ -73,7 +73,7 @@ const EventContent = ({event, is_favorite, menu}) => {
             <div
                 className="f-event-img-container mb-2 d-flex flex-column align-items-center justify-content-center position-relative">
                 <Link to={`/frydei/explore/${event._id}`} className="f-link">
-                    <img className="f-event-img" src={`${REACT_APP_BASE}/${event.event_photo}`} alt=""/>
+                    {event.hosts[0].username === "tmaster" ? <img className="f-event-img" src={`${event.event_photo}`} alt=""/> : <img className="f-event-img" src={`${REACT_APP_BASE}/${event.event_photo}`} alt=""/>}
                 </Link>
             </div>
             <div className="f-event-detail">

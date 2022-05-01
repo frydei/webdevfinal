@@ -13,9 +13,13 @@ const HomePageScreen = () => {
     const [events, setEvents] = useState()
     const [logged_in, current_user, setCurrentUser] = useOutletContext()
 
+
     useEffect(() => {
         async function fetch() {
-            setEvents(await getEvents());
+            getEvents().then(r => {
+                r = r.sort((a,b) => new Date(b.date) - new Date(a.date));
+                setEvents(r);
+            })
         }
         fetch()
     }, []);
@@ -25,6 +29,7 @@ const HomePageScreen = () => {
     }
 
     const homePageItems = [];
+
     for (let i = 0; i < 3; i++) {
         homePageItems.push(events[i]);
     }

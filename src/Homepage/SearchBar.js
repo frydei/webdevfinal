@@ -34,7 +34,7 @@ const SearchBar =() => {
 
                 </div>
             </form>
-            <div className={"f-search-note"}><h3 className="f-medium-medium mt-4" style={{"fontSize":"20px"}}>Events happening near you</h3></div>
+            <div className={"f-search-note"}><h3 className="f-medium-medium mt-4 mb-5" style={{"fontSize":"20px"}}>Upcoming Events</h3></div>
         </div>
     )
 }

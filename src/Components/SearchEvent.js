@@ -7,7 +7,7 @@ import {useDispatch} from "react-redux";
 const SearchEvent = ({event}) => {
     const navigate = useNavigate()
 
-    let date = new Date(event.dates.start.localDate)
+    let date = event.dates ? new Date(event.dates.start.localDate) : new Date(event.date)
     let month = date.toLocaleString("en-US", {month: "long"})
 
 
@@ -22,7 +22,11 @@ const SearchEvent = ({event}) => {
 
     const exploreEvent = (e) => {
         e.preventDefault();
-        navigate(`/frydei/explore/${event.id}`)
+        if(event.id) {
+            navigate(`/frydei/explore/${event.id}`)
+        } else {
+            navigate(`/frydei/explore/${event._id}`)
+        }
     }
 
     if(!event) {
@@ -35,7 +39,7 @@ const SearchEvent = ({event}) => {
                     className="f-event-img-container mb-2 d-flex flex-column align-items-center justify-content-center position-relative">
                     <button className="f-link f-link-button"
                             onClick={(e) => exploreEvent(e)}>
-                        {event.hosts ? <img className="f-event-img" src={`${REACT_APP_BASE}/${event.event_photo}`} alt=""/> : <img className="f-event-img" src={`${event.images[5].url}`} alt=""/>}
+                        {event.hosts ? (event.hosts[0].username === "tmaster" ? <img className="f-event-img" src={`${event.event_photo}`} alt=""/> : <img className="f-event-img" src={`${REACT_APP_BASE}/${event.event_photo}`} alt=""/>) : <img className="f-event-img" src={`${event.images[5].url}`} alt=""/>}
                     </button>
                     <button className="f-button f-link f-view d-flex justify-content-center align-items-center position-absolute bottom-0 end-0"
                             style={{"paddingLeft": "0px", "paddingRight": "0px", "margin": "0px 10px 15px 0px"}}

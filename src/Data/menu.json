@@ -4,19 +4,11 @@
         "icon": "fa-solid fa-house"
     },
     {
-        "title": "Create Event",
-        "icon": "fa-solid fa-plus"
-    },
-    {
         "title": "Explore",
         "icon": "fa-solid fa-compass"
     },
     {
-        "title": "Requests",
-        "icon": "fa-solid fa-bell"
-    },
-    {
-        "title": "Events",
-        "icon": "fa-solid fa-calendar"
+        "title": "Search",
+        "icon": "fa-solid fa-magnifying-glass"
     }
 ]
