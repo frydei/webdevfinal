@@ -1,8 +1,7 @@
 import React from "react";
 
-const FilledButton = (props) => {
-    const name = props.name;
-    const handleSubmit = props.handleSubmit
+const FilledButton = ({name, handleSubmit}) => {
+
     return(
         <button type="submit"
                 onClick={(e) => handleSubmit(e)}

@@ -15,7 +15,8 @@ import MediaCard from "../Components/MediaCard";
 import SelfProfileItem from "./SelfProfileItem";
 import {Modal} from "react-bootstrap";
 import {updateSession} from "../BACKEND/Services/AuthServices";
-
+import FilledButton from "../Components/FilledButton";
+import Button from "../Components/Button"
 const SelfProfileScreen = () => {
     const navigate = useNavigate();
     const {username} = useParams();
@@ -131,12 +132,7 @@ const SelfProfileScreen = () => {
                 {user._id === undefined ? null : <SelfProfileItem user={user}/>}
             </div>
             {!editing &&
-             <button
-                 onClick={() => showModal()}
-                 className='btn btn-secondary'
-             >
-                 Edit profile
-             </button>
+             <Button handleSubmit={showModal} name={"Edit Profile"}/>
 
             }
 
@@ -164,60 +160,56 @@ const SelfProfileScreen = () => {
                  (user._id === undefined ? null : user.media.map(med => <MediaCard media={med}/>))}
             </div>
 
-            <Modal className="c-modal d-flex justify-content-center" show={modal} onHide={hideModal}>
+            <Modal className="f-modal d-flex justify-content-center align-content-start " show={modal} onHide={hideModal}>
                 <Modal.Header closeButton>
                 </Modal.Header>
                 <Modal.Body className="d-flex flex-column justify-content-center align-items-center">
-                    <h4 className="c-medium-bold">Edit Item</h4>
-                    <form
-                        className="c-small-normal c-modal-form d-flex flex-column align-items-center justify-content-center">
-                        <label className="c-table-label c-xsmall-medium" htmlFor="username">
+                    <h4 className="f-medium-medium f-header">Edit Profile</h4>
+                    <form className="f-form d-flex flex-column align-items-center justify-content-center" onSubmit={(e) => updateItem(e)}>
+                        <label className="f-label" htmlFor="username">
                             Username
-                            <input className="c-table-input" id="name" type="text" form="user-form" ref={uname}
+                            <input className="f-input" id="name" type="text" form="user-form" ref={uname}
                                    placeholder={user.username}
                                    // onChange={updateItem}
                             />
                         </label>
-                        <label className="c-table-label c-xsmall-medium" htmlFor="first_name">
+                        <label htmlFor="first_name">
                             First Name
-                            <input className="c-table-input" id="first_name" ref={fname}
+                            <input id="first_name" ref={fname}
                                    type="text" form="user-form" placeholder={user.first_name}
                                    onChange={updateItem}
                             />
                         </label>
-                        <label className="c-table-label c-xsmall-medium"
-                               htmlFor="last_name">
+                        <label htmlFor="last_name">
                             Last Name
-                            <input className="c-table-input" id="last_name" ref={lname}
+                            <input id="last_name" ref={lname}
                                    type="text" form="user-form" placeholder={user.last_name}
                                    onChange={updateItem}
                             />
                         </label>
-                        <label className="c-table-label c-xsmall-medium" htmlFor="email"> Email
-                            <input className="c-table-input" ref={email}
+                        <label htmlFor="email"> Email
+                            <input ref={email}
                                    id="email" type="tel" form="user-form" placeholder={user.email}
                                    onChange={updateItem}
                             />
                         </label>
-                        <label className="c-table-label c-xsmall-medium" htmlFor="city"> City
-                            <input className="c-table-input" id="city" ref={city}
+                        <label htmlFor="city"> City
+                            <input id="city" ref={city}
                                    placeholder={user.city} form="item-form" onChange={updateItem}/>
                         </label>
-                        <label className="c-table-label c-xsmall-medium" htmlFor="state"> State
-                            <input className="c-table-input" id="state" ref={state}
+                        <label htmlFor="state"> State
+                            <input id="state" ref={state}
                                    placeholder={user.state} form="item-form" onChange={updateItem}/>
                         </label>
 
-                        <label className="c-table-label c-xsmall-medium" htmlFor="biography"> Bio
-                            <textarea className="c-table-input" id="biography" ref={bio}
+                        <label className="mb-3" htmlFor="biography"> Biography
+                            <textarea id="biography" ref={bio}
                                       placeholder={user.biography} onChange={updateItem}
                                       rows="5" form="item-form"/>
                         </label>
 
                         <div className="d-flex justify-content-center">
-                            <input className="c-submit c-small-medium" form="user-form" type="submit"
-                                   onClick={(e) => updateItem() }
-                                   value="Update Item"/>
+                            <FilledButton handleSubmit={updateItem} name={"Update Profile"}/>
                         </div>
                     </form>
                 </Modal.Body>

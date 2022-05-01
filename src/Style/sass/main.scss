@@ -1213,3 +1213,47 @@ button {
   border: none;
   padding: 0;
 }
+
+.f-modal {
+  width: 800px;
+  font: {
+  family: $fredoka;
+}
+  .f-header {
+    font: {
+      size: 16px;
+
+    }
+  }
+  form {
+    width: 450px;
+    label {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      font: {
+        size: 14px;
+        weight: 500;
+      }
+      margin: 1%;
+      input, textarea {
+        background-color: transparent;
+        border: 1px solid #616E83;
+        border-radius: 5px;
+        color: $grey;
+        opacity: 0.9;
+        font: {
+          family: $fredoka;
+          size: 12px;
+        }
+        resize: none;
+      }
+      input {
+        height: 25px;
+        padding: 6px;
+      }
+    }
+
+  }
+
+}

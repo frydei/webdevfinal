@@ -1,8 +1,12 @@
 import React from "react";
 
-const Button = (param) => {
+const Button = ({name, handleSubmit}) => {
     return(
-        <button className="f-button shadow-none">{param.name}</button>
+        <button
+            type="submit"
+            className="f-button shadow-none"
+            onClick={(e) => handleSubmit(e)}
+        >{name}</button>
     );
 }
 
