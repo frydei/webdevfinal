@@ -1,12 +1,19 @@
 import React, {useRef, useState} from "react";
 import FilledButton from "./FilledButton";
 import {REACT_APP_BASE} from "../App";
+import {uploadFile} from "../BACKEND/Services/FileServices";
+import {createEvent} from "../BACKEND/Services/EventsServices";
+import {getUserById, updateUser} from "../BACKEND/Services/UsersServices";
+import {updateSession} from "../BACKEND/Services/AuthServices";
+import {useNavigate} from "react-router";
 
 
-const CreateEvent = (param) => {
-    const user = param.user;
-    const [imageUploader, setImageUploader] = useState(true);
+const CreateEvent = ({user}) => {
+    const [current_user, setCurrentUser] = useState(user)
+    const [imageUploader, setImageUploader] = useState(false);
     const [image, setImage] = useState("");
+    const [file, setFile] = useState()
+    const navigate = useNavigate()
 
     const title = useRef()
     const desc = useRef()
@@ -19,31 +26,70 @@ const CreateEvent = (param) => {
     const tags = useRef()
     const restrictions = useRef()
     const img = useRef()
+    const [lat, setLat] = useState("")
+    const [lng, setLng] = useState("")
 
-    const addEvent = (e) => {
+    const addEvent = async (e) => {
         e.preventDefault()
+        navigator.geolocation.getCurrentPosition((p) => {
+            setLat(p.coords.latitude)
+            setLng(p.coords.longitude)
+        })
+
+        const data = new FormData()
+        console.log(file)
+        console.log(file.name)
+        data.append("file", file)
+        await uploadFile(data)
+        console.log(date.current.value)
+        let new_attendee = {
+            name: current_user.first_name + " " + current_user.last_name,
+            image: current_user.profile_picture,
+            username: current_user.username
+        }
         let event = {
+            _id: new Date().getTime(),
             title: title.current.value,
-            event_photo: image,
+            event_photo: file.name,
             desc: desc.current.value,
             hosts: [
                 {
-                    first_name: user.first_name,
-                    last_name: user.last_name,
-                    profile_picture: user.profile_picture,
-                    username: user.username
+                    first_name: current_user.first_name,
+                    last_name: current_user.last_name,
+                    profile_picture: current_user.profile_picture,
+                    username: current_user.username
                 }
             ],
-            cost: {type: String, default: "0"},
-            location: String,
-            date: Date,
-            spots: {type: Number, required: true, default: 1},
-            attendees: [],
-            restrictions: String,
-            tags: [],
-            is_approved: {type: Boolean, default: false}
-
+            cost: cost.current.value,
+            location: location.current.value,
+            geolocation: {
+                lat: lat,
+                lng: lng
+            },
+            date: new Date(date.current.value),
+            spots: spots.current.value,
+            attendees: [new_attendee],
+            restrictions: restrictions.current.value,
+            tags: [tags.current.value.split(",").map(t => t.trim())]
         }
+        await createEvent(event).then(async () => {
+            let db_user = await getUserById(current_user._id)
+
+            let updated_user = {
+                ...db_user,
+                user_events: [{...event},...db_user.user_events],
+                events_hosted: db_user.events_hosted + 1,
+                upcoming_events: [{...event}, ...db_user.upcoming_events]
+
+            }
+            updateUser(updated_user).then(async () => {
+                updateSession(updated_user).then(r => {
+                    setCurrentUser(r)
+                })
+
+            })
+            navigate("/frydei/profile")
+        })
     }
 
     return (
@@ -53,7 +99,7 @@ const CreateEvent = (param) => {
                     <div className="form-group f-form-group d-flex align-items-center justify-content-center position-relative">
                         {imageUploader ?
                             <>
-                                <img src={`${REACT_APP_BASE}/${image}`} alt="" className="f-uploaded-img"/>
+                                <img src={image} alt="" className="f-uploaded-img" style={{"objectFit": "cover"}}/>
                                 <button
                                     className="position-absolute top-0 end-0 shadow-none"
                                     onClick={() => setImageUploader(false)}
@@ -65,7 +111,17 @@ const CreateEvent = (param) => {
                             <label htmlFor="image-upload"
                                    className="shadow-none d-flex align-items-center justify-content-center">
                                 Add Image
-                                <input id="image-upload" ref={img} type="file" style={{"display": "none"}}/>
+                                <input id="image-upload"
+                                       ref={img}
+                                       type="file"
+                                       style={{"display": "none"}}
+                                       onChange={(e) => {
+                                           setImage(URL.createObjectURL(e.target.files[0]))
+                                           setFile(e.target.files[0])
+                                           setImageUploader(true)
+                                       }
+                                }
+                                />
                             </label>}
 
                     </div>
@@ -90,7 +146,7 @@ const CreateEvent = (param) => {
                         <div className="form-group f-form-group d-flex flex-column form-control p-0">
                             <label htmlFor="event-host">Host(s)</label>
                             <div>
-                                <img src={`${REACT_APP_BASE}/${user.profile_picture}`} alt="" className="f-icon-small me-1"/>
+                                <img src={`${REACT_APP_BASE}/${current_user.profile_picture}`} alt="" className="f-icon-small me-1"/>
                                 <button className="f-add-button shadow-none">
                                     <i className="fa-solid fa-plus"/>
                                 </button>
@@ -118,20 +174,14 @@ const CreateEvent = (param) => {
                                    placeholder="Where will this event take place?"/>
                         </div>
                         <div className="form-group f-form-group">
-                            <label htmlFor="event-date">Date<span className="f-orange-font">*</span></label>
-                            <input type="date"
+                            <label htmlFor="event-date">Date and Time<span className="f-orange-font">*</span></label>
+                            <input type="datetime-local"
                                    className="form-control shadow-none"
                                    id="event-date"
                                    ref={date}
-                                   placeholder="What date will this event take place?"/>
-                        </div>
-                        <div className="form-group f-form-group">
-                            <label htmlFor="event-time">Time<span className="f-orange-font">*</span></label>
-                            <input type="time"
-                                   ref={time}
-                                   className="form-control shadow-none"
-                                   id="event-time"
-                                   placeholder="What time will this event take place?"/>
+                                   defaultValue={new Date().toISOString().split(".")[0]}
+                                   placeholder="When will this event take place?"
+                            />
                         </div>
                         <div className="form-group f-form-group">
                             <label htmlFor="event-attendee">Attendees<span className="f-orange-font">*</span></label>
@@ -167,7 +217,7 @@ const CreateEvent = (param) => {
                     </div>
                     <div className="row d-flex justify-content-end">
                         <label htmlFor="form-submit" className="d-flex justify-content-end">
-                            <FilledButton name={"Create"}/>
+                            <FilledButton name={"Create"} handleSubmit={addEvent}/>
                         </label>
                         <input id="form-submit"
                                type="submit"

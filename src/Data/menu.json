@@ -4,6 +4,10 @@
         "icon": "fa-solid fa-house"
     },
     {
+        "title": "Create Event",
+        "icon": "fa-solid fa-plus"
+    },
+    {
         "title": "Explore",
         "icon": "fa-solid fa-compass"
     },

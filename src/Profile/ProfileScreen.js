@@ -15,7 +15,6 @@ const ProfileScreen = () => {
 
     const [user, setUser] = useState(current_user);
 
-
     useEffect(async () => {
         if (location.state.user !== "CURRENT") {
             const url_user = await getUserByUsername(username);
@@ -33,7 +32,7 @@ const ProfileScreen = () => {
             media: "",
             favorited: "",
         };
-    } else if (tab === "PAST_EVENTS") {
+    } else if (tab === "MY_EVENTS") {
         selected = {
             upcoming: "",
             past: "selected",
@@ -55,6 +54,7 @@ const ProfileScreen = () => {
             favorited: "",
         };
     }
+    console.log(user)
 
     const update = (new_user) => {
         setCurrentUser(new_user)
@@ -65,8 +65,8 @@ const ProfileScreen = () => {
             <ProfileNav changeTab={changeTab} selected={selected}/>
 
             <div className="f-event-grid mt-3">
-                {tab === "PAST_EVENTS" &&
-                    (user._id === undefined ? null : user.past_events.map && user.past_events.map(event => <HomeEvent event={event}
+                {tab === "MY_EVENTS" &&
+                    (user._id === undefined ? null : user.user_events.map && user.user_events.map(event => <HomeEvent event={event}
                                                                                               page="Past"/>))}
 
                 {tab === "UPCOMING_EVENTS" &&

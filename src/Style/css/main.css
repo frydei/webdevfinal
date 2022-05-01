@@ -393,7 +393,7 @@ button:focus, button:active {
 .f-form .f-form-content small {
   margin: 0;
   font-family: "Fredoka", sans-serif;
-  font-size: 8px;
+  font-size: 10px;
 }
 .f-form .f-form-content label {
   font-family: "Fredoka", sans-serif;
@@ -828,18 +828,43 @@ button:focus, button:active {
   font-weight: 500;
 }
 
+.f-dash .f-user-card {
+  width: 100%;
+  margin: 2%;
+  padding: 3%;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1607843137);
+}
+.f-dash .f-user-card .f-title-small {
+  font-size: 16px;
+}
+.f-dash .f-user-card .f-icon-button {
+  width: 35px;
+  height: 35px;
+  background-color: #4F5D75;
+  border-radius: 10px;
+}
+.f-dash .f-user-card .f-icon-button i {
+  color: #f7f7f7;
+}
 .f-dash .f-dash-box {
   background-color: #ffffff;
   border-radius: 15px;
   padding: 2%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .f-dash .f-dash-box .f-search, .f-dash .f-dash-box .f-event {
-  width: 250px;
+  width: 100%;
   height: 270px;
 }
-.f-dash .f-dash-box .f-search .f-event-img, .f-dash .f-dash-box .f-event .f-event-img {
-  width: 225px;
-  height: 165px;
+.f-dash .f-dash-box .f-search button, .f-dash .f-dash-box .f-event button {
+  height: 185px;
+}
+.f-dash .f-dash-box .f-search button .f-event-img, .f-dash .f-dash-box .f-event button .f-event-img {
+  width: 100%;
+  height: 185px;
 }
 .f-dash .f-dash-box .f-search h3, .f-dash .f-dash-box .f-event h3 {
   margin: 0;

@@ -16,7 +16,7 @@ const ProfileNav = ({changeTab, selected}) => {
                     </li>
                     <li className={`nav-item f-nav ${selected.past}`}>
                         {/*<Link className="nav-link" to="#past">Past Events</Link>*/}
-                        <button className="nav-link f-link" onClick={() => changeTab("PAST_EVENTS")}>Past Events</button>
+                        <button className="nav-link f-link" onClick={() => changeTab("MY_EVENTS")}>My Events</button>
 
                     </li>
                     <li className={`nav-item f-nav ${selected.favorited}`}>

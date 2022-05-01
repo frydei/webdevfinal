@@ -110,7 +110,8 @@ const EventDetailUser = ({event}) => {
             let db_user = await getUserById(current_user._id)
             let updated_user = {
                 ...db_user,
-                upcoming_events: [{...c_event},...db_user.upcoming_events]
+                upcoming_events: [{...c_event},...db_user.upcoming_events],
+                events_attended: db_user.events_attended + 1
 
             }
             updateUser(updated_user).then(async () => {
@@ -147,7 +148,7 @@ const EventDetailUser = ({event}) => {
 
             <div className="row f-event-detail-content">
                 <div className="col-6 f-event-detail-img">
-                    {c_event.hosts ?
+                    {c_event._id ?
                         (c_event.hosts[0].username !== "tmaster"
                                 ? <img src={`${REACT_APP_BASE}/${c_event.event_photo}`} alt=""/>
                                 :
