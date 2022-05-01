@@ -10,6 +10,7 @@ import {useLocation} from "react-router-dom";
 
 const HomePageScreen = () => {
     const location = useLocation()
+
     const [events, setEvents] = useState()
     const [logged_in, current_user, setCurrentUser] = useOutletContext()
 

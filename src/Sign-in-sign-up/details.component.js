@@ -11,6 +11,10 @@ import {useNavigate} from "react-router";
 const Details = ({user}) => {
     const [lat, setLat] = useState("")
     const [lng, setLng] = useState("")
+    const [imageUploader, setImageUploader] = useState(false);
+    const [image, setImage] = useState("");
+    const [file, setFile] = useState()
+
     const navigate = useNavigate()
     const city = useRef();
     const state = useRef();
@@ -35,7 +39,7 @@ const Details = ({user}) => {
         }
 
         const data = new FormData()
-        data.append("file", profile.current.files[0],  user.username + ".jpeg")
+        data.append("file", file,  user.username + ".jpeg")
         uploadFile(data).then(() => {
             new_user = {
                 ...new_user,
@@ -65,18 +69,30 @@ const Details = ({user}) => {
                     ref={state}
                     placeholder={"State"}
                 />
+                {imageUploader ?
+                    <div className="d-flex flex-column align-items-center">
+                        <img className="f-user-image mt-3 mb-3" src={image} alt="" style={{"objectFit": "cover"}} onClick={() => setImageUploader(false)}/>
+                        <h5 className="f-small-regular">Click the image to pick a different one.</h5>
+                    </div>
+                    :
                 <label htmlFor="f-profile-upload"
-                       className="f-user-image-upload shadow-none d-flex align-items-center justify-content-center "
-                >
-                    {profile.current ? user.username + ".jpeg" : "Upload Picture" }
-                    <input className="f-profile-upload"
-                           ref={profile}
-                           id="f-profile-upload"
-                           type="file"
-                           style={{"display": "none"}}
-                    />
-                </label>
-                <Spacer size={24}/>
+                       className="f-user-image-upload mt-3 shadow-none d-flex align-items-center justify-content-center">
+                        Upload Profile
+                        <input className="f-profile-upload"
+                               ref={profile}
+                               id="f-profile-upload"
+                               type="file"
+                               style={{"display": "none"}}
+                               onChange={(e) => {
+                                   setImage(URL.createObjectURL(e.target.files[0]))
+                                   setFile(e.target.files[0])
+                                   setImageUploader(true)
+                               }
+                               }
+                        />
+
+                </label>}
+                <Spacer size={20}/>
 
                 <FilledButton name={"Sign Up"} handleSubmit={handleSubmit}/>
             </div>

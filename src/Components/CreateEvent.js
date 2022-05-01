@@ -37,11 +37,8 @@ const CreateEvent = ({user}) => {
         })
 
         const data = new FormData()
-        console.log(file)
-        console.log(file.name)
         data.append("file", file)
         await uploadFile(data)
-        console.log(date.current.value)
         let new_attendee = {
             name: current_user.first_name + " " + current_user.last_name,
             image: current_user.profile_picture,

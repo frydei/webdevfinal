@@ -26,16 +26,19 @@ body, .container-fluid {
 
 input {
   outline: none !important;
+
   &:focus {
     outline: none !important;
   }
 }
+
 button {
-  &:focus, &:active{
+  &:focus, &:active {
     outline: none !important;
     box-shadow: none;
   }
 }
+
 .main {
   background: $orange;
 }
@@ -128,6 +131,7 @@ button {
   object-fit: cover;
   border-radius: 50%;
 }
+
 .f-user-icon-small {
   width: 46px;
   height: 46px;
@@ -201,8 +205,10 @@ button {
   width: 280px;
   height: 340px;
   padding: 4%;
+
   .f-search-content {
     height: 100%;
+
     .f-event-img-container {
       height: 230px;
 
@@ -212,6 +218,7 @@ button {
         object-fit: cover;
       }
     }
+
     .f-event-detail {
       height: 105px;
     }
@@ -230,6 +237,7 @@ button {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
   }
+
   h3 {
     margin-bottom: 2px;
   }
@@ -237,6 +245,7 @@ button {
   i {
     color: $white;
   }
+
   .f-event-detail {
     height: 95px;
 
@@ -402,17 +411,24 @@ button {
       size: 14px;
     }
   }
+
   .f-user-image-upload {
     font: {
       family: $fredoka;
       size: 14px;
     }
     color: $grey;
-  width: 100%;
-  background-color: white;
-  border-radius: 5px;
-  height: 31px;
-}
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 50%;
+  }
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 
 }
 
@@ -459,7 +475,8 @@ button {
       height: 25px;
       padding: 6px;
     }
-     select {
+
+    select {
       padding: {
         top: 3px;
         bottom: 3px;
@@ -546,16 +563,19 @@ button {
       border: 1px solid transparent;
       height: inherit;
       width: 100%;
+
       .f-uploaded-img {
         height: inherit;
         object-fit: cover;
         border-radius: 15px;
         width: 100%;
       }
+
       button {
         outline: none;
         background-color: transparent;
         border: 1px solid transparent;
+
         .fa-xmark {
           padding: 10px;
           font-size: 26px;
@@ -589,15 +609,19 @@ button {
       padding: 0;
 
     }
+
     &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
       color: $dark;
     }
+
     &::-moz-placeholder { /* Firefox 19+ */
       color: $dark;
     }
+
     &:-ms-input-placeholder { /* IE 10+ */
       color: $dark;
     }
+
     &:-moz-placeholder { /* Firefox 18- */
       color: $dark;
     }
@@ -712,6 +736,7 @@ button {
       outline: none !important;
       box-shadow: none;
     }
+
     .f-menu-item {
       background-color: transparent;
       border: 1px solid transparent;
@@ -812,6 +837,7 @@ button {
   .f-chat-info {
     width: 100%;
     padding-left: 10px;
+
     h4, h5, span {
       font: {
         size: 12px;
@@ -947,6 +973,7 @@ button {
 
   .f-msg {
     width: 65%;
+
     h5, h6 {
       padding: 0;
       margin: 0;
@@ -980,6 +1007,7 @@ button {
     size: 12px;
     weight: $regular;
   }
+
   textarea {
     border: 1px solid transparent;
     background-color: $lightlightgrey;
@@ -988,11 +1016,13 @@ button {
     border-radius: 3px;
     width: 95%;
     resize: none;
+
     &:focus {
       outline: none !important;
     }
 
   }
+
   textarea::-webkit-search-cancel-button,
   textarea::-webkit-search-decoration,
   textarea::-webkit-search-results-button,
@@ -1006,10 +1036,12 @@ button {
     max-width: 0;
     outline: none !important;
   }
+
   button {
     background-color: transparent;
     border: 1px solid transparent;
     padding: 0;
+
     i {
       color: $grey;
       font-size: 12px;
@@ -1023,6 +1055,7 @@ button {
   height: 90px;
   background-color: #ffffff;
   border-radius: 10px;
+
   h6 {
     font: {
       size: 18px;
@@ -1031,6 +1064,7 @@ button {
     text-align: center;
     margin: 0;
   }
+
   .f-num-card {
     font: {
       size: 28px;
@@ -1049,6 +1083,7 @@ button {
     }
 
   }
+
   .f-profile-location, .f-profile-bio {
     h4 {
       font: {
@@ -1071,19 +1106,23 @@ button {
         &:focus, &::after, &:hover, &:active, &:current {
           color: inherit;
         }
+
         &:hover {
 
         }
       }
+
       button {
 
       }
     }
   }
+
   .f-nav {
     width: 25%;
 
   }
+
   .selected {
     button {
       font-weight: $medium;
@@ -1100,6 +1139,7 @@ button {
     padding: 3%;
     border-radius: 15px;
     box-shadow: 0 2px 4px #00000029;
+
     .f-title-small {
       font: {
         size: 16px;
@@ -1111,11 +1151,13 @@ button {
       height: 35px;
       background-color: $grey;
       border-radius: 10px;
+
       i {
         color: $white;
       }
     }
   }
+
   .f-dash-box {
     background-color: #ffffff;
     border-radius: 15px;
@@ -1123,22 +1165,26 @@ button {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-      .f-search, .f-event {
-        width: 100%;
-        height: 270px;
 
-        button {
+    .f-search, .f-event {
+      width: 100%;
+      height: 270px;
+
+      button {
+        height: 185px;
+
+        .f-event-img {
+          width: 100%;
           height: 185px;
-          .f-event-img {
-            width: 100%;
-            height: 185px;
-          }
         }
-        h3 {
-          margin: 0;
-        }
-
       }
+
+      h3 {
+        margin: 0;
+      }
+
+    }
+
     h3 {
       font: {
         family: $fredoka;
@@ -1154,24 +1200,30 @@ button {
   background-color: $white;
   padding: 4%;
   border-radius: 15px;
+
   h3, h4, span {
     margin: 0;
   }
+
   span, h4, p {
     font-size: 13px;
     font-weight: $regular;
+
     span {
       font-weight: $medium;
     }
   }
+
   p {
     line-height: 15px;
     margin-top: 10px;
   }
+
   h3 {
     font-size: 16px;
     font-weight: $medium;
   }
+
   button {
     width: 50%;
   }
@@ -1180,6 +1232,7 @@ button {
 .f-media-card {
   width: 25%;
   margin: 5px;
+
   img {
     width: 100%;
     min-width: 250px;
@@ -1202,7 +1255,7 @@ button {
 
 .f-invalid {
   width: 100%;
-  font-size:  12px;
+  font-size: 12px;
   padding: 2%;
   text-align: center;
   color: #f51c1c;
@@ -1217,16 +1270,19 @@ button {
 .f-modal {
   width: 800px;
   font: {
-  family: $fredoka;
-}
+    family: $fredoka;
+  }
+
   .f-header {
     font: {
       size: 16px;
 
     }
   }
+
   form {
     width: 450px;
+
     label {
       display: flex;
       flex-direction: column;
@@ -1236,6 +1292,7 @@ button {
         weight: 500;
       }
       margin: 1%;
+
       input, textarea {
         background-color: transparent;
         border: 1px solid #616E83;
@@ -1248,6 +1305,7 @@ button {
         }
         resize: none;
       }
+
       input {
         height: 25px;
         padding: 6px;
@@ -1256,4 +1314,17 @@ button {
 
   }
 
+}
+
+.f-user-image-upload {
+  background-color: red;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  input {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
 }

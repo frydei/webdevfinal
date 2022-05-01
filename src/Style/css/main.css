@@ -315,10 +315,16 @@ button:focus, button:active {
   font-family: "Fredoka", sans-serif;
   font-size: 14px;
   color: #4F5D75;
-  width: 100%;
+  width: 150px;
+  height: 150px;
   background-color: white;
-  border-radius: 5px;
-  height: 31px;
+  border-radius: 50%;
+}
+.f-form-content-sign img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .f-icon-button {
@@ -970,6 +976,18 @@ button:focus, button:active {
 .f-modal form label input {
   height: 25px;
   padding: 6px;
+}
+
+.f-user-image-upload {
+  background-color: red;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.f-user-image-upload input {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=main.css.map */
