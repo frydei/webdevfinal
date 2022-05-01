@@ -1,11 +1,18 @@
-import React from "react";
+import {useNavigate} from "react-router";
+import more_menu from "../Data/more_menu.json";
+import React, {useState} from "react";
 import LargeUserIcon from "../Components/LargeUserIcon";
+import Spacer from "../Components/Spacer";
 
-const ProfileItem = ({user}) => {
+const SelfProfileItem = ({user}) => {
+    // console.log("this one undefined?")
+    // console.log(user.username)
+
     return(
         <div className="f-profile d-flex flex-column align-items-center">
             <LargeUserIcon user={user}/>
-            <h3 className="f-profile-name mt-2"> {user.username}</h3>
+            <h3 className="f-profile-name mt-2"> {user.username} </h3>
+            <h4 className="f-profile-bio mt-3"> {user.first_name} {user.last_name} &nbsp;•&nbsp;{user.email} </h4>
             <div className="f-profile-location d-flex align-items-center ">
                 <i className="fa-solid fa-location-dot me-2"/>
                 <h4 className=" m-0">{user.city}, {user.state}</h4>
@@ -13,17 +20,10 @@ const ProfileItem = ({user}) => {
             <div className="f-profile-bio mt-3">
                 <h4>{user.biography}</h4>
             </div>
+
         </div>
 
     )
 }
 
-const ProfileComponent = ({user}) => {
-    return (
-        <div className="f-profile-view">
-            <ProfileItem user={user}/>
-        </div>
-    );
-}
-
-export default ProfileComponent;
+export default SelfProfileItem;

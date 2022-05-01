@@ -9,6 +9,7 @@ export const UPDATE_USER = "UPDATE_USER";
 export const UPDATE_USER_GEOLOCATION = "UPDATE_USER_GEOLOCATION";
 export const GET_USERS = "GET_USERS";
 export const GET_USER_BY_ID = "GET_USER_BY_ID";
+export const UPDATE_PROFILE = "UPDATE_PROFILE";
 
 export const getUsers = async (dispatch) => {
     const users = await users_services.getUsers();
@@ -69,6 +70,14 @@ export const updateUser = async (dispatch, user) => {
         type: UPDATE_USER,
         user: user
     });
+};
+
+export const updateProfile = async (dispatch, user) => {
+    const status = await users_services.updateUser(user);
+    dispatch({
+                 type: UPDATE_PROFILE,
+                 user: user
+             });
 };
 
 

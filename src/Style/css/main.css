@@ -809,6 +809,10 @@ button:focus, button:active {
   font-size: 15px;
   font-weight: 400;
 }
+/*.f-profile .f-profile-location h4, .f-profile .f-profile-info h4 {*/
+/*  font-size: 15px;*/
+/*  font-weight: 400;*/
+/*}*/
 .f-profile .f-profile-tabs li .f-link {
   text-decoration: none;
   border: none;

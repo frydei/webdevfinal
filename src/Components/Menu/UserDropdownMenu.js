@@ -24,7 +24,7 @@ const UserDropdownMenu = ({user}) => {
 
     const navigateToProfile = () => {
 
-        navigate(`/frydei/profile/${user.username}`, {
+        navigate(`/frydei/profile`, {
             state: {
                 user: "CURRENT"
             }

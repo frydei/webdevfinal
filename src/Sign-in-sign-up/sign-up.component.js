@@ -20,7 +20,7 @@ const SignUp = () => {
     const [content, setContent] = useState("");
 
     const email = useRef();
-    const form = useRef()
+    const form = useRef();
     const username = useRef();
     const first_name = useRef();
     const last_name = useRef();

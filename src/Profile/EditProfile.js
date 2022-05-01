@@ -1,20 +1,54 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 
-const EditProfile = ({ formValues, setFormValues }) => {
-    const { name, biography, location } = formValues
+import SelfProfileItem from "./SelfProfileItem";
+
+
+const EditProfile = ({formValues, setFormValues }) => {
+    const { username, first_name, last_name,biography, email, city, state } = formValues
     const updateFormValue = (e) => {
         setFormValues({ ...formValues, ...{ [e.target.id]: e.target.value } })
     }
 
     return (
         <div
-            id="wd-profile-edit"
+            id="fr-profile-edit"
         >
+            <SelfProfileItem/>}
             <div className='profile-edit-field'>
-                <label htmlFor="name">Name</label>
+                <label htmlFor="username">Username</label>
                 <textarea
-                    id="name"
-                    value={name}
+                    id="username"
+                    value={username}
+                    onChange={updateFormValue}
+                    rows={1}
+                />
+            </div>
+
+            <div className='profile-edit-field'>
+                <label htmlFor="firstname">First Name</label>
+                <textarea
+                    id="firstname"
+                    value={first_name}
+                    onChange={updateFormValue}
+                    rows={1}
+                />
+            </div>
+
+            <div className='profile-edit-field'>
+                <label htmlFor="lasttname">Last Name</label>
+                <textarea
+                    id="last_name"
+                    value={last_name}
+                    onChange={updateFormValue}
+                    rows={1}
+                />
+            </div>
+
+            <div className='profile-edit-field'>
+                <label htmlFor="email">Email</label>
+                <textarea
+                    id="email"
+                    value={email}
                     onChange={updateFormValue}
                     rows={1}
                 />
@@ -31,10 +65,20 @@ const EditProfile = ({ formValues, setFormValues }) => {
             </div>
 
             <div className='profile-edit-field'>
-                <label htmlFor="location">Location</label>
+                <label htmlFor="city">City</label>
                 <textarea
-                    id="location"
-                    value={location}
+                    id="city"
+                    value={city}
+                    onChange={updateFormValue}
+                    rows={1}
+                />
+            </div>
+
+            <div className='profile-edit-field'>
+                <label htmlFor="state">State</label>
+                <textarea
+                    id="state"
+                    value={state}
                     onChange={updateFormValue}
                     rows={1}
                 />
