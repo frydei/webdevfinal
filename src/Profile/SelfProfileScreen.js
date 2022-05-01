@@ -2,7 +2,7 @@ import {useOutletContext, useParams} from "react-router";
 import {useDispatch} from "react-redux";
 import {useLocation, useNavigate} from "react-router-dom";
 import React, {useEffect, useState} from "react";
-import {getUserByUsername} from "../BACKEND/Actions/UsersActions";
+import {getUserByUsername, UPDATE_PROFILE, UPDATE_USER} from "../BACKEND/Actions/UsersActions";
 import ProfileNav from "./profileNav";
 import HomeEvent from "../Components/HomeEvent";
 import FavoriteEvent from "../Components/FavoriteEvent";
@@ -36,14 +36,32 @@ const SelfProfileScreen = () => {
                                                      city: user.city,
                                                      state: user.state
                                                  })
+    // const [user, updateUser] = useState({
+    //                                                  username: user.username,
+    //                                                  first_name: user.first_name,
+    //                                                  last_name: user.last_name,
+    //                                                  email: user.email,
+    //                                                  biography: user.biography,
+    //                                                  city: user.city,
+    //                                                  state: user.state
+    //                                              })
     const submitForm = (values) => {
         console.log(values)
 
         dispatch({
-                     type: 'update-profile',
+                     type: UPDATE_PROFILE,
                      profileData: values
                  });
     }
+
+    // const submitForm = (user) => {
+    //     console.log(user)
+    //
+    //     dispatch({
+    //                  type: UPDATE_USER,
+    //                  profileData: user
+    //              });
+    // }
 
 
     const [tab, changeTab] = useState("UPCOMING_EVENTS");
