@@ -4,6 +4,7 @@ import SignUp from './sign-up.component';
 
 import HeaderGuest from "../Components/HeaderGuest";
 import {Link} from "react-router-dom";
+import Footer from "../Components/Footer";
 
 
 const SignUpScreen = () => (
@@ -24,6 +25,7 @@ const SignUpScreen = () => (
 
             </div>
         </div>
+        <Footer/>
     </div>
 );
 

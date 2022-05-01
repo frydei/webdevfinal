@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import FilledButton from "../Components/FilledButton";
 import Spacer from "../Components/Spacer";
 import {uploadFile} from "../BACKEND/Services/FileServices";
@@ -9,21 +9,38 @@ import {REACT_APP_BASE} from "../App";
 import {useNavigate} from "react-router";
 
 const Details = ({user}) => {
+    const [lat, setLat] = useState("")
+    const [lng, setLng] = useState("")
     const navigate = useNavigate()
     const city = useRef();
     const state = useRef();
     const profile = useRef()
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition((p) => {
+            setLat(p.coords.latitude)
+            setLng(p.coords.longitude)
+        })
+    })
 
     const handleSubmit = async (event) => {
         event.preventDefault()
         let new_user = {
             ...user,
             city: city.current.value,
-            state: state.current.value
+            state: state.current.value,
+            geolocation: {
+                lat: lat,
+                lng: lng
+            }
         }
+
         const data = new FormData()
         data.append("file", profile.current.files[0],  user.username + ".jpeg")
         uploadFile(data).then(() => {
+            new_user = {
+                ...new_user,
+                profile_picture: new_user.username + ".jpeg"
+            }
             signUp(new_user).then(() => {
                 localStorage.setItem("user_logged_in", "TRUE")
                 navigate(`/frydei/profile/${new_user.username}`, {state: {from: "CURRENT"}})
@@ -51,7 +68,7 @@ const Details = ({user}) => {
                 <label htmlFor="f-profile-upload"
                        className="f-user-image-upload shadow-none d-flex align-items-center justify-content-center "
                 >
-                    {profile.current ? "Upload Picture" : user.username + ".jpeg"}
+                    {profile.current ? user.username + ".jpeg" : "Upload Picture" }
                     <input className="f-profile-upload"
                            ref={profile}
                            id="f-profile-upload"

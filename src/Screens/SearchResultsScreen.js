@@ -1,90 +1,67 @@
-import React, {useEffect, useState} from "react";
-import tags from "../Data/tags.json";
+import React, {useEffect, useRef, useState} from "react";
 import SearchEvent from "../Components/SearchEvent";
-import {month_num} from "../Components/Complaints";
-import ActionTag from "../Components/ActionTag";
-import {useDispatch, useSelector} from "react-redux";
-import {getEvents} from "../BACKEND/Actions/EventsActions";
-import {useOutletContext} from "react-router";
+import {getEvents} from "../BACKEND/Services/EventsServices";
+import {getTMEvent} from "../BACKEND/APIServices";
+import {useNavigate, useParams} from "react-router";
 
 const SearchResultsScreen = () => {
-    const dispatch = useDispatch();
-    const [logged_in, current_user] = useOutletContext()
+    const {query} = useParams();
+    const iref = useRef()
+    console.log(query);
+    const [searchEvent, setSearchEvent] = useState([]);
+    const navigate = useNavigate();
 
-    const events = useSelector(state => state.events)
-    const [searchEvent, setSearchEvent] = useState(events)
-    useEffect(() => getEvents(dispatch), [])
+    const isMatch = (e, input) => {
+        return e.title.toLowerCase().includes(input.toLowerCase())
+            || (e.desc && e.desc.toLowerCase().includes(input.toLowerCase()))
+            || e.location.toLowerCase().includes(input.toLowerCase());
 
-    const [input, setInput] = useState();
+    };
+    useEffect(() => {
+        let str = query || iref.current.value
+        if (query) {
+            async function fetch() {
+                getTMEvent(str).then(r => {
+                    let filtered_events = [];
+                    for (const ev of r) {
+                        if (!filtered_events.find(f => f.name === ev.name)) {
+                            filtered_events.push(ev);
+                        }
+                    }
+                    setSearchEvent(filtered_events);
+                });
+            }
 
-    const date = new Date()
+            fetch().then(() => {
+                getEvents().then((r) => {
+                    for (const de of r) {
+                        if (!searchEvent.find(fe => fe.name === de.title) && isMatch(de, str)) {
+                            searchEvent.push(de);
+                        }
+                    }
 
-    const getDate = (e) => {
-        return new Date(e.date)
-    }
+                });
+            });
+        } else {
+            getEvents().then(r =>
+                setSearchEvent(r));
+        }
+    }, [query]);
 
-    const isTomorrow = (d) => {
-        const tomorrow = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1)
-        return d.getMonth() === tomorrow.getMonth() && d.getDate() === tomorrow.getDate() && d.getFullYear() === tomorrow.getFullYear();
-    }
-
-    const isToday = (d) => {
-        return d.getMonth() === date.getMonth() && d.getDate() === date.getDate() && d.getFullYear() === date.getFullYear();
-    }
-
-    const isWeekend = (d) => {
-        return d.getDay() === 6 ||  d.getDay() === 0;
-    }
-
-
-    const handleClick = (name) => {
-       if (name === "Nearby") {
-           const success = (position) => {
-               console.log(position)
-               setSearchEvent(events)
-           }
-           const error=() => {
-               alert('Unable to retrieve your location.');
-           }
-
-           navigator.geolocation.getCurrentPosition(success, error)
-            // setSearchEvent(events)
-
-        } else if (name === "Tomorrow") {
-            setSearchEvent(events.filter(
-                e =>  isTomorrow(getDate(e))
-            ))
-        } else if (name === "Today") {
-           setSearchEvent(events.filter(
-               e =>  isToday(getDate(e))
-           ))
-       } else if (name === "Weekend") {
-           setSearchEvent(events.filter(
-               e =>  isWeekend(getDate(e))
-           ))
-       }
-
-    }
-    const isMatch = (e) => {
-        return e.title.toLowerCase().includes(input.toString().toLowerCase())
-            || e.desc.toLowerCase().includes(input.toString().toLowerCase())
-            || e.location.toLowerCase().includes(input.toString().toLowerCase())
-            || e.restrictions.toLowerCase().includes(input.toString().toLowerCase())
-    }
-
+    const [s_in, setS] = useState();
     const searchHandlerChange = (value) => {
-        setInput(value)
-        setSearchEvent(events.filter(e => isMatch(e)))
-        console.log(input)
-
-    }
+        setS(value);
+        setSearchEvent(searchEvent.filter(e => isMatch(e, value)));
+    };
 
     const searchHandlerSubmit = (e) => {
         e.preventDefault();
-        setInput(e.target.search.value)
-        setSearchEvent(events.filter(e => isMatch(e)))
-
+        navigate(`/frydei/search/${s_in}`);
+    };
+    if (!searchEvent) {
+        return null;
     }
+
     return (
         <>
             <div style={{"paddingLeft": "175px", "paddingRight": "175px", "paddingTop": "25px"}}>
@@ -95,25 +72,19 @@ const SearchResultsScreen = () => {
                             <input id="search-bar"
                                    className="form-control border-0 ps-1 shadow-none"
                                    name="search"
-                                   type="search"
+                                   type="text"
+                                   ref={iref}
                                    onChange={(e) => searchHandlerChange(e.target.value)}
-                                   value={input}/>
+                                   />
                             <i className="fa-solid fa-magnifying-glass form-control-feedback pe-1"/>
                         </label>
 
                     </div>
                 </form>
-                <div className="d-flex justify-content-between flex-wrap align-items-center mt-3 mb-1 ms-1" style={{"width": "100%"}}>
-                    {
-                        tags.map(tag => {
-                            return <ActionTag tag={tag} handleClick={handleClick}/>
-                        })
-                    }
-                </div>
-                <div className="f-event-grid">
+                <div className="f-search-event-grid">
                     {
                         searchEvent.map && searchEvent.map(event => {
-                            return <SearchEvent event={event}/>
+                            return <SearchEvent event={event}/>;
                         })
                     }
                 </div>

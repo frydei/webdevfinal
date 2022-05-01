@@ -1,11 +1,11 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import DashHeader from "../Components/Dashboard/DashHeader";
 import EventCard from "../Components/Dashboard/EventCard";
 import SearchEvent from "../Components/SearchEvent";
 import ComplaintCard from "../Components/Dashboard/ComplaintCard";
 import {useDispatch, useSelector} from "react-redux";
 import {useOutletContext} from "react-router";
-import {getEvents} from "../BACKEND/Actions/EventsActions"
+import {getEvents} from "../BACKEND/Services/EventsServices"
 
 const data = [
     {
@@ -28,15 +28,16 @@ const data = [
 
 const DashboardScreen = () => {
     const [logged_in, current_user, setCurrentUser] = useOutletContext()
-    const dispatch = useDispatch()
+    const [events, setEvents] = useState()
+    const [complaints, setComplaints] = useState()
     useEffect(() => {
         async function fetch() {
-            getEvents(dispatch())
+            getEvents().then(r =>
+                setEvents(r)
+            )
         }
         fetch()
     }, [])
-    const events = useSelector(state => state.events);
-    const complaints = useSelector(state => state.complaints);
 
     return (
         <div className="f-dash row d-flex flex-column align-content-center justify-content-center"
@@ -70,7 +71,7 @@ const DashboardScreen = () => {
                     <h3>Recent Complaints</h3>
                     <div className="d-flex flex-column align-items-center justify-content-center">
                         {
-                            complaints.map(c => {
+                            complaints.map && complaints.map(c => {
                                 return <ComplaintCard complaint={c}/>;
                             })
                         }

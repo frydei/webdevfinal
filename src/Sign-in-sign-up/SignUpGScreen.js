@@ -5,6 +5,7 @@ import SignUp from './sign-up.component';
 import HeaderGuest from "../Components/HeaderGuest";
 import {Link} from "react-router-dom";
 import SignUpG from "./sign-up-g";
+import Footer from "../Homepage/Footer";
 
 
 const SignUpGScreen = () => (

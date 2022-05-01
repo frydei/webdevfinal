@@ -4,33 +4,38 @@ import EventDetailGuest from "../Components/EventDetailGuest";
 import {useLocation} from "react-router-dom";
 import {useOutletContext, useParams} from "react-router";
 import {useDispatch, useSelector} from "react-redux";
-import {getEventById} from "../BACKEND/Actions/EventsActions";
+import {getEventsById} from "../BACKEND/Services/EventsServices";
+import {getTMEventById} from "../BACKEND/APIServices";
 
 
 const ViewEventScreen = () => {
-    const dispatch = useDispatch()
     const location = useLocation();
     const [logged_in, current_user] = useOutletContext()
-    const [state, setState] = useState(false)
-    console.log(logged_in)
+    const [event, setEvent] = useState()
 
     let param = useParams();
     let eventid = param.eventid
-    let  view;
     useEffect( async () => {
-        await getEventById(dispatch, eventid)
+        getEventsById(eventid).then((r) => {
+            setEvent(r)
+        }).catch((err) => {
+            if(err.response && err.response.status === 404) {
+                getTMEventById(eventid).then((r) => {
+                    setEvent(r[0])
+                })
+            }
+        })
     }, [])
-    const events = useSelector(state => state.events)
 
-    if (!events) {
+
+    if (!event) {
         return null
     }
 
-    console.log(events)
     return (
         <>
             <div style={{"paddingLeft": "175px", "paddingRight": "175px", "paddingTop": "25px"}}>
-                {logged_in ? <EventDetailUser event={events}/> : <EventDetailGuest event={events}/>}
+                {event && (logged_in ? <EventDetailUser event={event}/> : <EventDetailGuest event={event}/>)}
             </div>
         </>
 

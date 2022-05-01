@@ -88,6 +88,9 @@ function App() {
                         <Route path="search"
                                exact={true}
                                element={<SearchResultsScreen logged_in={true}/>}/>
+                        <Route path="search/:query"
+                               exact={true}
+                               element={<SearchResultsScreen logged_in={true}/>}/>
                         <Route path="privacy-policy"
                                exact={true}
                                element={<PrivacyPolicyScreen/>}/>
@@ -97,9 +100,6 @@ function App() {
                         <Route path="explore"
                                exact={true}
                                element={<ExploreEventsScreen logged_in={true}/>}/>
-                        <Route path="requests"
-                               exact={true}
-                               element={<RequestScreen logged_in={true}/>}/>
                         <Route path="create"
                                exact={true}
                                element={<CreateEventScreen/>}/>
