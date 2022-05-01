@@ -1,52 +1,19 @@
 import React, {useEffect, useState} from 'react'
-import SelfProfileComponent from "./SelfProfileComponent";
-import {useNavigate, useOutletContext, useParams} from "react-router";
-import {useDispatch} from "react-redux";
-import {useLocation} from "react-router-dom";
-import {getUserByUsername} from "../BACKEND/Actions/UsersActions";
-import FilledButton from "../Components/FilledButton";
 
-const EditProfile = ({ formValues, setFormValues }) => {
-    // const { first_name, last_name, username, email, biography, location } = formValues
+import SelfProfileItem from "./SelfProfileItem";
+
+
+const EditProfile = ({formValues, setFormValues }) => {
+    const { username, first_name, last_name,biography, email, city, state } = formValues
     const updateFormValue = (e) => {
-        setFormValues({ ...formValues, ...{ [e.target._id]: e.target.value } })
+        setFormValues({ ...formValues, ...{ [e.target.id]: e.target.value } })
     }
-    const {first_name, last_name, username, email, biography} = useParams();
-    const dispatch = useDispatch();
-    const location = useLocation();
-    const [logged_in, current_user, setCurrentUser] = useOutletContext()
-
-    const [user, setUser] = useState(current_user);
-
-    useEffect(async () => {
-        if (location.state.user !== "CURRENT") {
-            const url_user = await getUserByUsername(dispatch, username);
-            setUser(url_user);
-        }
-    }, []);
-    console.log(user)
-    const navigate = useNavigate();
-    const [content, setContent] = useState("");
-    const [error_msg, setErrorMsg] = useState(false);
-    const handleSaveUpdates = (e) => {
-        e.preventDefault();
-        let check_un;
-        getUserByUsername(dispatch, username.current.value).then(r => {
-            check_un = r;
-        })
-        console.log(check_un)
-        if (check_un) {
-            setContent("Please try a different username.")
-            setErrorMsg(true)
-        }
-            navigate("/profile", {state: {user: user}})
-        }
 
     return (
         <div
-            id="wd-profile-edit"
+            id="fr-profile-edit"
         >
-            {user._id === undefined ? null : <SelfProfileComponent user={user}/>}
+            <SelfProfileItem/>}
             <div className='profile-edit-field'>
                 <label htmlFor="username">Username</label>
                 <textarea
@@ -98,16 +65,24 @@ const EditProfile = ({ formValues, setFormValues }) => {
             </div>
 
             <div className='profile-edit-field'>
-                <label htmlFor="location">Location</label>
+                <label htmlFor="city">City</label>
                 <textarea
-                    id="location"
-                    value={location}
+                    id="city"
+                    value={city}
                     onChange={updateFormValue}
                     rows={1}
                 />
             </div>
 
-            <FilledButton name={"Save Updates"} handleSubmit={handleSaveUpdates}/>
+            <div className='profile-edit-field'>
+                <label htmlFor="state">State</label>
+                <textarea
+                    id="state"
+                    value={state}
+                    onChange={updateFormValue}
+                    rows={1}
+                />
+            </div>
 
         </div>
     )

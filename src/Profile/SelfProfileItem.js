@@ -5,32 +5,14 @@ import LargeUserIcon from "../Components/LargeUserIcon";
 import Spacer from "../Components/Spacer";
 
 const SelfProfileItem = ({user}) => {
-    const navigate = useNavigate();
-    let more;
-    if (user.admin_access) {
-        const admin = {menu: "Admin Dashboard", link: "admin"};
-        more = [...more_menu, admin];
-    } else {
-        more = more_menu;
-    }
-    let username = user.first_name.toLowerCase().split("")[0] + user.last_name.toLowerCase();
-
-    function navigateToProfile() {
-        navigate(`edit`, {
-            state: {
-                user: "CURRENT"
-            }
-        });
-    }
+    // console.log("this one undefined?")
+    // console.log(user.username)
 
     return(
         <div className="f-profile d-flex flex-column align-items-center">
             <LargeUserIcon user={user}/>
             <h3 className="f-profile-name mt-2"> {user.username} </h3>
             <h4 className="f-profile-bio mt-3"> {user.first_name} {user.last_name} &nbsp;•&nbsp;{user.email} </h4>
-            <Spacer size={10}/>
-            <button onClick={() => navigateToProfile()}> Edit Profile</button>
-            <Spacer size={10}/>
             <div className="f-profile-location d-flex align-items-center ">
                 <i className="fa-solid fa-location-dot me-2"/>
                 <h4 className=" m-0">{user.city}, {user.state}</h4>
@@ -38,6 +20,7 @@ const SelfProfileItem = ({user}) => {
             <div className="f-profile-bio mt-3">
                 <h4>{user.biography}</h4>
             </div>
+
         </div>
 
     )
