@@ -23,6 +23,9 @@ import DetailsScreen from "./Sign-in-sign-up/DetailsScreen";
 import GuestHomePageScreen from "./Homepage/GuestHomePageScreen";
 import SignUpG from "./Sign-in-sign-up/sign-up-g";
 import SignUpGScreen from "./Sign-in-sign-up/SignUpGScreen";
+import {useEffect} from "react";
+import {getUserSession} from "./BACKEND/Actions/AuthActions";
+import {useDispatch, useSelector} from "react-redux";
 
 export const REACT_APP_BASE = process.env.REACT_APP_BASE || "http://localhost:4000"
 console.log(REACT_APP_BASE)
@@ -46,7 +49,6 @@ const search_event = {
 };
 
 function App() {
-
     return (
 
         <Router>
@@ -75,12 +77,16 @@ function App() {
                         <Route path="profile"
                                exact={true}
                                element={<ProfileScreen/>}/>
+
                         <Route path="profile/:username"
                                exact={true}
                                element={<ProfileScreen/>}/>
                         <Route path="profile/pastevents/:eventid"
                                element={<PastEventDetailScreen/>}/>
                         <Route path="search"
+                               exact={true}
+                               element={<SearchResultsScreen logged_in={true}/>}/>
+                        <Route path="search/:query"
                                exact={true}
                                element={<SearchResultsScreen logged_in={true}/>}/>
                         <Route path="privacy-policy"

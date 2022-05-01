@@ -6,6 +6,7 @@ export const GET_USER_BY_USERNAME = "GET_USER_BY_USERNAME";
 export const GET_USER_BY_EMAIL = "GET_USER_BY_EMAIL";
 export const GET_USER_BY_CREDS = "GET_USER_BY_CREDS";
 export const UPDATE_USER = "UPDATE_USER";
+export const UPDATE_USER_GEOLOCATION = "UPDATE_USER_GEOLOCATION";
 export const GET_USERS = "GET_USERS";
 export const GET_USER_BY_ID = "GET_USER_BY_ID";
 
@@ -69,6 +70,7 @@ export const updateUser = async (dispatch, user) => {
         user: user
     });
 };
+
 
 export const deleteUser = async (dispatch, user_id) => {
     const res = await users_services.deleteUser(user_id);

@@ -5,11 +5,6 @@ import Footer from "./../Components/Footer";
 import HomeEvent from "../Components/HomeEvent";
 import {useDispatch, useSelector} from "react-redux";
 import {getEvents} from "../BACKEND/Actions/EventsActions";
-import {getCurrentUser} from "../BACKEND/Services/AuthServices";
-import HeaderGuest from "../Components/HeaderGuest";
-import HeaderUser from "../Components/HeaderUser";
-import {useOutletContext} from "react-router";
-import {useLocation} from "react-router-dom";
 
 const GuestHomePageScreen = () => {
     const dispatch = useDispatch();

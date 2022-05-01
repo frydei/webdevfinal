@@ -1,14 +1,14 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import {CustomButtonContainer, SignUpContainer} from './sign-up.styles';
 import FilledButton from "../Components/FilledButton";
 import Spacer from "../Components/Spacer";
 import FormInput from "./FormInput";
-import {getUserByCredentials} from "../BACKEND/Actions/UsersActions";
+import {getUserByCredentials, updateUser} from "../BACKEND/Actions/UsersActions";
 import {getCurrentUser, signIn, signInWithGoogle} from "../BACKEND/Services/AuthServices";
 import {useNavigate} from "react-router";
 import {useDispatch} from "react-redux";
-import {useLocation} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import GoogleLogin from "react-google-login";
 
 const CustomButton = ({children, ...props}) => (
@@ -25,7 +25,17 @@ const SignIn = () => {
     const [user, setUser] = useState();
     const [error_msg, setErrorMsg] = useState(false);
 
-    const handleSubmit = (event) => {
+    const [lat, setLat] = useState("")
+    const [lng, setLng] = useState("")
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition((p) => {
+            setLat(p.coords.latitude)
+            setLng(p.coords.longitude)
+        })
+    })
+
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         const creds = {
@@ -38,6 +48,16 @@ const SignIn = () => {
                setErrorMsg(true);
                formRef.current.reset()
            } else {
+               r = {
+                   ...r,
+                   password: creds.password,
+                   geolocation: {
+                       ...r.geolocation,
+                       lat: lat,
+                       lng: lng
+                   }
+               }
+               updateUser(dispatch, r)
                localStorage.setItem("user_logged_in", "TRUE")
                navigate(`/frydei/profile/${r.username}`, {state: {from: "CURRENT"}})
            }
@@ -93,6 +113,8 @@ const SignIn = () => {
                 <FilledButton name={"Log in"} handleSubmit={handleSubmit}/>
             </div>
             {error_msg ? <div className="f-invalid mb-1"> Please check your username and password and try again. </div> : null}
+            <Spacer size={24}/>
+            <h3 className="f-form-header mt-3" style={{"fontSize": "13px"}}>Or</h3>
             <Spacer size={24}/>
             <GoogleLogin
                 clientId="349790869284-jls9koectaa5ujhp40nchp8svu0co0k3.apps.googleusercontent.com"

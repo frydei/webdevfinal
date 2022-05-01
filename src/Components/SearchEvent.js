@@ -1,14 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import UserIconSmallest from "./UserIconSmallest";
-import {Link} from "react-router-dom";
 import {useNavigate} from "react-router";
 import {REACT_APP_BASE} from "../App";
-
-const link = "";
-
+import {useDispatch} from "react-redux";
 
 const SearchEvent = ({event}) => {
     const navigate = useNavigate()
+
+    let date = new Date(event.dates.start.localDate)
+    let month = date.toLocaleString("en-US", {month: "long"})
+
+
     const navigateToProfile = (host) => {
 
         navigate(`/frydei/profile/${host.username}`, {
@@ -18,34 +20,61 @@ const SearchEvent = ({event}) => {
         });
     }
 
+    const exploreEvent = (e) => {
+        e.preventDefault();
+        navigate(`/frydei/explore/${event.id}`)
+    }
+
+    if(!event) {
+        return null
+    }
     return (
         <div className="f-event f-search d-flex align-items-center justify-content-center mt-3 me-1 ms-1">
-            <div className="d-flex flex-column align-items-center justify-content-center">
+            <div className="f-search-content d-flex flex-column align-items-center justify-content-between">
                 <div
                     className="f-event-img-container mb-2 d-flex flex-column align-items-center justify-content-center position-relative">
-                    <Link to={`/frydei/explore/${event._id}`} className="f-link"><img className="f-event-img" src={`${REACT_APP_BASE}/${event.event_photo}`} alt=""/></Link>
-                    <Link to={`/frydei/explore/${event._id}`} className="f-button f-link f-view d-flex justify-content-center align-items-center position-absolute bottom-0 end-0"
-                            style={{"paddingLeft": "0px", "paddingRight": "0px", "margin": "0px 5px 5px 0px"}}>View
-                    </Link>
+                    <button className="f-link f-link-button"
+                            onClick={(e) => exploreEvent(e)}>
+                        {event.hosts ? <img className="f-event-img" src={`${REACT_APP_BASE}/${event.event_photo}`} alt=""/> : <img className="f-event-img" src={`${event.images[5].url}`} alt=""/>}
+                    </button>
+                    <button className="f-button f-link f-view d-flex justify-content-center align-items-center position-absolute bottom-0 end-0"
+                            style={{"paddingLeft": "0px", "paddingRight": "0px", "margin": "0px 10px 15px 0px"}}
+                            onClick={(e) => exploreEvent(e)}>
+                        View
+                    </button>
                 </div>
                 <div className="f-event-detail">
-                    <h3 className="f-event-title mb-1">{event.title}</h3>
-                    <div className="f-event-detail-section mb-1 d-flex align-items-center justify-content-between">
-                        <h3 className="f-event-location mb-1">{event.location}</h3>
-                        <h3 className="f-event-time mb-1">{event.time}</h3>
-                    </div>
+                    {event.hosts ?
+                       <>
+                           <h3 className="f-event-title mb-1">{event.title}</h3>
+                           <div className="f-event-detail-section mb-1 d-flex align-items-center justify-content-between">
+                               <h3 className="f-event-location mb-1">{event.location}</h3>
+                               <h3 className="f-event-time mb-1">{event.time}</h3>
+                           </div>
+                       </>
+                        :
+                        <>
+                            <h3 className="f-event-title mb-1">{event.name}</h3>
+                            <div className="f-event-detail-section mb-1 d-flex align-items-start flex-column justify-content-between">
+                                <h3 className="f-event-location mb-1 f-medium-medium">{event._embedded.venues[0].name}</h3>
+                                <h3 className="f-event-time mb-1 ">{month} {date.getDate()}, {date.getFullYear()}</h3>
+                            </div>
+                        </>}
                     <div className="f-event-detail-section d-flex align-items-center justify-content-between">
-                        <div>
-                            {
-                                event.hosts.map(host => {
-                                    return <button className="f-link-button" onClick={() => navigateToProfile(host)}>
-                                        <UserIconSmallest user={host}/>
-                                    </button>
-                                })
-                            }
-                        </div>
-                        <span className="f-event-attendees mb-1">{event.spots} <i
-                            className="fa-solid fa-user-group"/></span>
+                        {event.hosts ?
+                            <div>
+                                {
+                                    event.hosts && event.hosts.map(host => {
+                                        return <button className="f-link-button" onClick={() => navigateToProfile(host)}>
+                                            <UserIconSmallest user={host}/>
+                                        </button>
+                                    })
+                                }
+                            </div>
+                        :
+                        null}
+                        {event.spots ? <span className="f-event-attendees mb-1">{event.spots} <i
+                            className="fa-solid fa-user-group"/></span> : null}
                     </div>
                 </div>
             </div>

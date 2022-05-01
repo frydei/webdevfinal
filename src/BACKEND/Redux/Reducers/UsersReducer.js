@@ -22,8 +22,7 @@ const UsersReducer = (state =  [], action) => {
         case GET_USER_BY_CREDS:
             return action.user;
         case UPDATE_USER:
-            console.log(state)
-            return state.map(user => user._id === action.user._id ? action.user : user);
+            return action.user;
         case CREATE_USER:
             return [action.user, ...state];
         case DELETE_USER:

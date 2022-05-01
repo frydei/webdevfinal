@@ -2,51 +2,29 @@ import React, {useEffect, useState} from "react";
 import ProfileNav from "./profileNav";
 import ProfileComponent from "./ProfileItem";
 import {useOutletContext, useParams} from "react-router";
-import {useDispatch, useSelector} from "react-redux";
 import HomeEvent from "../Components/HomeEvent";
 import MediaCard from "../Components/MediaCard";
-import {getCurrentUser} from "../BACKEND/Services/AuthServices";
-import {getUserByUsername} from "../BACKEND/Actions/UsersActions";
+import {getUserByUsername} from "../BACKEND/Services/UsersServices";
 import {useLocation} from "react-router-dom";
 import FavoriteEvent from "../Components/FavoriteEvent";
 
 const ProfileScreen = () => {
     const {username} = useParams();
-    const dispatch = useDispatch();
     const location = useLocation();
     const [logged_in, current_user, setCurrentUser] = useOutletContext()
 
     const [user, setUser] = useState(current_user);
 
-    // const [profile, setProfile] = useState()
-    // const getProfile = async () =>{
-    //     try {
-    //         const p = await service.signin(
-    //             email,
-    //             password
-    //         )
-    //         setProfile(p)
-    //     } catch (e) {
-    //         throw e
-    //     }
-    // }
 
     useEffect(async () => {
         if (location.state.user !== "CURRENT") {
-            const url_user = await getUserByUsername(dispatch, username);
+            const url_user = await getUserByUsername(username);
             setUser(url_user);
         }
     }, []);
-    console.log(user)
-
-
     const [tab, changeTab] = useState("UPCOMING_EVENTS");
-    const [render, setRender] = useState(false)
-    //let user = users.find(u => u.first_name.toLowerCase().split("")[0] + u.last_name.toLowerCase() === uname)
 
-    const getDate = (e) => {
-        return new Date(e.date);
-    };
+    console.log(user)
     let selected;
     if (tab === "UPCOMING_EVENTS") {
         selected = {
@@ -81,17 +59,6 @@ const ProfileScreen = () => {
     const update = (new_user) => {
         setCurrentUser(new_user)
     }
-
-    /*const cleanUp = () => {
-        dispatch({
-            type: "user-clean-up",
-            past: past
-        })
-    }
-
-    const past = user.upcoming_events.filter(event => getDate(event) < new Date() ? cleanUp(event) : event)
-
-*/
     return (
         <div className="f-profile" style={{"paddingLeft": "175px", "paddingRight": "175px", "paddingTop": "25px"}}>
             {user._id === undefined ? null : <ProfileComponent user={user}/>}
@@ -99,22 +66,22 @@ const ProfileScreen = () => {
 
             <div className="f-event-grid mt-3">
                 {tab === "PAST_EVENTS" &&
-                    (user._id === undefined ? null : user.past_events.map(event => <HomeEvent event={event}
+                    (user._id === undefined ? null : user.past_events.map && user.past_events.map(event => <HomeEvent event={event}
                                                                                               page="Past"/>))}
 
                 {tab === "UPCOMING_EVENTS" &&
-                    (user._id === undefined ? null : user.upcoming_events.map(event => <HomeEvent event={event}
+                    (user._id === undefined ? null : user.upcoming_events.map && user.upcoming_events.map(event => <HomeEvent event={event}
                                                                                                   page="Upcoming"/>))}
 
                 {tab === "FAVORITED_EVENTS" &&
-                    (user._id === undefined ? null : user.favorited.map(event => <FavoriteEvent event={event}
+                    (user._id === undefined ? null : user.favorited.map && user.favorited.map(event => <FavoriteEvent event={event}
                                                                                                 logged_in={logged_in}
                                                                                                 current_user={user}
                                                                                                 setCurrentUser={setCurrentUser}
                                                                                                 update={update}
                                                                                             page="Favorited"/>))}
                 {tab === "MEDIA" &&
-                    (user._id === undefined ? null : user.media.map(med => <MediaCard media={med}/>))}
+                    (user._id === undefined ? null : user.media.map && user.media.map(med => <MediaCard media={med}/>))}
             </div>
 
         </div>

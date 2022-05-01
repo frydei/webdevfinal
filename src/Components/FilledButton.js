@@ -5,7 +5,7 @@ const FilledButton = (props) => {
     const handleSubmit = props.handleSubmit
     return(
         <button type="submit"
-                onClick={handleSubmit}
+                onClick={(e) => handleSubmit(e)}
                 className="f-button f-orange shadow-none">{name}
         </button>
     );

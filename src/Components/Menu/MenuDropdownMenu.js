@@ -20,13 +20,21 @@ const MenuDropdownMenu = () => {
             <Dropdown.Menu className="f-dropdown-menu bg-transparent border-0">
                 {
                     more_menu.map(item => {
-                        return <Dropdown.Item className="bg-transparent border-0">
+                        return <Dropdown.Item >
                             <Link to={`/frydei/${item.link}`} className="f-link">
                                 <li className="list-group-item d-flex align-items-center justify-content-end f-menu-item p-0 mb-1 f-menu-item-title ">{item.menu}</li>
                             </Link>
                         </Dropdown.Item>;
                     })
                 }
+                <Dropdown.Item>
+                    <Link className="f-link" to={"/sign-in"}><li className="list-group-item d-flex align-items-center justify-content-end f-menu-item p-0 mb-1 f-menu-item-title ">Log In</li></Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                    <Link className="f-link f-link-button" to={"/sign-up"}><li className="list-group-item d-flex align-items-center justify-content-end f-menu-item p-0 mb-1 f-menu-item-title"
+                                                                 style={{"fontWeight": "500"}}
+                    >Sign Up</li></Link>
+                </Dropdown.Item>
             </Dropdown.Menu>
 
         </Dropdown>
