@@ -170,7 +170,7 @@ const SelfProfileScreen = () => {
                             Username
                             <input className="f-input" id="name" type="text" form="user-form" ref={uname}
                                    placeholder={user.username}
-                                   // onChange={updateItem}
+                                   onChange={updateItem}
                             />
                         </label>
                         <label htmlFor="first_name">
