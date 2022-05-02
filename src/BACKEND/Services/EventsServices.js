@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE = process.env.FR_APP_API_BASE || 'http://localhost:4000/fr/api';
+const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:4000/fr/api';
 const EVENTS = `${API_BASE}/events`
 
 export const getEvents = async () => {

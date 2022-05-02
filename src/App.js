@@ -26,8 +26,7 @@ import SignUpGScreen from "./FRONTEND/Screens/Sign-in-sign-up/SignUpGScreen";
 import SelfProfileScreen from "./FRONTEND/Screens/Profile/SelfProfileScreen";
 import EditProfile from "./FRONTEND/Screens/Profile/EditProfile";
 
-export const REACT_APP_BASE = process.env.REACT_APP_BASE || "http://localhost:4000"
-console.log(REACT_APP_BASE)
+export const REACT_APP_BASE = process.env.REACT_APP_SERVER_BASE || "http://localhost:4000"
 
 const search_event = {
     "title": "Amine - The Best Tour",
