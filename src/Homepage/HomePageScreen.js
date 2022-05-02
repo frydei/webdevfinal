@@ -45,7 +45,7 @@ const HomePageScreen = () => {
     }
     return (
         <>
-            <div className="p-4">
+            <div className="row p-4">
                 {header}
                 <SearchBar/>
                 <div className="d-flex flex-wrap justify-content-center mt-2">

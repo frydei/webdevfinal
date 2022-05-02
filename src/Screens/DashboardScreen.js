@@ -17,15 +17,20 @@ const DashboardScreen = () => {
     const [users, setUsers] = useState();
     const navigate = useNavigate();
     useEffect(() => {
-        async function fetch() {
-            getEvents().then(r => {
-                    r = r.sort((a, b) => new Date(a.date) - new Date(b.date));
-                    setEvents(r);
-                }
-            );
+        if (current_user.admin_access) {
+            async function fetch() {
+                getEvents().then(r => {
+                        r = r.sort((a, b) => new Date(a.date) - new Date(b.date));
+                        setEvents(r);
+                    }
+                );
+            }
+
+            fetch();
+        } else {
+            navigate("/frydei")
         }
 
-        fetch();
     }, []);
 
     useEffect(() => {
@@ -93,7 +98,7 @@ const DashboardScreen = () => {
              style={{"paddingLeft": "150px", "paddingRight": "150px", "paddingTop": "25px"}}>
             <DashHeader data={data}/>
             <div className="row p-0 d-flex justify-content-evenly mt-4" style={{"width": "100%"}}>
-                <div className="col-md-6 col-sm-12 f-dash-box justify-content-start m-4">
+                <div className="col-sm-6 col-12 f-dash-box justify-content-start m-4">
                     <h3>Events</h3>
                     <div className="d-flex flex-column align-items-center justify-content-center">
                         {
@@ -104,7 +109,7 @@ const DashboardScreen = () => {
                     </div>
 
                 </div>
-                <div className="col-md-5 col-sm-12 f-dash-box justify-content-start m-4">
+                <div className="col-sm-5 col-12 f-dash-box justify-content-start m-4">
                     <h3>Registered Users</h3>
                     <div className="d-flex flex-column align-items-center justify-content-center">
                         {

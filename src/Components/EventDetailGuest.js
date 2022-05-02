@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import {getCurrentUser} from "../BACKEND/Services/AuthServices";
 import {useNavigate} from "react-router";
 import {REACT_APP_BASE} from "../App";
+import button from "./Button";
 
 const EventDetailGuest = ({event}) => {
     let time, min;
@@ -58,7 +59,7 @@ const EventDetailGuest = ({event}) => {
     return (
         <div className="container-fluid">
             <div className="row f-event-detail-content">
-                <div className="col-6 f-event-detail-img">
+                <div className="col-12 col-lg-6 f-event-detail-img mt-5 mb-5">
                     {event.hosts ?
                         (event.hosts[0].username !== "tmaster"
                                 ? <img src={`${REACT_APP_BASE}/${event.event_photo}`} alt=""/>
@@ -73,10 +74,13 @@ const EventDetailGuest = ({event}) => {
                         <div className="f-event-attendees m-0">
                             {
                                event.attendees && event.attendees.map(att => {
-                                    return <img src={`${REACT_APP_BASE}/${att.profile_picture}`}
-                                                alt=""
-                                                className="f-user-icon-small me-1"
-                                    />;
+                                    return <button  className="f-link-button" onClick={() => navigateToProfile(att)}>
+                                        <img src={`${REACT_APP_BASE}/${att.image}`}
+                                             alt=""
+                                             className="f-user-icon-small me-1"
+                                        />
+
+                                    </button>
                                 })
                             }
 
@@ -84,7 +88,7 @@ const EventDetailGuest = ({event}) => {
 
                     </div>
                 </div>
-                <div className="col-6 f-event-detail">
+                <div className="col-12 col-lg-6 f-event-detail mt-5">
                     <div className="row f-event-title-box p-2 mb-2">
                         {event.hosts ? <div className="f-event-title-content">
                             <h2 className="f-event-title">{event.title}</h2>

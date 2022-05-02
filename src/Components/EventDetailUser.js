@@ -147,7 +147,7 @@ const EventDetailUser = ({event}) => {
         <div className="container-fluid">
 
             <div className="row f-event-detail-content">
-                <div className="col-6 f-event-detail-img">
+                <div className="col-12 col-lg-6 f-event-detail-img mb-5 mt-5">
                     {c_event._id ?
                         (c_event.hosts[0].username !== "tmaster"
                                 ? <img src={`${REACT_APP_BASE}/${c_event.event_photo}`} alt=""/>
@@ -175,7 +175,7 @@ const EventDetailUser = ({event}) => {
 
                     </div>
                 </div>
-                <div className="col-6 f-event-detail">
+                <div className="col-12 col-lg-6 f-event-detail mt-5 mb-5">
                     <div className="row f-event-title-box p-2 mb-2">
                         {c_event.hosts ? <div className="f-event-title-content">
                                 <h2 className="f-event-title">{c_event.title}</h2>

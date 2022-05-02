@@ -445,7 +445,7 @@ button:focus, button:active {
 }
 .f-search-bar-home input {
   font-family: "Fredoka", sans-serif;
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 400;
   color: #2D3142;
   padding: 0;
@@ -484,7 +484,7 @@ button:focus, button:active {
   outline: none !important;
 }
 .f-search-bar-home i {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .f-search-bar {
@@ -926,11 +926,57 @@ button:focus, button:active {
   grid-template-columns: repeat(4, 1fr);
 }
 
+@media (max-width: 1500px) {
+  .f-event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 1256px) {
+  .f-event-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+}
+@media (max-width: 1000px) {
+  .f-event-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
 .f-search-event-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 
+@media (max-width: 1500px) {
+  .f-search-event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 1256px) {
+  .f-search-event-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+}
+@media (min-width: 1535px) {
+  .f-search-event-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 1000px) {
+  .f-search-event-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
 .f-invalid {
   width: 100%;
   font-size: 12px;
@@ -976,18 +1022,6 @@ button:focus, button:active {
 .f-modal form label input {
   height: 25px;
   padding: 6px;
-}
-
-.f-user-image-upload {
-  background-color: red;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}
-.f-user-image-upload input {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
 }
 
 /*# sourceMappingURL=main.css.map */

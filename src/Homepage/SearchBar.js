@@ -16,8 +16,8 @@ const SearchBar =() => {
 
 
     return (
-        <div className="d-flex align-items-center flex-column mt-5"
-            style={{"paddingLeft": "300px", "paddingRight": "300px", "paddingTop": "25px", "width": "100%"}}>
+        <div className="col d-flex align-items-center flex-column mt-5"
+            style={{"paddingLeft": "150px", "paddingRight": "150px", "paddingTop": "25px", "width": "100%"}}>
             <form action="" style={{"width": "100%"}} className="mb-5 mt-5 f-form-home" onSubmit={(e) => handleSubmit(e)}>
                 <div className="form-group d-flex justify-content-center mt-5" style={{"width": "100%"}}>
                     <label htmlFor="search-bar" className="d-flex align-items-center justify-content-center f-search-bar-home"

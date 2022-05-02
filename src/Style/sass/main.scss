@@ -17,6 +17,15 @@ $light: 300;
 $bold: 600;
 $black: 700;
 
+$grid-breakpoints: (
+        xs: 0,
+        sm: 1000px,
+        md: 1200px,
+        lg: 1400px,
+        xl: 1600px,
+        xxl: 1800px
+);
+
 body, .container-fluid {
   background-color: $background;
   font: {
@@ -597,7 +606,7 @@ button {
   input {
     font: {
       family: $fredoka;
-      size: 26px;
+      size: 22px;
       weight: $regular;
     }
     color: $dark;
@@ -642,7 +651,7 @@ button {
   }
 
   i {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 
@@ -1248,9 +1257,61 @@ button {
   grid-template-columns: repeat(4, 1fr);
 }
 
+@media (max-width: 1500px) {
+  .f-event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1256px) {
+  .f-event-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .f-event-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
 .f-search-event-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1500px) {
+  .f-search-event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1256px) {
+  .f-search-event-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+}
+@media (min-width: 1535px) {
+  .f-search-event-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .f-search-event-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
 
 .f-invalid {
@@ -1314,17 +1375,4 @@ button {
 
   }
 
-}
-
-.f-user-image-upload {
-  background-color: red;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-
-  input {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-  }
 }
