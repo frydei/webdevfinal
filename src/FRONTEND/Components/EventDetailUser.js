@@ -30,7 +30,7 @@ const EventDetailUser = ({event}) => {
             setLocation(c_event.location)
             setCost(c_event.cost)
             setRest(c_event.restrictions)
-            setTags(c_event.tags)
+            setTags(event.hosts[0].username === "tmaster" ? event.tags : event.tags[0] )
             if(c_event.attendees.find(a => a.username === current_user.username)) {
                 setButton("Joined")
             }
