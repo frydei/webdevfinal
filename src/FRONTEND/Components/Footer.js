@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 const Footer = () => {
     return (
-        <div className="f-footer d-flex flex-column align-items-center justify-content-between"
+        <div className="f-footer d-flex flex-column align-items-end justify-content-between"
 
              style={{"paddingLeft": "250px", "paddingRight": "250px", "marginTop": "150px"}}>
 
@@ -16,13 +16,13 @@ const Footer = () => {
                     </li>
                     <li className="list-group-item f-menu-item-title bg-transparent border-0 p-0 mb-2"
                         style={{"textAlign": "left"}}>
-                        <Link to="/frydei/privacy-policy">Privacy Policy</Link>
+                        <Link to="/frydei/privacy-policy" className="f-link">Privacy Policy</Link>
                     </li>
                 </ul>
                 <ul className="list-group bg-transparent border-0">
-                    <li className="list-group-item f-menu-item-title bg-transparent border-0 p-0 mb-2"
+                    <Link to="/frydei/about-us" className="f-link"> <li className="list-group-item f-menu-item-title bg-transparent border-0 p-0 mb-2"
                         style={{"textAlign": "left", "fontSize": "14px", "fontWeight": "500"}}>About
-                    </li>
+                    </li></Link>
                     <li className="list-group-item f-menu-item-title bg-transparent border-0 p-0 mb-2"
                         style={{"textAlign": "left"}}>Company
                     </li>
@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
 
 
-            <div className="d-flex flex-column align-items-center justify-content-start">
+            <div className="d-flex flex-column align-items-start justify-content-start" style={{"width": "30%"}}>
                 <h3 className="f-medium-medium mb-2" style={{"textAlign": "left"}}>Connect With Us</h3>
                 <div className="f-social-icons">
                     <i className="fa-brands fa-facebook f-social-icon"/>

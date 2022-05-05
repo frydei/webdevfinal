@@ -48,7 +48,7 @@ function App() {
     return (
 
         <Router>
-            <div className="container-fluid p-0">
+            <div className="f-main container-fluid p-0">
                 <Routes>
                     <Route path=""
                            element={<Navigate replace to="frydei"/>}/>

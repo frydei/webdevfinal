@@ -30,6 +30,7 @@ export const getUserById = async (dispatch, user_id) => {
 
 export const getUserByUsername = async (dispatch, username) => {
     const user = await users_services.getUserByUsername(username);
+    console.log("HERE")
     dispatch({
         type: GET_USER_BY_USERNAME,
         user: user

@@ -4,8 +4,6 @@ import {useLocation, useNavigate} from "react-router-dom";
 import React, {useEffect, useRef, useState} from "react";
 import {
     getUserByUsername,
-    UPDATE_PROFILE,
-    UPDATE_USER,
     updateUser
 } from "../../../BACKEND/Actions/UsersActions";
 import ProfileNav from "./profileNav";
@@ -16,45 +14,52 @@ import SelfProfileItem from "./SelfProfileItem";
 import {Form, Modal} from "react-bootstrap";
 import {updateSession} from "../../../BACKEND/Services/AuthServices";
 import FilledButton from "../../Components/FilledButton";
-import Button from "../../Components/Button"
+import Button from "../../Components/Button";
 import {uploadFile} from "../../../BACKEND/Services/FileServices";
+
+
 const SelfProfileScreen = () => {
     const {username} = useParams();
-    let [editing, setEditing] = useState(false)
+    let [editing, setEditing] = useState(false);
     const dispatch = useDispatch();
     const location = useLocation();
-    const [logged_in, current_user, setCurrentUser] = useOutletContext()
+    const [logged_in, current_user, setCurrentUser] = useOutletContext();
 
     let [user, setUser] = useState(current_user);
     const [modal, setModal] = useState(false);
 
     const uname = useRef();
-    const fname= useRef();
-    const lname= useRef();
-    const email= useRef();
-    const city= useRef();
-    const state= useRef();
-    const bio= useRef();
+    const fname = useRef();
+    const lname = useRef();
+    const email = useRef();
+    const city = useRef();
+    const state = useRef();
+    const bio = useRef();
 
-    const updateItem = (e) => {
+    const updateItem = async (e) => {
         // e.preventDefault();
         let updated_user;
+        let u_user = await getUserByUsername(dispatch, current_user.username);
         updated_user = {
             ...user,
-            username : uname.current.value,
+            username: uname.current.value,
             first_name: fname.current.value,
             last_name: lname.current.value,
             email: email.current.value,
             city: city.current.value,
             state: state.current.value,
-            biography : bio.current.value
+            biography: bio.current.value,
+            password: u_user.password
 
-        }
-        updateUser(dispatch, updated_user).then(() => console.log());
-        setUser(updated_user)
-        setCurrentUser(updateSession(updated_user));
+        };
+        await updateUser(dispatch, updated_user);
+        updateSession(updated_user).then(r => {
+            setCurrentUser(r);
+            setUser(r);
+        });
 
-    }
+
+    };
 
     const showModal = () => {
         setModal(true);
@@ -97,26 +102,33 @@ const SelfProfileScreen = () => {
     }
 
     const update = (new_user) => {
-        setCurrentUser(new_user)
-    }
+        setCurrentUser(new_user);
+        setUser(new_user);
+    };
 
     const uploadMedia = async (file) => {
-        const data = new FormData()
-        data.append("file", file)
+        const data = new FormData();
+        data.append("file", file);
+        let u_user = getUserByUsername(dispatch, current_user.username);
         await uploadFile(data).then(() => {
             let med = {
                 content: file.name
-            }
+            };
             let updated_user = {
-                ...current_user,
-                media: [med, ...current_user.media]
-            }
-            updateUser(dispatch, updated_user).then(() => console.log());
-            setUser(updated_user)
-            setCurrentUser(updateSession(updated_user));
-        })
+                ...user,
+                media: [med, ...user.media],
+                password: u_user.password
+            };
+            updateUser(dispatch, updated_user);
+            updateSession(updated_user).then(r => {
+                setCurrentUser(r);
+                setUser(r);
+            });
 
-    }
+
+        });
+
+    };
 
     return (
 
@@ -126,28 +138,26 @@ const SelfProfileScreen = () => {
                 {user._id === undefined ? null : <SelfProfileItem user={user}/>}
             </div>
             {!editing &&
-             <Button handleSubmit={showModal} name={"Edit Profile"}/>
+                <Button handleSubmit={showModal} name={"Edit Profile"}/>
             }
             <ProfileNav changeTab={changeTab} selected={selected}/>
 
             <div className="f-event-grid mt-3">
                 {tab === "MY_EVENTS" &&
-                 (user._id === undefined ? null : user.user_events.map(event => <HomeEvent event={event}
-                                                                                           page="Past"/>))}
+                    (user._id === undefined ? null : user.user_events.map(event => <HomeEvent event={event}
+                                                                                              page="Past"/>))}
 
                 {tab === "UPCOMING_EVENTS" &&
-                 (user._id === undefined ? null : user.upcoming_events.map(event => <HomeEvent event={event}
-                                                                                               page="Upcoming"/>))}
+                    (user._id === undefined ? null : user.upcoming_events.map(event => <HomeEvent event={event}
+                                                                                                  page="Upcoming"/>))}
 
                 {tab === "FAVORITED_EVENTS" &&
-                 (user._id === undefined ? null : user.favorited.map(event => <FavoriteEvent event={event}
-                                                                                             logged_in={logged_in}
-                                                                                             current_user={user}
-                                                                                             setCurrentUser={setCurrentUser}
-                                                                                             update={update}
-                                                                                             page="Favorited"/>))}
-                {tab === "MEDIA" &&
-                 (user._id === undefined ? null : user.media.map(med => <MediaCard media={med}/>))}
+                    (user._id === undefined ? null : user.favorited.map(event => <FavoriteEvent event={event}
+                                                                                                logged_in={logged_in}
+                                                                                                current_user={user}
+                                                                                                setCurrentUser={setCurrentUser}
+                                                                                                update={update}
+                                                                                                page="Favorited"/>))}
                 {tab === "MEDIA" &&
                     <>
                         <div className="f-media-card d-flex justify-content-center">
@@ -158,23 +168,28 @@ const SelfProfileScreen = () => {
                                        type="file"
                                        style={{"display": "none"}}
                                        onChange={async (e) => {
-                                           await uploadMedia(e.target.files[0])
+                                           await uploadMedia(e.target.files[0]);
                                        }
                                        }
                                 />
 
                             </label>
-                    </div>
+                        </div>
                     </>
                 }
+                {tab === "MEDIA" &&
+                    (user._id === undefined ? null : user.media.map(med => <MediaCard media={med}/>))}
+
             </div>
 
-            <Modal className="f-modal d-flex justify-content-center align-content-start " show={modal} onHide={hideModal}>
+            <Modal className="f-modal d-flex justify-content-center align-content-start " show={modal}
+                   onHide={hideModal}>
                 <Modal.Header closeButton>
                 </Modal.Header>
                 <Modal.Body className="d-flex flex-column justify-content-center align-items-center">
                     <h4 className="f-medium-medium f-header">Edit Profile</h4>
-                    <form className="f-form d-flex flex-column align-items-center justify-content-center" onSubmit={(e) => updateItem(e)}>
+                    <form className="f-form d-flex flex-column align-items-center justify-content-center"
+                          onSubmit={(e) => updateItem(e)}>
                         <label className="f-label" htmlFor="username">
                             Username
                             <input className="f-input" id="name" type="text" form="user-form" ref={uname}
@@ -226,6 +241,6 @@ const SelfProfileScreen = () => {
 
         </div>
     );
-}
+};
 
 export default SelfProfileScreen;

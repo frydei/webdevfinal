@@ -50,6 +50,11 @@ const SignIn = () => {
                    }
                }
                updateUser(dispatch, r)
+
+               dispatch({
+                   type: "UPDATE_USER",
+                   user: r
+               })
                localStorage.setItem("user_logged_in", "TRUE")
                navigate("/frydei/profile/")
            }

@@ -25,8 +25,11 @@ $grid-breakpoints: (
         xl: 1600px,
         xxl: 1800px
 );
+#root, body, .f-main {
+  height: 100vh;
+}
 
-body, .container-fluid {
+#root, body, .container-fluid {
   background-color: $background;
   font: {
     family: $fredoka;

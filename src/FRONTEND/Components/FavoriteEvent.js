@@ -33,10 +33,13 @@ const FavoriteEvent = ({event, page, logged_in, current_user, setCurrentUser, up
             favorited: db_user.favorited.filter(e => e._id !== c_event._id)
         };
         updateUser(dispatch, updated_user).then(() => console.log());
-        setCurrentUser(await updateSession(updated_user));
-        setHeart(<i className="fa-regular fa-heart"/>);
-        update(current_user)
-        setEvent(null)
+        updateSession(updated_user).then(r => {
+            setCurrentUser(r)
+            update(r)
+            setHeart(<i className="fa-regular fa-heart"/>);
+        })
+
+
     }
 
 

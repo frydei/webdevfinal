@@ -10,37 +10,37 @@ import {getCurrentUser} from "../../BACKEND/Services/AuthServices";
 
 
 const Frydei = () => {
-    const [current_user, setCurrentUser] = useState([])
+    const [current_user, setCurrentUser] = useState([]);
     const location = useLocation();
     //const user = useSelector((state) => state.users)
     useEffect(async () => {
         const user = await getCurrentUser();
-        setCurrentUser(user)
-    }, [])
+        setCurrentUser(user);
+    }, []);
 
     let header, logged_in;
     if (current_user._id !== undefined) {
-        header = <HeaderUser user={current_user}/>
+        header = <HeaderUser user={current_user}/>;
 
         logged_in = localStorage.getItem("user_logged_in",);
 
     } else {
-        if (location.pathname === "/frydei" || location.pathname === "" ) {
-            header = null
+        if (location.pathname === "/frydei" || location.pathname === "") {
+            header = null;
         } else {
-            header = <HeaderGuest/>
+            header = <HeaderGuest/>;
         }
         logged_in = localStorage.getItem("user_logged_in");
     }
 
     return (
-            <div>
-                <div className="container-fluid p-4">
-                    {header}
-                    {<Outlet context={[logged_in, current_user, setCurrentUser]}/>}
-                </div>
-                <Footer/>
+        <>
+            <div className="container-fluid p-4">
+                {header}
+                {<Outlet context={[logged_in, current_user, setCurrentUser]}/>}
             </div>
+            <Footer/>
+        </>
 
     );
 

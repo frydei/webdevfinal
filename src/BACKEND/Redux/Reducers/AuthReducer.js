@@ -2,15 +2,15 @@ import {GET_USER_SESSION, SIGNIN, SIGNUP, SIGNOUT, UPDATE_SESSION} from "../../A
 const AuthReducer = (state = {}, action) => {
     switch(action.type) {
         case GET_USER_SESSION:
-            return state = {...action.user}
+            return {...action.user}
         case UPDATE_SESSION:
-            return state = {...state, ...action.user}
+            return {...state, ...action.user}
         case SIGNOUT:
-            return state = {}
+            return {}
         case SIGNUP:
-            return state = {...action.user}
+            return {...action.user}
         case SIGNIN:
-            return state = {...action.user}
+            return {...action.user}
         default:
             return state
     }

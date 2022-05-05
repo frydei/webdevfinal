@@ -19,6 +19,7 @@ export const signInWithGoogle = async (idToken) => {
 
 export const updateSession = async (user) => {
     const res = await api.post(`${AUTH}/update`, user)
+    console.log(res.data)
     return res.data
 }
 
