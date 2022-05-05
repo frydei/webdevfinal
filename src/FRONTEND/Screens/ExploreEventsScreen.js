@@ -1,11 +1,9 @@
 import React, {useEffect} from "react";
 import ExploreEvent from "../Components/ExploreEvent";
 import {useDispatch, useSelector} from "react-redux";
-import {useOutletContext} from "react-router";
 import {getEvents} from "../../BACKEND/Actions/EventsActions";
 
 const ExploreEventsScreen = () => {
-    const [logged_in, current_user, setCurrentUser] = useOutletContext()
     const dispatch = useDispatch()
     useEffect(async () => {
         await getEvents(dispatch);

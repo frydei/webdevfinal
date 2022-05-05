@@ -1,9 +1,10 @@
 import React from "react";
 import EventContent from "./EventContent";
 import {useOutletContext} from "react-router";
+import {useSelector} from "react-redux";
 
 const ExploreEvent = ({event}) => {
-    const [logged_in, current_user, setCurrentUser] = useOutletContext()
+    const current_user = useSelector(state => state.user)
     if (current_user._id === undefined) {
         return null;
     }

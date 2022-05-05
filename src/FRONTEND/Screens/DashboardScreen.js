@@ -12,7 +12,7 @@ import HomeEvent from "../Components/HomeEvent";
 
 
 const DashboardScreen = () => {
-    const [logged_in, current_user, setCurrentUser] = useOutletContext();
+    const current_user = useSelector(state => state.user);
     const [events, setEvents] = useState();
     const [users, setUsers] = useState();
     const navigate = useNavigate();

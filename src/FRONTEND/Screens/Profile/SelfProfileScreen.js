@@ -1,5 +1,5 @@
 import {useOutletContext, useParams} from "react-router";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useLocation, useNavigate} from "react-router-dom";
 import React, {useEffect, useRef, useState} from "react";
 import {
@@ -11,22 +11,20 @@ import HomeEvent from "../../Components/HomeEvent";
 import FavoriteEvent from "../../Components/FavoriteEvent";
 import MediaCard from "../../Components/MediaCard";
 import SelfProfileItem from "./SelfProfileItem";
-import {Form, Modal} from "react-bootstrap";
+import {Modal} from "react-bootstrap";
 import {updateSession} from "../../../BACKEND/Services/AuthServices";
 import FilledButton from "../../Components/FilledButton";
 import Button from "../../Components/Button";
 import {uploadFile} from "../../../BACKEND/Services/FileServices";
+import {getUserById} from "../../../BACKEND/Services/UsersServices";
 
 
 const SelfProfileScreen = () => {
-    const {username} = useParams();
     let [editing, setEditing] = useState(false);
     const dispatch = useDispatch();
-    const location = useLocation();
-    const [logged_in, current_user, setCurrentUser] = useOutletContext();
-
-    let [user, setUser] = useState(current_user);
+    const user = useSelector(state => state.user);
     const [modal, setModal] = useState(false);
+
 
     const uname = useRef();
     const fname = useRef();
@@ -37,25 +35,31 @@ const SelfProfileScreen = () => {
     const bio = useRef();
 
     const updateItem = async (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         let updated_user;
-        let u_user = await getUserByUsername(dispatch, current_user.username);
+        console.log(user)
+        let u_user = await getUserById(user._id);
+        console.log(u_user)
         updated_user = {
             ...user,
-            username: uname.current.value,
-            first_name: fname.current.value,
-            last_name: lname.current.value,
-            email: email.current.value,
-            city: city.current.value,
-            state: state.current.value,
-            biography: bio.current.value,
+            username: uname.current.value ? uname.current.value : user.username,
+            first_name: fname.current.value ? fname.current.value : user.first_name,
+            last_name: lname.current.value ? lname.current.value : user.last_name,
+            email: email.current.value ? email.current.value : user.email,
+            city: city.current.value ? city.current.value : user.city,
+            state: state.current.value ? state.current.value : user.state,
+            biography: bio.current.value ? bio.current.value : user.biography,
             password: u_user.password
 
         };
+        console.log("HERE")
         await updateUser(dispatch, updated_user);
         updateSession(updated_user).then(r => {
-            setCurrentUser(r);
-            setUser(r);
+            dispatch({
+                type: "UPDATE_CURRENT_USER",
+                user: r
+            });
+            hideModal();
         });
 
 
@@ -102,14 +106,16 @@ const SelfProfileScreen = () => {
     }
 
     const update = (new_user) => {
-        setCurrentUser(new_user);
-        setUser(new_user);
+        dispatch({
+            type: "UPDATE_CURRENT_USER",
+            user: new_user
+        });
     };
 
     const uploadMedia = async (file) => {
         const data = new FormData();
         data.append("file", file);
-        let u_user = getUserByUsername(dispatch, current_user.username);
+        let u_user = await getUserById(user._id);
         await uploadFile(data).then(() => {
             let med = {
                 content: file.name
@@ -121,8 +127,10 @@ const SelfProfileScreen = () => {
             };
             updateUser(dispatch, updated_user);
             updateSession(updated_user).then(r => {
-                setCurrentUser(r);
-                setUser(r);
+                dispatch({
+                    type: "UPDATE_CURRENT_USER",
+                    user: r
+                });
             });
 
 
@@ -153,9 +161,6 @@ const SelfProfileScreen = () => {
 
                 {tab === "FAVORITED_EVENTS" &&
                     (user._id === undefined ? null : user.favorited.map(event => <FavoriteEvent event={event}
-                                                                                                logged_in={logged_in}
-                                                                                                current_user={user}
-                                                                                                setCurrentUser={setCurrentUser}
                                                                                                 update={update}
                                                                                                 page="Favorited"/>))}
                 {tab === "MEDIA" &&
@@ -194,41 +199,40 @@ const SelfProfileScreen = () => {
                             Username
                             <input className="f-input" id="name" type="text" form="user-form" ref={uname}
                                    placeholder={user.username}
-                                   onChange={updateItem}
                             />
                         </label>
                         <label htmlFor="first_name">
                             First Name
                             <input id="first_name" ref={fname}
-                                   type="text" form="user-form" placeholder={user.first_name}
-                                   onChange={updateItem}
+                                   type="text" form="user-form"
+                                   placeholder={user.first_name}
                             />
                         </label>
                         <label htmlFor="last_name">
                             Last Name
                             <input id="last_name" ref={lname}
-                                   type="text" form="user-form" placeholder={user.last_name}
-                                   onChange={updateItem}
+                                   type="text" form="user-form"
+                                   placeholder={user.last_name}
                             />
                         </label>
                         <label htmlFor="email"> Email
                             <input ref={email}
-                                   id="email" type="tel" form="user-form" placeholder={user.email}
-                                   onChange={updateItem}
+                                   id="email" type="tel" form="user-form"
+                                   placeholder={user.email}
                             />
                         </label>
                         <label htmlFor="city"> City
                             <input id="city" ref={city}
-                                   placeholder={user.city} form="item-form" onChange={updateItem}/>
+                                   placeholder={user.city} form="item-form"/>
                         </label>
                         <label htmlFor="state"> State
                             <input id="state" ref={state}
-                                   placeholder={user.state} form="item-form" onChange={updateItem}/>
+                                   placeholder={user.state} form="item-form"/>
                         </label>
 
                         <label className="mb-3" htmlFor="biography"> Biography
                             <textarea id="biography" ref={bio}
-                                      placeholder={user.biography} onChange={updateItem}
+                                      placeholder={user.biography}
                                       rows="5" form="item-form"/>
                         </label>
 

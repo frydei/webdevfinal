@@ -9,8 +9,6 @@ import FavoriteEvent from "../../Components/FavoriteEvent";
 
 const ProfileScreen = () => {
     const {username} = useParams();
-    const [logged_in] = useOutletContext()
-
     const [user, setUser] = useState();
 
     useEffect(async () => {
@@ -69,11 +67,8 @@ const ProfileScreen = () => {
 
                 {tab === "FAVORITED_EVENTS" &&
                     (user._id === undefined ? null : user.favorited.map && user.favorited.map(event => <FavoriteEvent event={event}
-                                                                                                logged_in={logged_in}
-                                                                                                current_user={null}
-                                                                                                setCurrentUser={null}
-                                                                                                update={null}
-                                                                                            page="Favorited"/>))}
+                                                                                                                      update={null}
+                                                                                                                      page="Favorited"/>))}
                 {tab === "MEDIA" &&
                     (user._id === undefined ? null : user.media.map && user.media.map(med => <MediaCard media={med}/>))
                 }

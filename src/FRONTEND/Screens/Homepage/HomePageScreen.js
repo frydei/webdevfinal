@@ -9,17 +9,12 @@ import {useOutletContext} from "react-router";
 import {useLocation} from "react-router-dom";
 
 const HomePageScreen = () => {
-    const location = useLocation()
-
     const [events, setEvents] = useState()
-    const [logged_in, current_user, setCurrentUser] = useOutletContext()
-
 
     useEffect(() => {
         async function fetch() {
             getEvents().then(r => {
-                r = r.sort((a,b) => new Date(b.date) - new Date(a.date));
-                setEvents(r);
+                setEvents(r.reverse());
             })
         }
         fetch()
@@ -36,7 +31,7 @@ const HomePageScreen = () => {
     }
 
     let header, footer;
-    if (logged_in) {
+    if (localStorage.getItem("user_logged_in")) {
         header = "";
         footer = "";
     } else {

@@ -6,14 +6,16 @@ import {updateUser, getUserById} from "../../BACKEND/Services/UsersServices";
 import {createEvent, getEventsById, updateEvent} from "../../BACKEND/Services/EventsServices";
 import {updateSession} from "../../BACKEND/Services/AuthServices";
 import {REACT_APP_BASE} from "../../App";
+import {useDispatch, useSelector} from "react-redux";
 
 
 const EventDetailUser = ({event}) => {
     const [c_event, setEvent] = useState(event)
     const [button, setButton] = useState("Join")
-    const [logged_in, current_user, setCurrentUser] = useOutletContext()
+    const current_user = useSelector(state => state.user)
     let time, min;
     const [cost, setCost] = useState()
+    const dispatch = useDispatch()
 
     const [tags, setTags] = useState()
     const [location, setLocation] = useState()
@@ -115,7 +117,10 @@ const EventDetailUser = ({event}) => {
             }
             updateUser(updated_user).then(async () => {
                 updateSession(updated_user).then(r => {
-                    setCurrentUser(r)
+                    dispatch({
+                        type: "UPDATE_CURRENT_USER",
+                        user: r
+                    })
                 })
             })
 

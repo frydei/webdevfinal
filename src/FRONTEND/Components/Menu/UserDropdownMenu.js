@@ -7,10 +7,11 @@ import UserIconName from "../UserIconName";
 import {Link} from "react-router-dom";
 import {signOut} from "../../../BACKEND/Services/AuthServices";
 import {useNavigate} from "react-router";
+import {useDispatch} from "react-redux";
 
 const UserDropdownMenu = ({user}) => {
     const navigate = useNavigate();
-    //const [current_user, setCurrentUser] = useState([])
+    const dispatch = useDispatch()
     let more;
     if (user.admin_access) {
         const admin = {menu: "Admin Dashboard", link: "admin"};
@@ -57,11 +58,14 @@ const UserDropdownMenu = ({user}) => {
                 <Dropdown.Item className="d-flex align-items-center justify-content-end bg-transparent border-0">
                     <button className="d-flex align-items-center justify-content-end p-0 list-group-item d-flex align-items-center justify-content-end f-menu-item p-0 mb-1 f-menu-item-title "
                             style={{"backgroundColor": "transparent", "border": "1px solid transparent"}}
-                            onClick={() => {
-                                signOut().then(r => {
-                                    localStorage.clear()
-                                    navigate("/")
-                                });
+                            onClick={async () => {
+                                await signOut()
+                                dispatch({
+                                    type: "LOG_OUT"
+                                })
+                                localStorage.clear()
+                                navigate("/frydei")
+
                             }}
                     >Sign out
                     </button>

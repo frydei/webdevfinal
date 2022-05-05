@@ -6,14 +6,16 @@ import {createEvent} from "../../BACKEND/Services/EventsServices";
 import {getUserById, updateUser} from "../../BACKEND/Services/UsersServices";
 import {updateSession} from "../../BACKEND/Services/AuthServices";
 import {useNavigate} from "react-router";
+import {useDispatch, useSelector} from "react-redux";
 
 
 const CreateEvent = ({user}) => {
-    const [current_user, setCurrentUser] = useState(user)
+    const current_user = useSelector(state => state.user)
     const [imageUploader, setImageUploader] = useState(false);
     const [image, setImage] = useState("");
     const [file, setFile] = useState()
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const title = useRef()
     const desc = useRef()
@@ -81,7 +83,10 @@ const CreateEvent = ({user}) => {
             }
             updateUser(updated_user).then(async () => {
                 updateSession(updated_user).then(r => {
-                    setCurrentUser(r)
+                    dispatch({
+                        type: "UPDATE_CURRENT_USER",
+                        user: r
+                    })
                 })
 
             })

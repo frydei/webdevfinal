@@ -1,10 +1,10 @@
 import React from "react";
 import CreateEvent from "../Components/CreateEvent";
 import {useSelector} from "react-redux";
-import {useNavigate, useOutletContext} from "react-router";
+import {useNavigate} from "react-router";
 
 const CreateEventScreen = () => {
-    const [logged_in, current_user, setCurrentUser] = useOutletContext()
+    const current_user = useSelector(state => state.user)
     const navigate = useNavigate()
     if(!current_user.admin_access) {
         navigate("/frydei")

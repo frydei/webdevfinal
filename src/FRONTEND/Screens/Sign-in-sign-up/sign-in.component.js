@@ -50,12 +50,12 @@ const SignIn = () => {
                    }
                }
                updateUser(dispatch, r)
-
+               localStorage.setItem("user_logged_in", "TRUE")
+               localStorage.setItem("CURRENT_USER", JSON.stringify(r))
                dispatch({
-                   type: "UPDATE_USER",
+                   type: "UPDATE_CURRENT_USER",
                    user: r
                })
-               localStorage.setItem("user_logged_in", "TRUE")
                navigate("/frydei/profile/")
            }
         }).catch((err) => {

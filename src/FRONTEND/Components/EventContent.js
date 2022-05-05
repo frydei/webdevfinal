@@ -5,13 +5,13 @@ import {Link} from "react-router-dom";
 import {getCurrentUser, updateSession} from "../../BACKEND/Services/AuthServices";
 import {useNavigate, useOutletContext} from "react-router";
 import {getUserById, updateUser} from "../../BACKEND/Actions/UsersActions";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {REACT_APP_BASE} from "../../App";
 
 const EventContent = ({event, is_favorite, menu}) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const [logged_in, current_user, setCurrentUser] = useOutletContext();
+    const current_user = useSelector(state => state.user);
     const host = event.hosts[0];
     const [heart, setHeart] = useState(is_favorite);
 
@@ -32,7 +32,12 @@ const EventContent = ({event, is_favorite, menu}) => {
                 favorited: [{...event}, ...db_user.favorited]
             };
             updateUser(dispatch, updated_user).then(() => console.log());
-            setCurrentUser(await updateSession(updated_user));
+            updateSession(updated_user).then(r => {
+                dispatch({
+                    type: "UPDATE_CURRENT_USER",
+                    user: r
+                })
+            });
 
         } else {
             updated_user = {
@@ -40,7 +45,12 @@ const EventContent = ({event, is_favorite, menu}) => {
                 favorited: db_user.favorited.filter(e => e._id !== event._id)
             };
             updateUser(dispatch, updated_user).then(() => console.log());
-            setCurrentUser(await updateSession(updated_user));
+            updateSession(updated_user).then(r => {
+                dispatch({
+                    type: "UPDATE_CURRENT_USER",
+                    user: r
+                })
+            });
         }
 
     };
@@ -56,11 +66,7 @@ const EventContent = ({event, is_favorite, menu}) => {
         if (host.username === current_user.username) {
             navigate("/frydei/profile");
         } else {
-            navigate(`/frydei/profile/${host.username}`, {
-                state: {
-                    user: "USER"
-                }
-            });
+            navigate(`/frydei/profile/${host.username}`);
         }
 
     };

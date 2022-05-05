@@ -7,6 +7,7 @@ import axios from "axios";
 import FormInput from "./FormInput";
 import {REACT_APP_BASE} from "../../../App";
 import {useNavigate} from "react-router";
+import {useDispatch} from "react-redux";
 
 const Details = ({user}) => {
     const [lat, setLat] = useState("")
@@ -19,6 +20,8 @@ const Details = ({user}) => {
     const city = useRef();
     const state = useRef();
     const profile = useRef()
+    const dispatch = useDispatch();
+
     useEffect(() => {
         navigator.geolocation.getCurrentPosition((p) => {
             setLat(p.coords.latitude)
@@ -45,8 +48,13 @@ const Details = ({user}) => {
                 ...new_user,
                 profile_picture: new_user.username + ".jpeg"
             }
-            signUp(new_user).then(() => {
+            signUp(new_user).then((r) => {
                 localStorage.setItem("user_logged_in", "TRUE")
+                localStorage.setItem("CURRENT_USER", JSON.stringify(r))
+                dispatch({
+                    type: "UPDATE_CURRENT_USER",
+                    user: r
+                })
                 navigate("/frydei/profile/")
             })
         })

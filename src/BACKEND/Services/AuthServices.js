@@ -38,6 +38,7 @@ export const signOut = async () => {
 
 export const getCurrentUser = async () => {
     const res = await api.post(`${AUTH}/user`)
+    console.log(res.data)
     return res.data
 
 }

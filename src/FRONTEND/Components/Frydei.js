@@ -7,22 +7,17 @@ import HeaderUser from "./HeaderUser";
 import HeaderGuest from "./HeaderGuest";
 import Footer from "./Footer";
 import {getCurrentUser} from "../../BACKEND/Services/AuthServices";
+import {useSelector} from "react-redux";
 
 
 const Frydei = () => {
-    const [current_user, setCurrentUser] = useState([]);
+    const user = useSelector((state) => state.user)
     const location = useLocation();
-    //const user = useSelector((state) => state.users)
-    useEffect(async () => {
-        const user = await getCurrentUser();
-        setCurrentUser(user);
-    }, []);
 
-    let header, logged_in;
-    if (current_user._id !== undefined) {
-        header = <HeaderUser user={current_user}/>;
+    let header;
 
-        logged_in = localStorage.getItem("user_logged_in",);
+    if (user._id) {
+        header = <HeaderUser user={user}/>;
 
     } else {
         if (location.pathname === "/frydei" || location.pathname === "") {
@@ -30,14 +25,13 @@ const Frydei = () => {
         } else {
             header = <HeaderGuest/>;
         }
-        logged_in = localStorage.getItem("user_logged_in");
     }
 
     return (
         <>
             <div className="container-fluid p-4">
                 {header}
-                {<Outlet context={[logged_in, current_user, setCurrentUser]}/>}
+                <Outlet />
             </div>
             <Footer/>
         </>

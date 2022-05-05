@@ -1,13 +1,8 @@
-import React, {useState} from "react";
-import {Link} from "react-router-dom";
-import {useNavigate, useOutletContext} from "react-router";
-import {getUserById, updateUser} from "../../BACKEND/Actions/UsersActions";
-import {useDispatch} from "react-redux";
-import {updateSession} from "../../BACKEND/Services/AuthServices";
+import React from "react";
+import {useNavigate} from "react-router";
 import {REACT_APP_BASE} from "../../App";
 
 const HomeEvent = ({event, page}) => {
-    const [logged_in, current_user, setCurrentUser] = useOutletContext()
     const navigate = useNavigate()
     if (!event) {
         return null;
@@ -27,7 +22,7 @@ const HomeEvent = ({event, page}) => {
     }
 
     const viewEvent = () => {
-        navigate(`/frydei/explore/${event._id}`, {state: {logged_in: logged_in}})
+        navigate(`/frydei/explore/${event._id}`, {state: {logged_in: localStorage.getItem("user_logged_in")}})
     }
 
 

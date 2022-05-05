@@ -9,8 +9,6 @@ import {getTMEventById} from "../../BACKEND/APIServices";
 
 
 const ViewEventScreen = () => {
-    const location = useLocation();
-    const [logged_in, current_user] = useOutletContext()
     const [event, setEvent] = useState()
 
     let param = useParams();
@@ -35,7 +33,7 @@ const ViewEventScreen = () => {
     return (
         <>
             <div style={{"paddingLeft": "175px", "paddingRight": "175px", "paddingTop": "25px"}}>
-                {event && (logged_in ? <EventDetailUser event={event}/> : <EventDetailGuest event={event}/>)}
+                {event && (localStorage.getItem("user_logged_in") ? <EventDetailUser event={event}/> : <EventDetailGuest event={event}/>)}
             </div>
         </>
 

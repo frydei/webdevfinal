@@ -2,11 +2,12 @@ import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import {useNavigate, useOutletContext} from "react-router";
 import {getUserById, updateUser} from "../../BACKEND/Actions/UsersActions";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {updateSession} from "../../BACKEND/Services/AuthServices";
 import {REACT_APP_BASE} from "../../App";
 
-const FavoriteEvent = ({event, page, logged_in, current_user, setCurrentUser, update}) => {
+const FavoriteEvent = ({event, update}) => {
+    const current_user = useSelector(state => state.user)
     const [heart, setHeart] = useState(<i className="fa-solid fa-heart"/>)
     const [c_event, setEvent] = useState(event)
     const dispatch = useDispatch()
@@ -23,7 +24,7 @@ const FavoriteEvent = ({event, page, logged_in, current_user, setCurrentUser, up
 
 
     const viewEvent = () => {
-        navigate(`/frydei/explore/${c_event._id}`, {state: {logged_in: logged_in}})
+        navigate(`/frydei/explore/${c_event._id}`, {state: {logged_in: localStorage.getItem("user_logged_in")}})
     }
 
     const unlike = async () => {
@@ -34,7 +35,10 @@ const FavoriteEvent = ({event, page, logged_in, current_user, setCurrentUser, up
         };
         updateUser(dispatch, updated_user).then(() => console.log());
         updateSession(updated_user).then(r => {
-            setCurrentUser(r)
+            dispatch({
+                type: "UPDATE_CURRENT_USER",
+                user: r
+            })
             update(r)
             setHeart(<i className="fa-regular fa-heart"/>);
         })
