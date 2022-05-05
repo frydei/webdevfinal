@@ -23,7 +23,7 @@ const EventDetailGuest = ({event}) => {
            setLocation(event.location)
            setCost(event.cost)
            setRest(event.restrictions)
-           setTags(event.tags)
+           setTags(event.hosts[0].username === "tmaster" ? event.tags : event.tags[0] )
        } else {
            setDate(new Date(event.dates.start.localDate))
            setLocation(event._embedded.venues[0].name)
@@ -149,14 +149,9 @@ const EventDetailGuest = ({event}) => {
                     <div className="row f-tag-box d-flex align-items-center justify-content-start ps-0 mb-2" style={{"width": "100%"}}>
                         <div className="d-flex align-items-center justify-content-start ps-0 mt-2" style={{"width": "100%"}}>
                             {
-                                tags && tags.map(tag => {
-                                    if(tag === null) {
-                                        return null
-                                    } else {
-                                        return <Tag tag={tag}/>
-                                    }
-                                })
+                                tags && tags.map(tag => tag === null ? null : <Tag tag={tag}/>)
                             }
+
                         </div>
                     </div>
                     <div className="row f-button-box">
