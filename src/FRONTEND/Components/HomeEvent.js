@@ -12,7 +12,6 @@ const HomeEvent = ({event, page}) => {
     if (!event) {
         return null;
     }
-    console.log(event)
 
     let time;
     const date = new Date(event.date);
@@ -28,7 +27,6 @@ const HomeEvent = ({event, page}) => {
     }
 
     const viewEvent = () => {
-        console.log(event)
         navigate(`/frydei/explore/${event._id}`, {state: {logged_in: logged_in}})
     }
 

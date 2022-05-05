@@ -18,17 +18,11 @@ const UserDropdownMenu = ({user}) => {
     } else {
         more = more_menu;
     }
-    //console.log("MENU___" + user)
-    let username = user.first_name.toLowerCase().split("")[0] + user.last_name.toLowerCase();
     const [dropdown, setDropdown] = useState(false);
 
     const navigateToProfile = () => {
 
-        navigate(`/frydei/profile`, {
-            state: {
-                user: "CURRENT"
-            }
-        });
+        navigate("/frydei/profile");
 
     };
 

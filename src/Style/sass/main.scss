@@ -1121,9 +1121,6 @@ button {
         }
       }
 
-      button {
-
-      }
     }
   }
 
@@ -1136,6 +1133,15 @@ button {
     button {
       font-weight: $medium;
     }
+  }
+  button {
+    margin: {
+      top: 10px;
+      bottom: 5px;
+    }
+    background-color: $dark;
+    color: $white;
+
   }
 
 }
@@ -1239,8 +1245,12 @@ button {
 }
 
 .f-media-card {
-  width: 25%;
+  width: 250px;
   margin: 5px;
+  background-color: $lightgrey;
+  border-radius: 10px;
+  color: $grey;
+  height: 400px;
 
   img {
     width: 100%;

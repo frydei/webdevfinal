@@ -7,7 +7,6 @@ import SearchResultsScreen from "./FRONTEND/Screens/SearchResultsScreen";
 import ExploreEventsScreen from "./FRONTEND/Screens/ExploreEventsScreen";
 import CreateEventScreen from "./FRONTEND/Screens/CreateEventScreen";
 import ViewEventScreen from "./FRONTEND/Screens/ViewEventScreen";
-import RequestScreen from "./FRONTEND/Screens/RequestsScreen";
 import HomePageScreen from "./FRONTEND/Screens/Homepage/HomePageScreen";
 import SignInScreen from "./FRONTEND/Screens/Sign-in-sign-up/SignInScreen";
 import SignUpScreen from "./FRONTEND/Screens/Sign-in-sign-up/SignUpScreen";
@@ -20,8 +19,6 @@ import DashboardScreen from "./FRONTEND/Screens/DashboardScreen";
 import PastEventDetailScreen from "./FRONTEND/Screens/PastEventDetailScreen";
 import AboutUs from "./FRONTEND/Screens/AboutUs";
 import DetailsScreen from "./FRONTEND/Screens/Sign-in-sign-up/DetailsScreen";
-import GuestHomePageScreen from "./FRONTEND/Screens/Homepage/GuestHomePageScreen";
-import SignUpG from "./FRONTEND/Screens/Sign-in-sign-up/sign-up-g";
 import SignUpGScreen from "./FRONTEND/Screens/Sign-in-sign-up/SignUpGScreen";
 import SelfProfileScreen from "./FRONTEND/Screens/Profile/SelfProfileScreen";
 import EditProfile from "./FRONTEND/Screens/Profile/EditProfile";
@@ -82,8 +79,6 @@ function App() {
                         <Route path="profile/:username"
                                exact={true}
                                element={<ProfileScreen/>}/>
-                        <Route path="profile/pastevents/:eventid"
-                               element={<PastEventDetailScreen/>}/>
                         <Route path="search"
                                exact={true}
                                element={<SearchResultsScreen logged_in={true}/>}/>

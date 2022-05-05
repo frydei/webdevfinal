@@ -47,7 +47,7 @@ const Details = ({user}) => {
             }
             signUp(new_user).then(() => {
                 localStorage.setItem("user_logged_in", "TRUE")
-                navigate(`/frydei/profile/${new_user.username}`, {state: {from: "CURRENT"}})
+                navigate("/frydei/profile/")
             })
         })
 

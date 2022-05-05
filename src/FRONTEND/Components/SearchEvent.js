@@ -13,11 +13,7 @@ const SearchEvent = ({event}) => {
 
     const navigateToProfile = (host) => {
 
-        navigate(`/frydei/profile/${host.username}`, {
-            state: {
-                user: "USER"
-            }
-        });
+        navigate(`/frydei/profile/${host.username}`);
     }
 
     const exploreEvent = (e) => {

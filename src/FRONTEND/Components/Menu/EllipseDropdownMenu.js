@@ -1,12 +1,9 @@
 import React, {useState} from "react";
 import {Dropdown} from "react-bootstrap";
 import {Link, useLocation} from "react-router-dom";
-import {useParams} from "react-router";
 
 const EllipseDropdownMenu = () => {
-    const param = useParams();
     const path = useLocation().pathname;
-    console.log(path)
 
     const [dropdown, setDropdown] = useState(false);
     return (

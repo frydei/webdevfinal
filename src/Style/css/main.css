@@ -833,6 +833,12 @@ button:focus, button:active {
 .f-profile .selected button {
   font-weight: 500;
 }
+.f-profile button {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background-color: #2D3142;
+  color: #f7f7f7;
+}
 
 .f-dash .f-user-card {
   width: 100%;
@@ -910,8 +916,12 @@ button:focus, button:active {
 }
 
 .f-media-card {
-  width: 25%;
+  width: 250px;
   margin: 5px;
+  background-color: #DBDBDB;
+  border-radius: 10px;
+  color: #4F5D75;
+  height: 400px;
 }
 .f-media-card img {
   width: 100%;

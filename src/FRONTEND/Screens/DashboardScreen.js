@@ -36,7 +36,6 @@ const DashboardScreen = () => {
     useEffect(() => {
         async function fetch() {
             getUsers().then(r => {
-                    console.log(r);
                     setUsers(r);
                 }
             );
@@ -63,8 +62,6 @@ const DashboardScreen = () => {
         ];
     }
 
-    console.log(users);
-    console.log(events);
     if (!events || !users) {
         return null;
     }
@@ -74,16 +71,11 @@ const DashboardScreen = () => {
         if(host.username === current_user.username) {
             navigate("/frydei/profile/");
         } else {
-            navigate(`/frydei/profile/${host.username}`, {
-                state: {
-                    user: "USER"
-                }
-            });
+            navigate(`/frydei/profile/${host.username}`);
         }
     };
 
     const removeUser = (u) => {
-        console.log(u)
         deleteUserByUsername(u.username).then(() => {
             getUsers().then((r) => {
                 setUsers(r)

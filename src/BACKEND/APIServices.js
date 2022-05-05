@@ -23,27 +23,6 @@ const px_config = {
     }
 }
 
-const tm_config = {
-
-}
-
-/*axios.get("PQ", {
-    headers: {
-        "Authorization": "Bearer " + TOKEN,
-        "Accept": "application/json"
-    },
-    params: {
-        "q": "art show",
-        "limit": 2
-    }
-
-}).then(r => {
-    for (const res of r.data.results) {
-        console.log(res)
-    }
-})*/
-
-
 export const searchByString = async (query) => {
     const res = await axios.get(PQ_BASE_URL, {
         ...pq_config,
@@ -70,10 +49,7 @@ export const getPexelPhoto = async (term) => {
 
 export const getTMEvent = async (term) => {
     let n_term = term.replaceAll(" ", "%20")
-    console.log(n_term)
     const res = await axios.get(`${TM_URL}apikey=${TM_KEY}&keyword=${n_term}`)
-    console.log(res.data)
-
     return res.data._embedded.events
 }
 

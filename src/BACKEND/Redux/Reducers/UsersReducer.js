@@ -29,7 +29,6 @@ const UsersReducer = (state =  [], action) => {
         case DELETE_USER:
             return state.filter(user => user._id !== action.user_id);
         case UPDATE_PROFILE:
-            // console.log(state)
             return { ...state, ...action.profileData }
         default:
             return state;

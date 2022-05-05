@@ -16,7 +16,6 @@ const Request = ({user, event}) => {
 
     const acceptClick = async () => {
         const in_event = current_user.user_events.find(e => e._id === event._id || e.title === event.title);
-        console.log(in_event)
         let db_user = await getUserById(dispatch, current_user._id);
         const is_added = in_event.attendees.find(u => u.username === user.username);
         let updated_user;

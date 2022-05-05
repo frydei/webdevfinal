@@ -1,28 +1,20 @@
 import React, {useEffect, useRef, useState} from 'react';
 
-import {CustomButtonContainer, SignUpContainer} from './sign-up.styles';
 import FilledButton from "../../Components/FilledButton";
 import Spacer from "../../Components/Spacer";
 import FormInput from "./FormInput";
-import {getUserByCredentials, updateUser} from "../../../BACKEND/Actions/UsersActions";
-import {getCurrentUser, signIn, signInWithGoogle} from "../../../BACKEND/Services/AuthServices";
+import {updateUser} from "../../../BACKEND/Actions/UsersActions";
+import {signIn, signInWithGoogle} from "../../../BACKEND/Services/AuthServices";
 import {useNavigate} from "react-router";
 import {useDispatch} from "react-redux";
-import {Link, useLocation} from "react-router-dom";
 import GoogleLogin from "react-google-login";
-
-const CustomButton = ({children, ...props}) => (
-    <CustomButtonContainer {...props}>{children}</CustomButtonContainer>
-);
 
 const SignIn = () => {
     const usernameRef = useRef();
     const passwordRef = useRef();
     const formRef = useRef();
     const navigate = useNavigate();
-    const location = useLocation();
     const dispatch = useDispatch();
-    const [user, setUser] = useState();
     const [error_msg, setErrorMsg] = useState(false);
 
     const [lat, setLat] = useState("")
@@ -59,7 +51,7 @@ const SignIn = () => {
                }
                updateUser(dispatch, r)
                localStorage.setItem("user_logged_in", "TRUE")
-               navigate(`/frydei/profile/${r.username}`, {state: {from: "CURRENT"}})
+               navigate("/frydei/profile/")
            }
         }).catch((err) => {
             if(err.response.status === 403) {
@@ -70,13 +62,9 @@ const SignIn = () => {
     };
 
     const responseGoodGoogle = (response) => {
-
-        console.log(response)
         const creds = {
             id_token: response.tokenId
         }
-        // console.log("creds: ")
-        // console.log(creds)
 
         signInWithGoogle(creds).then ( r => {
                                            if (r.state) {

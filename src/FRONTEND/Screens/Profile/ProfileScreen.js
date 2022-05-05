@@ -5,25 +5,20 @@ import {useOutletContext, useParams} from "react-router";
 import HomeEvent from "../../Components/HomeEvent";
 import MediaCard from "../../Components/MediaCard";
 import {getUserByUsername} from "../../../BACKEND/Services/UsersServices";
-import {useLocation} from "react-router-dom";
 import FavoriteEvent from "../../Components/FavoriteEvent";
 
 const ProfileScreen = () => {
     const {username} = useParams();
-    const location = useLocation();
-    const [logged_in, current_user, setCurrentUser] = useOutletContext()
+    const [logged_in] = useOutletContext()
 
-    const [user, setUser] = useState(current_user);
+    const [user, setUser] = useState();
 
     useEffect(async () => {
-        if (location.state.user !== "CURRENT") {
-            const url_user = await getUserByUsername(username);
-            setUser(url_user);
-        }
+        const url_user = await getUserByUsername(username);
+        setUser(url_user);
     }, []);
     const [tab, changeTab] = useState("UPCOMING_EVENTS");
 
-    console.log(user)
     let selected;
     if (tab === "UPCOMING_EVENTS") {
         selected = {
@@ -54,10 +49,9 @@ const ProfileScreen = () => {
             favorited: "",
         };
     }
-    console.log(user)
 
-    const update = (new_user) => {
-        setCurrentUser(new_user)
+    if(!user) {
+        return null
     }
     return (
         <div className="f-profile" style={{"paddingLeft": "175px", "paddingRight": "175px", "paddingTop": "25px"}}>
@@ -76,12 +70,14 @@ const ProfileScreen = () => {
                 {tab === "FAVORITED_EVENTS" &&
                     (user._id === undefined ? null : user.favorited.map && user.favorited.map(event => <FavoriteEvent event={event}
                                                                                                 logged_in={logged_in}
-                                                                                                current_user={user}
-                                                                                                setCurrentUser={setCurrentUser}
-                                                                                                update={update}
+                                                                                                current_user={null}
+                                                                                                setCurrentUser={null}
+                                                                                                update={null}
                                                                                             page="Favorited"/>))}
                 {tab === "MEDIA" &&
-                    (user._id === undefined ? null : user.media.map && user.media.map(med => <MediaCard media={med}/>))}
+                    (user._id === undefined ? null : user.media.map && user.media.map(med => <MediaCard media={med}/>))
+                }
+
             </div>
 
         </div>

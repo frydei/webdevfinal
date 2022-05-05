@@ -35,7 +35,6 @@ const SignUpG = () => {
         getUserByUsername(dispatch, username.current.value).then(r => {
             check_un = r;
         })
-        console.log(check_un)
         if (check_un) {
             setContent("Please try a different username.")
             setErrorMsg(true)

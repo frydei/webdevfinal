@@ -5,8 +5,6 @@ import LargeUserIcon from "../../Components/LargeUserIcon";
 import Spacer from "../../Components/Spacer";
 
 const SelfProfileItem = ({user}) => {
-    // console.log("this one undefined?")
-    // console.log(user.username)
 
     return(
         <div className="f-profile d-flex flex-column align-items-center">

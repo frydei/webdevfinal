@@ -32,7 +32,6 @@ const Complaint = (param) => {
     }
     const min = event_date.minute === 0 ? "00" : event_date.minute.toString();
     const string_time = hour + ":" + min  + ":00";
-    console.log(string_time)
 
     return (
         <form action="" className="f-form mt-4">

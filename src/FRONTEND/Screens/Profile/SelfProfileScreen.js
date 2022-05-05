@@ -13,12 +13,12 @@ import HomeEvent from "../../Components/HomeEvent";
 import FavoriteEvent from "../../Components/FavoriteEvent";
 import MediaCard from "../../Components/MediaCard";
 import SelfProfileItem from "./SelfProfileItem";
-import {Modal} from "react-bootstrap";
+import {Form, Modal} from "react-bootstrap";
 import {updateSession} from "../../../BACKEND/Services/AuthServices";
 import FilledButton from "../../Components/FilledButton";
 import Button from "../../Components/Button"
+import {uploadFile} from "../../../BACKEND/Services/FileServices";
 const SelfProfileScreen = () => {
-    const navigate = useNavigate();
     const {username} = useParams();
     let [editing, setEditing] = useState(false)
     const dispatch = useDispatch();
@@ -36,13 +36,6 @@ const SelfProfileScreen = () => {
     const state= useRef();
     const bio= useRef();
 
-    useEffect(async () => {
-        if (location.state.user !== "CURRENT") {
-            const url_user = await getUserByUsername(dispatch, username);
-            setUser(url_user);
-        }
-    }, []);
-
     const updateItem = (e) => {
         // e.preventDefault();
         let updated_user;
@@ -57,10 +50,10 @@ const SelfProfileScreen = () => {
             biography : bio.current.value
 
         }
-        updateUser(dispatch, updated_user).then(r => console.log(r));
+        updateUser(dispatch, updated_user).then(() => console.log());
+        setUser(updated_user)
         setCurrentUser(updateSession(updated_user));
-        // console.log (uname.current.value)
-        // setModal(false);
+
     }
 
     const showModal = () => {
@@ -70,15 +63,8 @@ const SelfProfileScreen = () => {
         setModal(false);
     };
 
-
-
     const [tab, changeTab] = useState("UPCOMING_EVENTS");
-    const [render, setRender] = useState(false)
-    //let user = users.find(u => u.first_name.toLowerCase().split("")[0] + u.last_name.toLowerCase() === uname)
 
-    const getDate = (e) => {
-        return new Date(e.date);
-    };
     let selected;
     if (tab === "UPCOMING_EVENTS") {
         selected = {
@@ -114,16 +100,24 @@ const SelfProfileScreen = () => {
         setCurrentUser(new_user)
     }
 
-    /*const cleanUp = () => {
-        dispatch({
-            type: "user-clean-up",
-            past: past
+    const uploadMedia = async (file) => {
+        const data = new FormData()
+        data.append("file", file)
+        await uploadFile(data).then(() => {
+            let med = {
+                content: file.name
+            }
+            let updated_user = {
+                ...current_user,
+                media: [med, ...current_user.media]
+            }
+            updateUser(dispatch, updated_user).then(() => console.log());
+            setUser(updated_user)
+            setCurrentUser(updateSession(updated_user));
         })
+
     }
 
-    const past = user.upcoming_events.filter(event => getDate(event) < new Date() ? cleanUp(event) : event)
-
-*/
     return (
 
 
@@ -133,11 +127,7 @@ const SelfProfileScreen = () => {
             </div>
             {!editing &&
              <Button handleSubmit={showModal} name={"Edit Profile"}/>
-
             }
-
-
-
             <ProfileNav changeTab={changeTab} selected={selected}/>
 
             <div className="f-event-grid mt-3">
@@ -158,6 +148,25 @@ const SelfProfileScreen = () => {
                                                                                              page="Favorited"/>))}
                 {tab === "MEDIA" &&
                  (user._id === undefined ? null : user.media.map(med => <MediaCard media={med}/>))}
+                {tab === "MEDIA" &&
+                    <>
+                        <div className="f-media-card d-flex justify-content-center">
+                            <label htmlFor="f-media-upload"
+                                   className="shadow-none d-flex align-items-center justify-content-center">
+                                Add New Media
+                                <input id="f-media-upload"
+                                       type="file"
+                                       style={{"display": "none"}}
+                                       onChange={async (e) => {
+                                           await uploadMedia(e.target.files[0])
+                                       }
+                                       }
+                                />
+
+                            </label>
+                    </div>
+                    </>
+                }
             </div>
 
             <Modal className="f-modal d-flex justify-content-center align-content-start " show={modal} onHide={hideModal}>

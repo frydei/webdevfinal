@@ -47,14 +47,8 @@ const EventDetailGuest = ({event}) => {
     }
 
     const navigateToProfile = (host) => {
-
-        navigate(`/frydei/profile/${host.username}`, {
-            state: {
-                user: "USER"
-            }
-        });
+        navigate(`/frydei/profile/${host.username}`);
     };
-    console.log(event)
 
     return (
         <div className="container-fluid">

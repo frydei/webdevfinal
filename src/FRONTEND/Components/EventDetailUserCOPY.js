@@ -90,7 +90,6 @@ const EventDetailUser = ({event}) => {
     };
 
     const addUser = async () => {
-        console.log("here")
         let user_added = event.attendees.find(u => u.name === new_attendee.name)
 
         if (!user_added) {

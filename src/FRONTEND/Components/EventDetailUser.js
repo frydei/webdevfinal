@@ -112,36 +112,29 @@ const EventDetailUser = ({event}) => {
                 ...db_user,
                 upcoming_events: [{...c_event},...db_user.upcoming_events],
                 events_attended: db_user.events_attended + 1
-
             }
             updateUser(updated_user).then(async () => {
                 updateSession(updated_user).then(r => {
-                    console.log(r)
                     setCurrentUser(r)
                 })
-
             })
 
             let updated_event = {
                 ...c_event, attendees: [...c_event.attendees, {...new_attendee}]
-
             }
             updateEvent(updated_event).then(() => {
+                setEvent(updated_event)
             })
-
         }
     }
 
     const navigateToProfile = (host) => {
-
-        navigate(`/frydei/profile/${host.username}`, {
-            state: {
-                user: "USER"
-            }
-        });
+        if (host.username === current_user.username) {
+            navigate("/frydei/profile");
+        } else {
+            navigate(`/frydei/profile/${host.username}`);
+        }
     };
-
-    console.log(event)
 
     return (
         <div className="container-fluid">

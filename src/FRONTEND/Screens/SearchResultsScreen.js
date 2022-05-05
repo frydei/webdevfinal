@@ -7,7 +7,6 @@ import {useNavigate, useParams} from "react-router";
 const SearchResultsScreen = () => {
     const {query} = useParams();
     const iref = useRef()
-    console.log(query);
     const [searchEvent, setSearchEvent] = useState([]);
     const navigate = useNavigate();
 

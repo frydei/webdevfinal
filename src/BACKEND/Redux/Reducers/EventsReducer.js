@@ -4,7 +4,6 @@ const EventsReducer = (state = [], action) => {
         case GET_EVENTS:
             return state = [...action.all_events];
         case GET_EVENT_BY_ID:
-            console.log(action.event)
             return action.event;
         case DELETE_EVENT:
             return state.filter(event => event._id !== action.event_id);

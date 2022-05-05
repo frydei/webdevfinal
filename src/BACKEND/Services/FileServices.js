@@ -5,6 +5,5 @@ const UPLOAD = `${API_BASE}/upload`
 
 export const uploadFile = async (data) => {
     const res = await axios.post(UPLOAD, data)
-    console.log(res.data)
     return res.data
 }

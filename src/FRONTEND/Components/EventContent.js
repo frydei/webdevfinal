@@ -31,7 +31,7 @@ const EventContent = ({event, is_favorite, menu}) => {
                 ...db_user,
                 favorited: [{...event}, ...db_user.favorited]
             };
-            updateUser(dispatch, updated_user).then(r => console.log(r));
+            updateUser(dispatch, updated_user).then(() => console.log());
             setCurrentUser(await updateSession(updated_user));
 
         } else {
@@ -39,7 +39,7 @@ const EventContent = ({event, is_favorite, menu}) => {
                 ...db_user,
                 favorited: db_user.favorited.filter(e => e._id !== event._id)
             };
-            updateUser(dispatch, updated_user).then(r => console.log(r));
+            updateUser(dispatch, updated_user).then(() => console.log());
             setCurrentUser(await updateSession(updated_user));
         }
 
@@ -53,11 +53,15 @@ const EventContent = ({event, is_favorite, menu}) => {
     }
 
     const navigateToProfile = () => {
-        navigate(`/frydei/profile/${host.username}`, {
-            state: {
-                user: user
-            }
-        });
+        if (host.username === current_user.username) {
+            navigate("/frydei/profile");
+        } else {
+            navigate(`/frydei/profile/${host.username}`, {
+                state: {
+                    user: "USER"
+                }
+            });
+        }
 
     };
 
